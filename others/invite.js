@@ -1,22 +1,21 @@
-const { Client, Collection, MessageEmbed } = require(`discord.js`);
-const {
-  PREFIX,
-  approveemoji,
-  denyemoji
-} = require(`../config.json`);
+const { MessageEmbed } = require("discord.js");
+const prefix = ("b!");
+  
 
 module.exports = {
-  name: `invitelllllll`,
-  description: `Gives you an invite`,
-  aliases: ["add"],
-  cooldown: 3,
-  edesc: "Type this command to get an invite link for the Bot, thanks for every Invite",
-  execute(message, args, client) {
-    //react with approve emoji
-    message.react("769665713124016128");
-    //send the invite embed
-    message.reply(new MessageEmbed().setColor("#c219d8").setTitle(":heart: Please Invite me: ").setDescription("https://discord.com/oauth2/authorize?client_id=769642999227351070&permissions=0&scope=bot")
-    .setFooter("And enjoy listening to music!", ""));
+  name: "help",
+  aliases: ["h"],
+  description: "Display all commands and descriptions",
+  execute(message) {
+    execute(message, args, client) {
+     
+    let helpEmbed = new MessageEmbed()
+    .setFooter(message.author.username, message.author.displayAvatarURL)
+    .setColor('RANDOM')
+    .setTitle("Invite Me")
+    .setURL("https://discord.com/api/oauth2/authorize?client_id=864203179947458571&permissions=8&scope=bot")
+    helpEmbed.setTimestamp();
 
+    return message.channel.send(helpEmbed).catch(console.error);
   }
-}
+};
