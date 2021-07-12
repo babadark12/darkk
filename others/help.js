@@ -17,7 +17,7 @@ module.exports = {
     .setImage("")
     .setDescription(`
 🌐 | Other Commands
-\`${prefix}help\`-\`${prefix}ping\` 
+\`${prefix}invite\`-\`${prefix}ping\` 
 \`${prefix}prefix\`-\`${prefix}uptime\`
 
 🎶 | Music Commands
@@ -33,7 +33,7 @@ module.exports = {
 \`${prefix}mute\`-\`${prefix}unmute\`
 \`${prefix}count\`-\`${prefix}invites\`
 \`${prefix}emoji\`-\`${prefix}se\`
-\`${prefix}bans\`
+\`${prefix}bans\`-\`${prefix}embed\`
 `)
     
 
