@@ -5,7 +5,7 @@ module.exports = {
   category: "<:mod:789590144650051604> moderation",
   description: "Kick anyone with one shot whithout knowing anyone xD",
   usage: "kick <@user> <reason>",
-  run: async (client, message, args) => {
+  async execute(message, args, client) {
     
     const target = message.mentions.users.first() || message.guild.members.cache.get(args[0]).user
     
