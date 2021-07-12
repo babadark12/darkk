@@ -4,7 +4,7 @@ module.exports = {
   name: "about",
   category: "<:info:773053660380135424>info",
   description: "INVITE BOT",
-  run: async (client, message, args) => {
+  async execute(message, args) {
     let embed = new discord.MessageEmbed()
       .setTitle(`__**INFORMATION ABOUT BOT**__`)
       .addField("> BOT NAME", `Automodv12 beta`)
