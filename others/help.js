@@ -40,6 +40,7 @@ module.exports = {
 > \`${prefix}emoji\`-\`${prefix}se\`
 > \`${prefix}bans\`-\`${prefix}embed\`
 > \`${prefix}addrole\`-\`${prefix}rmvrole\`
+> \`${prefix}suggest\`-\`${prefix}vkick\`
 > 
 > **Fun Commands**
 > \`${prefix}slap\`-\`${prefix}hug\`
