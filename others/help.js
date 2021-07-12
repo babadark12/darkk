@@ -17,9 +17,9 @@ module.exports = {
     .setImage("")
     .setDescription(`
 > **Other Commands**
-> \`${prefix}help\`-\`${prefix}ping\` 
+> \`${prefix}about\`-\`${prefix}ping\` 
 > \`${prefix}prefix\`-\`${prefix}uptime\`
-> \`${prefix}avatar\`
+> \`${prefix}avatar\`-\`${prefix}server\`
 > 
 > **Music Commands**
 > \`${prefix}filter\`-\`${prefix}loop\`
@@ -39,7 +39,7 @@ module.exports = {
 > \`${prefix}count\`-\`${prefix}invites\`
 > \`${prefix}emoji\`-\`${prefix}se\`
 > \`${prefix}bans\`-\`${prefix}embed\`
-> 
+> \`${prefix}roleadd\`-\`${prefix}roleremove\`
 > **Fun Commands**
 > \`${prefix}slap\`-\`${prefix}hug\`
 `)
