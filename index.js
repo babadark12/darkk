@@ -73,6 +73,27 @@ client.on(`message`, async (message) => {
     message.channel.send(embed)
   }
 /////hhhh
+if(message.content.startsWith(`${prefix}status`)){
+    //define saymsg
+    const saymsg = message.content.slice(Number(prefix.length) + 5)
+    //define embed
+    const embed = new Discord.MessageEmbed()
+    .setColor("BLUE")
+    .setAuthor("")
+    .setThumbnail(` `)
+    .setFooter(message.author.username, message.author.displayAvatarURL)
+    .setTimestamp()
+    .setDescription(`
+Guilds Count: ${client.guilds.cache.size}
+Users Count: ${client.guilds.cache.reduce((a, g) => a + g.memberCount, 0)}
+Channels Count: ${client.channels.cache.size}
+`)
+
+    //send the Message
+    message.channel.send(embed)
+    message.react("")
+  }
+///////
   client.on('message',async message => {
   if(message.content.startsWith(prefix + "roleadd")) { 
  
