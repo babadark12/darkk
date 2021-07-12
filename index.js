@@ -156,6 +156,41 @@ ${client.channels.cache.size}
     message.channel.send(embed)
     message.react("📊")
 }
+//////
+if(message.content.startsWith(`${prefix}server`)){
+    //define saymsg
+    const saymsg = message.content.slice(Number(prefix.length) + 5)
+    //define embed
+    const embed = new Discord.MessageEmbed()
+    .setColor("RANDOM")
+    .setAuthor("")
+    .setThumbnail(` `)
+    .setFooter(message.author.username, message.author.displayAvatarURL)
+    .setTimestamp()
+    .setDescription(`
+**Guild Name:** 
+${message.guild.name}
+**Guild Id:**
+${message.guild.id}
+**Guild Owner:** 
+<@${message.guild.ownerID}>
+**Created:** 
+${message.guild.createdAt.toLocaleString()}
+**Roles:** 
+${message.guild.roles.cache.size}
+**Emojis:** 
+${message.guild.emojis.cache.size}
+**Member:**
+${message.guild.memberCount}
+**Boost:** 
+${message.guild.premiumSubscriptionCount}
+**Channels:** 
+${message.guild.channels.cache.size}
+`)
+
+    //send the Message
+    message.channel.send(embed)
+    
 //command Handler DO NOT TOUCH
  const prefixRegex = new RegExp(`^(<@!?${client.user.id}>|${escapeRegex(prefix)})\\s*`);
  if (!prefixRegex.test(message.content)) return;
