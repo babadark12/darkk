@@ -1,5 +1,5 @@
 const { MessageEmbed } = require("discord.js");
-const prefix = (".");
+const prefix = ("b!");
   
 
 module.exports = {
@@ -16,19 +16,24 @@ module.exports = {
     .setURL("https://discord.com/api/oauth2/authorize?client_id=864203179947458571&permissions=8&scope=bot")
     .setImage("")
     .setDescription(`
-| Other Commands
+🌐 | Other Commands
 \`${prefix}help\`-\`${prefix}ping\` 
 \`${prefix}prefix\`-\`${prefix}uptime\`
 
-| Music Commands
-
+🎶 | Music Commands
 \`${prefix}filter(fi)\`-\`${prefix}loop (l)\`-\`${prefix}lyrics (ly)\`-\`${prefix}np\`
 \`${prefix}pause\`-\`${prefix}play(p)\`-\`${prefix}queue(qu)\`-\`${prefix}radio\`-\`${prefix}remove\`
 \`${prefix}resume (r)\`-\`${prefix}search\`-\`${prefix}shuffle(mix)\`-\`${prefix}skip(s)\`-\`${prefix}skipto(st)\`-\`${prefix}stop\`
 \`${prefix}volume(vol)\`
 
-| Moderation Commands
-
+📢 | Moderation Commands
+\`${prefix}lock\`-\`${prefix}unlock\`
+\`${prefix}hide\`-\`${prefix}unhide\`
+\`${prefix}ban\`-\`${prefix}unban\`
+\`${prefix}mute\`-\`${prefix}unmute\`
+\`${prefix}count\`-\`${prefix}invites\`
+\`${prefix}emoji\`-\`${prefix}se\`
+\`${prefix}bans\`
 `)
     
 
