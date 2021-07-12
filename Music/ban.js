@@ -5,7 +5,7 @@ module.exports = {
   category: "<:mod:789590144650051604> moderation",
   description: "Ban anyone with one shot whithout knowing anyone xD",
   usage: "ban <@user> <reason>",
-  run: async (client, message, args) => {
+  async execute(message, args, client) {
     
     const target = message.mentions.members.first()
     
