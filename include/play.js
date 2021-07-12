@@ -4,82 +4,54 @@
 const ytdl = require("discord-ytdl-core");
 const { canModifyQueue } = require("../util/MilratoUtil");
 const { Client, Collection, MessageEmbed, splitMessage, escapeMarkdown,MessageAttachment } = require("discord.js");
-const { attentionembed } = require("../util/attentionembed");
+const { attentionembed } = require("../util/attentionembed"); 
 const createBar = require("string-progressbar");
 const lyricsFinder = require("lyrics-finder");
-const {
-  approveemoji,
-  denyemoji,
-  BOTNAME,
-} = require(`../config.json`);
 ////////////////////////////
 //////COMMAND BEGIN/////////
 ////////////////////////////
 module.exports = {
   async play(song, message, client, filters) {
-    //get the queue!
+    //VERY MESSY CODE WILL BE CLEANED SOON!
+    const { PRUNING, SOUNDCLOUD_CLIENT_ID } = require("../config.json");
+
     const queue = message.client.queue.get(message.guild.id);
-    //if no song provided
+    
     if (!song) {
-      //leave the channel
       queue.channel.leave();
-      //delete the queue for this server
       message.client.queue.delete(message.guild.id);
-      //define the embed
       const endembed = new MessageEmbed().setColor("#c219d8")
         .setAuthor(`Music Queue ended.`, "https://cdn.discordapp.com/emojis/769915194066862080.png")
-      //set the embed
       return queue.textChannel.send(endembed).catch(console.error);
     }
-    //do some variables defining
+
     let stream = null;
-    let streamType = song.url.includes("youtube.com") ? "opus" : "ogg/opus"; //if its youtube change streamtype
-    let isnotayoutube = false; //is not a youtube
-    let seekTime = 0; //seektime to 0
-    let oldSeekTime = queue.realseek; //the seek time if you skipped the song it would reset it himself, this provents it
-    let encoderArgstoset; //encoderargs for the filters only for youtube tho
-    if (filters)
-    {
-      //if filter is remove
-      if (filters === "remove") {
-        //clear the filters (actual setting them to something clean which stopps earraping)
+    let streamType = song.url.includes("youtube.com") ? "opus" : "ogg/opus";
+    let isnotayoutube=false;        
+    let seekTime = 0;
+    let oldSeekTime = queue.realseek;
+    let encoderArgstoset;
+    if (filters === "remove") {
         queue.filters = ['-af','dynaudnorm=f=200'];
-        //defining encodersargs
         encoderArgstoset = queue.filters;
-        //try to get seektime
         try{
-          //set seektime to the howlong a song is playing plus the oldseektime
           seekTime = (queue.connection.dispatcher.streamTime - queue.connection.dispatcher.pausedTime) / 1000 + oldSeekTime;
-        }
-        //catch if try is not possible
-        catch{
-          //set seektime to 0
+        } catch{
           seekTime = 0;
-        }
-        //set the realseek time with seektime
+        } 
+          queue.realseek = seekTime;
+    } else if (filters)
+    {
+      try{
+        seekTime = (queue.connection.dispatcher.streamTime - queue.connection.dispatcher.pausedTime) / 1000 + oldSeekTime;
+      } catch{
+        seekTime = 0;
+      } 
         queue.realseek = seekTime;
-      }
-      else{
-        //try to get seektime
-        try{
-            //set seektime to the howlong a song is playing plus the oldseektime
-          seekTime = (queue.connection.dispatcher.streamTime - queue.connection.dispatcher.pausedTime) / 1000 + oldSeekTime;
-        }
-        //catch if try is not possible
-        catch{
-          //set seektime to 0
-          seekTime = 0;
-        }
-        //set the realseek time with seektime
-        queue.realseek = seekTime;
-        //push the queue filters array so that you can have multiple filters
         queue.filters.push(filters)
-        //set the encoderargs to the filters
         encoderArgstoset = ['-af', queue.filters]
-      }
-
     }
-
+ 
 
     try {
       if (song.url.includes("youtube.com")) {
@@ -88,11 +60,11 @@ module.exports = {
           opusEncoded: true,
           encoderArgs: encoderArgstoset,
           bitrate: 320,
-          seek: seekTime,
+          seek: seekTime, 
           quality: "highestaudio",
           liveBuffer: 40000,
-          highWaterMark: 1 << 50, 
-
+          highWaterMark: 1 << 25, 
+  
       });
       } else if (song.url.includes(".mp3") || song.url.includes("baseradiode")) {
         stream = song.url;
@@ -108,8 +80,8 @@ module.exports = {
       return attentionembed(message, `Error: ${error.message ? error.message : error}`);
     }
 
-    queue.connection.on("disconnect", () => message.client.queue.delete(message.guild.id));
-
+    queue.connection.on("disconnect", () => message.client.queue.delete(message.guild.id));   
+    
     if(isnotayoutube){
       console.log("TEST")
       const dispatcher = queue.connection
@@ -137,7 +109,7 @@ module.exports = {
       .play(stream, { type: streamType })
       .on("finish", () => {
         if (collector && !collector.ended) collector.stop();
-
+  
         if (queue.loop) {
           let lastSong = queue.songs.shift();
           queue.songs.push(lastSong);
@@ -154,14 +126,14 @@ module.exports = {
       });
     dispatcher.setVolumeLogarithmic(queue.volume / 100);
     }
-
+    
   let thumb;
     if (song.thumbnail === undefined) thumb = "https://cdn.discordapp.com/attachments/748095614017077318/769672148524335114/unknown.png";
     else thumb = song.thumbnail.url;
 
     try {
       const newsong = new MessageEmbed()
-        .setTitle("<:Playing:769665713124016128>  "+song.title)
+        .setTitle("✅ "+song.title)
         .setURL(song.url)
         .setColor("#c219d8")
         .setThumbnail(thumb)
@@ -169,15 +141,15 @@ module.exports = {
         .addField("Duration:", `\`${song.duration} Minutes\``, true)
 
       var playingMessage = await queue.textChannel.send(newsong);
+      
 
-
-      await playingMessage.react("769915194444480542"); //skip
-      await playingMessage.react("769912238236106793"); //pause
-      await playingMessage.react("769913064194834511"); //loop
-      await playingMessage.react("769915194066862080"); //stop
-      await playingMessage.react("769940554481532938"); //np
-      await playingMessage.react("769945882120028160"); //queue
-      await playingMessage.react("769938447279456296"); //lyrics
+      await playingMessage.react("⏭"); //skip
+      await playingMessage.react("⏯"); //pause
+      await playingMessage.react("🔄"); //loop
+      await playingMessage.react("⏹"); //stop
+      await playingMessage.react("❓"); //np
+      await playingMessage.react("🎵"); //queue
+      await playingMessage.react("📑"); //lyrics
     } catch (error) {
       console.error(error);
     }
@@ -191,26 +163,11 @@ module.exports = {
 
     collector.on("collect", async (reaction, user) => {
       if (!queue) return;
-     
       const member = message.guild.member(user);
-      
-     
-      if (member.voice.channel !== member.guild.me.voice.channel) {
 
-        member.send(new MessageEmbed()
-        .setTitle("<:no:770326304473350145> | You must be in the Same Voice Channel as me!")
-        .setColor("#ff0e7a"))
-        
-        reaction.users.remove(user).catch(console.error);
-        
-        console.log("not in the same ch."); 
-        
-        return; 
-      }
-      
-      switch (reaction.emoji.id) {
+      switch (reaction.emoji.name) {
         //queue
-        case "769945882120028160":
+        case "🎵":
           reaction.users.remove(user).catch(console.error);
           const description = queue.songs.map((song, index) => `${index + 1}. ${escapeMarkdown(song.title)}`);
 
@@ -219,29 +176,29 @@ module.exports = {
             .setDescription(description)
             .setColor("#c219d8")
              ;
-
+      
           const splitDescription = splitMessage(description, {
             maxLength: 2048,
             char: "\n",
             prepend: "",
             append: ""
           });
-
+      
           splitDescription.forEach(async (m) => {
-
+      
             queueEmbed.setDescription(m);
-            message.react(approveemoji)
+            message.react("✅")
             message.channel.send(queueEmbed);
           });
           break;
         //np
-        case "769940554481532938":
+        case "❓":
         reaction.users.remove(user).catch(console.error);
         const song = queue.songs[0];
         //get current song duration in s
-        let minutes = song.duration.split(":")[0];
-        let seconds = song.duration.split(":")[1];
-        let ms = (Number(minutes)*60+Number(seconds));
+        let minutes = song.duration.split(":")[0];   
+        let seconds = song.duration.split(":")[1];    
+        let ms = (Number(minutes)*60+Number(seconds));   
         //get thumbnail
         let thumb;
         if (song.thumbnail === undefined) thumb = "https://cdn.discordapp.com/attachments/748095614017077318/769672148524335114/unknown.png";
@@ -263,16 +220,16 @@ module.exports = {
             //send approve msg
             return message.channel.send(nowPlaying);
           }
-          //If its not a stream
+          //If its not a stream 
           if (ms > 0 && ms<10000) {
-            nowPlaying.addField("\u200b", "**[" + createBar((ms == 0 ? seek : ms), seek, 25, "▬", "<:currentposition:770098066552258611>")[0] + "]**\n**" + new Date(seek * 1000).toISOString().substr(11, 8) + " / " + (ms == 0 ? " ◉ LIVE" : new Date(ms * 1000).toISOString().substr(11, 8))+ "**" , false );
+            nowPlaying.addField("\u200b", "**[" + createBar((ms == 0 ? seek : ms), seek, 25, "▬", "⚪️")[0] + "]**\n**" + new Date(seek * 1000).toISOString().substr(11, 8) + " / " + (ms == 0 ? " ◉ LIVE" : new Date(ms * 1000).toISOString().substr(11, 8))+ "**" , false );
             //send approve msg
             return message.channel.send(nowPlaying);
           }
-
+        
         break;
         //skip
-        case "769915194444480542":
+        case "⏭":
           queue.playing = true;
           reaction.users.remove(user).catch(console.error);
           if (!canModifyQueue(member)) return;
@@ -284,8 +241,8 @@ module.exports = {
 
           break;
         //lyrics
-        case "769938447279456296":
-
+        case "📑":
+        
           reaction.users.remove(user).catch(console.error);
           if (!canModifyQueue(member)) return;
           let lyrics = null;
@@ -299,21 +256,21 @@ module.exports = {
           } catch (error) {
             lyrics = `No lyrics found for ${queue.songs[0].title}.`;
           }
-
+      
           let lyricsEmbed = new MessageEmbed()
-            .setTitle("<:lyrics:769938447279456296> Lyrics")
+            .setTitle("📑 Lyrics")
             .setDescription(lyrics)
             .setColor("#c219d8")
-
+      
           if (lyricsEmbed.description.length >= 2048)
-
+      
             lyricsEmbed.description = `${lyricsEmbed.description.substr(0, 2045)}...`;
-            message.react(approveemoji);
+            message.react("✅");
           return result.edit(lyricsEmbed).catch(console.error);
 
           break;
           //pause
-        case "769912238236106793":
+        case "⏯":
           reaction.users.remove(user).catch(console.error);
           if (!canModifyQueue(member)) return;
           if (queue.playing) {
@@ -330,8 +287,8 @@ module.exports = {
             queue.textChannel.send(playembed).catch(console.error);
           }
           break;
-          //loop
-        case "769913064194834511":
+          //loop  
+        case "🔄":
           reaction.users.remove(user).catch(console.error);
           if (!canModifyQueue(member)) return;
           queue.loop = !queue.loop;
@@ -340,7 +297,7 @@ module.exports = {
           queue.textChannel.send(loopembed).catch(console.error);
           break;
           //stop
-        case "769915194066862080":
+        case "⏹":
           reaction.users.remove(user).catch(console.error);
           if (!canModifyQueue(member)) return;
           queue.songs = [];
@@ -363,9 +320,11 @@ module.exports = {
 
     collector.on("end", () => {
       playingMessage.reactions.removeAll().catch(console.error);
-      if (playingMessage && !playingMessage.deleted) {
+      if (PRUNING && playingMessage && !playingMessage.deleted) {
         playingMessage.delete({ timeout: 3000 }).catch(console.error);
       }
     });
   }
 };
+
+/////by Ragnar Black Hat
