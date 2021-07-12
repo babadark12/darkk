@@ -110,8 +110,11 @@ client.on(`message`, async (message) => {
    .setTitle(`There was an error executing that command.`)).catch(console.error);
  }
 
-
+client.on("guildMemberAdd" , async (member,guild) => {
+let role = member.guild.roles.cache.get('')
+await member.roles.add(role.id).catch(err => console.log(err));
 });
+
 function delay(delayInms) {
  return new Promise(resolve => {
    setTimeout(() => {
