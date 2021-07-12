@@ -1,3 +1,5 @@
+const discord = require("discord.js");
+
 module.exports = {
   name: "vkick",
   category: "<:mod:789590144650051604> moderation",
