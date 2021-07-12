@@ -39,7 +39,7 @@ module.exports = {
 > \`${prefix}count\`-\`${prefix}invites\`
 > \`${prefix}emoji\`-\`${prefix}se\`
 > \`${prefix}bans\`-\`${prefix}embed\`
-> \`${prefix}roleadd\`-\`${prefix}roleremove\`
+> \`${prefix}addrole\`-\`${prefix}rmvrole\`
 > 
 > **Fun Commands**
 > \`${prefix}slap\`-\`${prefix}hug\`
