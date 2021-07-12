@@ -16,31 +16,32 @@ module.exports = {
     .setURL("https://discord.com/api/oauth2/authorize?client_id=864203179947458571&permissions=8&scope=bot")
     .setImage("")
     .setDescription(`
-🌐 | Other Commands
-\`${prefix}invite\`-\`${prefix}ping\` 
-\`${prefix}prefix\`-\`${prefix}uptime\`
-
-🎶 | Music Commands
-\`${prefix}filter\`-\`${prefix}loop\`
-\`${prefix}lyrics\`-\`${prefix}np\`
-\`${prefix}pause\`-\`${prefix}play\`
-\`${prefix}queue\`-\`${prefix}radio\`
-\`${prefix}remove\`-\`${prefix}resume\`
-\`${prefix}search\`-\`${prefix}shuffle\`
-\`${prefix}skip\`-\`${prefix}skipto\`
-\`${prefix}stop\`-\`${prefix}volume\`
-
-📢 | Moderation Commands
-\`${prefix}lock\`-\`${prefix}unlock\`
-\`${prefix}hide\`-\`${prefix}unhide\`
-\`${prefix}ban\`-\`${prefix}unban\`
-\`${prefix}mute\`-\`${prefix}unmute\`
-\`${prefix}count\`-\`${prefix}invites\`
-\`${prefix}emoji\`-\`${prefix}se\`
-\`${prefix}bans\`-\`${prefix}embed\`
-
-🌟 | Fun Commands
-\`${prefix}slap\`-\`${prefix}hug\`
+> **Other Commands**
+> \`${prefix}help\`-\`${prefix}ping\` 
+> \`${prefix}prefix\`-\`${prefix}uptime\`
+> \`${prefix}avatar\`
+> 
+> **Music Commands**
+> \`${prefix}filter\`-\`${prefix}loop\`
+> \`${prefix}lyrics\`-\`${prefix}np\`
+> \`${prefix}pause\`-\`${prefix}play\`
+> \`${prefix}queue\`-\`${prefix}radio\`
+> \`${prefix}remove\`-\`${prefix}resume\`
+> \`${prefix}search\`-\`${prefix}shuffle\`
+> \`${prefix}skip\`-\`${prefix}skipto\`
+> \`${prefix}stop\`-\`${prefix}volume\`
+> 
+> **Moderation Commands**
+> \`${prefix}lock\`-\`${prefix}unlock\`
+> \`${prefix}hide\`-\`${prefix}unhide\`
+> \`${prefix}ban\`-\`${prefix}unban\`
+> \`${prefix}mute\`-\`${prefix}unmute\`
+> \`${prefix}count\`-\`${prefix}invites\`
+> \`${prefix}emoji\`-\`${prefix}se\`
+> \`${prefix}bans\`-\`${prefix}embed\`
+> 
+> **Fun Commands**
+> \`${prefix}slap\`-\`${prefix}hug\`
 `)
     
 
