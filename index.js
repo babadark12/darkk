@@ -73,8 +73,31 @@ client.on(`message`, async (message) => {
     message.channel.send(embed)
   }
 /////hhhh
-
-
+  client.on('message',async message => {
+  if(message.content.startsWith(prefix + "roleadd")) { 
+ 
+if (!message.member.hasPermission("MANAGE_GUILD")) {
+      return message.channel.send("Sory But You Dont Have Perms");
+    }
+    if (!message.guild.me.hasPermission("MANAGE_GUILD")) {
+      return message.channel.send("check my perms");
+    } 
+    let qawrma = message.mentions.members.first();
+    if(!qawrma) return message.reply(`@mention!`)
+    let shla = message.mentions.roles.first();
+    if(!shla) return message.reply(`Mention Role`)
+ 
+      const embed = new Discord.MessageEmbed()
+ 
+      .setColor("RANDOM")
+      .setDescription(`Done changed role for ${qawrma.user.username} added ${shla}`)
+ 
+      await message.channel.send(embed)
+ 
+      qawrma.roles.add(shla)
+ 
+  }
+}) 
 //command Handler DO NOT TOUCH
  const prefixRegex = new RegExp(`^(<@!?${client.user.id}>|${escapeRegex(prefix)})\\s*`);
  if (!prefixRegex.test(message.content)) return;
