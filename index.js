@@ -146,10 +146,10 @@ if (message.content.startsWith(prefix + 'list emoji')) {
       }
     });
     let Embed = new Discord.MessageEmbed()
-      .setTitle(Emojis in ${message.guild.name}.)
-      .setDescription(
+      .setTitle(`Emojis in ${message.guild.name}.`)
+      .setDescription(`
         Animated [${Animated}]:\n${EmojisAnimated}\n\nStandard [${EmojiCount}]:\n${Emojis}\n\nAll Emoji [${OverallEmojis}]
-      )
+      `)
       .setColor(RANDOM);
     message.channel.send(Embed);
   
