@@ -17,9 +17,9 @@ module.exports = {
     .setImage("")
     .setDescription(`
 > **Other Commands**
-> \`${prefix}about\`-\`${prefix}ping\` 
+> \`${prefix}help\`-\`${prefix}ping\` 
 > \`${prefix}prefix\`-\`${prefix}uptime\`
-> \`${prefix}avatar\`-\`${prefix}server\`
+> \`${prefix}avatar\`-\`${prefix}status\`
 > 
 > **Music Commands**
 > \`${prefix}filter\`-\`${prefix}loop\`
