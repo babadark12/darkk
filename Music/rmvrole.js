@@ -5,7 +5,7 @@ module.exports = {
   aliases: ["rmrole", "-role"],
   category: "<:mod:789590144650051604> moderation",
   description: "Remove role from any user",
-  run: async (client, message, args) => {
+  async execute(message, args, client) {
     
     let target = message.mentions.members.first();
     
