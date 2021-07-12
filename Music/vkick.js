@@ -1,7 +1,7 @@
 module.exports = {
   name: "vkick",
   category: "<:mod:789590144650051604> moderation",
-  run: async (client, message, args) => {
+  async execute(message, args, client) {
     if (!message.guild.me.hasPermission(["ADMINISTRATOR"]))
       return message.channel.send(
         "I Don't Have Proper Permissions To Use This Command!"
