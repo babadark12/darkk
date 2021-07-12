@@ -21,10 +21,14 @@ module.exports = {
 \`${prefix}prefix\`-\`${prefix}uptime\`
 
 🎶 | Music Commands
-\`${prefix}filter(fi)\`-\`${prefix}loop (l)\`-\`${prefix}lyrics (ly)\`-\`${prefix}np\`
-\`${prefix}pause\`-\`${prefix}play(p)\`-\`${prefix}queue(qu)\`-\`${prefix}radio\`-\`${prefix}remove\`
-\`${prefix}resume (r)\`-\`${prefix}search\`-\`${prefix}shuffle(mix)\`-\`${prefix}skip(s)\`-\`${prefix}skipto(st)\`-\`${prefix}stop\`
-\`${prefix}volume(vol)\`
+\`${prefix}filter\`-\`${prefix}loop\`
+\`${prefix}lyrics\`-\`${prefix}np\`
+\`${prefix}pause\`-\`${prefix}play\`
+\`${prefix}queue\`-\`${prefix}radio\`
+\`${prefix}remove\`-\`${prefix}resume\`
+\`${prefix}search\`-\`${prefix}shuffle\`
+\`${prefix}skip\`-\`${prefix}skipto\`
+\`${prefix}stop\`-\`${prefix}volume\`
 
 📢 | Moderation Commands
 \`${prefix}lock\`-\`${prefix}unlock\`
@@ -34,6 +38,9 @@ module.exports = {
 \`${prefix}count\`-\`${prefix}invites\`
 \`${prefix}emoji\`-\`${prefix}se\`
 \`${prefix}bans\`-\`${prefix}embed\`
+
+🌟 | Fun Commands
+\`${prefix}slap\`-\`${prefix}hug\`
 `)
     
 
