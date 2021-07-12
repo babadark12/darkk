@@ -40,6 +40,7 @@ module.exports = {
 > \`${prefix}emoji\`-\`${prefix}se\`
 > \`${prefix}bans\`-\`${prefix}embed\`
 > \`${prefix}roleadd\`-\`${prefix}roleremove\`
+> 
 > **Fun Commands**
 > \`${prefix}slap\`-\`${prefix}hug\`
 `)
