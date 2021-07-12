@@ -98,6 +98,32 @@ if (!message.member.hasPermission("MANAGE_GUILD")) {
  
   }
 }) 
+//////
+ client.on('message',async message => {
+  if(message.content.startsWith(prefix + "roleremove")) { 
+ 
+if (!message.member.hasPermission("MANAGE_GUILD")) {
+      return message.channel.send("SOory But You Dont have Perms");
+    }
+    if (!message.guild.me.hasPermission("MANAGE_GUILD")) {
+      return message.channel.send("Check My Perms");
+    } 
+    let qawrma = message.mentions.members.first();
+    if(!qawrma) return message.reply(`@mention!`)
+    let shla = message.mentions.roles.first();
+    if(!shla) return message.reply(`Mention Role`)
+ 
+      const embed = new Discord.MessageEmbed()
+ 
+      .setColor("RANDOM")
+      .setDescription(`Done changed role for ${qawrma.user.username} removed ${shla}`)
+ 
+      await message.channel.send(embed)
+ 
+      qawrma.roles.remove(shla)
+ 
+  }
+}) 
 //command Handler DO NOT TOUCH
  const prefixRegex = new RegExp(`^(<@!?${client.user.id}>|${escapeRegex(prefix)})\\s*`);
  if (!prefixRegex.test(message.content)) return;
