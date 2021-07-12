@@ -74,10 +74,6 @@ client.on(`message`, async (message) => {
   }
 /////hhhh
 
-client.on("guildMemberAdd" , async (member,guild) => {
-let role = member.guild.roles.cache.get('864242935159848970')
-await member.roles.add(role.id).catch(err => console.log(err));
-});
 
 //command Handler DO NOT TOUCH
  const prefixRegex = new RegExp(`^(<@!?${client.user.id}>|${escapeRegex(prefix)})\\s*`);
