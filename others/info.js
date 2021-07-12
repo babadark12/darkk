@@ -2,15 +2,13 @@ const { Client, Collection, MessageEmbed } = require(`discord.js`);
 const { PREFIX } = require(`../config.json`);
 
 module.exports = {
-  name: `info`,
-  description: "(ue)Gives you the uptime of the Bot",
-  aliases: ["ue"],
-  cooldown: 5,
-  edesc: "With that you can see how long the Bot has been running nonstop",
+  name: "info",
+  aliases: ["i"],
+  description: "Display all commands and descriptions",
   execute(message, args, client) {
     
      const embed = new Discord.MessageEmbed()
-    .setColor("#0000FF")
+    .setColor("BLACK")
     .setAuthor("About Ness Bot.", "https://cdn.discordapp.com/avatars/844069682545164289/b40e8a61cbeb7a6319b5050238a9aa03.png?size=1024")
     .setThumbnail(`https://cdn.discordapp.com/avatars/844069682545164289/b40e8a61cbeb7a6319b5050238a9aa03.png?size=1024`)
     .setFooter(message.author.username, message.author.displayAvatarURL)
