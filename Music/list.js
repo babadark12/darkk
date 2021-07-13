@@ -1,7 +1,7 @@
 const { RichEmbed } = require("discord.js");
 
 module.exports = {
-  name: "list",
+  name: "iemoji",
   category: "<:info:773053660380135424>info",
   description: "INVITE BOT",
   async execute(message, args, client) {
