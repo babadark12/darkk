@@ -3,7 +3,6 @@ const db = require("quick.db");
 const ms = require("parse-ms");
 
 module.exports = {
-    config: {
         name: "daily",
         aliases: ["day"],
         category: "economy",
