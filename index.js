@@ -3,7 +3,6 @@ const { Client, Collection, MessageEmbed,MessageAttachment } = require(`discord.
 const { readdirSync } = require(`fs`);
 const { join } = require(`path`);
 const db = require('quick.db');
-const ms = require("parse-ms");
 const { TOKEN, PREFIX, AVATARURL, BOTNAME, } = require(`./config.json`);
 const figlet = require("figlet");
 const client = new Client({ disableMentions: `` , partials: ['MESSAGE', 'CHANNEL', 'REACTION'] });
