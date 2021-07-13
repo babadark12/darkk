@@ -1,6 +1,4 @@
-const { MessageEmbed } = require("discord.js");
-const prefix = ("n!");
-  
+const { MessageEmbed } = require("discord.js"); 
 
 module.exports = {
   name: "help",
@@ -17,38 +15,29 @@ module.exports = {
     .setImage("")
     .setDescription(`
 > **Other Commands**
-> \`${prefix}help\`-\`${prefix}ping\` 
-> \`${prefix}prefix\`-\`${prefix}uptime\`
-> \`${prefix}avatar\`-\`${prefix}status\`
+> \`help\`,\`ping\`,\`prefix\`,
+> \`uptime\`,\`avatar\`,\`status\`
 > 
 > **Music Commands**
-> \`${prefix}filter\`-\`${prefix}loop\`
-> \`${prefix}lyrics\`-\`${prefix}np\`
-> \`${prefix}pause\`-\`${prefix}play\`
-> \`${prefix}queue\`-\`${prefix}radio\`
-> \`${prefix}remove\`-\`${prefix}resume\`
-> \`${prefix}search\`-\`${prefix}shuffle\`
-> \`${prefix}skip\`-\`${prefix}skipto\`
-> \`${prefix}stop\`-\`${prefix}volume\`
+> \`filter\`,\`loop\`,\`lyrics\`
+> \`np\`,\`pause\`,\`play\`
+> \`queue\`,\`radio\`,\`remove\`,
+> \`resume\`,\`search\`,\`shuffle\`
+> \`skip\`,\`${prefix}skipto\`,\`stop\`
+> \`volume\`
 > 
 > **Moderation Commands**
-> \`${prefix}lock\`-\`${prefix}unlock\`
-> \`${prefix}hide\`-\`${prefix}unhide\`
-> \`${prefix}ban\`-\`${prefix}unban\`
-> \`${prefix}mute\`-\`${prefix}unmute\`
-> \`${prefix}count\`-\`${prefix}invites\`
-> \`${prefix}emoji\`-\`${prefix}se\`
-> \`${prefix}bans\`-\`${prefix}embed\`
-> \`${prefix}addrole\`-\`${prefix}rmvrole\`
-> \`${prefix}suggest\`-\`${prefix}vkick\`
-> \`${prefix}clear\`-\`${prefix}iemoji\`
+> \`lock\`,\`unlock\`,\`hide\`
+> \`unhide\`,\`ban\`,\`unban\`
+> \`mute\`,\`unmute\`,\`count\`
+> \`invites\`,\`emoji\`,\`se\`
+> \`bans\`,\`embed\`,\`addrole\`
+> \`rmvrole\`,\`suggest\`,\`vkick\`
+> \`clear\`,\`iemoji\`
 > 
 > **Fun Commands**
-> \`${prefix}slap\`-\`${prefix}hug\`
+> \`slap\`,\`hug\`
 > 
-> **Text Commands**
-> \`${prefix}textkurdish\`-\`${prefix}textenglish\`
-> \`${prefix}textarabic\`
 `)
     
 
