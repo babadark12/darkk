@@ -92,7 +92,7 @@ client.on('message', message =>{
 if(message.content === prefix +"server"){
 const embed = new Discord.MessageEmbed()
 .setColor("RED")
-.setTitle("Server Info")
+.setTitle(`Server Info`)
 .addField("Server Name", `${message.guild.name}`)
 .addField("Server Id", `${message.guild.id}`)
 .addField("Guild Owner", `${message.guild.owner}`)
