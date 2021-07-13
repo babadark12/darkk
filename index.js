@@ -73,6 +73,22 @@ client.on(`message`, async (message) => {
     message.channel.send(embed)
   }
 /////hhhh
+client.on('message', message =>{
+if(message.content === prefix +"bot"){
+const embed = new Discord.MessageEmbed()
+.setColor("BLUE")
+.setTitle(`${client.user.username}`)
+.addField('My Name' , ` ${client.user.tag}` , true)
+.addField('servers``', ` ${client.guilds.cache.size} `, true)
+.addField('channels', ` ${client.channels.cache.size} `, true)
+.addField('``Users', ` ${client.users.cache.size} `, true)
+.addField('My ID' , ` ${client.user.id} ` , true)
+.setFooter(`Reqouested`)
+message.channel.send(embed);
+}
+});
+
+////
 if(message.content.startsWith(`${prefix}status`)){
     //define saymsg
     const saymsg = message.content.slice(Number(prefix.length) + 5)
