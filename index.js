@@ -92,6 +92,7 @@ client.on('message', message =>{
 if(message.content === prefix +"server"){
 const embed = new Discord.MessageEmbed()
 .setColor("RED")
+.setTitle("Server Info")
 .addField("Server Name", `${message.guild.name}`)
 .addField("Server Id", `${message.guild.id}`)
 .addField("Guild Owner", `${message.guild.owner}`)
@@ -99,7 +100,6 @@ const embed = new Discord.MessageEmbed()
 .addField("Channels", `${message.guild.channels.cache.size}`)
 .addField("Roles", `${message.guild.roles.cache.size}`)
 .addField("Members", `${message.guild.memberCount}`)
-.setThumbnail(message.guild.iconURL())
 message.channel.send(embed);
 }
 });
