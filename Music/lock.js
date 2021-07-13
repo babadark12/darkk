@@ -22,7 +22,7 @@ module.exports = {
    .addField("Guild name", message.guild.name)
    .addField("Locked", `${message.channel.name}`)
    .addField("Moderation", `<@${message.author.id}>`, true)
-   .setColor("Red");
+   .setColor("Red")
    .setFooter(`${message.author.username}#${message.author.discriminator}`, message.member.user.displayAvatarURL({ dynamic: true }))
    await message.channel.send(embed);
 }
