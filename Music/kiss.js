@@ -6,7 +6,7 @@ module.exports = {
   name: "kiss",
   category: "fun",
   description: "Kiss someone",
-  run: async (client, message, args) => {
+  async execute(message, args, client) {
     
     let target = message.mentions.members.first()
     
