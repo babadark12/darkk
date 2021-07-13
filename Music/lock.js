@@ -16,14 +16,18 @@ module.exports = {
      },
     ],);
    const embed = new Discord.MessageEmbed()
-   .setTitle("**Done :lock:**")
+    .setTitle("")
    .setTimestamp()
    .setThumbnail(message.author.avatarURL({dynamic: "true"}))
-   .addField("Guild name", message.guild.name)
-   .addField("Locked", `${message.channel.name}`)
-   .addField("Moderation", `<@${message.author.id}>`, true)
-   .setColor("Red")
    .setFooter(`${message.author.username}#${message.author.discriminator}`, message.member.user.displayAvatarURL({ dynamic: true }))
+   .setDescription(`
+> **Channel Has Been Locked**
+> 
+> **Channel Name:** <#${message.channel.id}>
+> **UnLocked By:** <@${message.author.id}>
+> **Channel Status:** Send Message ❌
+`)
+   .setColor("#FF0000");
    await message.channel.send(embed);
 }
 }
