@@ -1,3 +1,5 @@
+const discord = require("discord.js");
+
 module.exports = {
   name: "clear",
   aliases:["c", "purge"],
