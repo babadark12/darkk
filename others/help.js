@@ -45,6 +45,10 @@ module.exports = {
 > 
 > **Fun Commands**
 > \`${prefix}slap\`-\`${prefix}hug\`
+> 
+> **Text Commands**
+> \`${prefix}textkurdish\`-\`${prefix}textenglish\`
+> \`${prefix}textarabic\`
 `)
     
 
