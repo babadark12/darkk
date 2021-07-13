@@ -4,7 +4,7 @@ module.exports = {
   name: "list",
   category: "<:info:773053660380135424>info",
   description: "INVITE BOT",
-  run: async (client, message, args) => {
+  async execute(message, args, client) {
   
     try {
         let notAnimated = [];
