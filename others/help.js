@@ -41,6 +41,7 @@ module.exports = {
 > \`${prefix}bans\`-\`${prefix}embed\`
 > \`${prefix}addrole\`-\`${prefix}rmvrole\`
 > \`${prefix}suggest\`-\`${prefix}vkick\`
+> \`${prefix}clear\`
 > 
 > **Fun Commands**
 > \`${prefix}slap\`-\`${prefix}hug\`
