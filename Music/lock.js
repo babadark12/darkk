@@ -16,7 +16,7 @@ module.exports = {
      },
     ],);
    const embed = new Discord.MessageEmbed()
-    .setTitle("")
+   .setTitle("Done Locked")
    .setTimestamp()
    .setThumbnail(message.author.avatarURL({dynamic: "true"}))
    .setFooter(`${message.author.username}#${message.author.discriminator}`, message.member.user.displayAvatarURL({ dynamic: true }))
@@ -24,8 +24,8 @@ module.exports = {
 > **Channel Has Been Locked**
 > 
 > **Channel Name:** <#${message.channel.id}>
-> **UnLocked By:** <@${message.author.id}>
-> **Channel Status:** Send Message ❌
+> **Locked By:** <@${message.author.id}>
+> **Channel Status:** Send Message (❌)
 `)
    .setColor("#FF0000");
    await message.channel.send(embed);
