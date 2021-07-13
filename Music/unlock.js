@@ -16,17 +16,18 @@ module.exports = {
      },
     ],);
    const embed = new Discord.MessageEmbed()
-   .setTitle("")
+   .setTitle("Done")
    .setTimestamp()
    .setThumbnail(message.author.avatarURL({dynamic: "true"}))
    .setFooter(`${message.author.username}#${message.author.discriminator}`, message.member.user.displayAvatarURL({ dynamic: true }))
    .setDescription(`
-🔒 UnLocked Channel
-Channel Name : <#${message.channel.id}>
-UnLocked By : <@${message.author.id}>
-Channel Status : Send Message
+> **Channel Has Been Unlocked**
+> 
+> **Channel Name:** <#${message.channel.id}>
+> **UnLocked By:** <@${message.author.id}>
+> **Channel Status:** Send Message (✅)
 `)
-   .setColor("Blue");
+   .setColor("BLUE");
    await message.channel.send(embed);
 }
 }
