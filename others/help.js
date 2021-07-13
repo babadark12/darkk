@@ -23,7 +23,7 @@ module.exports = {
 > \`np\`,\`pause\`,\`play\`
 > \`queue\`,\`radio\`,\`remove\`,
 > \`resume\`,\`search\`,\`shuffle\`
-> \`skip\`,\`${prefix}skipto\`,\`stop\`
+> \`skip\`,\`skipto\`,\`stop\`
 > \`volume\`
 > 
 > **Moderation Commands**
