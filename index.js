@@ -78,11 +78,11 @@ if(message.content === prefix +"bot"){
 const embed = new Discord.MessageEmbed()
 .setColor("BLUE")
 .setTitle(`${client.user.username}`)
-.addField('My Name' , ` ${client.user.tag}` , true)
-.addField('servers``', ` ${client.guilds.cache.size} `, true)
-.addField('channels', ` ${client.channels.cache.size} `, true)
-.addField('``Users', ` ${client.users.cache.size} `, true)
-.addField('My ID' , ` ${client.user.id} ` , true)
+.addField("Name", `${client.user.tag}` , true)
+.addField("Guilds", `${client.guilds.cache.size}`, true)
+.addField("Channels", `${client.channels.cache.size}`, true)
+.addField("Users", `${client.users.cache.size}`, true)
+.addField("APPLICATION ID", `${client.user.id}` , true)
 .setFooter(`Reqouested`)
 message.channel.send(embed);
 }
@@ -109,58 +109,6 @@ Channels Count: ${client.channels.cache.size}
     message.channel.send(embed)
     message.react("")
   }
-///////
-  client.on('message',async message => {
-  if(message.content.startsWith(prefix + "roleadd")) { 
- 
-if (!message.member.hasPermission("MANAGE_GUILD")) {
-      return message.channel.send("Sory But You Dont Have Perms");
-    }
-    if (!message.guild.me.hasPermission("MANAGE_GUILD")) {
-      return message.channel.send("check my perms");
-    } 
-    let qawrma = message.mentions.members.first();
-    if(!qawrma) return message.reply(`@mention!`)
-    let shla = message.mentions.roles.first();
-    if(!shla) return message.reply(`Mention Role`)
- 
-      const embed = new Discord.MessageEmbed()
- 
-      .setColor("RANDOM")
-      .setDescription(`Done changed role for ${qawrma.user.username} added ${shla}`)
- 
-      await message.channel.send(embed)
- 
-      qawrma.roles.add(shla)
- 
-  }
-}) 
-//////
- client.on('message',async message => {
-  if(message.content.startsWith(prefix + "roleremove")) { 
- 
-if (!message.member.hasPermission("MANAGE_GUILD")) {
-      return message.channel.send("SOory But You Dont have Perms");
-    }
-    if (!message.guild.me.hasPermission("MANAGE_GUILD")) {
-      return message.channel.send("Check My Perms");
-    } 
-    let qawrma = message.mentions.members.first();
-    if(!qawrma) return message.reply(`@mention!`)
-    let shla = message.mentions.roles.first();
-    if(!shla) return message.reply(`Mention Role`)
- 
-      const embed = new Discord.MessageEmbed()
- 
-      .setColor("RANDOM")
-      .setDescription(`Done changed role for ${qawrma.user.username} removed ${shla}`)
- 
-      await message.channel.send(embed)
- 
-      qawrma.roles.remove(shla)
- 
-  }
-}) 
 //command Handler DO NOT TOUCH
  const prefixRegex = new RegExp(`^(<@!?${client.user.id}>|${escapeRegex(prefix)})\\s*`);
  if (!prefixRegex.test(message.content)) return;
