@@ -11,7 +11,7 @@ module.exports = {
         usage: " ",
         accessableby: "everyone"
     },
-    run: async (bot, message, args) => {
+    async execute(message, args, client) {
         let user = message.author;
 
         let timeout = 86400000;
