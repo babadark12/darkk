@@ -140,7 +140,7 @@ module.exports = {
         .setImage(thumb)
         .setDescription(`◈ ━━━━━━━ <a:loeadmusic_14:864932697708298301> ━━━━━━━ ◈`)
         .addField("<a:right_6:864927124623720487> Requested by:", `\`${message.author.username}#${message.author.discriminator}\``, true)
-        .addField("🧭 • Length:", `\`${song.duration} Minutes\``, true)
+        .addField("<a:2play_16:864932819952468038> Length:", `\`${song.duration} Minutes\``, true)
         .addField("🔊 • Volume:", `\`100\``, true)
 
       var playingMessage = await queue.textChannel.send(newsong);
