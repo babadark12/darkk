@@ -14,30 +14,31 @@ module.exports = {
     .setURL("https://discord.com/api/oauth2/authorize?client_id=864203179947458571&permissions=8&scope=bot")
     .setImage("")
     .setDescription(`
-> **Other Commands**
-> \`help\`, \`ping\`, \`prefix\`
-> \`uptime\`, \`avatar\`, \`status\`
-> \`invites\`, \`suggest\`,
+__Total Commands
 
-> **Music Commands**
-> \`filter\`, \`loop\`, \`lyrics\`
-> \`np\`, \`pause\`, \`play\`
-> \`queue\`, \`radio\`, \`remove\`,
-> \`resume\`, \`search\`, \`shuffle\`
-> \`skip\`, \`skipto\`, \`stop\`
-> \`volume\`
+**Other Commands**
+\`help\`, \`ping\`, \`prefix\`
+\`uptime\`, \`avatar\`, \`status\`
+\`invites\`, \`suggest\`,
 
-> **Moderation Commands**
-> \`lock\`, \`unlock\`, \`hide\`
-> \`unhide\`, \`ban\`, \`unban\`
-> \`mute\`, \`unmute\`, \`count\`
-> \`emoji\`, \`se\`, \`bans\`
-> \`embed\`, \`addrole\`, \`rmvrole\`
-> \`vkick\`, \`clear\`, \`iemoji\`
+**Music Commands**
+\`filter\`, \`loop\`, \`lyrics\`
+\`np\`, \`pause\`, \`play\`
+\`queue\`, \`radio\`, \`remove\`,
+\`resume\`, \`search\`, \`shuffle\`
+\`skip\`, \`skipto\`, \`stop\`
+\`volume\`
 
-> **Fun Commands**
-> \`slap\`, \`hug\`
-> 
+**Moderation Commands**
+\`lock\`, \`unlock\`, \`hide\`
+\`unhide\`, \`ban\`, \`unban\`
+\`mute\`, \`unmute\`, \`count\`
+\`emoji\`, \`se\`, \`bans\`
+\`embed\`, \`addrole\`, \`rmvrole\`
+\`vkick\`, \`clear\`, \`iemoji\`
+
+**Fun Commands**
+\`slap\`, \`hug\`
 `)
     
 
