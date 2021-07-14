@@ -138,6 +138,7 @@ module.exports = {
         .setColor("RANDOM")
         .setThumbnail(`https://cdn.discordapp.com/avatars/844069682545164289/b40e8a61cbeb7a6319b5050238a9aa03.png?size=1024`)
         .setImage(thumb)
+        .setDescription(`◈ ━━━━━━━ <a:loeadmusic_14:864932697708298301> ━━━━━━━ ◈`)
         .addField("✅ • Requested by:", `\`${message.author.username}#${message.author.discriminator}\``, true)
         .addField("🧭 • Length:", `\`${song.duration} Minutes\``, true)
         .addField("🔊 • Volume:", `\`100\``, true)
