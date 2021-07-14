@@ -35,6 +35,10 @@ __Total Commands__
 
 🎭 **Fun Commands**
 \`slap\`, \`hug\`
+
+🌟 **Gifs Commands**
+\`boy\`, \`girl\`, ‌\`couple\`, \`anime\`
+\`emoji\`, \`animal\`
 `)
     
 
