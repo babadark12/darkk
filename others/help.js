@@ -31,14 +31,14 @@ __Total Commands__
 \`ban\`, \`unban\`, \`mute\`, \`unmute\`
 \`count\`, \`emoji\`, \`se\`, \`bans\`
 \`embed\`, \`addrole\`, \`rmvrole\`, \`vkick\`
-\`clear\`, \`iemoji\`
-
-🎭 **Fun Commands**
-\`slap\`, \`hug\`
+\`clear\`, \`iemoji\`, \`kick\`
 
 🌟 **Gifs Commands**
 \`boy\`, \`girl\`, ‌\`couple\`, \`anime\`
 \`emoji\`, \`animal\`
+
+🖋️ **Text Commands**
+\`textkurdish\`, \`textarabic\`, \`textenglish\`,
 `)
     
 
