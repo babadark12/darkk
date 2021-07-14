@@ -10,8 +10,6 @@ module.exports = {
     let helpEmbed = new MessageEmbed()
     .setFooter(message.author.username, message.author.displayAvatarURL)
     .setColor('RANDOM')
-    .setTitle("")
-    .setImage("")
     .setDescription(`
 > __Total Commands__
 > 
@@ -22,7 +20,7 @@ module.exports = {
 > \`avatar\`, \`status\`, \`invites\`, \`suggest\`
 > \`userinfo\`, \`serverinfo\`
 > 
-> Music Commands**
+> **Music Commands**
 > \`filter\`, \`loop\`, \`lyrics\`, \`np\`
 > \`pause\`, \`play\`, \`queue\`, \`radio\`
 > \`remove\`, \`resume\`, \`search\`, \`shuffle\`
