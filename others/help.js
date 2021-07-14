@@ -17,20 +17,20 @@ module.exports = {
 __Total Commands__
 
 🌏 **Other Commands**
-\`help\`, \`ping\`, \`prefix\`\`uptime\`, 
-\`avatar\`, \`status\`, \`invites\`, \`suggest\`,
+\`help\`, \`ping\`, \`prefix\`, \`uptime\`
+\`avatar\`, \`status\`, \`invites\`, \`suggest\`
 
 🎶 **Music Commands**
-\`filter\`, \`loop\`, \`lyrics\`,\`np\`, 
-\`pause\`, \`play\`\`queue\`, \`radio\`, 
-\`remove\`,\`resume\`, \`search\`, \`shuffle\`
+\`filter\`, \`loop\`, \`lyrics\`, \`np\`
+\`pause\`, \`play\`, \`queue\`, \`radio\`
+\`remove\`, \`resume\`, \`search\`, \`shuffle\`
 \`skip\`, \`skipto\`, \`stop\`, \`volume\`
 
 📣 **Moderation Commands**
-\`lock\`, \`unlock\`, \`hide\`\`unhide\`, 
-\`ban\`, \`unban\`,\`mute\`, \`unmute\`, 
+\`lock\`, \`unlock\`, \`hide\`, \`unhide\`
+\`ban\`, \`unban\`, \`mute\`, \`unmute\`
 \`count\`, \`emoji\`, \`se\`, \`bans\`
-\`embed\`, \`addrole\`, \`rmvrole\`, \`vkick\`, 
+\`embed\`, \`addrole\`, \`rmvrole\`, \`vkick\`
 \`clear\`, \`iemoji\`
 
 🎭 **Fun Commands**
