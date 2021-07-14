@@ -20,7 +20,7 @@ module.exports = {
     if (!song) {
       queue.channel.leave();
       message.client.queue.delete(message.guild.id);
-      const endembed = new MessageEmbed().setColor("#c219d8")
+      const endembed = new MessageEmbed().setColor("Red")
         .setAuthor(`Music Queue ended.`, "https://cdn.discordapp.com/emojis/769915194066862080.png")
       return queue.textChannel.send(endembed).catch(console.error);
     }
@@ -128,28 +128,28 @@ module.exports = {
     }
     
   let thumb;
-    if (song.thumbnail === undefined) thumb = "https://cdn.discordapp.com/attachments/748095614017077318/769672148524335114/unknown.png";
+    if (song.thumbnail === undefined) thumb = "https://cdn.discordapp.com/avatars/844069682545164289/b40e8a61cbeb7a6319b5050238a9aa03.png?size=1024";
     else thumb = song.thumbnail.url;
 
     try {
       const newsong = new MessageEmbed()
-        .setTitle("✅ "+song.title)
+       .setTitle("🎶 "+song.title)
         .setURL(song.url)
-        .setColor("#c219d8")
-        .setThumbnail(thumb)
-        .setFooter(`Requested by: ${message.author.username}#${message.author.discriminator}`, message.member.user.displayAvatarURL({ dynamic: true }))
-        .addField("Duration:", `\`${song.duration} Minutes\``, true)
+        .setColor("RANDOM")
+        .setThumbnail(`https://cdn.discordapp.com/avatars/844069682545164289/b40e8a61cbeb7a6319b5050238a9aa03.png?size=1024`)
+        .setImage(thumb)
+        .addField("✅ • Requested by:", `\`${message.author.username}#${message.author.discriminator}\``, true)
+        .addField("🧭 • Length:", `\`${song.duration} Minutes\``, true)
+        .addField("🔊 • Volume:", `\`100\``, true)
 
       var playingMessage = await queue.textChannel.send(newsong);
       
 
-      await playingMessage.react("⏭"); //skip
-      await playingMessage.react("⏯"); //pause
-      await playingMessage.react("🔄"); //loop
-      await playingMessage.react("⏹"); //stop
-      await playingMessage.react("❓"); //np
-      await playingMessage.react("🎵"); //queue
-      await playingMessage.react("📑"); //lyrics
+      await playingMessage.react(""); //skip
+      await playingMessage.react(""); //pause
+      await playingMessage.react(""); //loop
+      await playingMessage.react(""); //stop
+      await playingMessage.react(""); //np
     } catch (error) {
       console.error(error);
     }
@@ -166,33 +166,9 @@ module.exports = {
       const member = message.guild.member(user);
 
       switch (reaction.emoji.name) {
-        //queue
-        case "🎵":
-          reaction.users.remove(user).catch(console.error);
-          const description = queue.songs.map((song, index) => `${index + 1}. ${escapeMarkdown(song.title)}`);
-
-          let queueEmbed = new MessageEmbed()
-            .setTitle("Music Queue")
-            .setDescription(description)
-            .setColor("#c219d8")
-             ;
-      
-          const splitDescription = splitMessage(description, {
-            maxLength: 2048,
-            char: "\n",
-            prepend: "",
-            append: ""
-          });
-      
-          splitDescription.forEach(async (m) => {
-      
-            queueEmbed.setDescription(m);
-            message.react("✅")
-            message.channel.send(queueEmbed);
-          });
-          break;
+       
         //np
-        case "❓":
+        case "":
         reaction.users.remove(user).catch(console.error);
         const song = queue.songs[0];
         //get current song duration in s
@@ -201,7 +177,7 @@ module.exports = {
         let ms = (Number(minutes)*60+Number(seconds));   
         //get thumbnail
         let thumb;
-        if (song.thumbnail === undefined) thumb = "https://cdn.discordapp.com/attachments/748095614017077318/769672148524335114/unknown.png";
+        if (song.thumbnail === undefined) thumb = "https://cdn.discordapp.com/avatars/811955068563488788/0d2f650ba4544decd768924878747a3b.webp?size=1024";
         else thumb = song.thumbnail.url;
         //define current time
         const seek = (queue.connection.dispatcher.streamTime - queue.connection.dispatcher.pausedTime) / 1000;
@@ -211,9 +187,9 @@ module.exports = {
         let nowPlaying = new MessageEmbed()
           .setTitle("Now playing")
           .setDescription(`[**${song.title}**](${song.url})`)
-          .setThumbnail(song.thumbnail.url)
-          .setColor("#c219d8")
-          .setFooter("Time Remaining: " + new Date(left * 1000).toISOString().substr(11, 8));
+          .addField("<:emoji_15:830469967752724500> Requested by:", `\`${message.author.username}#${message.author.discriminator}\``, true)
+          .addField("<:emoji_13:830469943496671252> Length:", `\`${song.duration} Minutes\``, true)
+          .setColor("#FFF712")
           //if its a stream
           if(ms >= 10000) {
             nowPlaying.addField("\u200b", "🔴 LIVE", false);
@@ -229,79 +205,50 @@ module.exports = {
         
         break;
         //skip
-        case "⏭":
+        case "":
           queue.playing = true;
           reaction.users.remove(user).catch(console.error);
           if (!canModifyQueue(member)) return;
           queue.connection.dispatcher.end();
-          const skipembed = new MessageEmbed().setColor("#c219d8").setAuthor(`${user.username} skipped the song.`, "https://cdn.discordapp.com/attachments/748633941912584333/753201474691137647/next.png")
+          const skipembed = new MessageEmbed().setColor("#FFF712").setAuthor(`${user.username} skipped the song.`, "https://cdn.discordapp.com/attachments/748633941912584333/753201474691137647/next.png")
           queue.textChannel.send(skipembed).catch(console.error);
 
           collector.stop();
 
           break;
-        //lyrics
-        case "📑":
-        
-          reaction.users.remove(user).catch(console.error);
-          if (!canModifyQueue(member)) return;
-          let lyrics = null;
-          let temEmbed = new MessageEmbed()
-          .setAuthor("Searching...", "https://cdn.discordapp.com/emojis/757632044632375386.gif?v=1").setFooter("Lyrics")
-          .setColor("#c219d8")
-          let result = await message.channel.send(temEmbed)
-          try {
-            lyrics = await lyricsFinder(queue.songs[0].title,"");
-            if (!lyrics) lyrics = `No lyrics found for ${queue.songs[0].title}.`;
-          } catch (error) {
-            lyrics = `No lyrics found for ${queue.songs[0].title}.`;
-          }
-      
-          let lyricsEmbed = new MessageEmbed()
-            .setTitle("📑 Lyrics")
-            .setDescription(lyrics)
-            .setColor("#c219d8")
-      
-          if (lyricsEmbed.description.length >= 2048)
-      
-            lyricsEmbed.description = `${lyricsEmbed.description.substr(0, 2045)}...`;
-            message.react("✅");
-          return result.edit(lyricsEmbed).catch(console.error);
-
-          break;
-          //pause
-        case "⏯":
+        //pause
+        case "":
           reaction.users.remove(user).catch(console.error);
           if (!canModifyQueue(member)) return;
           if (queue.playing) {
             queue.playing = !queue.playing;
             queue.connection.dispatcher.pause(true);
-            const pausemebed = new MessageEmbed().setColor("#c219d8")
+            const pausemebed = new MessageEmbed().setColor("#FFF712")
               .setAuthor(`${user.username} paused the music.`, "https://cdn.discordapp.com/emojis/769912238236106793.png")
             queue.textChannel.send(pausemebed).catch(console.error);
           } else {
             queue.playing = !queue.playing;
             queue.connection.dispatcher.resume();
-            const playembed = new MessageEmbed().setColor("#c219d8")
+            const playembed = new MessageEmbed().setColor("#FFF712")
               .setAuthor(`${user.username} resumed the music!`, "https://cdn.discordapp.com/emojis/769912238236106793.png")
             queue.textChannel.send(playembed).catch(console.error);
           }
           break;
           //loop  
-        case "🔄":
+        case "":
           reaction.users.remove(user).catch(console.error);
           if (!canModifyQueue(member)) return;
           queue.loop = !queue.loop;
-          const loopembed = new MessageEmbed().setColor("#c219d8")
+          const loopembed = new MessageEmbed().setColor("#FFF712")
             .setAuthor(`Loop is now ${queue.loop ? " enabled" : " disabled"}`, "https://cdn.discordapp.com/emojis/769913064194834511.png")
           queue.textChannel.send(loopembed).catch(console.error);
           break;
           //stop
-        case "⏹":
+        case "":
           reaction.users.remove(user).catch(console.error);
           if (!canModifyQueue(member)) return;
           queue.songs = [];
-          const stopembed = new MessageEmbed().setColor("#c219d8").setAuthor(`${user.username} stopped the music!`, "https://cdn.discordapp.com/emojis/769915194066862080.png")
+          const stopembed = new MessageEmbed().setColor("#FFF712").setAuthor(`${user.username} stopped the music!`, "https://cdn.discordapp.com/emojis/769915194066862080.png")
           queue.textChannel.send(stopembed).catch(console.error);
           try {
             queue.connection.dispatcher.end();
