@@ -87,22 +87,6 @@ const embed = new Discord.MessageEmbed()
 message.channel.send(embed);
 }
 });
-//////
-client.on('message', message =>{
-if(message.content === prefix +"server"){
-const embed = new Discord.MessageEmbed()
-.setColor("RED")
-.setTitle(`Server Info`)
-.addField("Server Name", `${message.guild.name}`)
-.addField("Server Id", `${message.guild.id}`)
-.addField("Guild Owner", `${message.guild.owner}`)
-.addField("Boosts", `${message.guild.premiumSubscriptionCount}`)
-.addField("Channels", `${message.guild.channels.cache.size}`)
-.addField("Roles", `${message.guild.roles.cache.size}`)
-.addField("Members", `${message.guild.memberCount}`)
-message.channel.send(embed);
-}
-});
 ////
 if(message.content.startsWith(`${prefix}status`)){
     //define saymsg
