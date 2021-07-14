@@ -10,7 +10,7 @@ module.exports = {
       return message.channel.send("sorry you need permission to mute someone");
     }
     if (!message.guild.me.hasPermission("MANAGE_ROLES")) {
-      return message.channel.send("I do not have permission to mute");
+      return message.channel.send("I do not have permission to AddRole");
     } 
     let target = message.mentions.members.first();
     
