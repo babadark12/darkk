@@ -19,7 +19,7 @@ __Total Commands__
 🌏 **Other Commands**
 \`help\`, \`ping\`, \`prefix\`, \`uptime\`
 \`avatar\`, \`status\`, \`invites\`, \`suggest\`
-\`serverinfo\`, \`serverinfo\`
+\`userinfo\`, \`serverinfo\`
 
 🎶 **Music Commands**
 \`filter\`, \`loop\`, \`lyrics\`, \`np\`
