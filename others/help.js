@@ -18,7 +18,7 @@ module.exports = {
 > **Other Commands**
 > \`help\`, \`ping\`, \`prefix\`, \`uptime\`
 > \`avatar\`, \`status\`, \`invites\`, \`suggest\`
-> \`userinfo\`, \`serverinfo\`
+> \`userinfo\`, \`serverinfo\`, \`botinfo\`,
 > 
 > **Music Commands**
 > \`filter\`, \`loop\`, \`lyrics\`, \`np\`
@@ -31,7 +31,7 @@ module.exports = {
 > \`ban\`, \`unban\`, \`mute\`, \`unmute\`
 > \`count\`, \`emoji\`, \`se\`, \`bans\`
 > \`embed\`, \`addrole\`, \`rmvrole\`, \`vkick\`
-> \`clear\`, \`iemoji\`, \`kick\`
+> \`clear\`, \`iemoji\`, \`kick\`, \`nick\`
 > 
 > **Gifs Commands**
 > \`boy\`, \`girl\`, ‌\`couple\`, \`anime\`
