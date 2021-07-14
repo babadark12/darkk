@@ -19,6 +19,7 @@ __Total Commands__
 🌏 **Other Commands**
 \`help\`, \`ping\`, \`prefix\`, \`uptime\`
 \`avatar\`, \`status\`, \`invites\`, \`suggest\`
+\`serverinfo\`, \`serverinfo\`
 
 🎶 **Music Commands**
 \`filter\`, \`loop\`, \`lyrics\`, \`np\`
@@ -38,7 +39,7 @@ __Total Commands__
 \`emoji\`, \`animal\`
 
 🖋️ **Text Commands**
-\`textkurdish\`, \`textarabic\`, \`textenglish\`,
+\`textkurdish\`, \`textarabic\`, \`textenglish\`
 `)
     
 
