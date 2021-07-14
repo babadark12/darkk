@@ -326,5 +326,3 @@ module.exports = {
     });
   }
 };
-
-/////by Ragnar Black Hat
