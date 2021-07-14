@@ -14,30 +14,26 @@ module.exports = {
     .setURL("https://discord.com/api/oauth2/authorize?client_id=864203179947458571&permissions=8&scope=bot")
     .setImage("")
     .setDescription(`
-__Total Commands
+__Total Commands__
 
-**Other Commands**
-\`help\`, \`ping\`, \`prefix\`
-\`uptime\`, \`avatar\`, \`status\`
-\`invites\`, \`suggest\`,
+🌏 **Other Commands**
+\`help\`, \`ping\`, \`prefix\`\`uptime\`, 
+\`avatar\`, \`status\`, `invites\`, \`suggest\`,
 
-**Music Commands**
-\`filter\`, \`loop\`, \`lyrics\`
-\`np\`, \`pause\`, \`play\`
-\`queue\`, \`radio\`, \`remove\`,
-\`resume\`, \`search\`, \`shuffle\`
-\`skip\`, \`skipto\`, \`stop\`
-\`volume\`
+🎶 **Music Commands**
+\`filter\`, \`loop\`, \`lyrics\`,\`np\`, 
+\`pause\`, \`play\`\`queue\`, \`radio\`, 
+\`remove\`,\`resume\`, \`search\`, \`shuffle\`
+\`skip\`, \`skipto\`, \`stop\`, \`volume\`
 
-**Moderation Commands**
-\`lock\`, \`unlock\`, \`hide\`
-\`unhide\`, \`ban\`, \`unban\`
-\`mute\`, \`unmute\`, \`count\`
-\`emoji\`, \`se\`, \`bans\`
-\`embed\`, \`addrole\`, \`rmvrole\`
-\`vkick\`, \`clear\`, \`iemoji\`
+📣 **Moderation Commands**
+\`lock\`, \`unlock\`, \`hide\`\`unhide\`, 
+\`ban\`, \`unban\`,\`mute\`, \`unmute\`, 
+\`count\`, \`emoji\`, \`se\`, \`bans\`
+\`embed\`, \`addrole\`, \`rmvrole\`, \`vkick\`, 
+\`clear\`, \`iemoji\`
 
-**Fun Commands**
+🎭 **Fun Commands**
 \`slap\`, \`hug\`
 `)
     
