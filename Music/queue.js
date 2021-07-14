@@ -3,7 +3,7 @@
 ////////////////////////////
 const { MessageEmbed, splitMessage, escapeMarkdown } = require("discord.js");
 const { Client, Collection } = require("discord.js");
-const { attentionembed } = require("../util/attentionembed");
+const { attentionembed } = require("../util/attentionembed"); 
 const { PREFIX } = require(`../config.json`);
 ////////////////////////////
 //////COMMAND BEGIN/////////
@@ -44,7 +44,7 @@ module.exports = {
       //(over)write embed description
       queueEmbed.setDescription(m);
       //react with emoji
-      message.react("769665713124016128")
+      message.react("✅")
       //send embed
       message.channel.send(queueEmbed);
     });
