@@ -7,12 +7,12 @@ module.exports = {
   async execute(message, args, client) {
     let embed = new discord.MessageEmbed()
       .setTitle(`__**INFORMATION ABOUT BOT**__`)
-      .addField("BOT NAME", `${client.user.tag}`)
-      .addField("BOT DEVELOPER ", `@Ragnar{}#6067`)
-      .addField("TOTAL SERVER", `${client.guilds.cache.size}`, true)
-      .addField("TOTAL CHANNAL", `${client.channels.cache.size}`)
-      .addField("TOTAL USER", `${client.users.cache.size}`, true)
-      .addField("BOT LIBRARY", `discord.js`)
+      .addField("Bot Name", `<@${client.user.id}>`)
+      .addField("Bot Developer", `@Ragnar{}#6067`)
+      .addField("Total Guilds", `${client.guilds.cache.size}`, true)
+      .addField("Total Channels", `${client.channels.cache.size}`)
+      .addField("Total Users", `${client.users.cache.size}`, true)
+      .addField("Bot Libary", `discord.js`)
       .setColor("RANDOM")
       .setFooter(`information about bot`);
       message.channel.send(embed);
