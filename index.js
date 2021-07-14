@@ -95,14 +95,7 @@ Channels Count: ${client.channels.cache.size}
   }
 
 //create vc
-client.on('message', message => {
-if (message.content.startsWith(prefix+"create-voice")) {
-    var args = message.content.split(" ").slice(1);
-    var argrst = args.join(' ');
-                message.guild.channels.create(`${argrst}`,'voice')
-         
-        }
-});
+
 //command Handler DO NOT TOUCH
  const prefixRegex = new RegExp(`^(<@!?${client.user.id}>|${escapeRegex(prefix)})\\s*`);
  if (!prefixRegex.test(message.content)) return;
