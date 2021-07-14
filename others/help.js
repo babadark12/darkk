@@ -15,28 +15,28 @@ module.exports = {
     .setImage("")
     .setDescription(`
 > **Other Commands**
-> \`help\`,\`ping\`,\`prefix\`,
-> \`uptime\`,\`avatar\`,\`status\`
-> 
+> \`help\`, \`ping\`, \`prefix\`
+> \`uptime\`, \`avatar\`, \`status\`
+> \`invites\`, \`suggest\`,
+
 > **Music Commands**
-> \`filter\`,\`loop\`,\`lyrics\`
-> \`np\`,\`pause\`,\`play\`
-> \`queue\`,\`radio\`,\`remove\`,
-> \`resume\`,\`search\`,\`shuffle\`
-> \`skip\`,\`skipto\`,\`stop\`
+> \`filter\`, \`loop\`, \`lyrics\`
+> \`np\`, \`pause\`, \`play\`
+> \`queue\`, \`radio\`, \`remove\`,
+> \`resume\`, \`search\`, \`shuffle\`
+> \`skip\`, \`skipto\`, \`stop\`
 > \`volume\`
-> 
+
 > **Moderation Commands**
-> \`lock\`,\`unlock\`,\`hide\`
-> \`unhide\`,\`ban\`,\`unban\`
-> \`mute\`,\`unmute\`,\`count\`
-> \`invites\`,\`emoji\`,\`se\`
-> \`bans\`,\`embed\`,\`addrole\`
-> \`rmvrole\`,\`suggest\`,\`vkick\`
-> \`clear\`,\`iemoji\`
-> 
+> \`lock\`, \`unlock\`, \`hide\`
+> \`unhide\`, \`ban\`, \`unban\`
+> \`mute\`, \`unmute\`, \`count\`
+> \`emoji\`, \`se\`, \`bans\`
+> \`embed\`, \`addrole\`, \`rmvrole\`
+> \`vkick\`, \`clear\`, \`iemoji\`
+
 > **Fun Commands**
-> \`slap\`,\`hug\`
+> \`slap\`, \`hug\`
 > 
 `)
     
