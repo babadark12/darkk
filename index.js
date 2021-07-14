@@ -95,29 +95,6 @@ Channels Count: ${client.channels.cache.size}
   }
 
 //create vc
-client.on('message' , async (message) => {
-  const prefix = "$" 
-      if(message.content.startsWith(prefix + "tinvites")) {
-  if(message.author.bot) return;
-  if(!message.channel.guild) return message.reply(' Error : \` Server Command \`');
-    var invites = await message.guild.fetchInvites();
-      invites = invites.array();
-      arraySort(invites, 'uses', { reverse: true });
-      let pinvites= ['User Invited |  Uses '];
-      invites.forEach(i => {
-          if (i.uses === 0) { 
-              return;
-          }
-        pinvites.push(['\n\ ' +'<@'+ i.inviter.id +'>' + '  :  ' +   i.uses]);
-       
-      })
-      const embedtopinv = new Discord.RichEmbed()
-   .setColor('RANDOM')
-      .addField("Top Invites." ,`${(pinvites)}`)
-  
-      message.channel.send(embedtopinv)
-      }
-  });
 //command Handler DO NOT TOUCH
  const prefixRegex = new RegExp(`^(<@!?${client.user.id}>|${escapeRegex(prefix)})\\s*`);
  if (!prefixRegex.test(message.content)) return;
