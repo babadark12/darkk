@@ -15,7 +15,7 @@ module.exports = {
     .setDescription(`
 > __Total Commands__
 > 
-> [Invite ](https://discord.com/api/oauth2/authorize?client_id=864203179947458571&permissions=8&scope=bot) -
+> [Invite ](https://discord.com/api/oauth2/authorize?client_id=864203179947458571&permissions=8&scope=bot) - [Support](https://discord.gg/MJdH4S76bv)
 >  
 > **Other Commands**
 > \`help\`, \`ping\`, \`prefix\`, \`uptime\`
