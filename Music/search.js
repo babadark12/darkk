@@ -3,7 +3,7 @@
 ////////////////////////////
 const ytsr = require("youtube-sr")
 const { Client, Collection, MessageEmbed } = require("discord.js");
-const { attentionembed } = require("../util/attentionembed");
+const { attentionembed } = require("../util/attentionembed"); 
 const { PREFIX } = require(`../config.json`);
 ////////////////////////////
 //////COMMAND BEGIN/////////
@@ -23,7 +23,7 @@ async execute(message,args,client) {
      //get serverqueue
      const serverQueue = message.client.queue.get(message.guild.id);
     //react with approve emoji
-    message.react("769665713124016128").catch(console.error);
+    message.react("✅").catch(console.error);
     //if the argslength is null return error
     if (!args.length)
       return attentionembed(message,`Usage: ${message.client.prefix}${module.exports.name} <Video Name>`)
@@ -44,7 +44,7 @@ async execute(message,args,client) {
     .setColor("#f300e5")
     //define the Result Embed
     let resultsEmbed = new MessageEmbed()
-      .setTitle("<:Playing:769665713124016128> Results for: ")
+      .setTitle("✅ Results for: ")
       .setDescription(`\`${search}\``)
       .setColor("#f300e5")
       .setFooter("Response with your favorite number", client.user.displayAvatarURL() )
@@ -57,11 +57,11 @@ async execute(message,args,client) {
       // send the temporary embed
       const resultsMessage = await message.channel.send(temEmbed)
       //react with 5 Numbers
-        await resultsMessage.react("769932441967263754");
-        await resultsMessage.react("769932441909067786");
-        await resultsMessage.react("769932441946816542");
-        await resultsMessage.react("769932569235292170");
-        await resultsMessage.react("769933892014440448");
+        await resultsMessage.react("1️⃣");
+        await resultsMessage.react("2️⃣");
+        await resultsMessage.react("3️⃣");
+        await resultsMessage.react("4️⃣");
+        await resultsMessage.react("5️⃣");
       //edit the resultmessage to the resultembed
         await resultsMessage.edit(resultsEmbed)
       //set the collector to true
@@ -71,11 +71,11 @@ async execute(message,args,client) {
       await resultsMessage.awaitReactions((reaction, user) => user.id == message.author.id,
       {max: 1, time: 60000, errors: ['time'],} ).then(collected => {
         //if its one of the emoji set them to 1 / 2 / 3 / 4 / 5
-          if(collected.first().emoji.id == "769932441967263754"){ return response = 1; }
-          if(collected.first().emoji.id == "769932441909067786"){ return response = 2; }
-          if(collected.first().emoji.id == "769932441946816542"){ return response = 3; }
-          if(collected.first().emoji.id == "769932569235292170"){ return response = 4; }
-          if(collected.first().emoji.id == "769933892014440448"){ return response = 5; }
+          if(collected.first().emoji.name == "1️⃣"){ return response = 1; }
+          if(collected.first().emoji.name == "2️⃣"){ return response = 2; }
+          if(collected.first().emoji.name == "3️⃣"){ return response = 3; }
+          if(collected.first().emoji.name == "4️⃣"){ return response = 4; }
+          if(collected.first().emoji.name == "5️⃣"){ return response = 5; }
           //otherwise set it to error
           else{
             response = "error";
