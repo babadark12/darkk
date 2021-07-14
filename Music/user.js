@@ -7,7 +7,7 @@ module.exports = {
   aliases: [],
   description: "Show User Information!",
   usage: "Userinfo | <Mention User>",
-  async execute(message, args, client) {
+  async execute(message, args) {
     
     let member = message.mentions.users.first() || message.member;
 
