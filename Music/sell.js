@@ -1,6 +1,6 @@
 const { MessageEmbed } = require('discord.js');
 const db = require('quick.db');
-const { PREFIX } = require('./config.json')
+const { PREFIX } = require(`./config.json`);
 
 module.exports = { 
         name: "sell",
