@@ -25,7 +25,7 @@ module.exports = {
       .addField(`Roles Count`, Roles, true)
       .addField(`Emojis Count`, Emojis, true)
       .addField(`Members Count`, Members, true)
-      .addField(`تاکەگۆرەوی`, ${message.guild.channels.cache.filter(channel => channel.type === "category").size}, true)
+      .addField(`تاکەگۆرەوی`, ${message.guild.channels.cache.filter(channel => channel.type === "category").size})
       .addField(`Humans Count`, Humans, true)
       .addField(`Bots Count`, Bots, true)
       .addField(`Server Created At`, guild.createdAt.toDateString())
