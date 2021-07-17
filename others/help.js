@@ -32,7 +32,8 @@ module.exports = {
 > \`count\`, \`emoji\`, \`se\`, \`bans\`
 > \`embed\`, \`addrole\`, \`rmvrole\`, \`vkick\`
 > \`clear\`, \`iemoji\`, \`kick\`, \`nick\`
-> \`rolinfo\`, \`warn\`,
+> \`rolinfo\`, \`warn\`, \`botlist\`, \`cinvite\`
+> 
 > **Gifs Commands**
 > \`boy\`, \`girl\`, ‌\`couple\`, \`anime\`
 > \`emoji\`, \`animal\`
