@@ -109,6 +109,6 @@ module.exports = {
 
     //  if (reaction.partial) await reaction.fetch();
 
-    //  await reaction.message.guild.members.cache.get(user.id).roles.add("708554596817174559") // Minecraft role.
+    //  await reaction.message.guild.members.cache.get(user.id).roles.add("866061440208076851") // Minecraft role.
   }
 };
