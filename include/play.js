@@ -140,7 +140,7 @@ module.exports = {
         .setImage(thumb)
         .setDescription(`◈ ━━━━━━━ <a:emoji_2:866050145459241010> ━━━━━━━ ◈`)
         .addField("<a:emoji_6:866052139855380531> Requested by:", `\`${message.author.username}#${message.author.discriminator}\``, true)
-        .addField(":-<a:emoji_15:866054793189261322> Length:", `\`${song.duration} Minutes\``, true)
+        .addField("<a:emoji_15:866054793189261322> Length:", `\`${song.duration} Minutes\``, true)
         .addField("<a:emoji_9:866052195157409834> Volume:", `\`100\``, true)
 
       var playingMessage = await queue.textChannel.send(newsong);
