@@ -139,7 +139,7 @@ module.exports = {
         .setThumbnail(`https://cdn.discordapp.com/avatars/844069682545164289/b40e8a61cbeb7a6319b5050238a9aa03.png?size=1024`)
         .setImage(thumb)
         .setDescription(`◈ ━━━━━━━ :-<a:emoji_2:866050145459241010> ━━━━━━━ ◈`)
-        .addField("<a:right_6:864927124623720487> Requested by:", `\`${message.author.username}#${message.author.discriminator}\``, true)
+        .addField(":-<a:emoji_6:866052139855380531> Requested by:", `\`${message.author.username}#${message.author.discriminator}\``, true)
         .addField("<a:2play_16:864932819952468038> Length:", `\`${song.duration} Minutes\``, true)
         .addField("<a:partner_13:864932636635430963> Volume:", `\`100\``, true)
 
