@@ -3,7 +3,7 @@ const { MessageEmbed } = require("discord.js");
 //By Legendary Keker
 
 module.exports = {
-    name: "emoji",
+    name: "emojiinfo",
    cooldown: 7,
     aliases: ["emojiinfo", "info"],
     description: "Show Emoji Information!",
