@@ -29,9 +29,9 @@ module.exports = {
 > **Moderation Commands**
 > \`lock\`, \`unlock\`, \`hide\`, \`unhide\`
 > \`ban\`, \`unban\`, \`mute\`, \`unmute\`
-> \`count\`, \`emoji\`, \`se\`, \`bans\`
+> \`count\`, \`emojiinfo\`, \`se\`, \`bans\`
 > \`embed\`, \`addrole\`, \`rmvrole\`, \`vkick\`
-> \`clear\`, \`iemoji\`, \`kick\`, \`nick\`
+> \`clear\`, \`emojilist\`, \`kick\`, \`nick\`
 > \`rolinfo\`, \`warn\`, \`botlist\`, \`cinvite\`
 > 
 > **Gifs Commands**
