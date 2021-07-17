@@ -39,7 +39,8 @@ module.exports = {
 > \`emoji\`, \`animal\`
 > 
 > **Text Commands**
-> \`textkurdish\`, \`textarabic\`, \`textenglish\`
+> \`textkurdish\`, \`textarabic\`, \`textenglish\`,
+> \`textturkish\`, \`textpersian\`
 `)
     
 
