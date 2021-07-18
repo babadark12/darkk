@@ -21,11 +21,9 @@ module.exports = {
    .setThumbnail(message.author.avatarURL({dynamic: "true"}))
    .setFooter(`${message.author.username}#${message.author.discriminator}`, message.member.user.displayAvatarURL({ dynamic: true }))
    .setDescription(`
-> **Channel Has Been Unlocked**
-> 
-> **Channel Name:** <#${message.channel.id}>
-> **UnLocked By:** <@${message.author.id}>
-> **Channel Status:** Send Message (✅)
+**Unlocked Channel: <:emoji_18:866295594279632936>**
+\`Channel Name:\` <#${message.channel.id}>
+\`UnLocked By:\` <@${message.author.id}>
 `)
    .setColor("BLUE");
    await message.channel.send(embed);
