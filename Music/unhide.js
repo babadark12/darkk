@@ -21,10 +21,9 @@ module.exports = {
    .setThumbnail(message.author.avatarURL({dynamic: "true"}))
    .setFooter(`${message.author.username}#${message.author.discriminator}`, message.member.user.displayAvatarURL({ dynamic: true }))
    .setDescription(`
-🔒 UnHided A Channel
-Channel Name : <#${message.channel.id}>
-UnHided By : <@${message.author.id}>
-Channel Status : Send Message
+**Unhided Channel: <:emoji_18:866295594279632936>**
+\`Channel Name:\` <#${message.channel.id}>
+\`UnHided By:\` <@${message.author.id}>
 `)
    .setColor("White");
    await message.channel.send(embed);
