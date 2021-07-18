@@ -1,7 +1,7 @@
 const Discord = module.require("discord.js");
 
 module.exports = {
-   name: "unlock",
+   name: "unhide",
    description: "Unlocks a Channel",
     usage: "unlock",
   category: "admin",
