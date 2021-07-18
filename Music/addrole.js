@@ -25,7 +25,7 @@ module.exports = {
     
       const embed = new MessageEmbed()
       
-      .setColor("RANDOM")
+      .setColor("#277ecd")
       .setDescription(`changed role for ${target.user.username} added ${arole}`)
       
       await message.channel.send(embed)
