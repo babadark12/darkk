@@ -1,11 +1,13 @@
 const Discord = module.require("discord.js");
 
 module.exports = {
-   name: "hide",
-   aliases: ["hs"],
-   cooldown: 5,
+   name: "lock",
    description: "Locks a Channel",
-   async execute(message, args) {
+   usage: "lock",
+ category: "admin",
+  bot: ['MANAGE_SERVER', 'MANAGE_CHANNELS'],
+  author: 'MANAGE_SERVER'||'MANAGE_CHANNELS',
+   async execute(message, args, client) {
    if (!message.member.hasPermission('MANAGE_SERVER', 'MANAGE_CHANNELS')) {
    return message.channel.send("You don't have enough Permissions")
    }
@@ -15,16 +17,6 @@ module.exports = {
         deny : ['VIEW_CHANNEL'],
      },
     ],);
-   const embed = new Discord.MessageEmbed()
-   .setTitle("")
-   .setTimestamp()
-   .setFooter(`${message.author.username}#${message.author.discriminator}`, message.member.user.displayAvatarURL({ dynamic: true }))
-   .setDescription(`
-**Hided Channel: <:emoji_19:866295615028461568>**
-\`Channel Name:\` <#${message.channel.id}>
-\`Hided By:\` <@${message.author.id}>
-`)
-   .setColor("Black");
-   await message.channel.send(embed);
+   message.channel.send(`**${message.channel} has been Hided**`)
 }
 }
