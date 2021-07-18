@@ -11,7 +11,7 @@ const { PREFIX } = require(`../config.json`);
 module.exports = {
   name: "skip",
   aliases: ["s"],
-  description: "(s)Skip the currently playing song",
+  description: "Skip the currently playing song",
   cooldown: 5,
   edesc: `Type the Command, to skip to current listening song.\nUsage: ${PREFIX}skip`,
 
@@ -19,7 +19,7 @@ execute(message) {
     //if not in a guild retunr
     if (!message.guild) return;
     //react with approve emoji
-    message.react("").catch(console.error);
+    message.react("✅").catch(console.error);
     //get the queue
     const queue = message.client.queue.get(message.guild.id);
     //if no Queue return error
