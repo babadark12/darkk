@@ -20,7 +20,7 @@ module.exports = {
 
     message.channel.send(replies[result]).then(message => {
 			message.react('<a:emoji_3:865956590484848640>').then(r => {
-				message.react('<a:emoji_2:865956568738693172>');
+				message.react('<a:emoji_16:866295550469865483>');
            });
           });
       }
