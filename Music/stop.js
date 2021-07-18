@@ -10,7 +10,7 @@ const { PREFIX } = require(`../config.json`);
 ////////////////////////////
 module.exports = {
   name: "stop",
-  description: "(leave)Stops the music",
+  description: "Stops the music",
   aliases: ["leave", "end"],
   cooldown: 5,
   edesc: `Type the Command, to stop playing and leave the channel.\nUsage: ${PREFIX}stop`,
@@ -19,7 +19,7 @@ async execute(message,args,client) {
   //if not in a guild retunr
   if (!message.guild) return;
   //react with approve emoji
-  message.react("").catch(console.error);
+  message.react("✅").catch(console.error);
   const { channel } = message.member.voice;
   //get the serverQueue
   const queue = message.client.queue.get(message.guild.id);
