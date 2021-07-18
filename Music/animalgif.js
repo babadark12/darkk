@@ -16,7 +16,7 @@ module.exports = {
 
     .setTitle("Animal Gif")
     .setURL(replies[result])
-      .setColor("BLACK")
+      .setColor("#277ecd")
     .setFooter(`${message.author.tag} `, message.author.avatarURL)
     .setImage(replies[result]);
 
