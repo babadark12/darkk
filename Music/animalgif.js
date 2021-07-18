@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 const { MessageEmbed } = require("discord.js");
 
 module.exports = {
-  name: "animal",
+  name: "gifanimal",
   aliases: ["Animal"],
   description: "Show Gif",
   usage: "Gif",
@@ -15,7 +15,7 @@ module.exports = {
     let gifembed = new Discord.MessageEmbed()
 
     .setTitle("Animal Gif")
-    
+    .setURL(replies[result])
       .setColor("BLACK")
     .setFooter(`${message.author.tag} `, message.author.avatarURL)
     .setImage(replies[result]);
