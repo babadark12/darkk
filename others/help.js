@@ -49,7 +49,6 @@ module.exports = {
 > 
 > **Backup Commands**
 > \`backup-create\`, \`backup-load\`, \`backup-info\`
-> 
 `)
     
 
