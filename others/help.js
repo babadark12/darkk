@@ -43,6 +43,7 @@ module.exports = {
 > \`textkurdish\`, \`textarabic\`, \`textenglish\`,
 > \`textturkish\`, \`textpersian\`
 > 
+> **Fun Commands**
 > \`slap\`, \`hug\`, \`howgay\`,‌ \`rate\`
 `)
     
