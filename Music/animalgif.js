@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 const { MessageEmbed } = require("discord.js");
 
 module.exports = {
-  name: "gifanimal",
+  name: "animal",
   aliases: ["Animal"],
   description: "Show Gif",
   usage: "Gif",
