@@ -13,7 +13,7 @@ module.exports = {
 
     backup.create(message.guild).then((backupData) => {
 
-        return message.channel.send('Backup created! Here is your ID: `'+backupData.id+'` Use `+load-backup '+backupData.id+'` to load the backup on another server!');
+        return message.channel.send('Backup created! Here is your ID: `'+backupData.id+'` Use `+backup-load '+backupData.id+'` to load the backup on another server!');
 
     }).catch(() => {
 
