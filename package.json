@@ -20,6 +20,7 @@
     "something-random-on-discord": "^0.0.1",
     "mal-scraper": "^2.11.3",
     "ms": "^2.1.2",
+    "discord-backup": "^2.5.0",
     "quick.db": "^7.1.3",
     "string-progressbar": "^1.0.1",
     "youtube-sr": "^1.0.4",
