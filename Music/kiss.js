@@ -13,11 +13,11 @@ module.exports = {
     let data = await random.getAnimeImgURL("kiss");
     
     let embed = new discord.MessageEmbed()
-    .setTitle("${message.author.username} kisses ${target.user.username}")
+    .setTitle(`Kissed`)
     .setURL(data)
     .setImage(data)
     .setColor("RANDOM")
-    .setFooter(`Kissed`)
+    .setFooter(`${message.author.username} kisses ${target.user.username}`)
     .setTimestamp()
     
     message.channel.send(embed);
