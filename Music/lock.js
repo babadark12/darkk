@@ -17,6 +17,6 @@ module.exports = {
         deny : ['SEND_MESSAGES'],
      },
     ],);
-   message.channel.send(`🔒 ${message.channel} has been Locked`)
+   message.channel.send(`**🔒 - ${message.channel} has been Locked**`)
 }
 }
