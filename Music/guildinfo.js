@@ -17,7 +17,7 @@ module.exports = {
 
     const embed = new MessageEmbed()
       .setTitle(guild.name + " Information!")
-      .setColor("BLACK")
+      .setColor("#277ecd")
       .setThumbnail(guild.iconURL())
       .addField(`Name`, guild.name, true)
       .addField(`ID`, `${guild.id}`, true)
