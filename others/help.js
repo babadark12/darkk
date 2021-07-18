@@ -43,7 +43,7 @@ module.exports = {
 > \`textkurdish\`, \`textarabic\`, \`textenglish\`,
 > \`textturkish\`, \`textpersian\`
 > 
-> \`slap\`, \`hug\`, \`howgay\`,‌ \`rate\`,
+> \`slap\`, \`hug\`, \`howgay\`,‌ \`rate\`
 `)
     
 
