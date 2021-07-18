@@ -18,12 +18,12 @@ module.exports = {
    const embed = new Discord.MessageEmbed()
    .setTitle("")
    .setTimestamp()
-   .setThumbnail(message.author.avatarURL({dynamic: "true"}))
    .setFooter(`${message.author.username}#${message.author.discriminator}`, message.member.user.displayAvatarURL({ dynamic: true }))
    .setDescription(`
 **Unhided Channel: <:emoji_18:866295594279632936>**
 \`Channel Name:\` <#${message.channel.id}>
 \`UnHided By:\` <@${message.author.id}>
+\`Guild Name:\` ${mesage.guild.name}
 `)
    .setColor("White");
    await message.channel.send(embed);
