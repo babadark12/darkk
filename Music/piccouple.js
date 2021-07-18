@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 const { MessageEmbed } = require("discord.js");
 
 module.exports = {
-  name: "piccouple",
+  name: "picemoji",
   aliases: [],
   description: "Show Photo",
   usage: "Photo",
@@ -14,7 +14,7 @@ module.exports = {
     
     let photoembed = new Discord.MessageEmbed()
 
-    .setTitle("Couple Photo")
+    .setTitle("Emoji Photo")
     
       .setColor("PURPLE")
     .setFooter(`${message.author.tag} `, message.author.avatarURL)
