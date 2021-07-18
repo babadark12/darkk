@@ -72,9 +72,9 @@
 
     //define the No args Embed, lmao
     let resultsEmbed = new Discord.MessageEmbed()
-        .setTitle(`**<:Playing:769665713124016128> Available Radio Stations**`)//
+        .setTitle(`**Available Radio Stations**`)//
         .addFields(
-          { name: `***<:RADIO:770266575839952936> Standard Radio***`, value: `**1:  ** [\`${Radiostations[1-1].split(" ")[0]}\`](${Radiostations[1-1].split(" ")[1]})
+          { name: `Standard Radio***`, value: `**1:  ** [\`${Radiostations[1-1].split(" ")[0]}\`](${Radiostations[1-1].split(" ")[1]})
           **2:  ** [\`${Radiostations[2-1].split(" ")[0]}\`](${Radiostations[2-1].split(" ")[1]})
           **3:  ** [\`${Radiostations[3-1].split(" ")[0]}\`](${Radiostations[3-1].split(" ")[1]})
           **4:  ** [\`${Radiostations[4-1].split(" ")[0]}\`](${Radiostations[4-1].split(" ")[1]})
@@ -219,7 +219,7 @@
   .setFooter(`${message.author.username}#${message.author.discriminator}`));
   //send Search something embed
   message.channel.send(new MessageEmbed().setColor("#c219d8")
-  .setDescription(`**<:youtube:769675858431705109> Searching 🔍 \`${Radiostations[i-1].split(" ")[0]}\`**`));
+  .setDescription(`**Searching 🔍 \`${Radiostations[i-1].split(" ")[0]}\`**`));
   //mute yourself
   await queueConstruct.connection.voice.setSelfDeaf(true);
   await queueConstruct.connection.voice.setDeaf(true);
@@ -250,7 +250,7 @@
     serverQueue.songs.push(song);
     //the new song embed
     const newsong = new MessageEmbed()
-      .setTitle("<:Playing:769665713124016128> " + song.title)
+      .setTitle(" " + song.title)
       .setColor("#c219d8")
       .setThumbnail(song.thumbnail)
       .setURL(song.url)
