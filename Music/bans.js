@@ -11,7 +11,7 @@ async execute(message, args) {
         message.guild.fetchBans().then(bans => {
             let bansembed = new MessageEmbed()
                 .setTitle(`Total Bans`)
-                .setColor("Red")
+                .setColor("#277ecd")
                 .setDescription(`**Banned User**: ${bans.size}`)
                 .setFooter("")
                 .setTimestamp()
