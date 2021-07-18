@@ -11,7 +11,7 @@ const { PREFIX } = require(`../config.json`);
 module.exports = {
   name: "skipto",
   aliases: ["st", "jump"],
-  description: "(st)Skip to the selected queue number",
+  description: "Skip to the selected queue number",
   cooldown: 5,
   edesc: `Type the Command, to skip a specific amount of songs to the wanted song.\nUsage: ${PREFIX}skipto`,
 
@@ -19,7 +19,7 @@ execute(message, args) {
     //if not in a guild return
     if (!message.guild) return;
     //react with approve
-    message.react("").catch(console.error);
+    message.react("✅").catch(console.error);
     //if no args return error
     if (!args.length)
       return attentionembed(message, `Try: ${message.client.prefix}${module.exports.name} <Queue Number>`)
