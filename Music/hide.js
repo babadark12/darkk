@@ -18,13 +18,11 @@ module.exports = {
    const embed = new Discord.MessageEmbed()
    .setTitle("")
    .setTimestamp()
-   .setThumbnail(message.author.avatarURL({dynamic: "true"}))
    .setFooter(`${message.author.username}#${message.author.discriminator}`, message.member.user.displayAvatarURL({ dynamic: true }))
    .setDescription(`
-🔒 Hided A Channel
-Channel Name : <#${message.channel.id}>
-Hided By : <@${message.author.id}>
-Channel Status : Send Message
+**Hided Channel: <:emoji_19:866295615028461568>**
+\`Channel Name:\` <#${message.channel.id}>
+\`Hided By:\` <@${message.author.id}>
 `)
    .setColor("Black");
    await message.channel.send(embed);
