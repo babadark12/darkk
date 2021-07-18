@@ -20,26 +20,26 @@ module.exports = {
     if(prefix === null) prefix = PREFIX;
 
     //react with approve emoji
-    message.react("769665713124016128");
+    message.react("");
 
     if(!args[0]) return message.channel.send(new MessageEmbed()
-    .setColor("#c219d8")
+    .setColor("#277ecd")
     .setTitle(`Current Prefix: \`${prefix}\``)
     .setFooter('Please provide a new prefix')
     );
     if(!message.member.hasPermission("ADMINISTRATOR")) return message.reply(new MessageEmbed()
-    .setColor("#c219d8")
-    .setTitle(`<:no:770326304473350145> You don\'t have permission for this Command!`)
+    .setColor("#277ecd")
+    .setTitle(`You don\'t have permission for this Command!`)
     );
 
     if(args[1]) return message.channel.send(new MessageEmbed()
-    .setColor("#c219d8")
-    .setTitle(`'<:no:770326304473350145> The prefix can\'t have two spaces'`));
+    .setColor("#277ecd")
+    .setTitle(`'The prefix can\'t have two spaces'`));
 
     db.set(`prefix_${message.guild.id}`, args[0])
 
     message.channel.send(new MessageEmbed()
-    .setColor("#c219d8")
-    .setTitle(`<:CHECKMARK:770290491731476500> Successfully set new prefix to **\`${args[0]}\`**`))
+    .setColor("#277ecd")
+    .setTitle(`Successfully set new prefix to **\`${args[0]}\`**`))
   }
 }
