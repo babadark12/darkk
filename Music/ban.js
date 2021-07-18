@@ -44,7 +44,7 @@ module.exports = {
         User.ban({ reason: `${Reason || "No Reason Provided!"}` });
       }, 2000);
       let embed = new Discord.MessageEmbed()
-        .setColor("black")
+        .setColor("#277ecd")
         .setTitle(`Member Banned!`)
         .addField(`Moderator`, `${message.author.tag} (${message.author.id}`)
         .addField(`Banned Member`, `${Member.tag} (${Member.id})`)
