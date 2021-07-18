@@ -45,6 +45,11 @@ module.exports = {
 > 
 > **Fun Commands**
 > \`slap\`, \`hug\`, \`howgay\`,‌ \`rate\`
+> \`meme\`, \`cry\`, \`kiss\`
+> 
+> **Backup Commands**
+> \`backup-create\`, \`backup-load\`, \`backup-info\`
+> 
 `)
     
 
