@@ -36,9 +36,8 @@ module.exports = {
 > 
 > **Gif And Picture Commands**
 > \`boy\`, \`girl\`, ‌\`couple\`, \`anime\`
-> \`emoji\`, \`animal\` \`picboy\`, \`picgirl\`
-> \`picanime\`, \`picanimal\`, \`picemoji\`, \`baby\`
-> \`piccouple\`
+> \`emoji\`, \`animal\`, \`picboy\`, \`picgirl\`
+> \`picanimal\`, \`picemoji\`, \`picbaby\`
 > 
 > **Text Commands**
 > \`textkurdish\`, \`textarabic\`, \`textenglish\`,
