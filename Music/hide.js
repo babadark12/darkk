@@ -1,7 +1,7 @@
 const Discord = module.require("discord.js");
 
 module.exports = {
-   name: "lock",
+   name: "hide",
    description: "Locks a Channel",
    usage: "lock",
  category: "admin",
