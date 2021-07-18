@@ -16,9 +16,8 @@ module.exports = {
      },
     ],);
    const embed = new Discord.MessageEmbed()
-   .setTitle("Done")
+   .setTitle("")
    .setTimestamp()
-   .setThumbnail(message.author.avatarURL({dynamic: "true"}))
    .setFooter(`${message.author.username}#${message.author.discriminator}`, message.member.user.displayAvatarURL({ dynamic: true }))
    .setDescription(`
 **Unlocked Channel: <:emoji_18:866295594279632936>**
