@@ -14,20 +14,20 @@ module.exports = {
 
     backup.fetch(backupID).then(() => {
 
-        message.channel.send(':warning: All the server channels, roles, and settings will be cleared. Do you want to continue? Send `-confirm` or `cancel`!');
+        message.channel.send(':warning: All the server channels, roles, and settings will be cleared. Do you want to continue? Send `+confirm` or `cancel`!');
 
-        const collector = message.channel.createMessageCollector((m) => m.author.id === message.author.id && ['-confirm', 'cancel'].includes(m.content), {
+        const collector = message.channel.createMessageCollector((m) => m.author.id === message.author.id && ['+confirm', 'cancel'].includes(m.content), {
             time: 60000,
             max: 1
         });
         collector.on('collect', (m) => {
-            const confirm = m.content === '-confirm';
+            const confirm = m.content === '+confirm';
             collector.stop();
             if (confirm) {
 
                 backup.load(backupID, message.guild).then(() => {
 
-                    return message.author.send('Backup loaded successfully!');
+                    return message.author.send('**Backup loaded successfully✅!**');
             
                 }).catch((err) => {
             
