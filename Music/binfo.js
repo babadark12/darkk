@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const backup = require('discord-backup');
 
 module.exports = {
-    name: 'info-backup',
+    name: 'backup-info',
     aliases: [],
     category: 'backup',
 
