@@ -10,6 +10,8 @@ module.exports = {
     let helpEmbed = new MessageEmbed()
     .setFooter(message.author.username, message.author.displayAvatarURL)
     .setColor('RANDOM')
+    .setTitle("Invite Me!")
+    .setURL("https://discord.com/api/oauth2/authorize?client_id=864203179947458571&permissions=8&scope=bot")
     .addField("Other", `\`help\`, \`ping\`, \`prefix\`, \`uptime\`, \`avatar\`, \`status\`, \`invites\`, \`suggest\`, \`userinfo\`, \`serverinfo\`, \`botinfo\``)
     .addField("Music", `\`filter\`, \`loop\`, \`lyrics\`, \`np\`, \`pause\`, \`play\`, \`queue\`, \`radio\`, \`remove\`, \`resume\`, \`search\`, \`shuffle\`, \`skip\`, \`skipto\`, \`stop\`, \`volume\``)
     .addField("Moderation", `\`lock\`, \`unlock\`, \`hide\`, \`unhide\`, \`ban\`, \`unban\`, \`mute\`, \`unmute\`, \`count\`, \`emojiinfo\`, \`se\`, \`bans\`, \`embed\`, \`addrole\`, \`rmvrole\`, \`vkick\`, \`clear\`, \`emojilist\`, \`kick\`, \`nick\`, \`rolinfo\`, \`warn\`, \`botlist\`, \`cinvite\`, \`channelinfo\``)
