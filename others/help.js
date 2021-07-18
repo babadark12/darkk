@@ -42,6 +42,8 @@ module.exports = {
 > **Text Commands**
 > \`textkurdish\`, \`textarabic\`, \`textenglish\`,
 > \`textturkish\`, \`textpersian\`
+> 
+> \`slap\`, \`hug\`, \`howgay\`,‌ \`rate\`,
 `)
     
 
