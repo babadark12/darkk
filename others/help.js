@@ -10,7 +10,7 @@ module.exports = {
     let helpEmbed = new MessageEmbed()
     .setFooter(message.author.username, message.author.displayAvatarURL)
     .setColor('RANDOM')
-    .addField("Wolf", `Coder`)
+    .addField("Other Commands", `\`help\`, \`ping\`, \`prefix\`, \`uptime\`, \`avatar\`, \`status\`, \`invites\`, \`suggest\`, \`userinfo\`, \`serverinfo\`, \`botinfo\``)
     .addField("Robot", `Hich`)
     helpEmbed.setTimestamp();
 
