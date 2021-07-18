@@ -7,7 +7,7 @@ module.exports = {
   bot: ["MANAGE_MESSAGES"],
   usage: "dm <id user/ mention user> <msg>",
   args: true,
-  async execute(message, args, client) {
+  run: async (client, message, args, del, member) => {
     message.delete();
    let user =
       message.mentions.members.first() ||
