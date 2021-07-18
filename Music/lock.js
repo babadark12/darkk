@@ -17,10 +17,6 @@ module.exports = {
         deny : ['SEND_MESSAGES'],
      },
     ],);
-   const embed = new Discord.MessageEmbed()
-   .setTitle("Channel Updates")
-   .setDescription(`🔒 ${message.channel} has been Locked`)
-   .setColor("RANDOM");
-   await message.channel.send(embed);
+   message.channel.send(`🔒 ${message.channel} has been Locked`)
 }
 }
