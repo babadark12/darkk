@@ -23,11 +23,7 @@ category: "admin",
                deny : ['SEND_MESSAGES'],
             },
            ],);
-           const embed = new Discord.MessageEmbed()
-           .setTitle("Channel Updates")
-           .setDescription(`${message.channel} has been placed under lockdown for \`${time}\``)
-           .setColor("RANDOM");
-           message.channel.send(embed)
+           message.channel.send(`**${message.channel} has been placed under lockdown for** \`${time}\``)
 
            setTimeout(function(){
            message.channel.overwritePermissions([
@@ -36,11 +32,7 @@ category: "admin",
                null: ['SEND_MESSAGES'],
                },
             ],);
-           const embed2 = new Discord.MessageEmbed()
-           .setTitle("Channel Updates")
-           .setDescription(`Locked has been lifted in ${message.channel}`)
-           .setColor("RANDOM");
-           message.channel.send(embed2);
+           message.channel.send(`**Locked has been lifted in ${message.channel}**`)
         }, ms(time));
         message.delete();
     }
