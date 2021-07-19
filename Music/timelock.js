@@ -23,7 +23,7 @@ category: "admin",
                deny : ['SEND_MESSAGES'],
             },
            ],);
-           message.channel.send(`**${message.channel} has been placed under lockdown for** \`${time}\``)
+           message.channel.send(`🔒 ${message.channel} has been placed under lockdown for \`${time}\``)
 
            setTimeout(function(){
            message.channel.overwritePermissions([
@@ -32,7 +32,7 @@ category: "admin",
                null: ['SEND_MESSAGES'],
                },
             ],);
-           message.channel.send(`**Locked has been lifted in ${message.channel}**`)
+           message.channel.send(`🔓 Locked has been lifted in ${message.channel}`)
         }, ms(time));
         message.delete();
     }
