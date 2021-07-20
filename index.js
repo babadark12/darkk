@@ -54,11 +54,10 @@ client.on(`message`, async (message) => {
   //if not prefix set it to standard prefix in the config.json file
   if(prefix === null) prefix = PREFIX;
 
-  ‌‌//information message when the bot has been tagged
+  //information message when the bot has been tagged
   if(message.content.includes(client.user.id)) {
     message.reply(new Discord.MessageEmbed().setColor("#c219d8").setAuthor(`${message.author.username}, My Prefix is ${prefix}, to get started; type ${prefix}help`, message.author.displayAvatarURL({dynamic:true})));
   } 
-
   //An embed announcement for everyone but no one knows so fine ^w^
   if(message.content.startsWith(`${prefix}embed`)){
     //define saymsg
@@ -73,29 +72,8 @@ client.on(`message`, async (message) => {
     //send the Message
     message.channel.send(embed)
   }
-//status
-if(message.content.startsWith(`${prefix}status`)){
-    //define saymsg
-    const saymsg = message.content.slice(Number(prefix.length) + 5)
-    //define embed
-    const embed = new Discord.MessageEmbed()
-    .setColor("BLUE")
-    .setAuthor("")
-    .setThumbnail(` `)
-    .setFooter(message.author.username, message.author.displayAvatarURL)
-    .setTimestamp()
-    .setDescription(`
-Guilds Count: ${client.guilds.cache.size}
-Users Count: ${client.guilds.cache.reduce((a, g) => a + g.memberCount, 0)}
-Channels Count: ${client.channels.cache.size}
-`)
 
-    //send the Message
-    message.channel.send(embed)
-    message.react("")
-  }
 
-//create vc
 //command Handler DO NOT TOUCH
  const prefixRegex = new RegExp(`^(<@!?${client.user.id}>|${escapeRegex(prefix)})\\s*`);
  if (!prefixRegex.test(message.content)) return;
