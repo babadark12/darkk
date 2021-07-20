@@ -19,8 +19,8 @@ module.exports = {
     let result = Math.floor((Math.random() * replies.length));
 
     message.channel.send(replies[result]).then(message => {
-			message.react('<a:emoji_17:866295572424163368>').then(r => {
-				message.react('<a:emoji_16:866295550469865483>');
+			message.react('<a:emoji_21:867156106464067624>').then(r => {
+				message.react('');
            });
           });
       }
