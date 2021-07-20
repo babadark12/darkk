@@ -58,10 +58,10 @@ client.on(`message`, async (message) => {
     message.reply(new Discord.MessageEmbed()
     .setColor("RED")
     .setDescription(`
-[Suport](https://discord.gg/ynW4Gnkb3G) - [Invite](https://discord.com/api/oauth2/authorize?client_id=864203179947458571&permissions=8&scope=bot)**
+[Suport](https://discord.gg/ynW4Gnkb3G) - [Invite](https://discord.com/api/oauth2/authorize?client_id=864203179947458571&permissions=8&scope=bot)
 `)
     .setTitle(`
-\`To View List of Commands Type; +help or Going Voice Channel Type; +play Add Song [name,Url]\``));
+**To View List of Commands Type:** \`+help\` | **To Listing Song Or Music Type:** \`+play\``));
   } 
   //An embed announcement for everyone but no one knows so fine ^w^
   if(message.content.startsWith(`${prefix}embed`)){
