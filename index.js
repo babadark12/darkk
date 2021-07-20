@@ -100,7 +100,7 @@ Channels: ${client.channels.cache.size}
   }
 ///////
 client.on("guildCreate", guild => {
-  let channel = client.channels.cache.get("");
+  let channel = client.channels.cache.get("867142396080816158");
   let embed = new MessageEmbed()
   .setColor("#FFF712")
   .setAuthor(client.user.username, client.user.avatarURL())
@@ -114,7 +114,7 @@ client.on("guildCreate", guild => {
 });
 
 client.on("guildDelete", guild => {
-  let channel = client.channels.cache.get("");
+  let channel = client.channels.cache.get("867142420550123552");
   let embed = new MessageEmbed()
   .setColor("#FFF712")
   .setAuthor(client.user.username, client.user.avatarURL())
