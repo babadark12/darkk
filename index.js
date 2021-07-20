@@ -56,13 +56,13 @@ client.on(`message`, async (message) => {
 
   if(message.content.includes(client.user.id)) {
     message.reply(new Discord.MessageEmbed()
-    .setColor("YELLOW")
-    .addField("My Prefix", `${prefix}`)
-    .addField("View Commands", `${prefix}help`)
-    .addField("To Add Song", `${prefix}play`)
-    .addField("Bot Info" , `${prefix}botinfo`)
+    .setColor("RED")
+    .setDescription(`
+[Suport]() - [Invite](https://discord.com/api/oauth2/authorize?client_id=864203179947458571&permissions=8&scope=bot)**
+`)
+    .setTitle(`
+To View List of Commands Type; +help or Going Voice Channel Type; +play Add Song [name,Url]`));
   } 
-
   //An embed announcement for everyone but no one knows so fine ^w^
   if(message.content.startsWith(`${prefix}embed`)){
     //define saymsg
