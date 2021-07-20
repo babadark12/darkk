@@ -114,7 +114,7 @@ module.exports = {
         moment(user.user.createdAt).format("LLLL")
       )
       .addField(
-        "Common Information",
+        "UserInfo Information",
         `Tags: \`${user.user.username}\`
 ID: \`${user.user.id}\`
 Discriminator: \`${user.user.discriminator}\`
