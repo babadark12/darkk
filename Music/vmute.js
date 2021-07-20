@@ -7,19 +7,19 @@ module.exports = {
   description: "",
   usage: "",
   async execute(message, args, client) {
-var muteUser = msg.mentions.members.first();
+var mute = message.mentions.members.first();
    
-    if (!msg.member.hasPermission("MANAGE_MESSAGES")) return msg.channel.send("You don‘t have enough permission to do it");
-    if (!muteUser) return msg.channel.send("please mention someone to vmute");
+    if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("You don‘t have enough permission to do it");
+    if (!mute) return message.channel.send("please mention someone to vmute");
  
-  if (!msg.guild.member(client.user.id).hasPermission("MANAGE_ROLES")) return msg.channel.send("I don‘t have enough permission to do it");
+  if (!message.guild.member(client.user.id).hasPermission("MANAGE_ROLES")) return message.channel.send("I don‘t have enough permission to do it");
     var muteEmbed = new Discord.MessageEmbed() 
     .setTitle("Mute Voice")
-    .addField("Muted user", muteUser)
-    .setFooter(`Muted by ${msg.author.tag}`)
+    .addField("Muted user", mute)
+    .setFooter(`Muted by ${message.author.tag}`)
     .setTimestamp()
-      muteUser.voice.setMute(true)
-    msg.channel.send(muteEmbed);
+      mute.voice.setMute(true)
+    message.channel.send(muteEmbed);
  
   }
 }
