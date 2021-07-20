@@ -77,8 +77,56 @@ client.on(`message`, async (message) => {
     //send the Message
     message.channel.send(embed)
   }
+/////
+if(message.content.startsWith(`${prefix}status`)){
+    //define saymsg
+    const saymsg = message.content.slice(Number(prefix.length) + 5)
+    //define embed
+    const embed = new Discord.MessageEmbed()
+    .setColor("Red")
+    .setAuthor("")
+    .setThumbnail(``)
+    .setFooter(message.author.username, message.author.displayAvatarURL)
+    .setTimestamp()
+    .setDescription(`
+Guilds: ${client.guilds.cache.size}
+Users: ${client.guilds.cache.reduce((a, g) => a + g.memberCount, 0)}
+Channels: ${client.channels.cache.size}
+`)
 
+    //send the Message
+    message.channel.send(embed)
+    message.react("")
+  }
+///////
+client.on("guildCreate", guild => {
+  let channel = client.channels.cache.get("");
+  let embed = new MessageEmbed()
+  .setColor("#FFF712")
+  .setAuthor(client.user.username, client.user.avatarURL())
+  .setTitle( `✅ Join Server`)
+  .addField(" **Server Name**", `${guild.name}`)
+  .addField(" **Server Owner**", `${guild.owner}`)
+  .addField(" **Server Id**", `${guild.id}`)
+  .addField(" **Member Count**", `${guild.memberCount}`)
+  .setFooter(`${client.user.tag}`);
+  channel.send(embed);
+});
 
+client.on("guildDelete", guild => {
+  let channel = client.channels.cache.get("");
+  let embed = new MessageEmbed()
+  .setColor("#FFF712")
+  .setAuthor(client.user.username, client.user.avatarURL())
+  .setTitle( `❌ Left Server`)
+  .addField(" **Server Name**", `${guild.name}`)
+  .addField(" **Server Owner**", `${guild.owner}`)
+  .addField(" **Server Id**", `${guild.id}`)
+  .addField(" **Member Count**", `${guild.memberCount}`)
+  .addField(" **Verification Level**", `${guild.verificationLevel}`)
+  .setFooter(`${client.user.tag}`);
+  channel.send(embed);
+});
 //command Handler DO NOT TOUCH
  const prefixRegex = new RegExp(`^(<@!?${client.user.id}>|${escapeRegex(prefix)})\\s*`);
  if (!prefixRegex.test(message.content)) return;
