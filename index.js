@@ -56,7 +56,14 @@ client.on(`message`, async (message) => {
 
   //information message when the bot has been tagged
   if(message.content.includes(client.user.id)) {
-    message.reply(new Discord.MessageEmbed().setColor("#c219d8").setAuthor(`${message.author.username}, My Prefix is ${prefix}, to get started; type ${prefix}help`, message.author.displayAvatarURL({dynamic:true})));
+    const embed = new Discord.MessageEmbed()
+  .setColor("#c219d8")
+  .setTitle("Helping")
+  .addField("My Prefix Is", `+`)
+  .addField("To View Commands", `+help`)
+  .addField("Support Guild", ``)
+   
+  message.channel.send(embed)
   } 
   //An embed announcement for everyone but no one knows so fine ^w^
   if(message.content.startsWith(`${prefix}embed`)){
