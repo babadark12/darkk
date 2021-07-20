@@ -54,10 +54,15 @@ client.on(`message`, async (message) => {
   //if not prefix set it to standard prefix in the config.json file
   if(prefix === null) prefix = PREFIX;
 
-  //information message when the bot has been tagged
   if(message.content.includes(client.user.id)) {
-    message.reply(new Discord.MessageEmbed().setColor("#c219d8").setAuthor(`${message.author.username}, My Prefix is ${prefix}, to get started; type ${prefix}help`, message.author.displayAvatarURL({dynamic:true})));
+    message.reply(new Discord.MessageEmbed()
+    .setColor("YELLOW")
+    .addField("My Prefix", `${prefix}`)
+    .addField("View Commands", `${prefix}help`)
+    .addField("To Add Song", `${prefix}play`)
+    .addField("Bot Info" , `${prefix}botinfo`)
   } 
+
   //An embed announcement for everyone but no one knows so fine ^w^
   if(message.content.startsWith(`${prefix}embed`)){
     //define saymsg
