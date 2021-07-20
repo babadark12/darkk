@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 
 module.exports = {
-  name: "gbx",
+  name: "serverinfo",
   description: "Displays server information & statistics!",
   category: "misc",
   usage: "serverinfo",
@@ -18,7 +18,7 @@ module.exports = {
       )
       .setColor(3447003)
       .addField(
-        "Common Information",
+        "Guild Information",
         `
        **Server:** \`${message.guild.name} (${
           message.guild.id
