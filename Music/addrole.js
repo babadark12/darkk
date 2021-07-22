@@ -5,7 +5,7 @@ module.exports = {
   aliases: ["role", "P!role"],
   category: "moderation",
   description: "Add role to any user",
-  run: async (client, message, args) => {
+  async execute(message, args, client) {
    if (!message.member.hasPermission("MANAGE_ROLES")) {
       return message.channel.send("sorry you need permission to Adding Role To someone");
     }
