@@ -2,7 +2,7 @@ const discord = require("discord.js");
 
 module.exports = {
   name: "vkick",
-  category: "<:mod:789590144650051604> moderation",
+  category: "moderation",
   async execute(message, args, client) {
     if (!message.guild.me.hasPermission(["ADMINISTRATOR"]))
       return message.channel.send(
@@ -21,6 +21,6 @@ module.exports = {
 
     message.mentions.members.first().voice.kick();
     
-    message.channel.send(`User Has Been Kicked From Voice Channel!`)
+    message.channel.send(`${message.user.username} Has Been Kicked From Voice Channel!`)
   }
 };
