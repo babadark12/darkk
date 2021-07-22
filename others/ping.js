@@ -1,20 +1,23 @@
-const { Client, Collection, MessageEmbed } = require(`discord.js`);
-const {
-  PREFIX,
-  approveemoji,
-  denyemoji
-} = require(`../config.json`);
+const Discord = require("discord.js");
+const { MessageEmbed } = require("discord.js");
 
 module.exports = {
-  name: `ping`,
-  description: `Gives you the ping of the Bot`,
-  aliases: ["latency"],
-  cooldown: 3,
-  edesc: "Type this command to see how fast the Bot can response to your messages / commands inputs!",
-  execute(message, args, client) {
-    //react with approve emoji
-    message.react("");
-    //send the Ping embed
-    message.reply(new MessageEmbed().setColor("#277ecd").setTitle(":ping_pong: `" + client.ws.ping + "ms`"));
+  name: "ping",
+  aliases: [],
+  description: "Pong!",
+  usage: "Ping",
+  async execute(message, args, client) {
+   
+   
+
+    const embed = new MessageEmbed()
+      .setColor("Blue")
+      .setDescription(`Pong ${client.ws.ping} ms`)
+      .setFooter(`Requested By ${message.author.username}`)
+      .setTimestamp();
+
+    message.channel.send(embed);
+
+    
   }
-}
+};
