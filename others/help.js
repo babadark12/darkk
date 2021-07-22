@@ -14,7 +14,7 @@ module.exports = {
     .setURL("https://discord.com/api/oauth2/authorize?client_id=864203179947458571&permissions=8&scope=bot")
     .addField("Other", `\`help\`, \`ping\`, \`prefix\`, \`uptime\`, \`avatar\`, \`status\`, \`invites\`, \`suggest\`, \`userinfo\`, \`serverinfo\`, \`botinfo\`, \`github\``)
     .addField("Music", `\`filter\`, \`loop\`, \`lyrics\`, \`np\`, \`pause\`, \`play\`, \`queue\`, \`radio\`, \`remove\`, \`resume\`, \`search\`, \`shuffle\`, \`skip\`, \`skipto\`, \`stop\`, \`volume\``)
-    .addField("Moderation", `\`lock\`, \`unlock\`, \`hide\`, \`unhide\`, \`ban\`, \`unban\`, \`mute\`, \`unmute\`, \`count\`, \`emojiinfo\`, \`se\`, \`bans\`, \`embed\`, \`addrole\`, \`rmvrole\`, \`vkick\`, \`clear\`, \`emojilist\`, \`kick\`, \`nick\`, \`rolinfo\`, \`warn\`, \`botlist\`, \`cinvite\`, \`channelinfo\`, \`vdeafen\`, \`vundeafen\`, \`timelock\``)
+    .addField("Moderation", `\`lock\`, \`unlock\`, \`hide\`, \`unhide\`, \`ban\`, \`unban\`, \`mute\`, \`unmute\`, \`count\`, \`emojiinfo\`, \`se\`, \`bans\`, \`embed\`, \`addrole\`, \`rmvrole\`, \`vkick\`, \`clear\`, \`emojilist\`, \`kick\`, \`nick\`, \`rolinfo\`, \`warn\`, \`botlist\`, \`cinvite\`, \`channelinfo\`, \`deafen\`, \`undeafen\`, \`timelock\``)
     .addField("Gif & Picture", `\`boy\`, \`girl\`, ‌\`couple\`, \`anime\`, \`emoji\`, \`animal\`, \`picboy\`, \`picgirl\`, \`picanimal\`, \`picemoji\`, \`picbaby\``)
     .addField("Text", `\`textkurdish\`, \`textarabic\`, \`textenglish\`, \`textturkish\`, \`textpersian\``)
     .addField("Fun", `\`slap\`, \`hug\`, \`howgay\`,‌ \`rate\`, \`meme\`, \`cry\`, \`kiss\``)
