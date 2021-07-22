@@ -21,6 +21,6 @@ module.exports = {
 
     message.mentions.members.first().voice.kick();
     
-    message.channel.send(`${message.user.username} Has Been Kicked From Voice Channel!`)
+    message.channel.send(`User Has Been Kicked From Voice Channel!`)
   }
 };
