@@ -1,75 +1,44 @@
-const Discord = require("discord.js");
-const { MessageEmbed } = require("discord.js");
+const discord = require("discord.js");
 
 module.exports = {
   name: "ban",
-  aliases: [],
-  description: "Ban A Member!",
-  usage: "Ban <Mention Member>",
-  async execute(message, args, client) {
-   
-    if (!message.member.hasPermission("BAN_MEMBERS"))
-      return message.channel.send(
-        `You Don't Have Permission`
-      );
-
-    let Member = message.mentions.users.first();
-
-    if (!Member)
-      return message.channel.send(
-        `Mention: ${Prefix}ban @user`
-      );
-
-    if (!message.guild.members.cache.get(Member.id))
-      return message.channel.send(`Please Mention A Valid Member!`);
-
-    if (Member.id === message.author.id)
-      return message.channel.send(`You Can't Ban Your Self!`);
-
-    if (Member.id === client.user.id)
-      return message.channel.send(`Please Don't Ban Me`);
-
-    if (Member.id === message.guild.owner.user.id)
-      return message.channel.send(`You Can't Ban Owner Of Server!`);
-
-    let Reason = args.slice(1).join(" ");
-
-    let User = message.guild.member(Member);
-
-    if (!User.bannable) return message.channel.send(`I Can't Ban That Member!`);
-
-    try {
-      console.log(`Member Is Going To Get Ban!`);
-      setTimeout(function() {
-        User.ban({ reason: `${Reason || "No Reason Provided!"}` });
-      }, 2000);
-      let embed = new Discord.MessageEmbed()
-        .setColor("#277ecd")
-        .setTitle(`Member Banned!`)
-        .addField(`Moderator`, `${message.author.tag} (${message.author.id}`)
-        .addField(`Banned Member`, `${Member.tag} (${Member.id})`)
-        .addField(`Reason`, `${Reason || "No Reason Provided!"}`)
-        .setFooter(`${message.author.username}`)
-        .setTimestamp();
-      if (User && Member.bot === false)
-        Member.send(
-          `You Have Been Banned From **${message.guild.name}** For ${Reason ||
-            "No Reason Provided!"}`
-        );
-      message.channel.send(embed);
-      console.log(
-        `User: ${Member.tag} (${Member.id}) Just Got Banned From ${
-          message.guild.name
-        } For ${Reason || "No Reason Provided!"}`
-      );
-    } catch (error) {
-      return message.channel
-        .send(
-          `I Can't Ban That Member Maybe Member Has Higher Role Than Me & My Role Is Lower Than Member!`
-        )
-        .then(() => console.log(error));
-    }
-
+  category: "moderation",
+  description: "Ban anyone with one shot whithout knowing anyone xD",
+  usage: "ban <@user> <reason>",
+  run: async (client, message, args) => {
     
+    const target = message.mentions.members.first()
+    
+    const reason = args.slice(1).join(" ")
+    
+    if(!message.member.hasPermission("BAN_MEMBERS")) return message.reply(`You don't have enough powers to ban someone`)
+    
+    if(!message.guild.me.hasPermission("BAN_MEMBERS")) return message.reply(`I don't have powers to ban someone`)
+    
+    if(!args[0]) return message.reply(`Please mention someone to ban`)
+    
+    if(!target) return message.reply(`I can't find that member`)
+    
+    if(target.roles.highest.position >= message.member.roles.highest.position || message.author.id !== message.guild.owner.id) {
+      return message.reply(`They have more power than you`)
+    }
+    
+    if(target.id === message.author.id) return message.reply(`I can't ban you as you are the Boss`)
+    
+    if(target.bannable) {
+      let embed = new discord.MessageEmbed()
+      .setColor("RANDOM")
+      .setDescription(`Banned \`${target}\` for \`${reason || "No Reason Provided"}\``)
+      
+      message.channel.send(embed)
+      
+      target.ban()
+      
+      message.delete()
+      
+    } else {
+      return message.reply(`I can't ban them, make sure that my role is above of theirs`)
+    }
+    return undefined
   }
 };
