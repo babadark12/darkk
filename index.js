@@ -6,7 +6,7 @@ const db = require('quick.db');
 const { TOKEN, PREFIX, AVATARURL, BOTNAME, } = require(`./config.json`);
 const figlet = require("figlet");
 const client = new Client({ disableMentions: `` , partials: ['MESSAGE', 'CHANNEL', 'REACTION'] });
-client.login('ODY0NzcyNTE0NTEzMDI3MDcy.YO6UKg.xGD4UPe8pgoa7ruJnA0Jp5NGYro');
+client.login('ODY0MjAzMTc5OTQ3NDU4NTcx.YOyB7g.MLq7EH6MONdCz1Vi2t55JPI7dnk');
 client.commands = new Collection();
 client.setMaxListeners(0);
 client.prefix = PREFIX;
@@ -54,14 +54,9 @@ client.on(`message`, async (message) => {
   //if not prefix set it to standard prefix in the config.json file
   if(prefix === null) prefix = PREFIX;
 
+  //information message when the bot has been tagged
   if(message.content.includes(client.user.id)) {
-    message.reply(new Discord.MessageEmbed()
-    .setColor("RED")
-    .setDescription(`
-[Suport](https://discord.gg/ynW4Gnkb3G) - [Invite](https://discord.com/api/oauth2/authorize?client_id=864203179947458571&permissions=8&scope=bot)
-`)
-    .setTitle(`
-**To View List of Commands Type:** \`+help\` | **To Listing Song Or Music Type:** \`+play\``));
+    message.reply(new Discord.MessageEmbed().setColor("#c219d8").setAuthor(`${message.author.username}, My Prefix is ${prefix}, to get started; type ${prefix}help`, message.author.displayAvatarURL({dynamic:true})));
   } 
   //An embed announcement for everyone but no one knows so fine ^w^
   if(message.content.startsWith(`${prefix}embed`)){
@@ -76,27 +71,6 @@ client.on(`message`, async (message) => {
     message.delete({timeout: 300})
     //send the Message
     message.channel.send(embed)
-  }
-/////
-if(message.content.startsWith(`${prefix}status`)){
-    //define saymsg
-    const saymsg = message.content.slice(Number(prefix.length) + 5)
-    //define embed
-    const embed = new Discord.MessageEmbed()
-    .setColor("Red")
-    .setAuthor("")
-    .setThumbnail(``)
-    .setFooter(message.author.username, message.author.displayAvatarURL)
-    .setTimestamp()
-    .setDescription(`
-Guilds: ${client.guilds.cache.size}
-Users: ${client.guilds.cache.reduce((a, g) => a + g.memberCount, 0)}
-Channels: ${client.channels.cache.size}
-`)
-
-    //send the Message
-    message.channel.send(embed)
-    message.react("")
   }
 //command Handler DO NOT TOUCH
  const prefixRegex = new RegExp(`^(<@!?${client.user.id}>|${escapeRegex(prefix)})\\s*`);
@@ -131,7 +105,7 @@ Channels: ${client.channels.cache.size}
  } catch (error) {
    console.error(error);
    message.reply( new MessageEmbed().setColor("#c219d8")
-   .setTitle(`There was an error executing that command.`)).catch(console.error);
+   .setTitle(` There was an error executing that command.`)).catch(console.error);
  }
 
 
