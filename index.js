@@ -73,27 +73,6 @@ client.on(`message`, async (message) => {
     message.channel.send(embed)
   }
 ////////
-client.on("guildCreate", guild => {
-  
-      let channelID;
-    let channels = guild.channels;
-    channelLoop:
-    for (let c of channels) {
-        let channelType = c[1].type;
-        if (channelType === "text") {
-            channelID = c[0];
-            break channelLoop;
-        }
-    }
-
-    let channel = client.channels.get(guild.systemChannelID || channelID);
-  
-    let embed = new RichEmbed()
-    .setTitle(`Start`)
-    .addField("Info", `Thx For Adding Me`)
-    .setColor("#5DBCD2")
-channel.send(embed)
-})
 //command Handler DO NOT TOUCH
  const prefixRegex = new RegExp(`^(<@!?${client.user.id}>|${escapeRegex(prefix)})\\s*`);
  if (!prefixRegex.test(message.content)) return;
