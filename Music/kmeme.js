@@ -2,8 +2,8 @@ const Discord = require("discord.js");
 const { MessageEmbed } = require("discord.js");
 
 module.exports = {
-  name: "tmeme",
-  aliases: ["tmeme"],
+  name: "meme",
+  aliases: ["mm"],
   description: "Show Gif",
   usage: "Gif",
   async execute(message, args, client) {
@@ -39,9 +39,8 @@ module.exports = {
     
     let gifembed = new Discord.MessageEmbed()
 
-    .setTitle("meme")
-    .setURL(replies[result])
-     .setColor("#277ecd")
+    .setTitle("Meme😂")
+    .setColor("#277ecd")
     .setFooter(`${message.author.tag} `, message.author.avatarURL)
     .setImage(replies[result]);
 
