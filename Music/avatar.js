@@ -1,4 +1,8 @@
-const Discord = require('discord.js');
+const { MessageEmbed } = require("discord.js");
+const db = require('quick.db');
+const { MessageButton , MessageActionRow } = require(`discord-buttons`)
+const moment = require("moment")
+const { lineReply } = require("discord-reply");
 
 
 module.exports = {
@@ -15,7 +19,7 @@ module.exports = {
         .setDescription(`**[png](${member.user.displayAvatarURL({format: "png", size: 1024})}) | [jpg](${member.user.displayAvatarURL({format: "jpg", size: 1024})}) | [gif](${member.user.displayAvatarURL({format: "gif", size: 1024, dynamic: true})}) | [webp](${member.user.displayAvatarURL({format: "webp", size: 1024})})**`)
         .setImage(member.user.displayAvatarURL({ dynamic: true, size: 1024 }))
         .setFooter(`Requested By ${message.member.displayName}`, message.author.displayAvatarURL({ dynamic: true, size: 1024 }))
-    return message.channel.send(embed)
+    message.lineReplyNoMention(embed)
     
     }
 }
