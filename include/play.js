@@ -141,7 +141,7 @@ module.exports = {
         .setDescription(`◈ ━━━━━━━ <a:emoji_19:867156071814266881> ━━━━━━━ ◈`)
         .addField("<a:emoji_16:867154442456530994> Requested by:", `\`${message.author.username}#${message.author.discriminator}\``, true)
         .addField("<a:emoji_7:867154062319419412> Length:", `\`${song.duration} Minutes\``, true)
-        .addField("<a:emoji_13:867154348916080640> Volume:", `\`${queue.volume}%\``, true)
+        .addField("<a:emoji_13:867154348916080640> Volume:", `\`100\``, true)
 
       var playingMessage = await queue.textChannel.send(newsong);
       
