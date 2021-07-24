@@ -1,22 +1,33 @@
-const Discord = module.require("discord.js");
+const { MessageEmbed } = require("discord.js");
+const db = require('quick.db');
+const { MessageButton , MessageActionRow } = require(`discord-buttons`)
+const { lineReply } = require("discord-reply");
+
 
 module.exports = {
-   name: "unlock",
-   description: "Unlocks a Channel",
-    usage: "unlock",
-  category: "admin",
-    permissions: "MANAGE_CHANNELS",
-    bot: ["MANAGE_CHANNELS"],
-   async execute(message, args, client) {
-   if (!message.member.hasPermission('MANAGE_SERVER', 'MANAGE_CHANNELS')) {
-   return message.channel.send("You don't have enough Permissions")
-   }
-   message.channel.overwritePermissions([
-     {
-        id: message.guild.id,
-        null : ['SEND_MESSAGES'],
-     },
-    ],);
-   message.channel.send(`**🔓 ${message.channel}  has been Unlocked.**`)
-}
-}
+    name: "unlock",
+    cooldown: 5,
+    aliases: ["unlock"],
+    usage: "unlock [#channel]",
+    category: "admin",
+    description : "everyone can send messages",
+    async execute(message, args, client) {
+
+	if(!message.member.hasPermission("MANAGE_CHANNELS")) return message.lineReplyNoMention(new MessageEmbed()
+	.setColor("RED")
+	.setDescription("**You Need `MANAGE_CHANNELS` Permission To Use This Command!**")
+	.setFooter(`${message.author.tag}`, message.author.avatarURL()))
+
+        let channel = message.mentions.channels.first();
+        let channel_find = message.guild.channels.cache.find(ch => ch.id == channel);
+        if (!channel) channel_find = message.channel;
+        if (!channel_find) return;
+        channel_find.updateOverwrite(message.guild.id, {
+            SEND_MESSAGES: true
+        });
+      message.lineReplyNoMention(new MessageEmbed()
+      .setColor("Black")
+      .setDescription(`**🔓 ${message.channel} **Channel has been unlocked.**`)
+      .setFooter(`${message.author.tag}`, message.author.avatarURL()))
+    }
+};
