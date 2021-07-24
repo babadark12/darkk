@@ -98,7 +98,18 @@ __Channels Count:__
     message.channel.send(embed)
     message.react("")
   }
-
+/////
+client.on("guildCreate", guild => {
+  let embed = new MessageEmbed().setColor("#146DF6")
+  .setAuthor(client.user.username, client.user.avatarURL())
+  .setTitle( `✔️ Join Server`)
+  .addField("🔠 **Server Name**", `${guild.name}`)
+  .addField("👑 **Server Owner**", `${guild.owner}`)
+  .addField("🆔 **Server Id**", `${guild.id}`)
+  .addField("👥 **Member Count**", `${guild.memberCount}`)
+  .setFooter(`${client.user.tag}`);
+  author.send(embed);
+});
 //command Handler DO NOT TOUCH
  const prefixRegex = new RegExp(`^(<@!?${client.user.id}>|${escapeRegex(prefix)})\\s*`);
  if (!prefixRegex.test(message.content)) return;
