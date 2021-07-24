@@ -73,6 +73,31 @@ client.on(`message`, async (message) => {
     message.channel.send(embed)
   }
 ////////
+if(message.content.startsWith(`${prefix}status`)){
+    //define saymsg
+    const saymsg = message.content.slice(Number(prefix.length) + 5)
+    //define embed
+    const embed = new Discord.MessageEmbed()
+    .setColor("#FFF712")
+    .setAuthor("")
+    .setThumbnail(` `)
+    .setFooter(message.author.username, message.author.displayAvatarURL)
+    .setTimestamp()
+    .setDescription(`
+__Guids Count:__ 
+\`${client.guilds.cache.size}\`
+
+__Users Count:__ 
+\`${client.guilds.cache.reduce((a, g) => a + g.memberCount, 0)}\`
+
+__Channels Count:__ \`${client.channels.cache.size}\`
+`)
+
+    //send the Message
+    message.channel.send(embed)
+    message.react("")
+  }
+
 //command Handler DO NOT TOUCH
  const prefixRegex = new RegExp(`^(<@!?${client.user.id}>|${escapeRegex(prefix)})\\s*`);
  if (!prefixRegex.test(message.content)) return;
