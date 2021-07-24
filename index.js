@@ -90,7 +90,8 @@ __Guids Count:__
 __Users Count:__ 
 \`${client.guilds.cache.reduce((a, g) => a + g.memberCount, 0)}\`
 
-__Channels Count:__ \`${client.channels.cache.size}\`
+__Channels Count:__ 
+\`${client.channels.cache.size}\`
 `)
 
     //send the Message
