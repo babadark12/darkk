@@ -28,7 +28,7 @@ new MessageEmbed()
         });
         message.lineReplyNoMention(new MessageEmbed()
 	    .setColor("RED")
-	    .setDescription("**:lock: ${message.channel} has been locked.**")
+	    .setDescription(`**:lock: ${message.channel} has been locked.**`)
 	    .setFooter(`${message.author.tag}`, message.author.avatarURL()))
  
 	
