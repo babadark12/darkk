@@ -1,25 +1,18 @@
-const { Client, Collection, MessageEmbed } = require(`discord.js`);
-const {
-  PREFIX,
-  approveemoji,
-  denyemoji
-} = require(`../config.json`);
-
+const { MessageEmbed } = require("discord.js");
+const Discord = require("discord.js");
 module.exports = {
-  name: `uptime`,
-  description: `Gives you the uptime of the Bot`,
-  aliases: [],
-  cooldown: 5,
-  edesc: "With that you can see how long the Bot has been running nonstop",
-  execute(message, args, client) {
+  name: "uptime",
+  category: "info",
+  description: "Shows Bot's Uptime.",
+  usage: "uptime",
+
+  async execute(message, args, client) {
     let days = Math.floor(client.uptime / 86400000);
     let hours = Math.floor(client.uptime / 3600000) % 24;
     let minutes = Math.floor(client.uptime / 60000) % 60;
     let seconds = Math.floor(client.uptime / 1000) % 60;
-    //react with approve emoji
-    message.react("");
-    return message.channel.send(new MessageEmbed().setColor("#c219d8").setTitle(`***__Uptime:__***\n\n\`${days}d\` \`${hours}h\` \`${minutes}m\` \`${seconds}s\n\``));
-
-
+    
+    return message.channel.send(`__Uptime:__\n${days}d ${hours}h ${minutes}m ${seconds}s`);
   }
+  
 }
