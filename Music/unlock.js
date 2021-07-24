@@ -17,6 +17,6 @@ module.exports = {
         null : ['SEND_MESSAGES'],
      },
     ],);
-   message.channel.send(`**🔓 - ${message.channel}  has been Unlocked**`)
+   message.channel.send(`**🔓 ${message.channel}  has been Unlocked.**`)
 }
 }
