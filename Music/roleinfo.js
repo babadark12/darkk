@@ -1,4 +1,5 @@
-const { MessageEmbed } = require("discord.js");
+const discord = require("discord.js");
+const { lineReply } = require("discord-reply");
 
 module.exports = {
         name: 'roleinfo',
@@ -28,11 +29,11 @@ module.exports = {
             .addField("**Color**", role.color, true)
             .addField("**Members**", role.members.size, true)
             .addField("**Position**", role.position, true)
-  //          .addField("**Permissions**", role.permission.join(", "), true)
+            .addField("**Permissions**", role.permission.join(", "), true)
             .addField("**Mentionable**", status[role.mentionable], true)
             .setFooter(message.member.displayName, message.author.displayAvatarURL(), true)
             .setTimestamp()
 
-        message.channel.send(roleembed);
+        message.lineReplyNoMention(roleembed).catch(console.error);
     }
 }
