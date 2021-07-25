@@ -13,7 +13,7 @@ module.exports = {
       .addField("Total Channels", `${client.channels.cache.size}`)
       .addField("Total Users", `${client.guilds.cache.reduce((a, g) => a + g.memberCount, 0)}`, true)
       .addField("Bot Libary", `discord.js`)
-      .setColor("#277ecd")
+      .setColor("#0d2943")
       .setFooter(`information about bot`);
       message.channel.send(embed);
   }
