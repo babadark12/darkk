@@ -10,7 +10,7 @@ module.exports = {
      
     let helpEmbed = new MessageEmbed()
     .setAuthor(message.author.username, message.author.displayAvatarURL)
-    .setColor('#277ecd')
+    .setColor('#0d2943')
     .setTitle("Invite Me!")
     .setURL("https://discord.com/api/oauth2/authorize?client_id=868194752619773962&permissions=8&scope=bot")
     .addField("Other", `\`help\`, \`ping\`, \`prefix\`, \`uptime\`, \`avatar\`, \`invites\`, \`suggest\`, \`userinfo\`, \`serverinfo\`, \`botinfo\`, \`github\``)
