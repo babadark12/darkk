@@ -1,5 +1,4 @@
 const { MessageEmbed } = require("discord.js");
-const { lineReply } = require("discord-reply");
 
 module.exports = {
   name: "animal",
@@ -20,7 +19,7 @@ module.exports = {
     .setFooter(`${message.author.tag} `, message.author.avatarURL)
     .setImage(replies[result]);
 
-    message.lineReplyNoMention(gifembed);
+    message.channel.send(gifembed);
 
    
   }
