@@ -48,7 +48,7 @@ module.exports = {
         message.channel.send(
           new MessageEmbed()
 
-            .setColor(`#277ecd`)
+            .setColor(`#0d2943`)
 
             .setTitle(`${channels.name} Invite`)
 
