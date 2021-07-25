@@ -34,13 +34,13 @@ module.exports = {
             }
         };
         let role2 = message.guild.roles.cache.find(r => r.name.toLowerCase() === 'muted')
-        if(Member.roles.cache.has(role2.id)) return message.channel.send(`**${Member.displayName} has already been muted..**`)
-        await Member.roles.add(role2)
-        message.channel.send(`**${Member.displayName} is now muted..**`)
+        if(member.roles.cache.has(role2.id)) return message.channel.send(`**${member.displayName} has already been muted..**`)
+        await member.roles.add(role2)
+        message.channel.send(`**${member.displayName} is now muted..**`)
 
         setTimeout(async () => {
-            await Member.roles.remove(role2)
-            message.channel.send(`**${Member.displayName} is now unmuted**`)
+            await member.roles.remove(role2)
+            message.channel.send(`**${member.displayName} is now unmuted**`)
         }, ms(time))
     }
 }
