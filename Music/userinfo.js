@@ -19,7 +19,7 @@ module.exports = {
 
     const embed = new MessageEmbed()
       .setTitle(member.user.username + " Information!")
-      .setColor("BLACK")
+      .setColor("#0d2943")
       .setThumbnail(member.user.displayAvatarURL())
       .addField("Full Name", member.user.tag, true)
       .addField("ID", `${member.id}`, true)
