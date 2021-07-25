@@ -1,5 +1,4 @@
-const Discord = require("discord.js");
-const { MessageEmbed } = require("discord.js");
+const discord = require("discord.js");
 const { lineReply } = require("discord-reply");
 
 module.exports = {
