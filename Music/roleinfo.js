@@ -1,5 +1,4 @@
 const discord = require("discord.js");
-const { lineReply } = require("discord-reply");
 
 module.exports = {
         name: 'roleinfo',
@@ -34,6 +33,6 @@ module.exports = {
             .setFooter(message.member.displayName, message.author.displayAvatarURL(), true)
             .setTimestamp()
 
-        message.lineReplyNoMention(roleembed).catch(console.error);
+        message.channel.send(roleembed);
     }
 }
