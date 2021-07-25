@@ -20,7 +20,7 @@ module.exports = {
     .setFooter(`${message.author.tag} `, message.author.avatarURL)
     .setImage(replies[result]);
 
-    message.lineReplyNoMention(gifembed)
+    message.lineReplyNoMention(gifembed);
 
    
   }
