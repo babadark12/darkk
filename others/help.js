@@ -22,6 +22,6 @@ module.exports = {
     .addField("Backup", `\`backup-create\`, \`backup-load\`, \`backup-info\``)
     helpEmbed.setTimestamp();
 
-    message.lineReplyNoMention(embed).catch(console.error);
+    message.lineReplyNoMention(helpEmbed).catch(console.error);
   }
 };
