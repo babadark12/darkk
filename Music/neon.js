@@ -34,7 +34,7 @@ module.exports = {
 
     .setTitle("Neon Gif")
     .setURL(replies[result])
-    .setColor("RANDOM")
+    .setColor("#0d2943")
     .setFooter(`${message.author.tag} `, message.author.avatarURL)
     .setImage(replies[result]);
 
