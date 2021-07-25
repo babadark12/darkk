@@ -1,4 +1,5 @@
 const discord = require("discord.js");
+const { MessageEmbed } = require('discord.js');
 const { lineReply } = require("discord-reply");
 
 
@@ -30,7 +31,6 @@ module.exports = {
             .addField("**Color**", role.color, true)
             .addField("**Members**", role.members.size, true)
             .addField("**Position**", role.position, true)
-          //  .addField("**Permissions**", role.permission.join(", "), true)
             .addField("**Mentionable**", status[role.mentionable], true)
             .setFooter(message.member.displayName, message.author.displayAvatarURL(), true)
             .setTimestamp()
