@@ -7,7 +7,6 @@ module.exports = {
   usage: "Unmute <Mention Member>",
   async execute(message, args, client) {
 
-    run : async(client, message, args) => {
         const Member = message.mentions.members.first() || message.guild.members.cache.get(args[0])
 
         if(!Member) return message.channel.send('**Member not found**')
