@@ -27,7 +27,7 @@ module.exports = {
             memberInvites.forEach(invite => index += invite.uses);
 
             let embed = new Discord.MessageEmbed()
-                .setColor("RANDOM")
+                .setColor("#0d2943")
                 .setAuthor(`${message.guild.name}`,message.guild.iconURL({ dynamic: true }))
                 .setThumbnail(message.author.avatarURL({dynamic: "true"}))
                 .setDescription(`Information on Invites of ${member.displayName}`)
