@@ -1,5 +1,5 @@
-const Discord = require("discord.js");
-const { MessageEmbed } = require("discord.js");
+const discord = require("discord.js");
+const { lineReply } = require("discord-reply");
 
 module.exports = {
   name: "userinfo",
@@ -36,7 +36,7 @@ module.exports = {
       .setFooter(`Requested by ${message.author.username}`)
       .setTimestamp();
 
-    message.channel.send(embed);
+    message.lineReplyNoMention(embed).catch(console.error);
 
    
   }
