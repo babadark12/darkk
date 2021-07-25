@@ -19,7 +19,7 @@ module.exports = {
     let embed = new MessageEmbed()
       .setAuthor("SUGGESTION: " + message.author.tag, message.author.avatarURL({ dynamic: true, size: 2048 }))
       .setThumbnail(message.author.avatarURL({ dynamic: true, size: 2048 }))
-      .setColor("RANDOM")
+      .setColor("#0d2943")
       .setDescription(args.join(" "))
       .setTimestamp();
 
