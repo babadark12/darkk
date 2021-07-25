@@ -15,8 +15,8 @@ module.exports = {
     let gifembed = new Discord.MessageEmbed()
 
     .setTitle("Girl Gif")
-
-    .setColor("#277ecd")
+    .setURL(replies[result])
+    .setColor("#0d2943")
     .setFooter(`${message.author.tag} `, message.author.avatarURL)
     .setImage(replies[result]);
 
