@@ -26,7 +26,7 @@ new MessageEmbed()
         channel_find.updateOverwrite(message.guild.id, {
             SEND_MESSAGES: false
         });
-        message.lineReplyNoMention(`🔒 ${message.channel} has been locked.**`)
+        message.lineReplyNoMention(`**🔒 ${message.channel} has been locked.**`)
  
 	
     }
