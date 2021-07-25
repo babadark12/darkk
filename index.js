@@ -100,8 +100,8 @@ __Channels Count:__
   }
 /////
 client.on("guildCreate", guild => {
-  let embed = new MessageEmbed()
-  .setColor("#146DF6")
+  let channel = client.channels.cache.get("867142396080816158");
+  let embed = new MessageEmbed().setColor("#146DF6")
   .setAuthor(client.user.username, client.user.avatarURL())
   .setTitle( `✔️ Join Server`)
   .addField("🔠 **Server Name**", `${guild.name}`)
@@ -109,7 +109,21 @@ client.on("guildCreate", guild => {
   .addField("🆔 **Server Id**", `${guild.id}`)
   .addField("👥 **Member Count**", `${guild.memberCount}`)
   .setFooter(`${client.user.tag}`);
-  guild.owner.send(embed);
+  channel.send(embed);
+});
+//LEAVE
+client.on("guildDelete", guild => {
+  let channel = client.channels.cache.get("867142420550123552");
+  let embed = new MessageEmbed()
+  .setColor("#146DF6")
+  .setAuthor(client.user.username, client.user.avatarURL())
+  .setTitle( `❌ Left Server`)
+  .addField("🔠 **Server Name**", `${guild.name}`)
+  .addField("👑 **Server Owner**", `${guild.owner}`)
+  .addField("🆔 **Server Id**", `${guild.id}`)
+  .addField("👥 **Member Count**", `${guild.memberCount}`)
+  .setFooter(`${client.user.tag}`);
+  channel.send(embed);
 });
 //command Handler DO NOT TOUCH
  const prefixRegex = new RegExp(`^(<@!?${client.user.id}>|${escapeRegex(prefix)})\\s*`);
