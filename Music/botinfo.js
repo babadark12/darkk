@@ -1,4 +1,5 @@
-const discord = require("discord.js");
+const Discord = require("discord.js");
+const { MessageEmbed } = require("discord.js");
 const { lineReply } = require("discord-reply");
 
 module.exports = {
@@ -16,6 +17,6 @@ module.exports = {
       .addField("Bot Libary", `discord.js`)
       .setColor("#0d2943")
       .setFooter(`information about bot`);
-      message.lineReplyNoMention(gifembed).catch(console.error);
+      message.lineReplyNoMention(embed).catch(console.error);
   }
 };
