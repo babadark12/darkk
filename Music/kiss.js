@@ -16,7 +16,7 @@ module.exports = {
     .setTitle(`Kissed`)
     .setURL(data)
     .setImage(data)
-    .setColor("RANDOM")
+    .setColor("#0d2943")
     .setFooter(`${message.author.username} kisses ${target.user.username}`)
     .setTimestamp()
     
