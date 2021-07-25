@@ -15,7 +15,7 @@ module.exports = {
     //###############
     let embed = new discord.MessageEmbed()
       .addField("Timer the result", `\`${ms(time)}\``, true)
-      .setColor("RANDOM");
+      .setColor("#0d2943");
     message.channel.send(embed);
   }
 };
