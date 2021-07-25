@@ -1,5 +1,4 @@
 const { MessageEmbed } = require("discord.js");
-const db = require('quick.db');
 const { lineReply } = require("discord-reply");
 
 module.exports = {
