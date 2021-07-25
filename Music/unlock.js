@@ -14,7 +14,7 @@ module.exports = {
     async execute(message, args, client) {
 
 	if(!message.member.hasPermission("MANAGE_CHANNELS")) return message.lineReplyNoMention(new MessageEmbed()
-	.setColor("RED")
+	.setColor("#0d2943")
 	.setDescription("**You Need `MANAGE_CHANNELS` Permission To Use This Command!**")
 	.setFooter(`${message.author.tag}`, message.author.avatarURL()))
 
@@ -26,7 +26,7 @@ module.exports = {
             SEND_MESSAGES: true
         });
       message.lineReplyNoMention(new MessageEmbed()
-      .setColor("Blue")
+      .setColor("#0d2943")
       .setDescription(`**🔓 ${message.channel} has been unlocked.**`)
       .setFooter(`${message.author.tag}`, message.author.avatarURL()))
     }
