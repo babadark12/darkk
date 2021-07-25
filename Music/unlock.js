@@ -25,9 +25,6 @@ module.exports = {
         channel_find.updateOverwrite(message.guild.id, {
             SEND_MESSAGES: true
         });
-      message.lineReplyNoMention(new MessageEmbed()
-      .setColor("#0d2943")
-      .setDescription(`**🔓 ${message.channel} has been unlocked.**`)
-      .setFooter(`${message.author.tag}`, message.author.avatarURL()))
+      message.lineReplyNoMention(`**🔓 ${message.channel} has been unlocked.**`)
     }
 };
