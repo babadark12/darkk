@@ -26,10 +26,7 @@ new MessageEmbed()
         channel_find.updateOverwrite(message.guild.id, {
             SEND_MESSAGES: false
         });
-        message.lineReplyNoMention(new MessageEmbed()
-	    .setColor("#0d2943")
-	    .setDescription(`**:lock: ${message.channel} has been locked.**`)
-	    .setFooter(`${message.author.tag}`, message.author.avatarURL()))
+        message.lineReplyNoMention(`🔒 ${message.channel} has been locked.**`)
  
 	
     }
