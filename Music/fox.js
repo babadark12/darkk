@@ -14,7 +14,7 @@ module.exports = {
         const { image } = await response.json();
         message.channel.send(new Discord.MessageEmbed()
             .setColor('#0d2943')
-            .setDescription('https://randomfox.ca/')
+            .setDescription('🐶 - Fox Picture')
             .setImage(image)
         );
     }
