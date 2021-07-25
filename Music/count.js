@@ -29,6 +29,11 @@ module.exports = {
       .setColor(`#277ecd`)
       .setTitle(`Members Information`)
       .addField(`**All Members**`, Members)
+      .addField("Humans", `${humans}`)
+      .addField("Online", `${online}`)
+      .addField("offlin", `${offline}`)
+      .addField("DnD", `${dnd}`)
+      .addField("idle", `${idle}`)
       .setThumbnail(message.guild.iconURL({ dynamic: true }))
       .setAuthor(`${message.guild.name}`)
       .setTimestamp();
