@@ -22,8 +22,7 @@ if (!message.channel.guild) return;
 message.lineReplyNoMention (new MessageEmbed()
 .setAuthor(message.guild.name, message.guild.iconURL())
 .setColor("BLUE")
-.setDescription(`**${message.guild.name}** Ban List`)
-.addField("__Total Ban's Is__", `\`${bans.size}\``)
+.addField("Total Ban's Is", `\`${bans.size}\``)
 .setFooter(`${message.author.tag}`, message.author.avatarURL()))).catch(console.error);
     }
 };
