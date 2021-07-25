@@ -29,7 +29,7 @@ module.exports = {
       .setColor(`#277ecd`)
       .setTitle(`Members Information`)
       .addField(`**All Members**`, Members)
-      .addField(`Humans`, Humans)
+      .addField(`Humans`, humans)
       .addField(`Bots`, bots)
       .addField(`Online`, online)
       .addField(`offlin`, offline)
