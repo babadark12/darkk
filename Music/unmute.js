@@ -1,40 +1,22 @@
-const db = require('quick.db')
+const { Message } = require('discord.js')
 
 module.exports = {
-    name: 'unmute',
-    description: "Unmute a user.",
+  name: "unmute",
+  aliases: ["u"],
+  description: "Unmute!!",
+  usage: "Unmute <Mention Member>",
+  async execute(message, args, client) {
 
-    async execute(message, args) {
-        if (!message.member.hasPermission("MANAGE_ROLES")) {
-            return message.channel.send(
-              "You do not have permission to use this command."
-            );
-          }
-      
-          if (!message.guild.me.hasPermission("MANAGE_ROLES")) {
-            return message.channel.send("The bot does not have permission to mute.");
-          }
+    run : async(client, message, args) => {
+        const Member = message.mentions.members.first() || message.guild.members.cache.get(args[0])
 
-          const user = message.mentions.members.first();
+        if(!Member) return message.channel.send('**Member not found**')
 
-    if (!user) {
-      return message.channel.send(
-        "You are required to mention a user you wish to unmute."
-      );
+        const role = message.guild.roles.cache.find(r => r.name.toLowerCase() === 'muted');
+
+        await Member.roles.remove(role)
+
+        message.channel.send(`**${Member.displayName} is now unmuted successfully**`)
     }
-    let muterole = message.guild.roles.cache.find(x => x.name === "Muted")
-    
-    
-    if(user.roles.cache.has(muterole)) {
-      return message.channel.send("The specified user is not muted.")
-    }
-
-    user.roles.remove(muterole)
-    
-    await message.channel.send(`✅ **${message.mentions.users.first().username} unmuted from the text! 🤐**`)
-    
-    user.send(``)
-
-
-    }
+}
 }
