@@ -2,7 +2,6 @@ const Discord = require("discord.js");
 const { MessageEmbed } = require("discord.js");
 
 module.exports = {
-    module.exports = {
   name: "rps",
   aliases: ["rps"],
   description: "Show text",
