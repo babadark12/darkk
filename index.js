@@ -1,5 +1,6 @@
 const Discord = require(`discord.js`);
 const { Client, Collection, MessageEmbed,MessageAttachment } = require(`discord.js`);
+require('discord-buttons')(client);
 const { readdirSync } = require(`fs`);
 const { join } = require(`path`);
 const db = require('quick.db');
