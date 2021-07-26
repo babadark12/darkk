@@ -3,13 +3,27 @@ const { MessageButton } = require('discord-buttons')
 module.exports = {
     name: "support",
     async execute(message, args, client) {
-        let btn = new MessageButton()
-            .setLabel('Discord Developers');
-            .setStyle('url')
-            .setURL('https://discord.gg/discord-developers')
-            .setID('click_me');
+        const embed = new discord.MessageEmbed()
+     .setTitle("Do you like me?")
+     .setColor("GREEN");
 
-        await message.channel.send('Here\'s the Official Discord Developer Server Link!', btn);
+     const button1 = new buttonClient.MessageButton()
+     .setLabel("Yes")
+     .setStyle("green")
+     .setID("yes")
 
-    }
-}
+     const button2 = new buttonClient.MessageButton()
+     .setLabel("No")
+     .setStyle("red")
+     .setID("no")
+ 
+    const button3 = new buttonClient.MessageButton()
+    .setLabel("Join me on OnlyFans")
+    .setURL("https://withwin.in/dbd")
+
+     buttonClient.send(null, { channel: message.channel.id, embed, buttons: [ [button1, button2], [button3] ]})
+ }
+})
+
+buttonClient.on("yes", (inta) => inta.message.reply("Thanks, I love you :3"))
+buttonClient.on("no", (inta) => inta.message.reply("WTF, you are the worst person, i have ever seen"))
