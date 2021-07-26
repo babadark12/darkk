@@ -27,7 +27,7 @@ return;
     }
       if(!content)
     {
-      message.channel.send(`You didnt gave me an text or vc option e.g - ${prefix}serverunlock text/vc/all`);
+      message.lineReplyNoMention(`**❌ You didnt gave me an text or vc option e.g - ${prefix}serverunlock text/vc/all**`);
       return;
     }
     if (content.toLowerCase() === "text") 
