@@ -33,6 +33,3 @@ module.exports = {
      buttonClient.send(null, { channel: message.channel.id, embed, buttons: [ [button1, button2], [button3] ]})
  }
 })
-
-buttonClient.on("yes", (inta) => inta.message.reply("Thanks, I love you :3"))
-buttonClient.on("no", (inta) => inta.message.reply("WTF, you are the worst person, i have ever seen"))
