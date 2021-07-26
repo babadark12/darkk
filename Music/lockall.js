@@ -1,5 +1,6 @@
 const db = require("quick.db");
 const Discord = require("discord.js")
+const { lineReply } = require("discord-reply");
 
 module.exports = {
   name: "serverlock",
@@ -40,7 +41,7 @@ if(ch.type == "text")
   },
 ], `${message.member.id} Told to lock the server`);
 }) 
-message.channel.send(`Done i have Locked the all text Channels which are in server`)
+message.lineReplyNoMention(`Done i have Locked the all text Channels which are in server`)
 }
 if (content.toLowerCase() === "vc") 
     {
@@ -54,7 +55,7 @@ if(ch.type == "voice")
   },
 ], `${message.member.id} Told to lock the server`);
 }) 
-message.channel.send(`Done i have Locked the all voice Channels which were in server`)
+message.lineReplyNoMention(`Done i have Locked the all voice Channels which were in server`)
     }
      if (content.toLowerCase() === "all") 
     {
@@ -67,7 +68,7 @@ message.channel.send(`Done i have Locked the all voice Channels which were in se
   },
 ], `${message.member.id} Told to lock the server`);
 }) 
-message.channel.send(`Done i have Locked the all voice  AND TEXT Channels which were in server`)
+message.lineReplyNoMention(`Done i have Locked the all voice  AND TEXT Channels which were in server`)
     }
        if (content.toLowerCase() === "hide") 
     {
@@ -80,7 +81,7 @@ message.channel.send(`Done i have Locked the all voice  AND TEXT Channels which 
   },
 ], `${message.member.id} Told to lock the server`);
 }) 
-message.channel.send(`Done i have hidden the all voice  AND TEXT Channels which were in server`)
+message.lineReplyNoMention(`Done i have hidden the all voice  AND TEXT Channels which were in server`)
     }
 
 }
