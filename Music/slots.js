@@ -1,8 +1,8 @@
 const Discord = require("discord.js");
 
 module.exports = {
-  name: "anime",
-  aliases: ["Anime"],
+  name: "slots",
+  aliases: ["sl"],
   description: "Show Gif",
   usage: "Gif",
   async execute(message, args, client) {
