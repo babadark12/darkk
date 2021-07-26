@@ -26,7 +26,7 @@ module.exports = {
     }
       if(!content)
     {
-      message.channel.send(`You didnt gave me an text or vc option e.g - ${prefix}serverlock text/vc/all/hide`);
+      message.lineReplyNoMention(`**❌ You didnt gave me an text or vc option e.g - ${prefix}serverlock text/vc/all/hide**`);
       return;
     }
     if (content.toLowerCase() === "text") 
