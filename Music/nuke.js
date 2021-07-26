@@ -17,7 +17,7 @@ module.exports = {
 			const newChannel = await message.channel.clone();
 			await message.channel.delete();
 			newChannel.setPosition(position);
-      newChannel.send("Channel Nuked");
+      newChannel.send("**💥 Channel Nuked**");
 			return newChannel.send("https://media1.tenor.com/images/e275783c9a40b4551481a75a542cdc79/tenor.gif?itemid=3429833");
 		
 
