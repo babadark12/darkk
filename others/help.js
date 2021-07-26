@@ -9,7 +9,6 @@ module.exports = {
     let commands = message.client.commands.array();
      
     let helpEmbed = new MessageEmbed()
-    .setAuthor(message.author.username, message.author.displayAvatarURL)
     .setColor('#0d2943')
     .setTitle("● This Is List Of Commands to use command Type +<command>")
     .setDescription(`[Support](https://discord.gg/tdVnzJtH) - [Invite](https://discord.com/api/oauth2/authorize?client_id=868194752619773962&permissions=8&scope=bot)`)
@@ -20,6 +19,7 @@ module.exports = {
     .addField("Text", `\`textkurdish\`, \`textarabic\`, \`textenglish\`, \`textturkish\`, \`textpersian\``)
     .addField("Fun", `\`slap\`, \`hug\`, \`howgay\`,‌ \`rate\`, \`meme\`, \`cry\`, \`kiss\`, \`ascii\`, \`advice\`, \`clyde\`, \`captcha\`, \`phcomment\``)
     .addField("Backup", `\`backup-create\`, \`backup-load\`, \`backup-info\``)
+    .setFooter(`Requester > ${message.author.tag} `, message.author.avatarURL
     helpEmbed.setTimestamp();
 
     message.lineReplyNoMention(helpEmbed).catch(console.error);
