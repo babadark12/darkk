@@ -1,6 +1,4 @@
 const discord = require('discord.js'); //Define the discord.js module
-const client = new discord.Client(); //Creating discord.js client (constructor)
-require('discord-buttons')(client);
 const discordButtons = require("discord-buttons-plugin");
 const buttonClient = new discordButtons(client)
 
