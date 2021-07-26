@@ -1,6 +1,5 @@
 const Discord = require(`discord.js`);
 const { Client, Collection, MessageEmbed,MessageAttachment } = require(`discord.js`);
-require('discord-buttons')(client);
 const { readdirSync } = require(`fs`);
 const { join } = require(`path`);
 const db = require('quick.db');
@@ -14,6 +13,7 @@ client.prefix = PREFIX;
 client.queue = new Map();
 const cooldowns = new Collection();
 const escapeRegex = (str) => str.replace(/[.*+?^${}()|[\]\\]/g, `\\$&`);
+require('discord-buttons')(client);
 
 
 client.on("ready", () => {
