@@ -1,10 +1,7 @@
 const { MessageEmbed } = require('discord.js')
 const { MessageButton } = require('discord-buttons')
 module.exports = {
-  name: "sup",
-  aliases: ["Sup"],
-  description: "Show Gif",
-  usage: "Gif",
+    name: "support",
     async execute(message, args, client) {
         let btn = new MessageButton()
             .setLabel('Discord Developers');
