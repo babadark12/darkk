@@ -13,7 +13,6 @@ client.prefix = PREFIX;
 client.queue = new Map();
 const cooldowns = new Collection();
 const escapeRegex = (str) => str.replace(/[.*+?^${}()|[\]\\]/g, `\\$&`);
-require('discord-buttons')(client);
 
 
 client.on("ready", () => {
