@@ -41,7 +41,7 @@ if(ch.type == "text")
   },
 ], `${message.member.id} Told to lock the server`);
 }) 
-message.lineReplyNoMention(`Done i have Locked the all text Channels which are in server`)
+message.lineReplyNoMention(`**🔒 Done i have Locked the all text Channels which are in server**`)
 }
 if (content.toLowerCase() === "vc") 
     {
@@ -55,7 +55,7 @@ if(ch.type == "voice")
   },
 ], `${message.member.id} Told to lock the server`);
 }) 
-message.lineReplyNoMention(`Done i have Locked the all voice Channels which were in server`)
+message.lineReplyNoMention(`**🔒 Done i have Locked the all voice Channels which were in server**`)
     }
      if (content.toLowerCase() === "all") 
     {
@@ -81,7 +81,7 @@ message.lineReplyNoMention(`Done i have Locked the all voice  AND TEXT Channels 
   },
 ], `${message.member.id} Told to lock the server`);
 }) 
-message.lineReplyNoMention(`Done i have hidden the all voice  AND TEXT Channels which were in server`)
+message.lineReplyNoMention(`**🔒 Done i have hidden the all voice  AND TEXT Channels which were in server**`)
     }
 
 }
