@@ -16,17 +16,17 @@ module.exports = {
      .setTitle("Do you like me?")
      .setColor("GREEN");
 
-     const button1 = new buttonClient.MessageButton()
+     const button1 = new MessageButton()
      .setLabel("Yes")
      .setStyle("green")
      .setID("yes")
 
-     const button2 = new buttonClient.MessageButton()
+     const button2 = new MessageButton()
      .setLabel("No")
      .setStyle("red")
      .setID("no")
  
-    const button3 = new buttonClient.MessageButton()
+    const button3 = new MessageButton()
     .setLabel("Join me on OnlyFans")
     .setURL("https://withwin.in/dbd")
 
