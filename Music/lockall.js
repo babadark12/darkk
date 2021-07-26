@@ -2,7 +2,7 @@ const db = require("quick.db");
 const Discord = require("discord.js")
 
 module.exports = {
-  name: "lockall",
+  name: "serverlock",
   aliases: [],
   description: "Show text",
   usage: "",
