@@ -8,8 +8,8 @@ const { MessageButton , MessageActionRow } = require
 module.exports = {
     name: "lockall",
     cooldown: 5,
-    aliases: ["lock"],
-    usage: "lock [#channel]",
+    aliases: ["lockall"],
+    usage: "lock [all/channel]",
     category: "admin",
     description : "make everyone can't send messages is chat",
     async execute(message, args, client) {
@@ -19,12 +19,14 @@ new MessageEmbed()
 .setColor("RED")
 .setDescription("**You Need `MANAGE_CHANNELS` Permission To Use This Command!**")
 .setFooter(`${message.author.tag}`, message.author.avatarURL()))
-        if (!channel) channels_find = message.channels
+        let channel = message.mentions.channels.first();
+        let channel_find = message.guild.channels.cache.find(ch => ch.id == channel);
+        if (!channel) channel_find = message.channel
         if (!channel_find) return;
         channels_find.updateOverwrite(message.guild.id, {
             SEND_MESSAGES: false
         });
-        message.lineReplyNoMention(`**🔒 All Channel Locked**`)
+        message.lineReplyNoMention(`**🔒 ${message.channel} has been locked.**`)
  
 	
     }
