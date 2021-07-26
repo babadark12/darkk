@@ -40,7 +40,7 @@ if(ch.type == "text")
   },
 ], `${message.member.id} Told to unlock the server`);
 }) 
-message.channel.send(`Done i have unLocked the all text Channels which are in server`)
+message.lineReplyNoMention(`Done i have unLocked the all text Channels which are in server`)
 }
 if (content.toLowerCase() === "vc") 
     {
@@ -54,7 +54,7 @@ if(ch.type == "voice")
   },
 ], `${message.member.id} Told to lock the server`);
 }) 
-message.channel.send(`Done i have unLocked the all voice Channels which were in server`)
+message.lineReplyNoMention(`Done i have unLocked the all voice Channels which were in server`)
     }
     if (content.toLowerCase() === "all") 
     {
@@ -67,7 +67,7 @@ message.channel.send(`Done i have unLocked the all voice Channels which were in 
   },
 ], `${message.member.id} Told to lock the server`);
 }) 
-message.channel.send(`Done i have unLocked the all voice  AND TEXT Channels which were in server`)
+message.lineReplyNoMention(`Done i have unLocked the all voice  AND TEXT Channels which were in server`)
     }
       if (content.toLowerCase() === "unhide") 
     {
@@ -80,7 +80,7 @@ message.channel.send(`Done i have unLocked the all voice  AND TEXT Channels whic
   },
 ], `${message.member.id} Told to lock the server`);
 }) 
-message.channel.send(`Done i have unhidden the all voice  AND TEXT Channels which were in server`)
+message.lineReplyNoMention(`Done i have unhidden the all voice  AND TEXT Channels which were in server`)
     }
 }
 }
