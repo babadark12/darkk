@@ -19,7 +19,7 @@ module.exports = {
     .addField("Text", `\`textkurdish\`, \`textarabic\`, \`textenglish\`, \`textturkish\`, \`textpersian\``)
     .addField("Fun", `\`slap\`, \`hug\`, \`howgay\`,‌ \`rate\`, \`meme\`, \`cry\`, \`kiss\`, \`ascii\`, \`advice\`, \`clyde\`, \`captcha\`, \`phcomment\``)
     .addField("Backup", `\`backup-create\`, \`backup-load\`, \`backup-info\``)
-    .setFooter(`${message.author.tag} `, message.author.avatarURL
+    .setFooter(`${message.author.tag} `, message.author.avatarURL)
     helpEmbed.setTimestamp();
 
     message.lineReplyNoMention(helpEmbed).catch(console.error);
