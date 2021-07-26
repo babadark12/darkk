@@ -1,4 +1,5 @@
 const discord = require("discord.js");
+const { lineReply } = require("discord-reply");
 
 module.exports = {
   name: "vkick",
@@ -21,6 +22,6 @@ module.exports = {
 
     message.mentions.members.first().voice.kick();
     
-    message.channel.send(`User Has Been Kicked From Voice Channel!`)
+    message.lineReplyNoMention(`User Has Been Kicked From Voice Channel`)
   }
 };
