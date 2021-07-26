@@ -1,5 +1,6 @@
 const Discord = require(`discord.js`);
 const { Client, Collection, MessageEmbed,MessageAttachment } = require(`discord.js`);
+const buttonClient = new discordButtons(client)
 const { readdirSync } = require(`fs`);
 const { join } = require(`path`);
 const db = require('quick.db');
@@ -72,6 +73,30 @@ client.on(`message`, async (message) => {
     //send the Message
     message.channel.send(embed)
   }
+////////
+client.on("message", (message) => {
+    if(message.content === "+button") {
+     const embed = new discord.MessageEmbed()
+     .setTitle("Do you like me?")
+     .setColor("GREEN");
+
+     const button1 = new buttonClient.MessageButton()
+     .setLabel("Yes")
+     .setStyle("green")
+     .setID("yes")
+
+     const button2 = new buttonClient.MessageButton()
+     .setLabel("No")
+     .setStyle("red")
+     .setID("no")
+ 
+    const button3 = new buttonClient.MessageButton()
+    .setLabel("Join me on OnlyFans")
+    .setURL("https://withwin.in/dbd")
+
+     buttonClient.send(null, { channel: message.channel.id, embed, buttons: [ [button1, button2], [button3] ]})
+ }
+})
 ////////
 if(message.content.startsWith(`${prefix}status`)){
     //define saymsg
