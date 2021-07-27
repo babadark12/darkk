@@ -1,4 +1,5 @@
 const { MessageEmbed } = require('discord.js');
+const { lineReply } = require("discord-reply");
 
 module.exports = {
         name: "channelinfo",
@@ -20,6 +21,6 @@ module.exports = {
             .addField("**Channel Description**", `${channel.topic || "No Description"}`)
             .addField("**Channel Created At**", channel.createdAt)
             .setColor("#0d2943")
-        message.channel.send(channelembed);
+        message.lineReplyNoMention(channelembed);
     }
 }
