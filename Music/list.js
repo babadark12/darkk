@@ -1,4 +1,5 @@
 const { RichEmbed } = require("discord.js");
+const { lineReply } = require("discord-reply");
 
 module.exports = {
   name: "emojilist",
@@ -15,7 +16,7 @@ module.exports = {
         });
         if (!animated[0]) animated = ['None'];
         if (!notAnimated[0]) notAnimated = ['None'];
-        message.channel.send('**__ANIMATED  :__**\n' + animated.join(' ') + '\n**__NORMAL:__**\n' + notAnimated.join(' '), {split:true});
+        message.lineReplyNoMention('**__ANIMATED  :__**\n' + animated.join(' ') + '\n**__NORMAL:__**\n' + notAnimated.join(' '), {split:true});
       } catch (err) {
         message.channel.send('Their was an error!\n' + err).catch();
       }
