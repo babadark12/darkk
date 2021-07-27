@@ -1,4 +1,5 @@
 const { MessageEmbed } = require("discord.js");
+const { lineReply } = require("discord-reply");
 
 //By Legendary Keker
 
@@ -37,7 +38,7 @@ async  execute(message, args) {
         .addField(`Animated :`, Animated ? "Yes" : "No", true)
         .addField(`Link :`, `[Click Me](${Link})`)
 
-        return message.channel.send(Embed);
+        return message.lineReplyNoMention(Embed);
 
         //End
 
