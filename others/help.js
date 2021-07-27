@@ -16,10 +16,10 @@ module.exports = {
     .addField("Music", `\`filter\`, \`loop\`, \`lyrics\`, \`np\`, \`pause\`, \`play\`, \`queue\`, \`radio\`, \`remove\`, \`resume\`, \`search\`, \`shuffle\`, \`skip\`, \`skipto\`, \`stop\`, \`volume\``)
     .addField("Moderation", `\`lock\`, \`unlock\`, \`ban\`, \`unban\`, \`count\`, \`emojiinfo\`, \`se\`, \`bans\`, \`embed\`, \`vkick\`, \`clear\`, \`emojilist\`, \`kick\`, \`warn\`, \`botlist\`, \`cinvite\`, \`channelinfo\`, \`roleinfo\`, \`timelock\`, \`tempban\`, \`serverlock\`, \`serverunlock\`, \`nuke\``)
     .addField("Gif & Picture", `\`boy\`, \`girl\`, ‌\`couple\`, \`anime\`, \`emoji\`, \`animal\`, \`neon\`, \`picboy\`, \`picgirl\`, \`picanimal\`, \`picemoji\`, \`picbaby\``)
+    .addField("Fun & Games", `\`slap\`, \`hug\`, \`howgay\`,‌ \`rate\`, \`meme\`, \`cry\`, \`kiss\`, \`ascii\`, \`advice\`, \`clyde\`, \`captcha\`, \`phcomment\`, \`dicksize\`, \`cuddle\`, \`joke\`, \`poke\`, \`rps\``)
     .addField("Text", `\`textkurdish\`, \`textarabic\`, \`textenglish\`, \`textturkish\`, \`textpersian\``)
-    .addField("Fun", `\`slap\`, \`hug\`, \`howgay\`,‌ \`rate\`, \`meme\`, \`cry\`, \`kiss\`, \`ascii\`, \`advice\`, \`clyde\`, \`captcha\`, \`phcomment\`, \`dicksize\`, \`cuddle\`, \`joke\`, \`poke\``)
     .addField("Backup", `\`backup-create\`, \`backup-load\`, \`backup-info\``)
-    .setFooter(`${message.author.tag} `, message.author.avatarURL)
+    .setFooter(`${message.author.tag}`, message.author.avatarURL)
     helpEmbed.setTimestamp();
 
     message.lineReplyNoMention(helpEmbed).catch(console.error);
