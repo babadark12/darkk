@@ -1,5 +1,6 @@
 const Discord = require('discord.js');
 const fetch = require('node-fetch');
+const { lineReply } = require("discord-reply");
 
 module.exports = {
         name: "clyde",
@@ -21,7 +22,7 @@ module.exports = {
             let res = await fetch(encodeURI(`https://nekobot.xyz/api/imagegen?type=clyde&text=${text}`));
             let json = await res.json();
             let attachment = new Discord.MessageAttachment(json.message, "clyde.png");
-            message.channel.send(attachment);
+            message.lineReplyNoMention(attachment);
             m.delete({ timeout: 5000 });
         } catch (e) {
             m.edit(e.message);
