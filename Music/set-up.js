@@ -19,16 +19,6 @@ message.guild.channels.create("Akeno - Requests", {
           }, ],
         })
 .then((channel1) => {
-          try {
-            //set the maximumbitrate limit
-            let maxbitrate = 96000;
-            //get the boosts amount
-            let boosts = message.guild.premiumSubscriptionCount;
-            //change the bitrate limit regarding too boost level from https://support.discord.com/hc/de/articles/360028038352-Server-Boosting-
-            if (boosts >= 2) maxbitrate = 128000;
-            if (boosts >= 15) maxbitrate = 256000;
-            if (boosts >= 30) maxbitrate = 384000;
-
 message.guild.channels.create(`🎧｜Akeno`, {
                 type: 'voice', //voice Channel
                 bitrate: maxbitrate, //set the bitrate to the maximum possible
