@@ -1,5 +1,6 @@
 const fs = require("fs");
 const Discord = require("discord.js");
+const { lineReply } = require("discord-reply");
 
 module.exports = {
   name: "invites",
@@ -34,7 +35,7 @@ module.exports = {
                 .setFooter(`${message.author.username}#${message.author.discriminator}`, message.member.user.displayAvatarURL({ dynamic: true }))
                 .addField("**No. Invited Persons**", index)
                 .addField("Invitation Codes\n\n", content);
-            message.channel.send(embed);
+            message.lineReplyNoMention(embed);
         } catch (e) {
             return message.channel.send(e.message)
         }
