@@ -1,4 +1,5 @@
 const Discord = require("discord.js");
+const { lineReply } = require("discord-reply");
 
 module.exports = {
   name: "slots",
@@ -67,6 +68,6 @@ module.exports = {
 	        .setColor("RANDOM")
 	        .setDescription(`**[ :slot_machine: ${message.author} launched the slot machine! :slot_machine: ]**`)
 	        .addField(`${reponse} \n \n${reponse2}**<** \n \n${reponse3}`, `** **`)
-	    message.channel.send(embed)
+	    message.lineReplyNoMention(embed)
 	}
 }
