@@ -7,8 +7,6 @@ module.exports = {
   usage: "Gif",
   async execute(message, args, client) {
 
-try {
-
 const iq = Math.floor(Math.random() * 226);
 const embed = new Discord.MessageEmbed()
   .setTitle(":brain: IQ Test:")
