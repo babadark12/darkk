@@ -20,6 +20,15 @@ message.guild.channels.create('akeno | request', {
     },
   ],
 })
+message.guild.channels.create('akeno-music', {
+  type: 'text',
+  permissionOverwrites: [
+     {
+       id: message.guild.roles.everyone.id,
+       deny: ['VIEW_CHANNEL'],
+    },
+  ],
+})
 message.reply("Done setup");
   }
 }
