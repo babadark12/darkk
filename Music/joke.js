@@ -1,5 +1,6 @@
 const superagent = require('superagent');
 const Discord = require('discord.js');
+const { lineReply } = require("discord-reply");
 
 module.exports = {
   name: "joke",
@@ -16,7 +17,7 @@ module.exports = {
         .setTitle("Joke")
         .setDescription(response.body.joke)
         .setColor("#0d2943");
-        message.channel.send(jEmbed);
+        message.lineReplyNoMention(Embed);
 		})
     }
 }
