@@ -16,7 +16,7 @@ module.exports = {
     .addField("🎶 Music", `\`filter\`, \`loop\`, \`lyrics\`, \`np\`, \`pause\`, \`play\`, \`queue\`, \`radio\`, \`remove\`, \`resume\`, \`search\`, \`shuffle\`, \`skip\`, \`skipto\`, \`stop\`, \`volume\``)
     .addField("🛠️ Moderation", `\`lock\`, \`unlock\`, \`ban\`, \`unban\`, \`count\`, \`emojiinfo\`, \`se\`, \`bans\`, \`embed\`, \`vkick\`, \`clear\`, \`emojilist\`, \`kick\`, \`warn\`, \`botlist\`, \`cinvite\`, \`channelinfo\`, \`roleinfo\`, \`timelock\`, \`tempban\`, \`serverlock\`, \`serverunlock\`, \`nuke\``)
     .addField("😅 Fun", `\`slap\`, \`hug\`, \`howgay\`,‌ \`meme\`, \`cry\`, \`kiss\`, \`clyde\`, \`captcha\`, \`phcomment\`, \`cuddle\`, \`joke\`, \`poke\``)
-    .addField("🎮 Game", `\`rps\`, \`slots\`, \`ascii\`, \`advice\`, \`dickize\`, \`rate\``)
+    .addField("🎮 Game", `\`rps\`, \`slots\`, \`ascii\`, \`advice\`, \`dickize\`, \`rate\`, \`iq\`, \`hack\``)
     .addField("❄️ Gif", `\`boy\`, \`girl\`, ‌\`couple\`, \`anime\`, \`emoji\`, \`animal\`, \`neon\``)
     .addField("✒️ Text", `\`textkurdish\`, \`textarabic\`, \`textenglish\`, \`textturkish\`, \`textpersian\``)
     .addField("🎟️ Backup", `\`backup-create\`, \`backup-load\`, \`backup-info\``)
