@@ -1,5 +1,6 @@
 const { MessageEmbed } = require("discord.js");
 const fetch = require("node-fetch");
+const { lineReply } = require("discord-reply");
 
 module.exports = {
   name: "slap",
@@ -20,6 +21,6 @@ module.exports = {
       .setImage(`${data.url}`)
       .setTimestamp();
 
-    message.channel.send({ embed });
+    message.lineReplyNoMention({ embed });
   },
 };
