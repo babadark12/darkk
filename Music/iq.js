@@ -6,6 +6,7 @@ module.exports = {
   description: "Show Gif",
   usage: "Gif",
   async execute(message, args, client) {
+try {
 
 const iq = Math.floor(Math.random() * 226);
 const embed = new Discord.MessageEmbed()
