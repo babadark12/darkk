@@ -59,8 +59,7 @@ message.guild.channels.create(`🎧｜Akeno`, {
                     .then(async (channel3) => {
                       message.reply(`Setting up in <#${channel3.id}>`)
                       let embed1 = new MessageEmbed()
-                        .setColor(ee.color)
-                        .setFooter(ee.footertext, ee.footericon)
+                        .setColor("#0d2943")              
                         .setTitle("Akeno | Request | Guide")
                         .setDescription(`Enter the song name or URL to play a song\n\nYou can also type \`+command <Parameters>\``)
                         .addField(`Commands`, `help to view part of commands`)
@@ -86,7 +85,7 @@ message.guild.channels.create(`🎧｜Akeno`, {
                           //save it in the database
                           client.setups.set(message.guild.id, msg.id, "message_queue_info");
                           //send an message again
-                          channel3.send(new MessageEmbed().setColor(ee.color).setDescription("Setting Up..")).then(async msg => {
+                          channel3.send(new MessageEmbed().setColor("#0d2943").setDescription("Setting Up..")).then(async msg => {
                             //edit the message
                             msg.edit(embed3)
   }
