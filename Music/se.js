@@ -1,5 +1,6 @@
 const Discord = require("discord.js");
 const { MessageEmbed } = require("discord.js");
+const { lineReply } = require("discord-reply");
 
 module.exports = {
   name: "se",
@@ -20,9 +21,9 @@ module.exports = {
       const Added = new MessageEmbed()
         .setTitle("Emoji Converter")
         .setColor("#0d2943")
-        .addField('Link', `[Click Me](${Link})`)
+        .addField('📎 • Link', `[Click Me](${Link})`)
         .setImage(Link);
-      return message.channel.send(Added);
+      return message.lineReplyNoMention(Added);
     } else {
       let CheckEmoji = (emoji, { assetType: "png" });
       if (!CheckEmoji[0])
