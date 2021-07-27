@@ -1,5 +1,6 @@
 const Discord = require("discord.js");
 const { MessageEmbed } = require("discord.js");
+const { lineReply } = require("discord-reply");
 
 module.exports = {
   name: "boy",
@@ -20,7 +21,7 @@ module.exports = {
     .setFooter(`${message.author.tag} `, message.author.avatarURL)
     .setImage(replies[result]);
 
-    message.channel.send(gifembed);
+    message.lineReplyNoMention(gifembed);
 
    
   }
