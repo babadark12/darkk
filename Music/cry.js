@@ -1,6 +1,7 @@
 const discord = require("discord.js");
 const { Random } = require("something-random-on-discord");
 const random = new Random();
+const { lineReply } = require("discord-reply");
 
 module.exports = {
   name: "cry",
@@ -16,6 +17,6 @@ module.exports = {
     .setFooter(`Please talk with ${message.author.username} they are crying`)
     .setTimestamp()
     
-    message.channel.send(embed);
+    message.lineReplyNoMention(embed);
   }
 };
