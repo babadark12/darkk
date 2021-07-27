@@ -1,5 +1,6 @@
 const Discord = module.require("discord.js");
 const ms = require("ms"); //Make sure to install ms package
+const { lineReply } = require("discord-reply");
 
 module.exports = {
     name: "timelock",
@@ -23,7 +24,7 @@ category: "admin",
                deny : ['SEND_MESSAGES'],
             },
            ],);
-           message.channel.send(`🔒 ${message.channel} has been placed under lockdown for \`${time}\``)
+           message.lineReplyNoMention(`🔒 ${message.channel} has been placed under lockdown for \`${time}\``)
 
            setTimeout(function(){
            message.channel.overwritePermissions([
@@ -32,7 +33,7 @@ category: "admin",
                null: ['SEND_MESSAGES'],
                },
             ],);
-           message.channel.send(`🔓 Locked has been lifted in ${message.channel}`)
+           message.lineReplyNoMention(`🔓 Locked has been lifted in ${message.channel}`)
         }, ms(time));
         message.delete();
     }
