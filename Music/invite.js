@@ -1,5 +1,6 @@
 const Discord = require("discord.js");
 const db = require("quick.db");
+const { lineReply } = require("discord-reply");
 
 module.exports = {
   name: "invite",
@@ -19,8 +20,7 @@ module.exports = {
       .addField("Support Server", `[Click Me](https://discord.gg/z5c3uBdU)`)
       .addField("Owner", `@MrRobot#7265 | <@690934381597949955>`)
       .setImage("");
-    return message.channel
-      .send(Embed)
+    return message.lineReplyNoMention(Embed)
       .catch(() => message.channel.send("Invite Link - " + Invite))
       .then(m => m.delete({ timeout: 44000 }).catch(e => {}));
   }
