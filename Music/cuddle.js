@@ -1,5 +1,6 @@
 const Discord = require("discord.js");
 const superagent = require("snekfetch");
+const { lineReply } = require("discord-reply");
 
 module.exports = {
   name: "cuddle",
@@ -24,7 +25,7 @@ module.exports = {
               .setDescription((user.toString() + " got a cuddle from " + message.author.toString()))
               .setFooter(`this is so cute`)
               .setURL(response.body.url);
-          message.channel.send(embed);
+          message.lineReplyNoMention(embed);
             }).catch((err) => message.channel.send({embed: {
                 color: 16734039,
                 description: "Something went wrong... :cry:"
