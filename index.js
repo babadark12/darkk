@@ -72,6 +72,18 @@ client.on(`message`, async (message) => {
     //send the Message
     message.channel.send(embed)
   }
+////////code guildcreate
+ client.on("guildCreate", guild => {
+  let embed = new MessageEmbed()
+.setColor("#0d2943")
+  .setAuthor(client.user.username, client.user.avatarURL())
+  .setTitle(`Hello Im Akeno Bot`)
+  .setDescription(`Thx For Invite Me To Your Server: ${guild.name} To View List Of Command Type +help`)
+  .addField("Info", `To View List of Commands Type +help`)
+  .addField("LInks", `To Get links Type +invite`)
+  guild.owner.send(embed);
+});
+
 ////////
 if(message.content.startsWith(`${prefix}status`)){
     //define saymsg
