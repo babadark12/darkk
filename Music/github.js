@@ -2,6 +2,7 @@ const { Discord, discord } = require("discord.js");
 const { MessageEmbed } = require("discord.js");
 const moment = require("moment");
 const fetch = require("node-fetch")
+const { lineReply } = require("discord-reply");
 
 module.exports = {
     name: "github",
@@ -35,7 +36,7 @@ module.exports = {
             .addField(`Account Created`, moment.utc(created_at).format("dddd, MMMM, Do YYYY"))
             .setFooter(`Tysm For Using Me! ${message.author.username}`)
 
-            message.channel.send(embed)
+            message.lineReplyNoMention(embed)
 
     })
 
