@@ -1,4 +1,5 @@
 const discord = require('discord.js');
+const { lineReply } = require("discord-reply");
 
 module.exports = {
   name: "rps",
@@ -9,7 +10,7 @@ module.exports = {
         .setTitle("RPS GAME")
         .setDescription("React to play!")
         .setTimestamp()
-        let msg = await message.channel.send(embed)
+        let msg = await message.lineReplyNoMention(embed)
         await msg.react("🗿")
         await msg.react("✂")
         await msg.react("📜")
