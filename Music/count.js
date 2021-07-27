@@ -1,4 +1,5 @@
 const { MessageEmbed } = require("discord.js");
+const { lineReply } = require("discord-reply");
 
 module.exports = {
   name: "membercount",
@@ -28,11 +29,11 @@ module.exports = {
     const embed = new MessageEmbed()
       .setColor(`#0d2943`)
       .setTitle(`Members Information`)
-      .addField(`**All Members**`, Members)
+      .addField(`**Total Members**`, Members)
       .setThumbnail(message.guild.iconURL({ dynamic: true }))
       .setAuthor(`${message.guild.name}`)
       .setTimestamp();
 
-    message.channel.send(embed);
+    message.lineReplyNoMention(embed);
   }
 };
