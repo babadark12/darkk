@@ -1,4 +1,5 @@
 const { MessageEmbed } = require("discord.js");
+const { lineReply } = require("discord-reply");
 
 module.exports = {
   name: "botlist",
@@ -23,6 +24,6 @@ module.exports = {
       .setDescription(allbots)
       .setFooter(client.user.tag, client.user.displayAvatarURL())
       .setTimestamp();
-    message.channel.send(embed);
+    message.lineReplyNoMention(embed);
   }
 };
