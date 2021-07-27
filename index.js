@@ -78,7 +78,7 @@ client.on(`message`, async (message) => {
 .setColor("#0d2943")
   .setAuthor(client.user.username, client.user.avatarURL())
   .setTitle(`Hello Im Akeno Bot`)
-  .setDescription(`Thx For Invite Me To Your Server: ${guild.name} To View List Of Command Type +help`)
+  .setDescription(`Thx For Invite Me To Your Server`)
   .addField("Info", `To View List of Commands Type +help`)
   .addField("LInks", `To Get links Type +invite`)
   guild.owner.send(embed);
