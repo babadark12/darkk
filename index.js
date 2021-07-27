@@ -72,23 +72,13 @@ client.on(`message`, async (message) => {
     //send the Message
     message.channel.send(embed)
   }
-////////code guildcreate
- client.on("guildCreate", guild => {
-  let embed = new MessageEmbed()
-.setColor("#0d2943")
-  .setAuthor(client.user.username, client.user.avatarURL())
-  .setTitle(`Hello Im Akeno Bot`)
-  .setDescription(`Thx For Invite Me To Your Server`)
-  guild.owner.send(embed);
-});
-
 ////////
 if(message.content.startsWith(`${prefix}status`)){
     //define saymsg
     const saymsg = message.content.slice(Number(prefix.length) + 5)
     //define embed
     const embed = new Discord.MessageEmbed()
-    .setColor("#FFF712")
+    .setColor("#0d2943")
     .setAuthor("")
     .setThumbnail(` `)
     .setFooter(message.author.username, message.author.displayAvatarURL)
