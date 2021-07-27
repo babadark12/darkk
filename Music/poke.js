@@ -1,5 +1,6 @@
 const Discord = require("discord.js");
 const superagent = require("snekfetch");
+const { lineReply } = require("discord-reply");
 
 module.exports = {
   name: "poke",
@@ -29,7 +30,7 @@ module.exports = {
               .setDescription((user.toString() + " got poked by " + message.author.toString()))
               .setFooter(`rip`)
               .setURL(response.body.url);
-          message.channel.send(embed);
+          message.lineReplyNoMention(embed);
             }).catch((err) => message.channel.send({embed: {
                 color: 16734039,
                 description: "Something went wrong... :cry:"
