@@ -1,8 +1,8 @@
 const discord = require("discord.js");
 
 module.exports = {
-  name: "vkick all",
-  aliases: ["vkick all"],
+  name: "vkick-all",
+  aliases: ["vkick-all"],
   description: "Show Gif",
   usage: "vkick all",
   async execute(message, args, client) {
