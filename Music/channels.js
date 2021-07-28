@@ -1,4 +1,5 @@
 const { MessageEmbed } = require("discord.js");
+const { lineReply } = require("discord-reply");
 
 module.exports = {
   name: "channels",
@@ -19,6 +20,6 @@ module.exports = {
             .setTimestamp();
 
 
-        message.channel.send(embed);
+        message.lineReplyNoMention(embed);
     }
 };
