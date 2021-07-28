@@ -1,4 +1,5 @@
 const Discord = require('discord.js');
+const { lineReply } = require("discord-reply");
 
 module.exports = {
   name: "nick",
@@ -14,32 +15,32 @@ module.exports = {
     let nickname = args[1];
 
     if(!message.member.hasPermission(perms)) 
-    return message.reply(`❌ You do not have the permission to do that lol try asking a staff to give you the permission **\`MANAGE_NICKNAMES\`** or **\`ADMINISTRATOR\`**`)
+    return message.lineReplyNoMention(`❌ You do not have the permission to do that lol try asking a staff to give you the permission **\`MANAGE_NICKNAMES\`** or **\`ADMINISTRATOR\`**`)
     .then(msg => {
       msg.delete({ timeout: 20000 })
     });
 
     if(!doggo.hasPermission(perms))
-    return message.reply(`❌ I do not have permission to ban users pls enable permission **\`MANAGE_NICKNAMES\`** for me`);
+    return message.lineReplyNoMention(`❌ I do not have permission to ban users pls enable permission **\`MANAGE_NICKNAMES\`** for me`);
 
     if(!user)
-    return message.reply(`❌ Please mention or provide the ID of the user from this guild !! **\`+nickname [Mention or ID] [The Nickname]\`**`)
+    return message.lineReplyNoMention(`❌ Please mention or provide the ID of the user from this guild !! **\`+nickname [Mention or ID] [The Nickname]\`**`)
 
     if (!args[1]) 
-    return message.reply(`❌ Please provide a nickname !!`);
+    return message.lineReplyNoMention(`❌ Please provide a nickname !!`);
 
     if (nickname.startsWith('"')) {
     nickname = message.content.slice(message.content.indexOf(args[1]) + 1);
 
     if (!nickname.includes('"')) 
-    return message.reply(`❌Please ensure the nickname is surrounded in quotes ""`);
+    return message.lineReplyNoMention(`❌Please ensure the nickname is surrounded in quotes ""`);
 
     if (user.roles.highest.position > message.member.roles.highest.position)
-    return message.reply(`❌ You cannot ban someone with an equal or higher role to you !!! or if you are owner pls be yourself in a higher position`)
+    return message.lineReplyNoMention(`❌ You cannot ban someone with an equal or higher role to you !!! or if you are owner pls be yourself in a higher position`)
     
     
     if (user.roles.highest.position > doggo.roles.highest.position)
-    return message.reply(`❌ You cannot ban someone with an equal or higher role than me !!`)
+    return message.lineReplyNoMention(`❌ You cannot ban someone with an equal or higher role than me !!`)
 
     nickname = nickname.slice(0, nickname.indexOf('"'));
     if (!nickname.replace(/\s/g, '').length)
@@ -47,7 +48,7 @@ module.exports = {
     }
 
     if (nickname.length > 32) {
-    return message.reply(`❌ Provided nickname is too big pls provide a nickname which is lesser than 32 characters !!`);
+    return message.lineReplyNoMention(`❌ Provided nickname is too big pls provide a nickname which is lesser than 32 characters !!`);
 
 
     } else {
@@ -77,10 +78,10 @@ module.exports = {
           .setFooter(message.member.displayName,  message.author.displayAvatarURL({ dynamic: true }))
           .setTimestamp()
           .setColor("#0d2943");
-        await message.channel.send(embed);
+        await message.lineReplyNoMention(embed);
       
       } catch (err) {
-        message.reply(`❌ Please check the role position !!`, err.message);
+        message.lineReplyNoMention(`❌ Please check the role position !!`, err.message);
       }
     }  
   }
