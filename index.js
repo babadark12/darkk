@@ -85,8 +85,9 @@ client.on("guildCreate", guild => {
   .setFooter(`${client.user.tag}`);
   channel.send(embed);
 });
+/////invite
 
-
+////leave
 client.on("guildDelete", guild => {
   let channel = client.channels.cache.get("870000756168732742");
   let embed = new MessageEmbed()
@@ -100,6 +101,8 @@ client.on("guildDelete", guild => {
   .setFooter(`${client.user.tag}`);
   channel.send(embed);
 });
+////
+
 //command Handler DO NOT TOUCH
  const prefixRegex = new RegExp(`^(<@!?${client.user.id}>|${escapeRegex(prefix)})\\s*`);
  if (!prefixRegex.test(message.content)) return;
