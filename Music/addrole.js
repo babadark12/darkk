@@ -1,6 +1,4 @@
 const Discord = require('discord.js');
-const emoji = require('../../Utils/emoji.json');
-const config = require('../../config.json');
 
 module.exports = {
     name: "addrole",
