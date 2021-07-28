@@ -1,4 +1,5 @@
 const Discord = require('discord.js');
+const { lineReply } = require("discord-reply");
 
 module.exports = {
     name: "rmvrole",
@@ -19,28 +20,28 @@ module.exports = {
         if (reason.length > 1024) reason = reason.slice(0, 1021) + '...';
 
         if(!message.member.hasPermission(perms)) 
-        return message.reply(`❌ You do not have the permission to do that lol try asking a staff to give you the permission **\`MANAGE_ROLES\`** or **\`ADMINISTRATOR\`**`)
+        return message.lineReplyNoMention(`❌ You do not have the permission to do that lol try asking a staff to give you the permission **\`MANAGE_ROLES\`** or **\`ADMINISTRATOR\`**`)
         .then(msg => {
             msg.delete({ timeout: 20000 })
         });
 
         if(!doggo.hasPermission(perms))
-        return message.reply(`❌ I do not have permission to addrole pls enable permission **\`MANAGE_ROLES\`** or **\`ADMINSTRATOR\`** for me`)
+        return message.lineReplyNoMention(`❌ I do not have permission to addrole pls enable permission **\`MANAGE_ROLES\`** or **\`ADMINSTRATOR\`** for me`)
 
         if (!user)
-        return message.reply(`❌ Please specify someone you want to remove the role!! **\`+removerole [User] [Role Mention or Role ID]\`**`)
+        return message.lineReplyNoMention(`❌ Please specify someone you want to remove the role!! **\`+removerole [User] [Role Mention or Role ID]\`**`)
 
         if (!role)
-        return message.reply(`❌ Please mention a role or provide a valid role ID`);
+        return message.lineReplyNoMention(`❌ Please mention a role or provide a valid role ID`);
 
         if (user.roles.highest.position >= message.member.roles.highest.position)
-        return message.reply(`❌ You cannot give a remove a role from someone who is higher or equal to your role`)
+        return message.lineReplyNoMention(`❌ You cannot give a remove a role from someone who is higher or equal to your role`)
 
         if (user.roles.highest.position >= doggo.roles.highest.position)
-        return message.reply(`❌ I cannot remove a role from someone who is higher or equal to my role`)
+        return message.lineReplyNoMention(`❌ I cannot remove a role from someone who is higher or equal to my role`)
 
         else if (!user.roles.cache.has(role.id))
-        return message.reply(`❌ User does not have the provided role`);
+        return message.lineReplyNoMention(`❌ User does not have the provided role`);
 
         else {
             try {
@@ -57,10 +58,10 @@ module.exports = {
                 .setFooter(message.member.displayName,  message.author.displayAvatarURL({ dynamic: true }))
                 .setTimestamp()
                 .setColor("#0d2943");
-              await message.channel.send(embed);
+              await message.lineReplyNoMention(embed);
       
             } catch (err) {
-              return message.reply(`❌ Please check the role hierarchy !!!`, err.message);
+              return message.lineReplyNoMention(`❌ Please check the role hierarchy !!!`, err.message);
             }
         }  
     }
