@@ -1,5 +1,6 @@
 const weather = require('weather-js');
 const { MessageEmbed } = require('discord.js');
+const { lineReply } = require("discord-reply");
 
 module.exports = {
         name: "weather",
@@ -39,7 +40,7 @@ module.exports = {
                 .setFooter(message.member.displayName, message.author.displayAvatarURL())
                 .setTimestamp()
 
-            message.channel.send({embed})
+            message.lineReplyNoMention({embed})
 
         });
     }
