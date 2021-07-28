@@ -33,7 +33,7 @@ async execute(message, args, client) {
     if (!args.length)
       return attentionembed(message, `Usage: ${message.client.prefix}play <YouTube URL | Video Name | Soundcloud URL>`);
     //react with approve emoji
-    message.react("<a:emoji_1:867153722931806218>").catch(console.error);
+    message.react("<a:emoji_5:869912004121473025>").catch(console.error);
     //get permissions and send error if bot doesnt have enough
     const permissions = channel.permissionsFor(message.client.user);
     if (!permissions.has("CONNECT"))
