@@ -1,60 +1,37 @@
-const Discord = require("discord.js");
+const { Client, Message, MessageEmbed} = require('discord.js');
 const { lineReply } = require("discord-reply");
 
 module.exports = {
   name: "serverinfo",
-  description: "Displays server information & statistics!",
-  category: "misc",
-  usage: "serverinfo",
-  aliases: ["stats", "serverstats", "guildinfo", "guildstats"],
+  aliases: ["sinfo"],
+  description: "Show serverinforimation",
+  usage: "server",
   async execute(message, args, client) {
-    const embed = new Discord.MessageEmbed()
-      .setAuthor(message.guild.name, message.guild.iconURL())
-      .setThumbnail(
-        message.guild.icon
-          ? message.guild.iconURL()
-          : `https://dummyimage.com/128/7289DA/FFFFFF/&text=${encodeURIComponent(
-              message.guild.nameAcronym
-            )}`
-      )
-      .setColor("#0d2943")
-      .addField(
-        "Guild Information",
-        `
-       **Server:** \`${message.guild.name} (${
-          message.guild.id
-        })\`\n**Owner:** \`${message.guild.owner.user.tag} (${
-          message.guild.owner.id
-        })\`\n\n**Member Count:** \`${
-          message.guild.memberCount
-        }\`\n\n**Emojis:** \`${
-          message.guild.emojis.cache.size
-        }\`\n\n**Channel Categories:** \`${
-          message.guild.channels.cache.filter(
-            channel => channel.type === "category"
-          ).size
-        }\`\n\n**Text Channels:** \`${
-          message.guild.channels.cache.filter(
-            channel => channel.type === "text"
-          ).size
-        }\`\n\n**Voice Channels:** \`${
-          message.guild.channels.cache.filter(
-            channel => channel.type === "voice"
-          ).size
-        }\`\n\n**AFK Timeout:** \`${message.guild.afkTimeout /
-          60} Minutes\`\n\n**AFK Channel:** \`${
-          message.guild.afkChannelID === null
-            ? "No AFK Channel"
-            : client.channels.get(message.guild.afkChannelID).name
-        }\`\n\n**Location:** \`${
-          message.guild.region
-        }\`\n\n**Created:** \`${message.guild.createdAt.toLocaleString()}\``,
-        true
-      )
-      .setImage(message.guild.splash ? message.guild.splashURL() : null)
-      .setTimestamp()
-      .setFooter(client.user.username, client.user.avatarURL);
 
-    message.lineReplyNoMention({ embed });
-  }
-};
+        const roleColor =
+        message.guild.me.displayHexColor === "#0d2943"
+          ? "#0d2943"
+          : message.guild.me.displayHexColor;
+
+        const embed = new MessageEmbed()
+        .setTimestamp()
+        .setTitle("**Server Information**")
+        .setColor(roleColor)
+        .setThumbnail(message.guild.iconURL({ dynamic: true }))
+        .addField(`🎫 Server Name:`, message.guild.name, true)
+        .addField(`🆔 Server ID`, message.guild.id, true)
+        .addField(`👑 Owner`, message.guild.owner, true)
+        .addField(`🌎 Region `, message.guild.region, true)
+        .addField(`👥 Members`, message.guild.members.cache.size, true)
+        .addField(`🤖 Bots:`, message.guild.members.cache.filter(member => member.user.bot).size, true)
+        .addField(`😗 Emojis:`, message.guild.emojis.cache.size, true)
+        .addField(`👻 Animated Emojis:`,message.guild.emojis.cache.filter(emoji => emoji.animated).size,true )
+        .addField(`💬 Total Text Channels:`, message.guild.channels.cache.filter(channel => channel.type === 'text').size, true)
+        .addField(`🎤 Total Voice Channels:`, message.guild.channels.cache.filter(channel => channel.type === 'voice').size, true)
+        .addField(`👔 Total Roles:`, message.guild.roles.cache.size, true)
+        .addField("⌚ Created at:", message.guild.createdAt, false)
+
+        .setAuthor(`${message.guild.name}`)
+        message.lineReplyNoMention(embed);
+    }
+}
