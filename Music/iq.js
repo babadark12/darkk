@@ -1,4 +1,5 @@
 const Discord = require("discord.js");
+const { lineReply } = require("discord-reply");
 
 module.exports = {
   name: "iq",
@@ -14,7 +15,7 @@ const embed = new Discord.MessageEmbed()
   .setDescription(":bulb: " + message.author.username + " IQ: `" + iq + "`")
   .setColor(`RANDOM`)
   .setTimestamp()
-message.channel.send(embed);
+message.lineReplyNoMention(embed);
 
 } catch (err) {
     message.channel.send({embed: {
