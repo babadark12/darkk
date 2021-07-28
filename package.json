@@ -23,6 +23,7 @@
     "something-random-on-discord": "^0.0.1",
     "snekfetch": "^4.0.4",
     "superagent": "^5.3.1",
+    "weather-js": "^2.0.0",
     "canvacord": "^5.1.0",
     "mal-scraper": "^2.11.3",
     "ms": "^2.1.2",
