@@ -67,30 +67,30 @@ async execute(message, args, client) {
       if (serverQueue) {
         //if its an url
         if (urlValid) { //send searching link
-          message.channel.send(new MessageEmbed().setColor("#c219d8")
-            .setDescription(`**<a:emoji_9:867154131168526358> Searching [\`LINK\`](${args.join(" ")})**`))
+          message.channel.send(new MessageEmbed().setColor("#0d2943")
+            .setDescription(`**<a:emoji_15:869913964799230022> Searching [LINK](${args.join(" ")})**`))
         //if not
         }
         else { //send searching TITLE
-          message.channel.send(new MessageEmbed().setColor("#c219d8")
-            .setDescription(`**<a:emoji_9:867154131168526358> Searching \`${args.join(" ")}\`**`))
+          message.channel.send(new MessageEmbed().setColor("#0d2943")
+            .setDescription(`**<a:emoji_15:869913964799230022> Searching \`${args.join(" ")}\`**`))
         }
       } else {
         //If nothing is playing join the channel
         queueConstruct.connection = await channel.join();
         //send join message
-        message.channel.send(new MessageEmbed().setColor("#c219d8")
-          .setDescription(`**<a:emoji_16:867154442456530994> Joined \`${channel.name}\` 📄 bound \`#${message.channel.name}\`**`)
+        message.channel.send(new MessageEmbed().setColor("#0d2943")
+          .setDescription(`**<a:emoji_2:869911935599124530> Joined \`${channel.name}\` 📄 bound \`#${message.channel.name}\`**`)
           .setFooter(`By: ${message.author.username}#${message.author.discriminator}`))
         //if its an url
         if (urlValid) { //send searching link
-          message.channel.send(new MessageEmbed().setColor("#c219d8")
-            .setDescription(`**<a:emoji_9:867154131168526358> Searching [\`LINK\`](${args.join(" ")})**`))
+          message.channel.send(new MessageEmbed().setColor("#0d2943")
+            .setDescription(`**<a:emoji_15:869913964799230022> Searching [\`LINK\`](${args.join(" ")})**`))
           //if not 
         }
         else { //send searching TITLE
-          message.channel.send(new MessageEmbed().setColor("#c219d8")
-            .setDescription(`**<a:emoji_9:867154131168526358> Searching \`${args.join(" ")}\`**`))
+          message.channel.send(new MessageEmbed().setColor("#0d2943")
+            .setDescription(`**<a:emoji_15:869913964799230022> Searching \`${args.join(" ")}\`**`))
         }
         //Set selfdeaf and serverdeaf true
         queueConstruct.connection.voice.setSelfDeaf(true);
