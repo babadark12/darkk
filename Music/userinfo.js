@@ -31,10 +31,10 @@ module.exports = {
     .addField("🧭 Created:", `${Created}`) // 7
     .addField("⌛ Joined:", `${Joined}`) // 8
 
-    .addField("📎 Avatar URLs", `[webp](${User.user.displayAvatarURL({ dynamic: true, format: 'webp'})}) | [png](${User.user.displayAvatarURL({ dynamic: true, format: 'png'})}) | [jpg](${User.user.displayAvatarURL({ dynamic: true, format: 'jpeg'})}) | [jpeg](${User.user.displayAvatarURL({ dynamic: true, format: 'jpeg'})}) | [gif](${User.user.displayAvatarURL({ dynamic: true, format: 'gif'})})`) //10
+    .addField("📎 Avatar URLs:", `[webp](${User.user.displayAvatarURL({ dynamic: true, format: 'webp'})}) | [png](${User.user.displayAvatarURL({ dynamic: true, format: 'png'})}) | [jpg](${User.user.displayAvatarURL({ dynamic: true, format: 'jpeg'})}) | [jpeg](${User.user.displayAvatarURL({ dynamic: true, format: 'jpeg'})}) | [gif](${User.user.displayAvatarURL({ dynamic: true, format: 'gif'})})`) //10
     .addField("➕ Using Discord On:", `${Place ? Place.join("\n") == "" ? "Unknown" : Place.join("\n") : "None"}`) //11
-    .addField("🔮 Activities", `${Activity.length > 1 ? "" : "Activity"}\n${Activity ? Activity.join("\n") == "" ? "None" : Activity.join("\n") : "None"}`) //11
-    .addField("🎴 Badges", `\n${Badges ? Badges : "No badges"}`) //12
+    .addField("🔮 Activities:", `${Activity.length > 1 ? "" : "Activity"}\n${Activity ? Activity.join("\n") == "" ? "None" : Activity.join("\n") : "None"}`) //11
+    .addField("🎴 Badges:", `\n${Badges ? Badges : "No badges"}`) //12
     .setThumbnail(User.user.displayAvatarURL({ size: 512, dynamic: true }))
     .setFooter(`Requested by ${message.author.tag}`, message.author.displayAvatarURL({ dynamic: true }))
     .setTimestamp();
