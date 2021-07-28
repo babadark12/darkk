@@ -33,4 +33,5 @@ module.exports = {
       if (button.id == "hello") return button.channel.send('Hello how are you?')
       if (button.id == "bye") return button.channel.send('Bye have a great time!')
 
-    })
+  }
+}
