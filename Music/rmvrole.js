@@ -1,6 +1,4 @@
 const Discord = require('discord.js');
-const emoji = require('../../Utils/emoji.json');
-const config = require('../../config.json');
 
 module.exports = {
     name: "rmvrole",
@@ -9,7 +7,7 @@ module.exports = {
     description: "Removes a role from the user",
     example: `+removerole @Dinav @Mod`,
 
-    run: async (client, message, args) => {
+    async execute(message, args, client) {
 
         const user = message.mentions.members.first() || message.guild.members.cache.get(args[0]);
         const perms = ["MANAGE_ROLES" || "ADMINSTRATOR"];
