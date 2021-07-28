@@ -73,7 +73,7 @@ client.on(`message`, async (message) => {
     message.channel.send(embed)
   }
 ////////
-if(message.content.startsWith(`${prefix}status`)){
+if(message.content.startsWith(`${prefix}bot`)){
     //define saymsg
     const saymsg = message.content.slice(Number(prefix.length) + 5)
     //define embed
