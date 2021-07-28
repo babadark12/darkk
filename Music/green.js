@@ -1,5 +1,4 @@
 const Discord = module.require("discord.js");
-const { lineReply } = require("discord-reply");
 
 module.exports = {
   name: "greentext",
@@ -11,6 +10,6 @@ module.exports = {
     if (!text) {
     return message.channel.send("You need to enter some text")
     }
-    message.lineReplyNoMention(`\`\`\`css\n${text}\n\`\`\``)
+    message.channel.send(`\`\`\`css\n${text}\n\`\`\``)
 }
 }
