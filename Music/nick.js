@@ -76,7 +76,7 @@ module.exports = {
           .addField('Reason', reason)
           .setFooter(message.member.displayName,  message.author.displayAvatarURL({ dynamic: true }))
           .setTimestamp()
-          .setColor(message.guild.me.displayHexColor);
+          .setColor("#0d2943");
         await message.channel.send(embed);
       
       } catch (err) {
