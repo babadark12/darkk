@@ -42,7 +42,7 @@ module.exports = {
             channel => channel.type === "voice"
           ).size
         }\`\n\n**AFK Timeout:** \`${message.guild.afkTimeout /
-          60} Minutes\`\n**AFK Channel:** \`${
+          60} Minutes\`\n\n**AFK Channel:** \`${
           message.guild.afkChannelID === null
             ? "No AFK Channel"
             : client.channels.get(message.guild.afkChannelID).name
