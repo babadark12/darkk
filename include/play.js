@@ -133,15 +133,15 @@ module.exports = {
 
     try {
       const newsong = new MessageEmbed()
-       .setTitle("🎶 "+song.title)
+       .setTitle(" "+song.title)
         .setURL(song.url)
-        .setColor("RANDOM")
+        .setColor("#0d2943")
         .setThumbnail(`https://cdn.discordapp.com/avatars/844069682545164289/b40e8a61cbeb7a6319b5050238a9aa03.png?size=1024`)
         .setImage(thumb)
-        .setDescription(`◈ ━━━━━━━ <a:emoji_19:867156071814266881> ━━━━━━━ ◈`)
-        .addField("<a:emoji_16:867154442456530994> Requested by:", `\`${message.author.username}#${message.author.discriminator}\``, true)
-        .addField("<a:emoji_7:867154062319419412> Length:", `\`${song.duration} Minutes\``, true)
-        .addField("<a:emoji_13:867154348916080640> Volume:", `\`100\``, true)
+        .setDescription(`◈ ━━━━━━━ <a:emoji_7:869913781013217291> ━━━━━━━ ◈`)
+        .addField("<a:emoji_2:869911935599124530> Requested by:", `\`${message.author.username}#${message.author.discriminator}\``, true)
+        .addField("<a:emoji_13:869913950454677585> Length:", `\`${song.duration} Minutes\``, true)
+        .addField("<a:emoji_6:869913748998066176> Volume:", `\`100\``, true)
 
       var playingMessage = await queue.textChannel.send(newsong);
       
