@@ -1,5 +1,6 @@
 const superagent = require("snekfetch");
 const Discord = require('discord.js')
+const { lineReply } = require("discord-reply");
 
 module.exports = {
   name: "baka",
@@ -15,7 +16,7 @@ module.exports = {
       .setColor(`RANDOM`)
       .setFooter(`idiot!`)
       .setURL(response.body.url);
-  message.channel.send(embed);
+  message.lineReplyNoMention(embed);
     }).catch((err) => message.channel.send({embed: {
                 color: 16734039,
                 description: "Something went wrong... :cry:"
