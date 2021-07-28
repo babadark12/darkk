@@ -1,4 +1,5 @@
 const Discord = module.require("discord.js");
+const { lineReply } = require("discord-reply");
 
 module.exports = {
   name: "support",
@@ -7,7 +8,7 @@ module.exports = {
   usage: "Gif",
   async execute(message, args, client) {
  
-await message.channel.send({embed: {
+await message.lineReplyNoMention({embed: {
  color: 3447003,
  description: "https://discord.gg/yPhDhhMBK6"
 }});
