@@ -27,28 +27,28 @@ module.exports = {
           message.guild.owner.id
         })\`\n\n**Member Count:** \`${
           message.guild.memberCount
-        }\`\n**Emojis:** \`${
+        }\`\n\n**Emojis:** \`${
           message.guild.emojis.cache.size
-        }\`\n**Channel Categories:** \`${
+        }\`\n\n**Channel Categories:** \`${
           message.guild.channels.cache.filter(
             channel => channel.type === "category"
           ).size
-        }\`\n**Text Channels:** \`${
+        }\`\n\n**Text Channels:** \`${
           message.guild.channels.cache.filter(
             channel => channel.type === "text"
           ).size
-        }\`\n**Voice Channels:** \`${
+        }\`\n\n**Voice Channels:** \`${
           message.guild.channels.cache.filter(
             channel => channel.type === "voice"
           ).size
-        }\`\n**AFK Timeout:** \`${message.guild.afkTimeout /
+        }\`\n\n**AFK Timeout:** \`${message.guild.afkTimeout /
           60} Minutes\`\n**AFK Channel:** \`${
           message.guild.afkChannelID === null
             ? "No AFK Channel"
             : client.channels.get(message.guild.afkChannelID).name
-        }\`\n**Location:** \`${
+        }\`\n\n**Location:** \`${
           message.guild.region
-        }\`\n**Created:** \`${message.guild.createdAt.toLocaleString()}\``,
+        }\`\n\n**Created:** \`${message.guild.createdAt.toLocaleString()}\``,
         true
       )
       .setImage(message.guild.splash ? message.guild.splashURL() : null)
