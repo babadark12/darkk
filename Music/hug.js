@@ -16,7 +16,7 @@ module.exports = {
     const embed = new MessageEmbed()
       .setTitle(`${message.author.username} Hugged ${hugged}`)
       .setFooter(message.author.username)
-      .setColor("RANDOM")
+      .setColor("#116d56")
       .setDescription(`[Click here if the image failed to load.](${data.url})`)
       .setImage(`${data.url}`)
       .setTimestamp();
