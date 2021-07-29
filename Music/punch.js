@@ -17,7 +17,7 @@ module.exports = {
     
     let embed = new discord.MessageEmbed()
     .setImage(data)
-    .setColor("#0d2943")
+    .setColor("#116d56")
     .setTitle(`${message.author.username} Punches ${target}`)
     .setDescription(`[Click here if the image failed to load](${data})`)
     .setFooter(`${message.author.username}`)
