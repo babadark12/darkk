@@ -177,6 +177,17 @@ client.on("guildDelete", guild => {
   channel.send(embed);
 });
 
+client.on("guildMemberAdd", async (member, message) => {
+    const channel = client.channels.cache.find(channel => channel.name === "greatings");
+    if(!channel) return;
+    let memberadd = new Discord.MessageEmbed()
+    .setAuthor(`${member.guild.name}`, "https://raw.githubusercontent.com/ViruusB/-ViB-/main/assets/vib.jpg")
+    .setDescription("<@" + member.user.id + "> a rejoint le serveur")
+    .setColor("GREEN")
+    channel.send(memberadd)
+    member.roles.add("")
+})
+
 function delay(delayInms) {
  return new Promise(resolve => {
    setTimeout(() => {
