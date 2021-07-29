@@ -14,7 +14,7 @@ module.exports = {
             return message.channel.send("**Please Enter A Query!**");
 
         const embed = new MessageEmbed()
-            .setColor("#0d2943")
+            .setColor("#116d56")
             .setTitle(`Poll For ${message.guild.name} Sever`)
             .setFooter(message.member.displayName, message.author.displayAvatarURL())
             .setDescription(args.join(' '))
