@@ -27,7 +27,7 @@ module.exports = {
     ).size;
 
     const embed = new MessageEmbed()
-      .setColor(`#985db3`)
+      .setColor(`#116d56`)
       .setTitle(`Server Member`)
       .addField(`Number Of All Members`, Members)
       .setThumbnail(message.guild.iconURL({ dynamic: true }))
