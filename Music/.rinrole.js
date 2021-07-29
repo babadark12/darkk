@@ -8,7 +8,7 @@ module.exports = {
     if(!args.join(" ")) return message.reply("Specify a role!");
     let gRole = message.guild.roles.find(m => m.name.toLowerCase() === args.join(" ").toLowerCase());
     if(!gRole) return message.reply("Couldn't find that role.");
-    if(gRole.members.size == 0) return xtal.simpleEmbed(message, `None Found to be in ${gRole.name}`)
+    if(gRole.members.size == 0) return message.simpleEmbed(message, `None Found to be in ${gRole.name}`)
     
     let i = 0;
     let kekes = '';
@@ -19,8 +19,8 @@ module.exports = {
     let embed = new RichEmbed()
     .setTitle(`Members in ${gRole.name}`)
     .setDescription(kekes)
-    .setColor(colors.gold)
-    .setFooter(xtal.user.username, xtal.user.avatarURL)
+    .setColor("#0d2943")
+    .setFooter(message.user.username, message.user.avatarURL)
     .setTimestamp();
     
 message.channel.send(embed);
