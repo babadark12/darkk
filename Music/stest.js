@@ -57,9 +57,9 @@ const regions = {
 };
 
 module.exports = {
-  name: "ts",
-  category: "info",
-  aliases: ["tsi"],
+  name: "serverinfo",
+  category: "Music",
+  aliases: ["sinfo"],
   description: "Get info about your server.",
   usage: "serverinfo ",
 
