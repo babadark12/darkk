@@ -157,12 +157,11 @@ client.on("guildCreate", guild => {
   let channel = client.channels.cache.get("870000756168732742");
   let embed = new MessageEmbed().setColor("#0d2943")
   .setTitle("Someone invited me!")
-    .setDescription(
-      `**Guild Name:** ${guild.name} (${guild.id})\n**Members:** ${guild.memberCount}`
-    )
-    .setTimestamp()
-    .setColor("#0d2943")
-    .setFooter(`I'm in ${client.guilds.cache.size} Guilds Now!`);
+  .addField("Server", `**${guild.name}**`)
+  .addField("Members", `**${guild.memberCount}**`)
+  .addField("Owner", `**${guild.owner}**`)
+  .setColor("#0d2943")
+  .setFooter(`${client.guilds.cache.size}`);
   channel.send(embed);
 });
 
@@ -179,18 +178,6 @@ client.on("guildDelete", guild => {
   .addField(" **Verification Level**", `${guild.verificationLevel}`)
   .setFooter(`${client.user.tag}`);
   channel.send(embed);
-});
-
-client.on("guildCreate", guild => {
-  let embed = new MessageEmbed().setColor("#0d2943")
-  .setTitle("Thx For Invite Me!")
-    .setDescription(
-      `**Your Server:** ${guild.name} ( ${guild.id} )\n**Members:** ${guild.memberCount}`
-    )
-    .setTimestamp()
-    .setColor("#0d2943")
-    .setFooter(`I'm in ${client.guilds.cache.size} Guilds Now!`);
-  guild.author.send(embed);
 });
 
 function delay(delayInms) {
