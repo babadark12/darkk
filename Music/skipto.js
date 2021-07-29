@@ -52,7 +52,7 @@ execute(message, args) {
     //Send approve
     queue.textChannel.send(
       new MessageEmbed()
-        .setColor("#c219d8")
+        .setColor("#116d56")
         .setAuthor(`${message.author.username}#${message.author.discriminator} skipped ${args[0]} songs`, "")
     ).catch(console.error);
   }
