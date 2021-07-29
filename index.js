@@ -58,33 +58,7 @@ client.on(`message`, async (message) => {
   if(message.content.includes(client.user.id)) {
     message.reply(new Discord.MessageEmbed().setColor("#c219d8").setAuthor(`${message.author.username}, My Prefix is ${prefix}, to get started; type ${prefix}help`, message.author.displayAvatarURL({dynamic:true})));
   } 
-//guildcreate
-client.on("guildCreate", guild => {
-  let channel = client.channels.cache.get("870000756168732742");
-  let embed = new MessageEmbed().setColor("#0d2943")
-  .setAuthor(client.user.username, client.user.avatarURL())
-  .setTitle( `Join Server`)
-  .addField("**Server Name**", `${guild.name}`)
-  .addField("**Server Owner**", `${guild.owner}`)
-  .addField("**Server Id**", `${guild.id}`)
-  .addField("**Member Count**", `${guild.memberCount}`)
-  .setFooter(`${client.user.tag}`);
-  channel.send(embed);
-});
-/////guilddelete
-client.on("guildDelete", guild => {
-  let channel = client.channels.cache.get("870000756168732742");
-  let embed = new MessageEmbed()
-  .setColor("#0d2943")
-  .setAuthor(client.user.username, client.user.avatarURL())
-  .setTitle( `Left Server`)
-  .addField("**Server Name**", `${guild.name}`)
-  .addField("**Server Owner**", `${guild.owner}`)
-  .addField("**Server Id**", `${guild.id}`)
-  .addField("**Member Count**", `${guild.memberCount}`)
-  .setFooter(`${client.user.tag}`);
-  channel.send(embed);
-});
+
   //An embed announcement for everyone but no one knows so fine ^w^
   if(message.content.startsWith(`${prefix}embed`)){
     //define saymsg
