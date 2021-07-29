@@ -65,7 +65,7 @@ module.exports = {
 	    ];
 	    let reponse3 = (replys3[Math.floor(Math.random() * replys3.length)])
 	    const embed = new Discord.MessageEmbed()
-	        .setColor("RANDOM")
+	        .setColor("#116d56")
 	        .setDescription(`**[ :slot_machine: ${message.author} launched the slot machine! :slot_machine: ]**`)
 	        .addField(`${reponse} \n \n${reponse2}**<** \n \n${reponse3}`, `** **`)
 	    message.lineReplyNoMention(embed)
