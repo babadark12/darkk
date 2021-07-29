@@ -41,7 +41,7 @@ async execute(message,args,client) {
     //define a temporary Loading Embed
     let temEmbed = new MessageEmbed()
     .setAuthor("Searching...", "https://cdn.discordapp.com/emojis/757632044632375386.gif?v=1")
-    .setColor("#f300e5")
+    .setColor("#116d56")
     //define the Result Embed
     let resultsEmbed = new MessageEmbed()
       .setTitle("✅ Results for: ")
