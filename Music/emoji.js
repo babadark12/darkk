@@ -30,7 +30,7 @@ async  execute(message, args) {
         const Link = `https://cdn.discordapp.com/emojis/${ID}.${Animated ? "gif" : "png"}?v=1`;
 
         const Embed = new MessageEmbed()
-        .setColor(`#0d2943`)
+        .setColor(`#985db3`)
         .setThumbnail(Link)
         .setTitle(`Emoji Information!`)
         .addField(`Name :`, Name, true)
