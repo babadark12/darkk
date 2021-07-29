@@ -156,27 +156,24 @@ client.on(`message`, async (message) => {
 client.on("guildCreate", guild => {
   let channel = client.channels.cache.get("870000756168732742");
   let embed = new MessageEmbed().setColor("#0d2943")
-  .setTitle("Someone invited me!")
+  .setTitle("✅ Adding To Server ✅")
   .addField("Server", `**${guild.name}**`)
   .addField("Members", `**${guild.memberCount}**`)
   .addField("Owner", `**${guild.owner}**`)
   .setTimestamp()
-  .setFooter(`${client.guilds.cache.size}`);
+  .setFooter(`i'm in ${client.guilds.cache.size}`);
   channel.send(embed);
 });
 
 client.on("guildDelete", guild => {
   let channel = client.channels.cache.get("870000756168732742");
-  let embed = new MessageEmbed()
-  .setColor("#0d2943")
-  .setAuthor(client.user.username, client.user.avatarURL())
-  .setTitle( `❌ Left Server`)
-  .addField(" **Server Name**", `${guild.name}`)
-  .addField(" **Server Owner**", `${guild.owner}`)
-  .addField(" **Server Id**", `${guild.id}`)
-  .addField(" **Member Count**", `${guild.memberCount}`)
-  .addField(" **Verification Level**", `${guild.verificationLevel}`)
-  .setFooter(`${client.user.tag}`);
+  let embed = new MessageEmbed().setColor("#0d2943")
+  .setTitle("🚫 kicked From Server 🚫")
+  .addField("Server", `**${guild.name}**`)
+  .addField("Members", `**${guild.memberCount}**`)
+  .addField("Owner", `**${guild.owner}**`)
+  .setTimestamp()
+  .setFooter(`i'm in ${client.guilds.cache.size}`);
   channel.send(embed);
 });
 
