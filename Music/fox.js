@@ -13,7 +13,7 @@ module.exports = {
      const response = await fetch('https://randomfox.ca/floof/');
         const { image } = await response.json();
         message.channel.send(new Discord.MessageEmbed()
-            .setColor('#985db3')
+            .setColor('#116d56')
             .setDescription('🐶 - Fox Picture')
             .setImage(image)
         );
