@@ -28,7 +28,7 @@ module.exports = {
                 .setDescription(`**${current.skytext}**`)
                 .setAuthor(`Weather for ${current.observationpoint}`)
                 .setThumbnail(current.imageUrl)
-                .setColor("#0d2943")
+                .setColor("#116d56")
                 .addField('**Timezone**', `UTC ${location.timezone}`, true)
                 .addField('**Degree Type**', `${location.degreetype}`, true)
                 .addField('**Temperature**', `${current.temperature} Degrees`, true)
