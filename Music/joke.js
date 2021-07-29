@@ -16,7 +16,7 @@ module.exports = {
         let jEmbed = new Discord.MessageEmbed()
         .setTitle("Joke")
         .setDescription(response.body.joke)
-        .setColor("#0d2943");
+        .setColor("#116d56");
         message.lineReplyNoMention(Embed);
 		})
     }
