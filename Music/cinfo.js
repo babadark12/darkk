@@ -15,12 +15,12 @@ module.exports = {
         let channelembed = new MessageEmbed()
             .setTitle(`Channel Information for ${channel.name}`)
             .setThumbnail(message.guild.iconURL())
-            .addField("**NSFW**", channel.nsfw, true)
+            .addField("**Channel Nfsw**", channel.nsfw, true)
             .addField("**Channel ID**", channel.id, true)
             .addField("**Channel Type**", channel.type)
             .addField("**Channel Description**", `${channel.topic || "No Description"}`)
             .addField("**Channel Created At**", channel.createdAt)
-            .setColor("#0d2943")
+            .setColor("#985db3")
         message.lineReplyNoMention(channelembed);
     }
 }
