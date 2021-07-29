@@ -1,5 +1,7 @@
 const { MessageEmbed } = require('discord.js');
 
+const { lineReply } = require("discord-reply");
+
 const moment = require('moment');
 
 const filterLevels = {
@@ -75,7 +77,7 @@ async execute(message, args, client) {
 
 		const embed = new MessageEmbed()
 
-			.setDescription(`**Guild information for __${message.guild.name}__**`)
+			.setDescription(`**Server information for __${message.guild.name}__**`)
 
 			.setColor('#116d56')
 
@@ -127,7 +129,7 @@ async execute(message, args, client) {
 
 			.setTimestamp();
 
-		message.channel.send(embed);
+		message.lineReplyNoMention(embed);
 
 	}
 
