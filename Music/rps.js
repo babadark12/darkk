@@ -7,6 +7,7 @@ module.exports = {
   description: "playing game",
   async execute(message, args, client) {
         let embed = new discord.MessageEmbed()
+        .setColor("#116d56")
         .setTitle("RPS GAME")
         .setDescription("React to play!")
         .setTimestamp()
@@ -27,6 +28,7 @@ module.exports = {
                 const reaction = collected.first()
          
                 let result = new discord.MessageEmbed()
+                .setColor("#116d56")
                 .setTitle("RESULT")
                 .addField("Your choice", `${reaction.emoji.name}`)
                 .addField("My choice", `${me}`)
