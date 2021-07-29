@@ -2,8 +2,8 @@ const { Client, Message, MessageEmbed} = require('discord.js');
 const { lineReply } = require("discord-reply");
 
 module.exports = {
-  name: "serverinfo",
-  aliases: ["sinfo"],
+  name: "ts",
+  aliases: ["ijnfo"],
   description: "Show serverinforimation",
   usage: "server",
   async execute(message, args, client) {
