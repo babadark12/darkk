@@ -16,7 +16,7 @@ module.exports = {
       .join("\n");
 
     const embed = new MessageEmbed()
-      .setColor("#985db3")
+      .setColor("#116d56")
       .setAuthor(
         message.author.tag,
         message.author.displayAvatarURL({ dynamic: true })
