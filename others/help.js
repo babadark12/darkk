@@ -9,7 +9,7 @@ module.exports = {
     let commands = message.client.commands.array();
      
     let helpEmbed = new MessageEmbed()
-    .setColor('#0d2943')
+    .setColor('#116d56')
     .setTitle("💬 Need? Help Here Are All Commands For Useing")
     .setDescription(`[Support](https://discord.gg/tdVnzJtH) - [Invite](https://discord.com/api/oauth2/authorize?client_id=868194752619773962&permissions=8&scope=bot)`)
     .addField("📰 Other", `\`help\`, \`ping\`, \`prefix\`, \`uptime\`, \`avatar\`, \`invites\`, \`suggest\`, \`userinfo\`, \`serverinfo\`, \`botinfo\`, \`github\`, \`support\`, \`status\`, \`weather\`, \`emojiid\``)
