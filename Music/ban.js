@@ -47,7 +47,7 @@ module.exports = {
 
             const embed = new MessageEmbed()
                 .setAuthor(`${message.guild.name} Modlogs`, message.guild.iconURL())
-                .setColor("#0d2943")
+                .setColor("#985db3")
                 .setThumbnail(banMember.user.displayAvatarURL({ dynamic: true }))
                 .setFooter(message.guild.name, message.guild.iconURL())
                 .addField("**Moderation**", "ban")
