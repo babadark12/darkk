@@ -47,7 +47,7 @@ const prompt = await message.channel.send(`Hacking ${user ? hacked.username : ha
    await  prompt.edit('Selling data to facebook...');
   await   wait(3700);
   let embed = new Discord.MessageEmbed()
-  .setColor("#985db3")
+  .setColor("#116d56")
   .setDescription(`A Dangerous and very ORIGINAL HACKING of ${user ? hacked.username : hacked} is just completed`)
   .setImage("https://media1.tenor.com/images/5ba5501d9ee356cc0c478daa57306c19/tenor.gif?itemid=20964053");
   await prompt.delete
