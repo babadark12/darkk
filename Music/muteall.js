@@ -18,6 +18,6 @@ module.exports = {
 
         return message.channel.send(new Discord.MessageEmbed()
             .setDescription(`:mute: Muted all participants`)
-            .setColor(`#0d2943`));
+            .setColor(`#116d56`));
     }
 };
