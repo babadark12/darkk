@@ -83,7 +83,7 @@ client.on(`message`, async (message) => {
     const saymsg = message.content.slice(Number(prefix.length) + 5)
     //define embed
     const embed = new Discord.MessageEmbed()
-    .setColor("#0d2943")
+    .setColor("#116d56")
     .setAuthor(``)
     .setDescription(saymsg)
     //delete the Command
@@ -104,7 +104,7 @@ client.on(`message`, async (message) => {
       return;
     //define embed
     const embed = new Discord.MessageEmbed()
-    .setColor("#0d2943")
+    .setColor("#116d56")
     .setAuthor(`${message.guild.name}`,message.guild.iconURL({ dynamic: true }))
     .setDescription(saymsg)
     .setTimestamp()
@@ -135,7 +135,7 @@ client.on(`message`, async (message) => {
    if (now < expirationTime) {
      const timeLeft = (expirationTime - now) / 1000;
      return message.reply(
-      new MessageEmbed().setColor("#0d2943")
+      new MessageEmbed().setColor("#116d56")
       .setTitle(`\`Please wait ${timeLeft.toFixed(1)} seconds before reusing the ${prefix}${command.name}\`!`)    
      );
    }
@@ -146,7 +146,7 @@ client.on(`message`, async (message) => {
    command.execute(message, args, client);
  } catch (error) {
    console.error(error);
-   message.reply( new MessageEmbed().setColor("#0d2943")
+   message.reply( new MessageEmbed().setColor("#116d56")
    .setTitle(`There was an error executing that command.`)).catch(console.error);
  }
 
@@ -155,7 +155,7 @@ client.on(`message`, async (message) => {
 
 client.on("guildCreate", guild => {
   let channel = client.channels.cache.get("870000756168732742");
-  let embed = new MessageEmbed().setColor("#0d2943")
+  let embed = new MessageEmbed().setColor("#116d56")
   .setTitle("✅ Adding To Server ✅")
   .addField("Server", `**${guild.name}**`)
   .addField("Members", `**${guild.memberCount}**`)
@@ -167,7 +167,7 @@ client.on("guildCreate", guild => {
 
 client.on("guildDelete", guild => {
   let channel = client.channels.cache.get("870000756168732742");
-  let embed = new MessageEmbed().setColor("#0d2943")
+  let embed = new MessageEmbed().setColor("#116d56")
   .setTitle("🚫 kicked From Server 🚫")
   .addField("Server", `**${guild.name}**`)
   .addField("Members", `**${guild.memberCount}**`)
