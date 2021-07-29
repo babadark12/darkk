@@ -13,7 +13,7 @@ module.exports = {
     
     let embed = new discord.MessageEmbed()
     .setImage(data)
-    .setColor("#985db3")
+    .setColor("#116d56")
     .setDescription(`Please talk with ${message.author.username} they are crying`)
     .setTimestamp()
     
