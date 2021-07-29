@@ -181,7 +181,7 @@ client.on("guildDelete", guild => {
   channel.send(embed);
 });
 
-client.on("guildCreate", (guild) => {
+client.on("guildCreate", guild => {
   const channelId = config.botlogch;
   const channel = client.channels.cache.get(channelId);
   if (!channel) return;
