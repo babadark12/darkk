@@ -13,7 +13,7 @@ module.exports = {
       const embed = new Discord.MessageEmbed()
       .setTitle("BAKA!!!")
       .setImage(response.body.url)
-      .setColor(`RANDOM`)
+      .setColor(`#985db3`)
       .setFooter(`idiot!`)
       .setURL(response.body.url);
   message.lineReplyNoMention(embed);
