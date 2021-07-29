@@ -184,8 +184,7 @@ client.on("guildMemberAdd", async (member, message) => {
     .setAuthor(`${member.guild.name}`, "https://raw.githubusercontent.com/ViruusB/-ViB-/main/assets/vib.jpg")
     .setDescription("<@" + member.user.id + "> a rejoint le serveur")
     .setColor("GREEN")
-    channel.send(memberadd)
-    member.roles.add("")
+    channel.send(memberadd);
 })
 
 function delay(delayInms) {
