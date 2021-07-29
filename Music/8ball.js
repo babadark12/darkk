@@ -36,7 +36,7 @@ module.exports = {
             .setTitle('🎱  The Magic 8-Ball  🎱')
             .addField('Question', question)
             .addField('Answer', `${answers[Math.floor(Math.random() * answers.length)]}`)
-            .setColor('#985db3');
+            .setColor('#116d56');
         message.lineReplyNoMention({ embed: embed, allowedMentions: { repliedUser: false } });
 
     }
