@@ -1,4 +1,5 @@
 const Discord = require("discord.js");
+const { lineReply } = require("discord-reply");
 
 module.exports = {
   name: "status",
@@ -15,6 +16,6 @@ module.exports = {
         .setImage(``)
         .setTimestamp()
         .setFooter(message.author.username, message.author.avatarURL);
-    message.channel.send(embed);
+    message.lineReplyNoMention(embed);
 }
 }
