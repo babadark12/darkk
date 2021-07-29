@@ -25,9 +25,9 @@ module.exports = {
             let embed = new Discord.MessageEmbed()
                 .setColor("#116d56")
                 .setFooter(message.guild.name, message.guild.iconURL())
-                .setAuthor(`**🎈 | Invites Tracker For ${message.guild.name}**`)
+                .setAuthor(`🎈 | Invites Tracker For ${message.guild.name}`)
                 .setDescription(`**ℹ️ | Information on Invites of ${member.displayName}**`)
-                .addField("**❌ | No. Invited Persons**", index)
+                .addField("**🔻 | No. Invited Persons**", index)
                 .addField("**🖇️ | Invitation Codes\n\n**", content);
             message.lineReplyNoMention(embed);
         } catch (e) {
