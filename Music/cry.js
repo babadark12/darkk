@@ -13,8 +13,8 @@ module.exports = {
     
     let embed = new discord.MessageEmbed()
     .setImage(data)
-    .setColor("#0d2943")
-    .setFooter(`Please talk with ${message.author.username} they are crying`)
+    .setColor("#985db3")
+    .setDescription(`Please talk with ${message.author.username} they are crying`)
     .setTimestamp()
     
     message.lineReplyNoMention(embed);
