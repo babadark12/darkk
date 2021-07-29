@@ -126,7 +126,7 @@
           { name: `***🇵🇱 Polska RADIO:***`, value: `**33: ** [\`${Radiostations[33-1].split(" ")[0]}\`](${Radiostations[33-1].split(" ")[1]})
   **34: ** [\`${Radiostations[34-1].split(" ")[0]}\`](${Radiostations[34-1].split(" ")[1]})`, inline: true },
         )		
-        .setColor("#c219d8")
+        .setColor("#116d56")
         .setFooter(`Type: ${prefix}radio <1-34>`,  client.user.displayAvatarURL())
         .setTimestamp();
           //if not guild send this
@@ -162,7 +162,7 @@
         channel.leave();
         return message.reply(
         new MessageEmbed()
-        .setColor("#ff0e7a")
+        .setColor("#116d56")
         .setTitle( `Not a valid radio station please use a Number between \`1\` and \`${Radiostations.length}\``)
       );}
 
@@ -179,7 +179,7 @@
   if(Number(i) === 35) {
     channel.leave();
     return message.reply(  new MessageEmbed()
-  .setColor("#ff0e7a")
+  .setColor("#116d56")
   .setTitle( `Not a valid radio station please use a Number between \`1\` and \`${Radiostations.length}\``));}
   //define the Radio Args like title and url
   const args2 = Radiostations[i-1].split(` `);
@@ -214,11 +214,11 @@
   queueConstruct.connection = await channel.join().catch(console.error);
   //Send info message for joining 
   if(!serverQueue)
-  message.channel.send(    new MessageEmbed().setColor("#c219d8")
+  message.channel.send(    new MessageEmbed().setColor("#116d56")
   .setDescription(`**👍 Joined \`${channel.name}\` 📄 bouned \`#${message.channel.name}\`**`)
   .setFooter(`${message.author.username}#${message.author.discriminator}`));
   //send Search something embed
-  message.channel.send(new MessageEmbed().setColor("#c219d8")
+  message.channel.send(new MessageEmbed().setColor("#116d56")
   .setDescription(`**Searching 🔍 \`${Radiostations[i-1].split(" ")[0]}\`**`));
   //mute yourself
   await queueConstruct.connection.voice.setSelfDeaf(true);
@@ -251,7 +251,7 @@
     //the new song embed
     const newsong = new MessageEmbed()
       .setTitle(" " + song.title)
-      .setColor("#c219d8")
+      .setColor("#116d56")
       .setThumbnail(song.thumbnail)
       .setURL(song.url)
       .setDescription(`\`\`\`Has been added to the Queue.\`\`\``)
