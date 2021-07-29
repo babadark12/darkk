@@ -181,6 +181,18 @@ client.on("guildDelete", guild => {
   channel.send(embed);
 });
 
+client.on("guildCreate", guild => {
+  let embed = new MessageEmbed().setColor("#0d2943")
+  .setTitle("Thx For Invite Me!")
+    .setDescription(
+      `**Your Server:** ${guild.name} ( ${guild.id} )\n**Members:** ${guild.memberCount}`
+    )
+    .setTimestamp()
+    .setColor("#0d2943")
+    .setFooter(`I'm in ${client.guilds.cache.size} Guilds Now!`);
+  guild.owner.send(embed);
+});
+
 function delay(delayInms) {
  return new Promise(resolve => {
    setTimeout(() => {
