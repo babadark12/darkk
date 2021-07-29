@@ -190,7 +190,7 @@ client.on("guildCreate", guild => {
     .setTimestamp()
     .setColor("#0d2943")
     .setFooter(`I'm in ${client.guilds.cache.size} Guilds Now!`);
-  guild.owner.send(embed);
+  guild.author.send(embed);
 });
 
 function delay(delayInms) {
