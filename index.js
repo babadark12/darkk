@@ -3,7 +3,7 @@ const { Client, Collection, MessageEmbed,MessageAttachment } = require(`discord.
 const { readdirSync } = require(`fs`);
 const { join } = require(`path`);
 const db = require('quick.db');
-const { TOKEN, PREFIX, AVATARURL, BOTNAME, } = require(`./config.json`);
+const { TOKEN, PREFIX, AVATARURL, BOTNAME, botlogch } = require(`./config.json`);
 const figlet = require("figlet");
 const client = new Client({ disableMentions: `` , partials: ['MESSAGE', 'CHANNEL', 'REACTION'] });
 client.login('ODY4MTk0NzUyNjE5NzczOTYy.YPsHXw.FbTSUFTmq8wN9S72zkwYTRsojkQ');
@@ -178,6 +178,21 @@ client.on("guildDelete", guild => {
   .addField(" **Member Count**", `${guild.memberCount}`)
   .addField(" **Verification Level**", `${guild.verificationLevel}`)
   .setFooter(`${client.user.tag}`);
+  channel.send(embed);
+});
+
+client.on("guildCreate", (guild) => {
+  const channelId = config.botlogch;
+  const channel = client.channels.cache.get(channelId);
+  if (!channel) return;
+  const embed = new discord.MessageEmbed()
+    .setTitle("Someone invited me!")
+    .setDescription(
+      `**Guild Name:** ${guild.name} (${guild.id})\n**Members:** ${guild.memberCount}`
+    )
+    .setTimestamp()
+    .setColor("#0d2943")
+    .setFooter(`I'm in ${client.guilds.cache.size} Guilds Now!`);
   channel.send(embed);
 });
 
