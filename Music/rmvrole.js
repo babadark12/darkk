@@ -57,7 +57,7 @@ module.exports = {
                 .addField('Reason', reason)
                 .setFooter(message.member.displayName,  message.author.displayAvatarURL({ dynamic: true }))
                 .setTimestamp()
-                .setColor("#0d2943");
+                .setColor("#116d56");
               await message.lineReplyNoMention(embed);
       
             } catch (err) {
