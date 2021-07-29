@@ -20,7 +20,7 @@ module.exports = {
             .addField("**Channel Type**", channel.type)
             .addField("**Channel Description**", `${channel.topic || "No Description"}`)
             .addField("**Channel Created At**", channel.createdAt)
-            .setColor("#985db3")
+            .setColor("#116d56")
         message.lineReplyNoMention(channelembed);
     }
 }
