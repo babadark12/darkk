@@ -16,7 +16,7 @@ module.exports = {
         const embed = new MessageEmbed()
         .setTimestamp()
         .setTitle("**Server Information**")
-        .setColor(roleColor)
+        .setColor("#116d56")
         .setThumbnail(message.guild.iconURL({ dynamic: true }))
         .addField(`🎫 Server Name:`, message.guild.name, true)
         .addField(`🆔 Server ID`, message.guild.id, true)
