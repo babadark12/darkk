@@ -135,7 +135,7 @@ module.exports = {
       const newsong = new MessageEmbed()
        .setTitle(" "+song.title)
         .setURL(song.url)
-        .setColor("#0d2943")
+        .setColor("#116d56")
         .setThumbnail(`https://cdn.discordapp.com/avatars/844069682545164289/b40e8a61cbeb7a6319b5050238a9aa03.png?size=1024`)
         .setImage(thumb)
         .setDescription(`◈ ━━━━━━━ <a:emoji_7:869913781013217291> ━━━━━━━ ◈`)
