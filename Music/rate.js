@@ -15,7 +15,7 @@ module.exports = {
       return message.channel.send(`Please Give Me Something To Rate!`);
 
     let embed = new Discord.MessageEmbed()
-      .setColor("#0d2943")
+      .setColor("#116d56")
       .setTitle(`I - Rate`)
       .setDescription(`${Math.floor(Math.random() * 11)}/10 To ${Content}`)
       .setFooter(`Requested by ${message.author.username}`)
