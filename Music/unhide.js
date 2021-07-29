@@ -14,7 +14,7 @@ module.exports = {
     async execute(message, args, client) {
 
 	if(!message.member.hasPermission("MANAGE_CHANNELS")) return message.lineReplyNoMention(new MessageEmbed()
-	.setColor("#0d2943")
+	.setColor("#116d56")
 	.setDescription("**You Need `MANAGE_CHANNELS` Permission To Use This Command!**")
 	.setFooter(`${message.author.tag}`, message.author.avatarURL()))
 
