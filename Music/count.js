@@ -27,9 +27,9 @@ module.exports = {
     ).size;
 
     const embed = new MessageEmbed()
-      .setColor(`#0d2943`)
-      .setTitle(`Members Information`)
-      .addField(`**Total Members**`, Members)
+      .setColor(`#985db3`)
+      .setTitle(`Server Member`)
+      .addField(`Number Of All Members`, Members)
       .setThumbnail(message.guild.iconURL({ dynamic: true }))
       .setAuthor(`${message.guild.name}`)
       .setTimestamp();
