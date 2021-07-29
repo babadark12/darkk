@@ -113,31 +113,13 @@ async execute(message, args, client) {
 
 				`**❯ Animated Emoji Count:** ${emojis.filter(emoji => emoji.animated).size}`,
 
-				`**❯ Member Count:** ${message.guild.memberCount}`,
-
-				`**❯ Humans:** ${members.filter(member => !member.user.bot).size}`,
-
-				`**❯ Bots:** ${members.filter(member => member.user.bot).size}`,
+				`**❯ Member Count:** ${message.guild.memberCount}`,					
 
 				`**❯ Text Channels:** ${channels.filter(channel => channel.type === 'text').size}`,
 
 				`**❯ Voice Channels:** ${channels.filter(channel => channel.type === 'voice').size}`,
 
 				`**❯ Boost Count:** ${message.guild.premiumSubscriptionCount || '0'}`,
-
-				'\u200b'
-
-			])
-
-			.addField('Presence', [
-
-				`**❯ Online:** ${members.filter(member => member.presence.status === 'online').size}`,
-
-				`**❯ Idle:** ${members.filter(member => member.presence.status === 'idle').size}`,
-
-				`**❯ Do Not Disturb:** ${members.filter(member => member.presence.status === 'dnd').size}`,
-
-				`**❯ Offline:** ${members.filter(member => member.presence.status === 'offline').size}`,
 
 				'\u200b'
 
