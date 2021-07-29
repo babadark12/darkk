@@ -6,7 +6,7 @@ const db = require('quick.db');
 const { TOKEN, PREFIX, AVATARURL, BOTNAME, } = require(`./config.json`);
 const figlet = require("figlet");
 const client = new Client({ disableMentions: `` , partials: ['MESSAGE', 'CHANNEL', 'REACTION'] });
-client.login('ODY4MTk0NzUyNjE5NzczOTYy.YPsHXw.FbTSUFTmq8wN9S72zkwYTRsojkQ');
+client.login('');
 client.commands = new Collection();
 client.setMaxListeners(0);
 client.prefix = PREFIX;
@@ -14,24 +14,48 @@ client.queue = new Map();
 const cooldowns = new Collection();
 const escapeRegex = (str) => str.replace(/[.*+?^${}()|[\]\\]/g, `\\$&`);
 
+//this fires when the BOT STARTS DO NOT TOUCH
+client.on(`ready`, () => {	
+//////////////
 
-client.on("ready", () => {
-setInterval(() => {
-console.log(`${client.user.username} ready! ,Users ${client.guilds.cache.reduce((a, g) => a + g.memberCount, 0)}, Guilds ${client.guilds.cache.size}`);
-client.user.setActivity(`${PREFIX}help | Guilds ${client.guilds.cache.size}`);
+////////
+   
+   ///////////////////////////////
+    ////////////IFCHEMPTY//////////
+        //remove everything in between those 2 big comments if you want to disable that the bot leaves when ch. or queue gets empty!
+        setInterval(() => { 
+          let member;
+        client.guilds.cache.forEach(async guild =>{
+        await delay(15);
+          member = await client.guilds.cache.get(guild.id).members.cache.get(client.user.id)
+        //if not connected
+          if(!member.voice.channel)
+          return;
+        //if alone 
+        if (member.voice.channel.members.size === 1) 
+        { return member.voice.channel.leave(); }
+      });
+      
 
-}, 15000);
+    client.user.setActivity(`${PREFIX}help ${client.guilds.cache.size} Server`, { type: "COMPETING"});
 
+    
+   
+  
+      }, (5000));
+      ////////////////////////////////
+      ////////////////////////////////
+    figlet.text(`${client.user.username} ready!`, function (err, data) {
+      if (err) {
+          console.log('Something went wrong');
+          console.dir(err);
+      }
+      console.log(`═════════════════════════════════════════════════════════════════════════════`);
+      console.log(data)
+      console.log(`═════════════════════════════════════════════════════════════════════════════`);
+    })
+   
 });
-client.on("warn", (info) => console.log(info));
-client.on("error", console.error);
-
-
-
-//DO NOT TOUCH
-client.on(`warn`, (info) => console.log(info));
-//DO NOT TOUCH
-client.on(`error`, console.error);
 //DO NOT TOUCH
 //FOLDERS:
 //Admin custommsg data FUN General Music NSFW others
@@ -53,26 +77,43 @@ client.on(`message`, async (message) => {
   let prefix = await db.get(`prefix_${message.guild.id}`)
   //if not prefix set it to standard prefix in the config.json file
   if(prefix === null) prefix = PREFIX;
-
-  //information message when the bot has been tagged
-  if(message.content.includes(client.user.id)) {
-    message.reply(new Discord.MessageEmbed().setColor("#c219d8").setAuthor(`${message.author.username}, My Prefix is ${prefix}, to get started; type ${prefix}help`, message.author.displayAvatarURL({dynamic:true})));
-  } 
-
   //An embed announcement for everyone but no one knows so fine ^w^
   if(message.content.startsWith(`${prefix}embed`)){
     //define saymsg
     const saymsg = message.content.slice(Number(prefix.length) + 5)
     //define embed
     const embed = new Discord.MessageEmbed()
-    .setColor("#c219d8")
+    .setColor("#0d2943")
+    .setAuthor(`Reyna`, `https://cdn.discordapp.com/attachments/843342058352541706/849755772346302484/PicsArt_05-25-07.10.31.jpg`)
     .setDescription(saymsg)
-    .setFooter("", client.user.displayAvatarURL())
     //delete the Command
     message.delete({timeout: 300})
     //send the Message
     message.channel.send(embed)
   }
+
+//An cv announcement for everyone but no one knows so fine ^w^
+  if(message.content.startsWith(`${prefix}cv`)){
+    //define saymsg
+     if (!message.member.hasPermission("MANAGE_CHANNELS")) return;
+    if (!message.guild.member(client.user).hasPermission("MANAGE_CHANNELS"))
+      return;
+    const saymsg = message.content.slice(Number(prefix.length) + 5)
+    if (!message.member.hasPermission("MANAGE_CHANNELS")) return;
+    if (!message.guild.member(client.user).hasPermission("MANAGE_CHANNELS"))
+      return;
+    //define embed
+    const embed = new Discord.MessageEmbed()
+    .setColor("#0d2943")
+    .setAuthor(`${message.guild.name}`,message.guild.iconURL({ dynamic: true }))
+    .setDescription(saymsg)
+    .setTimestamp()
+    //delete the Command
+    message.delete({timeout: 300})
+    //send the Message
+    message.channel.send(embed)
+  } 
+
 //command Handler DO NOT TOUCH
  const prefixRegex = new RegExp(`^(<@!?${client.user.id}>|${escapeRegex(prefix)})\\s*`);
  if (!prefixRegex.test(message.content)) return;
@@ -94,8 +135,8 @@ client.on(`message`, async (message) => {
    if (now < expirationTime) {
      const timeLeft = (expirationTime - now) / 1000;
      return message.reply(
-      new MessageEmbed().setColor("#c219d8")
-      .setTitle(`Please wait \`${timeLeft.toFixed(1)} seconds\` before reusing the \`${prefix}${command.name}\`!`)    
+      new MessageEmbed().setColor("#0d2943")
+      .setTitle(`\`Please wait ${timeLeft.toFixed(1)} seconds before reusing the ${prefix}${command.name}\`!`)    
      );
    }
  }
@@ -105,12 +146,41 @@ client.on(`message`, async (message) => {
    command.execute(message, args, client);
  } catch (error) {
    console.error(error);
-   message.reply( new MessageEmbed().setColor("#c219d8")
+   message.reply( new MessageEmbed().setColor("#0d2943")
    .setTitle(`There was an error executing that command.`)).catch(console.error);
  }
 
 
 });
+
+client.on("guildCreate", guild => {
+  let channel = client.channels.cache.get("870000756168732742");
+  let embed = new MessageEmbed().setColor("#0d2943")
+  .setAuthor(client.user.username, client.user.avatarURL())
+  .setTitle( `✅ Join Server`)
+  .addField(" **Server Name**", `${guild.name}`)
+  .addField(" **Server Owner**", `${guild.owner}`)
+  .addField(" **Server Id**", `${guild.id}`)
+  .addField(" **Member Count**", `${guild.memberCount}`)
+  .setFooter(`${client.user.tag}`);
+  channel.send(embed);
+});
+
+client.on("guildDelete", guild => {
+  let channel = client.channels.cache.get("870000756168732742");
+  let embed = new MessageEmbed()
+  .setColor("#0d2943")
+  .setAuthor(client.user.username, client.user.avatarURL())
+  .setTitle( `❌ Left Server`)
+  .addField(" **Server Name**", `${guild.name}`)
+  .addField(" **Server Owner**", `${guild.owner}`)
+  .addField(" **Server Id**", `${guild.id}`)
+  .addField(" **Member Count**", `${guild.memberCount}`)
+  .addField(" **Verification Level**", `${guild.verificationLevel}`)
+  .setFooter(`${client.user.tag}`);
+  channel.send(embed);
+});
+
 function delay(delayInms) {
  return new Promise(resolve => {
    setTimeout(() => {
@@ -118,5 +188,3 @@ function delay(delayInms) {
    }, delayInms);
  });
 }
-
-//Bot coded by Tomato#6966 
