@@ -12,10 +12,10 @@ module.exports = {
         const textChannels = channels.filter((channel) => channel.type === "text").map((channel) => `<#${channel.id}>`).join(", ");
 
         const embed = new MessageEmbed()
-            .setColor("#0d2943")
+            .setColor("#985db3")
             .setTitle(`${message.guild.name}'s channels`)
-            .addField("**Voice Channels:**", voiceChannels)
-            .addField("**Text Channels:**", textChannels)
+            .addField("**🔊Voice Channels:**", voiceChannels)
+            .addField("**#️⃣ Text Channels:**", textChannels)
             .setFooter(message.author.username)
             .setTimestamp();
 
