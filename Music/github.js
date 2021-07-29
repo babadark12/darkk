@@ -24,7 +24,7 @@ module.exports = {
 
             const embed = new MessageEmbed()
             .setAuthor(`${login} Information!`, avatar_url)
-            .setColor(`#0d2943`)
+            .setColor(`#985db3`)
             .setThumbnail(`${avatar_url}`)
             .addField(`Username`, `${login}`)
             .addField(`ID`, `${id}`)
