@@ -160,7 +160,7 @@ client.on("guildCreate", guild => {
   .addField("Server", `**${guild.name}**`)
   .addField("Members", `**${guild.memberCount}**`)
   .addField("Owner", `**${guild.owner}**`)
-  .setColor("#0d2943")
+  .setTimestamp()
   .setFooter(`${client.guilds.cache.size}`);
   channel.send(embed);
 });
