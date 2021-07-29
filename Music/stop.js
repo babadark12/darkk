@@ -37,7 +37,7 @@ async execute(message,args,client) {
   await channel.leave();
   //send the approve message
   message.channel.send(new MessageEmbed()
-  .setColor("#c219d8")
+  .setColor("#0d2943")
   .setAuthor(`${message.author.username} stopped the music!`)
   .catch(console.error);
   }
