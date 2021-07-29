@@ -37,7 +37,7 @@ client.on(`ready`, () => {
       });
       
 
-    client.user.setActivity(`${PREFIX}help ${client.guilds.cache.size} Server`, { type: "COMPETING"});
+    client.user.setActivity(`${PREFIX}help ${client.guilds.cache.size} Guilds`, { type: "COMPETING"});
 
     
    
@@ -84,7 +84,7 @@ client.on(`message`, async (message) => {
     //define embed
     const embed = new Discord.MessageEmbed()
     .setColor("#0d2943")
-    .setAuthor(`Reyna`, `https://cdn.discordapp.com/attachments/843342058352541706/849755772346302484/PicsArt_05-25-07.10.31.jpg`)
+    .setAuthor(``)
     .setDescription(saymsg)
     //delete the Command
     message.delete({timeout: 300})
