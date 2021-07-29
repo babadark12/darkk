@@ -21,7 +21,7 @@ module.exports = {
         .setDescription(`${message.author.username} Is Dancing!`)
         .setImage(`${data.image}`)
         .setTitle(`♪ \(^ω^\ )`)
-        .setColor("#0d2943")
+        .setColor("#985db3")
         .setTimestamp()
 
       message.lineReplyNoMention(embed);
