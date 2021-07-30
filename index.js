@@ -160,7 +160,7 @@ client.on("guildCreate", guild => {
       .setThumbnail(client.user.displayAvatarURL({ dynamic: true }))
       .addField(
         "Information",
-        `I Have Been Adding To New Server: **${guild.name}**.\n\n Members: **${guild.memberCount}**`,
+        `I Have Been Adding To New Server: **${guild.name}**. Members: **${guild.memberCount}**`,
         true
       )
       .addField(
