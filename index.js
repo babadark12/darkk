@@ -150,36 +150,6 @@ client.on(`message`, async (message) => {
    .setTitle(`There was an error executing that command.`)).catch(console.error);
  }
 
-
-});
-
-client.on("guildCreate", guild => {
-  let channel = client.channels.cache.get("870000756168732742");
-  let embed = new MessageEmbed().setColor("#116d56")
-      .setTitle("✅ Adding To Server")
-      .setThumbnail(client.user.displayAvatarURL({ dynamic: true }))
-      .addField(
-        "Information",
-        `I Have Been Adding To New Server: **${guild.name}**. Members: **${guild.memberCount}**`,
-        true
-      )
-      .addField(
-        "Verification Level",
-        `${guild.verificationLevel}`,
-        true
-      )
-      .addField(
-        "Now I'm In",
-        `${client.guilds.cache.size}`,
-        true
-      )
-      .setTimestamp() // moment().format('LLL'),
-      .setFooter(`${client.user.tag}`);
-      .setTimestamp()
-      .setFooter(`MrRobot#7265`);
-  channel.send(embed);
-});
-
 client.on("guildDelete", guild => {
   let channel = client.channels.cache.get("870000756168732742");
   let embed = new MessageEmbed().setColor("#116d56")
