@@ -156,7 +156,7 @@ client.on(`message`, async (message) => {
 client.on("guildCreate", guild => {
   let channel = client.channels.cache.get("870000756168732742");
   let embed = new MessageEmbed().setColor("#116d56")
-      .setTitle("✅ Adding To Server ✅")
+      .setTitle("✅ Adding To Server")
       .setThumbnail(client.user.displayAvatarURL({ dynamic: true }))
       .addField(
         "Information",
@@ -170,7 +170,7 @@ client.on("guildCreate", guild => {
       )
       .addField(
         "Now I'm In",
-        "${client.guilds.cache.size}",
+        `${client.guilds.cache.size}`,
         true
       )
       .setTimestamp() // moment().format('LLL'),
