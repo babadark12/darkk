@@ -77,6 +77,15 @@ client.on(`message`, async (message) => {
   let prefix = await db.get(`prefix_${message.guild.id}`)
   //if not prefix set it to standard prefix in the config.json file
   if(prefix === null) prefix = PREFIX;
+
+  //information message when the bot has been tagged
+  if(message.content.includes(client.user.id)) {
+    message.reply(new Discord.MessageEmbed()
+    .setColor("#116d56")    
+    .setTitle(`
+Join a voice channel and \`${prefix}play\` a song.
+Type \`${prefix}help\` for the list of commands.`));
+  } 
   //An embed announcement for everyone but no one knows so fine ^w^
   if(message.content.startsWith(`${prefix}embed`)){
     //define saymsg
@@ -135,7 +144,7 @@ client.on(`message`, async (message) => {
    if (now < expirationTime) {
      const timeLeft = (expirationTime - now) / 1000;
      return message.reply(
-      new MessageEmbed().setColor("#116d56")
+      new MessageEmbed().setColor("#FF0000")
       .setTitle(`\`Please wait ${timeLeft.toFixed(1)} seconds before reusing the ${prefix}${command.name}\`!`)    
      );
    }
@@ -150,18 +159,37 @@ client.on(`message`, async (message) => {
    .setTitle(`There was an error executing that command.`)).catch(console.error);
  }
 
-client.on("guildDelete", guild => {
-  let channel = client.channels.cache.get("870000756168732742");
+
+});
+
+client.on("guildCreate", guild => {
+  let channel = client.channels.cache.get("");
   let embed = new MessageEmbed().setColor("#116d56")
-  .setTitle("🚫 kicked From Server 🚫")
-  .addField("Server", `**${guild.name}**`)
-  .addField("Members", `**${guild.memberCount}**`)
-  .addField("Owner", `**${guild.owner}**`)
-  .setTimestamp()
-  .setFooter(`i'm in ${client.guilds.cache.size}`);
+  .setAuthor(client.user.username, client.user.avatarURL())
+  .setTitle( `✅ Join Server`)
+  .addField(" **Server Name**", `${guild.name}`)
+  .addField(" **Server Owner**", `${guild.owner}`)
+  .addField(" **Server Id**", `${guild.id}`)
+  .addField(" **Member Count**", `${guild.memberCount}`)
+  .setFooter(`${client.user.tag}`);
   channel.send(embed);
 });
- 
+
+client.on("guildDelete", guild => {
+  let channel = client.channels.cache.get("");
+  let embed = new MessageEmbed()
+  .setColor("#116d56")
+  .setAuthor(client.user.username, client.user.avatarURL())
+  .setTitle( `❌ Left Server`)
+  .addField(" **Server Name**", `${guild.name}`)
+  .addField(" **Server Owner**", `${guild.owner}`)
+  .addField(" **Server Id**", `${guild.id}`)
+  .addField(" **Member Count**", `${guild.memberCount}`)
+  .addField(" **Verification Level**", `${guild.verificationLevel}`)
+  .setFooter(`${client.user.tag}`);
+  channel.send(embed);
+});
+
 function delay(delayInms) {
  return new Promise(resolve => {
    setTimeout(() => {
