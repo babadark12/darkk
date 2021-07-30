@@ -28,7 +28,7 @@ module.exports = {
       .setTitle(`${client.user.username} stats`)
       .setThumbnail(client.user.displayAvatarURL())
       .addField(
-        `🔖 Memory Usage:`,
+        `🗂️ Memory Usage:`,
         (process.memoryUsage().rss / 1024 / 1024).toFixed(2) + "MB",
         false
       )
@@ -37,8 +37,8 @@ module.exports = {
       .addField(`🎫 Users Count:`, `${client.guilds.cache.reduce((a, g) => a + g.memberCount, 0)}`, false)
       .addField(`#️⃣ Channels Count:`, `${client.channels.cache.size}`, false)
       .addField(`🔸 Shards:`, `1`, false)
-      .addField(`⚙️ Made With :`, `Node.js V12`, false)
-      .addField(`🛠️ Developers of This Bot -`, `MrRobot#7265`, false)
+      .addField(`⚙️ Made With:`, `Node.js V12`, false)
+      .addField(`🛠️ Creator:`, `MrRobot#7265`, false)
       .addField(`🔻 Prefix : `, `${prefix}`, false)
       .addField(`🚥 Uptime:`, uptime.join(", "), false)
     message.lineReplyNoMention(embed);
