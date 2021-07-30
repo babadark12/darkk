@@ -161,7 +161,7 @@ client.on("guildDelete", guild => {
   .setFooter(`i'm in ${client.guilds.cache.size}`);
   channel.send(embed);
 });
-
+ 
 function delay(delayInms) {
  return new Promise(resolve => {
    setTimeout(() => {
