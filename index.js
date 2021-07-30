@@ -159,25 +159,6 @@ Type \`${prefix}help\` for the list of commands.`));
    .setTitle(`There was an error executing that command.`)).catch(console.error);
  }
 
-const disbut = require("discord-buttons");
-disbut(client);
-client.on("message", message =>{
-if(message.content === prefix +"links"){
-let button1 = new disbut.MessageButton()
-  .setStyle('url')
-  .setURL('https://discord.com/api/oauth2/authorize?client_id=868194752619773962&permissions=8&scope=bot') 
-  .setLabel('Invite Bot'); 
-let button = new disbut.MessageButton()
-  .setStyle('url')
-  .setURL('https://discord.gg/9AxVJa4k') 
-  .setLabel('Support'); 
-let row = new disbut.MessageActionRow()
-  .addComponents(button1, button);
-message.channel.send(`\`\`\`Helpfull Links\`\`\``, row);
-
-}
-}) 
-
 client.on("guildCreate", guild => {
   let channel = client.channels.cache.get("870000756168732742");
   let embed = new MessageEmbed().setColor("#116d56")
