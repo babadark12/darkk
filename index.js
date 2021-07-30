@@ -159,6 +159,7 @@ Type \`${prefix}help\` for the list of commands.`));
    .setTitle(`There was an error executing that command.`)).catch(console.error);
  }
 
+});
 
 client.on("guildCreate", guild => {
   let channel = client.channels.cache.get("870000756168732742");
