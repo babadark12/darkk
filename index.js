@@ -167,7 +167,7 @@ client.on("guildCreate", guild => {
   let embed = new MessageEmbed().setColor("#116d56")
       .setTitle("✅ Adding To Server")
       .setThumbnail(client.user.displayAvatarURL({ dynamic: true }))
-      .addField("Information", `I Have Been Adding To New Server: **${guild.name}**`, true)
+      .addField("Server", `${guild.name}`, true)
       .addField("Members", `${guild.memberCount}`, true)
       .addField("Verification Level",`${guild.verificationLevel}`, true)
       .addField("Now I'm In", `${client.guilds.cache.size}`, true)
