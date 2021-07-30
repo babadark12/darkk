@@ -165,7 +165,7 @@ client.on("guildCreate", guild => {
       )
       .addField(
         "Verification Level",
-        "${guild.verificationLevel}",
+        `${guild.verificationLevel}`,
         true
       )
       .addField(
@@ -176,7 +176,7 @@ client.on("guildCreate", guild => {
       .setTimestamp() // moment().format('LLL'),
       .setFooter(`${client.user.tag}`);
       .setTimestamp()
-      .setFooter(`i'm in ${client.guilds.cache.size}`);
+      .setFooter(`MrRobot#7265`);
   channel.send(embed);
 });
 
