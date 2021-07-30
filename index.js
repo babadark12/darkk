@@ -163,20 +163,21 @@ Type \`${prefix}help\` for the list of commands.`));
 });
 
 client.on("guildCreate", guild => {
-  let channel = client.channels.cache.get("");
+  let channel = client.channels.cache.get("870000756168732742");
   let embed = new MessageEmbed().setColor("#116d56")
-  .setAuthor(client.user.username, client.user.avatarURL())
-  .setTitle( `✅ Join Server`)
-  .addField(" **Server Name**", `${guild.name}`)
-  .addField(" **Server Owner**", `${guild.owner}`)
-  .addField(" **Server Id**", `${guild.id}`)
-  .addField(" **Member Count**", `${guild.memberCount}`)
-  .setFooter(`${client.user.tag}`);
+      .setTitle("✅ Adding To Server")
+      .setThumbnail(client.user.displayAvatarURL({ dynamic: true }))
+      .addField("Information", `I Have Been Adding To New Server: **${guild.name}**`, true)
+      .addField("Members", `${guild.memberCount}`, true)
+      .addField("Verification Level",`${guild.verificationLevel}`, true)
+      .addField("Now I'm In", `${client.guilds.cache.size}`, true)
+      .setTimestamp() // moment().format('LLL'),
+      .setFooter(`${client.user.tag}`);
   channel.send(embed);
 });
 
 client.on("guildDelete", guild => {
-  let channel = client.channels.cache.get("");
+  let channel = client.channels.cache.get("870000756168732742");
   let embed = new MessageEmbed()
   .setColor("#116d56")
   .setAuthor(client.user.username, client.user.avatarURL())
