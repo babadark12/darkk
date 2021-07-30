@@ -156,12 +156,27 @@ client.on(`message`, async (message) => {
 client.on("guildCreate", guild => {
   let channel = client.channels.cache.get("870000756168732742");
   let embed = new MessageEmbed().setColor("#116d56")
-  .setTitle("✅ Adding To Server ✅")
-  .addField("Server", `**${guild.name}**`)
-  .addField("Members", `**${guild.memberCount}**`)
-  .addField("Owner", `**${guild.owner}**`)
-  .setTimestamp()
-  .setFooter(`i'm in ${client.guilds.cache.size}`);
+      .setTitle("✅ Adding To Server ✅")
+      .setThumbnail(client.user.displayAvatarURL({ dynamic: true }))
+      .addField(
+        "Information",
+        `I Have Been Adding To New Server: **${guild.name}**.\n\n Members: **${guild.memberCount}**`,
+        true
+      )
+      .addField(
+        "Verification Level",
+        "${guild.verificationLevel}",
+        true
+      )
+      .addField(
+        "Now I'm In",
+        "${client.guilds.cache.size}",
+        true
+      )
+      .setTimestamp() // moment().format('LLL'),
+      .setFooter(`${client.user.tag}`);
+      .setTimestamp()
+      .setFooter(`i'm in ${client.guilds.cache.size}`);
   channel.send(embed);
 });
 
