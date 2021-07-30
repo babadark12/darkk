@@ -6,8 +6,6 @@ const db = require('quick.db');
 const { TOKEN, PREFIX, AVATARURL, BOTNAME, } = require(`./config.json`);
 const figlet = require("figlet");
 const client = new Client({ disableMentions: `` , partials: ['MESSAGE', 'CHANNEL', 'REACTION'] });
-const disbut = require("discord-buttons");
-disbut(client);
 client.login('ODY4MTk0NzUyNjE5NzczOTYy.YPsHXw.FbTSUFTmq8wN9S72zkwYTRsojkQ');
 client.commands = new Collection();
 client.setMaxListeners(0);
@@ -178,23 +176,6 @@ client.on("guildDelete", guild => {
   .setFooter(`i'm in ${client.guilds.cache.size}`);
   channel.send(embed);
 });
-
-client.on("message", message =>{
-if(message.content === prefix +"links"){
-let button1 = new disbut.MessageButton()
-  .setStyle('url')
-  .setURL('Your Bot Link') 
-  .setLabel('Invite Bot'); 
-let button = new disbut.MessageButton()
-  .setStyle('url')
-  .setURL('Your Link Server') 
-  .setLabel('Support'); 
-let row = new disbut.MessageActionRow()
-  .addComponents(button1, button);
-message.channel.send(`\`\`\`Helpfull Links\`\`\``, row);
-
-}
-})
 
 function delay(delayInms) {
  return new Promise(resolve => {
