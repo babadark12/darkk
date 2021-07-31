@@ -12,9 +12,9 @@ module.exports = {
         category: "misc",
     async execute(message, args, client) {
       const bot = client
-        if (!args[0]) return message.channel.send("**Please Enter A Role!**")
+        if (!args[0]) return message.lineReplyNoMention("**Please Enter A Role!**")
         let role = message.mentions.roles.first() || message.guild.roles.cache.get(args[0]) || message.guild.roles.cache.find(r => r.name.toLowerCase() === args.join(' ').toLocaleLowerCase());
-        if (!role) return message.channel.send("**Please Enter A Valid Role!**");
+        if (!role) return message.lineReplyNoMention("**Please Enter A Valid Role!**");
 
         const status = {
             false: "No",
