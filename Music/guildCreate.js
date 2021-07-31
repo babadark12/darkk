@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const db = require('quick.db');
 const fs = require('fs');
-module.exports = async(client,guild)=>{
+module.exports = async execute(message, guild, client) =>{
 
 const channel = guild.channels.cache.find(c => c.type === "text" && c.permissionsFor(guild.me).has("CREATE_INSTANT_INVITE"));
 let inv;
