@@ -3,7 +3,7 @@ const { lineReply } = require("discord-reply");
 
 module.exports = {
   name: "channels",
-  aliases: ["chs"],
+  aliases: ["ch"],
   description: "Show Gif",
   usage: "Gif",
    async execute(message, args, client) {
