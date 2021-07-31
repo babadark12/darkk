@@ -1,6 +1,5 @@
-const { RichEmbed } = require("discord.js");
+const Discord = require("discord.js");
 const { lineReply } = require("discord-reply");
-
 
 module.exports = {
     name: "emojilist",
