@@ -10,7 +10,7 @@ module.exports = {
             .setTitle(`General Rules`)
             .setColor("#116d56")
             .setThumbnail('')
-            .setDescription([`
+            .setDescription([`\`\`\`diff
         📜  1.1. Treat all members with respect.
         📜  1.2. Harassment, abuse, hate speech or any kind of discriminatory speech will not be tolerated.
         📜  1.3. Do not in any way intentionally offend any member in the Discord server.
@@ -23,14 +23,14 @@ module.exports = {
         📜  1.10. Words or small sentences in other languages other than English are allowed only for the purpose of teaching someone, or for clarification.
         📜  1.11. We welcome constructive criticism but have zero tolerance for aggressive or entitled demands.
         📜  1.12 Female Members Of The Server Are Supposed To Verify Themselves Through Voice Channels By Female Moderators As Soon As Possible Upon Joining Server Also If Already In Server To Avoid Certain Scenarios, Impersonating Using Fake Female Accounts Will Get Permanent Server Ban Once Proven.
-        `])
+        \`\`\``])
 
 
         let rules2 = new MessageEmbed()
             .setTitle(`Chat Rules`)
             .setColor("#116d56")
             .setThumbnail('')
-            .setDescription([`
+            .setDescription([`\`\`\`diff
     📜 2.1. Don’t Spam (Emoji , same msg again & again or Dont spam for Level Increase.
     📜  2.3. If any of staff member is asking to Change the Topic of conversation then it needs to be changed, if it gets too offensive to other members. If not followed, there are kick/ban.
         
@@ -50,13 +50,13 @@ module.exports = {
         
     📜  2.11 Excessive use of bad language will lead to permanent ban/kick.
         
-        `])
+        \`\`\``])
 
 
         let rules3 = new MessageEmbed()
             .setTitle(`Voice Rules `)
             .setThumbnail('')
-            .setDescription([`
+            .setDescription([`\`\`\`diff
         📜  3.1. Posting any content related to piracy, cheats, cracks, exploits or any kind of copyright breaching materials is forbidden.
         📜  3.2. Any malicious activity toward the server or any member is forbidden.
         📜  3.3 This server follows all the Discord Guidelines and TermsOfServices. Please do read and follow all them listed.
@@ -66,7 +66,7 @@ module.exports = {
         📜   3.7. Do not Argue With Any Mod/Staff. Their Decision will be last Decision
         📜   3.8. Do not use voice changer in vc, this will lead to permanent ban from the server.
         📜   3.9. Do not blow air in the mic or else you will be banned from vc.
-        `])
+        \`\`\``])
 
         let follow = new MessageEmbed()
             .setColor("#116d56")
