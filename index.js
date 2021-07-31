@@ -80,12 +80,9 @@ client.on(`message`, async (message) => {
 
   //information message when the bot has been tagged
   if(message.content.includes(client.user.id)) {
-    message.reply(new Discord.MessageEmbed()
-    .setColor("#116d56")    
-    .setTitle(`
-Join a voice channel and \`${prefix}play\` a song.
-Type \`${prefix}help\` for the list of commands.`));
-  } 
+    message.channel.send(`Hello, My Prefix Is > + To View More Commands Type +help`)
+    );
+} 
   //An embed announcement for everyone but no one knows so fine ^w^
   if(message.content.startsWith(`${prefix}embed`)){
     //define saymsg
