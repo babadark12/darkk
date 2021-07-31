@@ -10,7 +10,7 @@ module.exports = {
     async execute(message, args, client) {
          
 	let channel = message.mentions.channels.first() || message.guild.channels.cache.get(args[0]) || message.guild.channels.cache.find(Ch => Ch.name.toLowerCase() === args.join(" ").toLowerCase()) || message.guild.channels.cache.find(Ch => Ch.name.toLowerCase().includes(args.join(" ").toLowerCase())) || message.guild.channels.cache.find(Ch => Ch.name.toLowerCase().startsWith(args.join(" ").toLowerCase())) || message.guild.channels.cache.find(Ch => Ch.name.toLowerCase().endsWith(args.join(" ").toLowerCase()));
-if(!channel || channel.type === "unknown" || !args.length) return message.channel.send("Please Mention A Valid Channel Or Name Or ID Or Channel Starts/Ends With Or Channel Includes!");
+if(!channel || channel.type === "unknown" || !args.length) return message.lineReplyNoMention("**Please Mention A Valid Channel Or** `Name` **Or** `ID` **Or Channel** `Starts/Ends` **With Or Channel Includes!**");
 
 if(channel.type === "voice") {
   
@@ -29,7 +29,7 @@ const channelEmbed = new MessageEmbed()
 ${channel.members ? channel.members.array().join(" **|** ") : 'None'}`
 ]) 
 .setTimestamp()
-.setColor('RANDOM')
+.setColor('#116d56')
 .setFooter(`Requested by ${message.author.tag}`, message.author.displayAvatarURL({dynamic: true}))
 message.lineReplyNoMention(`**Information About** <#${channel.id}> **Channel**`,channelEmbed)
 }
@@ -45,7 +45,7 @@ const channelEmbed = new MessageEmbed()
 `**❯ Category:** ${channel.parent ? channel.parent.name : 'None'}`, 
 `**❯ Topic:** \n${channel.topic ? channel.topic.length > 200 ? `${channel.topic.slice(0, 200)}...` : channel.topic : "None"}`
 ]) 
-.setColor('RANDOM') 
+.setColor('#116d56') 
 .setTimestamp() 
 .setFooter(`Requested by ${message.author.tag}`, message.author.displayAvatarURL({dynamic: true}))
 message.lineReplyNoMention(`**Information About** <#${channel.id}> **Channel**`,channelEmbed)
@@ -63,7 +63,7 @@ const channelEmbed = new MessageEmbed()
 ${channel.children ? channel.children.array().join(" **|** ") : 'None'}`
 		])
 .setTimestamp()
-.setColor('RANDOM')
+.setColor('#116d56')
 .setFooter(`Requested by ${message.author.tag}`, message.author.displayAvatarURL({dynamic: true}))
 	message.lineReplyNoMention(`**Information About** <#${channel.id}> **Channel**`,channelEmbed)
 }
