@@ -165,7 +165,6 @@ client.on("guildCreate", guild => {
   let channel = client.channels.cache.get("870000756168732742");
   let embed = new MessageEmbed().setColor("#116d56")
     .setColor("#116d56")
-    .setURL(inv ? `https://discord.gg/${inv}` : null)
     .setThumbnail(guild.iconURL({dynamic: true}))
     .setFooter(`I Am In ${client.guilds.cache.size} Servers Now !`)
     .setTitle(`Joined A Server !`)
