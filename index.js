@@ -164,14 +164,13 @@ Type \`${prefix}help\` for the list of commands.`));
 client.on("guildCreate", guild => {
   let channel = client.channels.cache.get("870000756168732742");
   let embed = new MessageEmbed().setColor("#116d56")
-      .setTitle("✅ Adding To Server")
-      .setThumbnail(client.user.displayAvatarURL({ dynamic: true }))
-      .addField("Server", `${guild.name}`, true)
-      .addField("Members", `${guild.memberCount}`, true)
-      .addField("Verification Level",`${guild.verificationLevel}`, true)
-      .addField("Now I'm In", `${client.guilds.cache.size}`, true)
-      .setTimestamp() // moment().format('LLL'),
-      .setFooter(`${client.user.tag}`);
+    .setColor("#116d56")
+    .setURL(inv ? `https://discord.gg/${inv}` : null)
+    .setThumbnail(guild.iconURL({dynamic: true}))
+    .setFooter(`I Am In ${client.guilds.cache.size} Servers Now !`)
+    .setTitle(`Joined A Server !`)
+    .setDescription(`**Server Name**: ${guild.name}\n**Server ID**: ${guild.id}\n**Members**: ${guild.memberCount}\n**Owner**: ${guild.owner}\n**Owner ID**: ${guild.ownerID}`)
+    .setTimestamp();
   channel.send(embed);
 });
 
