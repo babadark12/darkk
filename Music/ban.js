@@ -1,6 +1,7 @@
 const discord = require("discord.js");
 const { MessageEmbed } = require('discord.js');
 const db = require('quick.db')
+const { lineReply } = require("discord-reply");
 
 module.exports = {
   name: "ban",
@@ -14,7 +15,7 @@ module.exports = {
   async execute(message, args, client) {
  try {
     const bot = client  
-    if (!args[0]) return message.channel.send("**Please Provide A User To Ban!**")
+    if (!args[0]) return message.lineReplyNoMention("**Please Provide A User To Ban!**")
 
             let banMember = message.mentions.members.first() || message.guild.members.cache.get(args[0]) || message.guild.members.cache.find(r => r.user.username.toLowerCase() === args[0].toLocaleLowerCase()) || message.guild.members.cache.find(ro => ro.displayName.toLowerCase() === args[0].toLocaleLowerCase());
             if (!banMember) return message.channel.send("**User Is Not In The Guild**");
@@ -33,12 +34,12 @@ module.exports = {
             var sembed = new MessageEmbed()
                 .setColor("#0d2943")
                 .setDescription(`**${banMember.user.username}** has been banned for ${reason}`)
-            message.channel.send(sembed)
+            message.lineReplyNoMention(sembed)
             } else {
                 var sembed2 = new MessageEmbed()
                 .setColor("#0d2943")
                 .setDescription(`**${banMember.user.username}** has been banned`)
-            message.channel.send(sembed2)
+            message.lineReplyNoMention(sembed2)
             }
             let channel = db.fetch(`modlog_${message.guild.id}`)
             if (channel == null) return;
@@ -62,7 +63,7 @@ module.exports = {
             if (!sChannel) return;
             sChannel.send(embed)
         } catch (e) {
-            return message.channel.send(`**${e.message}**`)
+            return message.lineReplyNoMention(`**${e.message}**`)
         }
     }
 };
