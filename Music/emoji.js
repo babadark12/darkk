@@ -11,11 +11,11 @@ module.exports = {
         async execute(message, args, client) {
         let emojiName = args.join(" ");
         let emoji = message.guild.emojis.cache.get(args[0]) || message.guild.emojis.cache.find(emoji => emoji.name === `${emojiName}`) 
-        if (!args[0]) return message.channel.send("Please provide an emoji name or id!")
-        if (!emoji) return message.channel.send("Could not find emoji... Please provide emoji name or emoji id!")
+        if (!args[0]) return message.lineReplyNoMention("Please provide an emoji name or id!")
+        if (!emoji) return message.lineReplyNoMention("Could not find emoji... Please provide emoji name or emoji id!")
         let xd;
-        if(emoji.animated) xd = "<a:YesCheck:819048011840618526>"
-        if(!emoji.animated) xd = '<a:WrongCheck:819048042091118604>'
+        if(emoji.animated) xd = "✅"
+        if(!emoji.animated) xd = '❌'
         let embed = new Discord.MessageEmbed()
 
             .addField("Name", `${emoji.name}`)
