@@ -78,11 +78,6 @@ client.on(`message`, async (message) => {
   //if not prefix set it to standard prefix in the config.json file
   if(prefix === null) prefix = PREFIX;
 
-  //information message when the bot has been tagged
-  if(message.content.includes(client.user.id)) {
-    message.channel.send(`Hello, My Prefix Is > + To View More Commands Type +help`)
-    );
-} 
   //An embed announcement for everyone but no one knows so fine ^w^
   if(message.content.startsWith(`${prefix}embed`)){
     //define saymsg
