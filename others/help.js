@@ -23,6 +23,6 @@ module.exports = {
     .setFooter(`${message.author.tag}`, message.author.avatarURL)
     helpEmbed.setTimestamp();
 
-    message.lineReplyNoMention(embed).catch(console.error);
+    message.lineReplyNoMention(helpEmbed).catch(console.error);
   }
 };
