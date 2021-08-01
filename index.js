@@ -157,12 +157,14 @@ client.on("guildCreate", guild => {
   let channel = client.channels.cache.get("870000756168732742");
   let embed = new MessageEmbed().setColor("#116d56")
     const embed = new Discord.MessageEmbed()
-        .setTitle(':clap: New Server Join! :clap: ')
-	.addField('Guild', '```' + guild.name + '```')
-	.addField('Server Region', '```' + guild.region + '```', true)
-	.addField('Guild ID', '```' + guild.id + '```', true)
-	.addField('Guild Owner ID', '```' + guild.ownerID + '```', true)
-	.addField('Guild Members', '```' + guild.memberCount + '```', true)
+  .setAuthor(client.user.username, client.user.avatarURL())
+  .setTitle(`NewServer`)
+  .addField(" **Server Name**", `${guild.name}`)
+  .addField(" **Server Owner**", `${guild.owner}`)
+  .addField(" **Server Id**", `${guild.id}`)
+  .addField(" **Member Count**", `${guild.memberCount}`)
+  .addField(" **Verification Level**", `${guild.verificationLevel}`)
+  .setFooter(`${client.user.tag}`);
   channel.send(embed);
 });
 
