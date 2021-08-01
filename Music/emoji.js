@@ -14,8 +14,8 @@ module.exports = {
         if (!args[0]) return message.lineReplyNoMention("Please provide an emoji name or id!")
         if (!emoji) return message.lineReplyNoMention("Could not find emoji... Please provide emoji name or emoji id!")
         let xd;
-        if(emoji.animated) xd = "✅"
-        if(!emoji.animated) xd = '❌'
+        if(emoji.animated) xd = "<:yes_17:871319322792976455>"
+        if(!emoji.animated) xd = '<:no_18:871319342170656780>'
         let embed = new Discord.MessageEmbed()
 
             .addField("Name", `${emoji.name}`)
