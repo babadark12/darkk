@@ -2,38 +2,17 @@ const { MessageEmbed } = require("discord.js");
 const { lineReply } = require("discord-reply");
 
 module.exports = {
-  name: "membercount",
-  aliases: ["count", "infocount"],
-  category: "count",
-  async execute(message, args) {
-    const Members = message.guild.memberCount;
-    const bots = message.guild.members.cache.filter(
-      member => member.bot === true
-    ).size;
-    const humans = message.guild.members.cache.filter(
-      member => !member.user.bot
-    ).size;
-    const online = message.guild.members.cache.filter(
-      member => member.presence.status === "online"
-    ).size;
-    const offline = message.guild.members.cache.filter(
-      member => member.presence.status === "offline"
-    ).size;
-    const dnd = message.guild.members.cache.filter(
-      member => member.presence.status === "dnd"
-    ).size;
-    const idle = message.guild.members.cache.filter(
-      member => member.presence.status === "idle"
-    ).size;
+name: "membercount",
+aliases: ["whatdamembers", "count"],
+description: "Check your guilds membercount!",
 
+async execute(message, args, client) {
     const embed = new MessageEmbed()
-      .setColor(`#116d56`)
-      .setTitle(`Server Member`)
-      .addField(`Number Of All Members`, Members)
-      .setThumbnail(message.guild.iconURL({ dynamic: true }))
-      .setAuthor(`${message.guild.name}`)
-      .setTimestamp();
+    .setTitle("Member Count")
+    .addField("⌜📚⌟・Total:", `**${message.guild.memberCount}**`)
+    .addField("⌜🤖⌟・Bots", `**${message.guild.members.cache.filter(m => m.user.bot).size}**`)
+    .addField("⌜🌐⌟・Users", `**${message.guild.members.cache.filter(m => !m.user.bot).size}**`)
+    .setTimestamp()
 
-    message.lineReplyNoMention(embed);
-  }
-};
+    message.lineReplyNoMention(embed)
+}}
