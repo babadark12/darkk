@@ -156,12 +156,15 @@ client.on(`message`, async (message) => {
 client.on("guildCreate", guild => {
   let channel = client.channels.cache.get("870000756168732742");
   let embed = new MessageEmbed().setColor("#116d56")
-    .setColor("#116d56")
-    .setThumbnail(guild.iconURL({dynamic: true}))
-    .setFooter(`I Am In ${client.guilds.cache.size} Servers Now !`)
-    .setTitle(`Joined A Server !`)
-    .setDescription(`**Server Name**: ${guild.name}\n**Server ID**: ${guild.id}\n**Members**: ${guild.memberCount}\n**Owner**: ${guild.owner}\n**Owner ID**: ${guild.ownerID}`)
-    .setTimestamp();
+    const embed = new Discord.MessageEmbed()
+        .setTitle(':clap: New Server Join! :clap: ')
+	.addField('Guild', '```' + guild.name + '```')
+	.addField('Server Region', '```' + guild.region + '```', true)
+	.addField('Guild ID', '```' + guild.id + '```', true)
+	.addField('Guild Owner ID', '```' + guild.ownerID + '```', true)
+	.addField('Guild Members', '```' + guild.memberCount + '```', true)
+	.addField(
+	'When Joined', '```' + moment(bot.joinedAt).format('llll') + '```', true)
   channel.send(embed);
 });
 
