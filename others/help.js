@@ -10,7 +10,6 @@ module.exports = {
      
     let helpEmbed = new MessageEmbed()
     .setColor('#116d56')
-    .setTitle("💬 Need? Help Here Are All Commands For Useing")
     .setDescription(`[Support](https://discord.gg/tdVnzJtH) - [Invite](https://discord.com/api/oauth2/authorize?client_id=868194752619773962&permissions=8&scope=bot)`)
     .addField("🌐 ❯ General Commands", `\`help\`, \`ping\`, \`prefix\`, \`uptime\`, \`avatar\`, \`invites\`, \`suggest\`, \`userinfo\`, \`serverinfo\`, \`github\`, \`support\`, \`botinfo\`, \`weather\`, \`emojiid\``)
     .addField("🎶 ❯ Music Commands", `\`filter\`, \`loop\`, \`lyrics\`, \`np\`, \`pause\`, \`play\`, \`queue\`, \`radio\`, \`remove\`, \`resume\`, \`search\`, \`shuffle\`, \`skip\`, \`skipto\`, \`stop\`, \`volume\``)
@@ -23,6 +22,6 @@ module.exports = {
     .setFooter(`${message.author.tag}`, message.author.avatarURL)
     helpEmbed.setTimestamp();
 
-    message.lineReplyNoMention(helpEmbed).catch(console.error);
+    message.lineReplyNoMention(`💬 Need Help? Here Are All Commands For Useing`).catch(console.error);
   }
 };
