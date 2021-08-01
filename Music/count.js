@@ -14,5 +14,5 @@ async execute(message, args, client) {
     .addField("⌜🌐⌟・Users", `**${message.guild.members.cache.filter(m => !m.user.bot).size}**`)
     .setTimestamp()
 
-    message.lineReplyNoMention(embed)
+    message.lineReplyNoMention(embed);
 }}
