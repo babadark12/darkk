@@ -4,8 +4,8 @@ const db = require("quick.db");
 const { lineReply } = require("discord-reply");
 
 module.exports = {
-  name: "stats",
-  aliases: ["stats", "botstats"],
+  name: "about",
+  aliases: ["stats", "botstats", "botinfo"],
   description: "Show Status Of bot",
   usage: "Gif",
   async execute(message, args, client) {
