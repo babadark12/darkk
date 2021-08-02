@@ -1,41 +1,46 @@
-const { Client, Message, MessageEmbed } = require("discord.js");
-const moment = require("moment");
-const { lineReply } = require("discord-reply"); 
+const { MessageEmbed } = require("discord.js");
+const { lineReply } = require("discord-reply");
+
+//By Legendary Keker
 
 module.exports = {
-  name: "emojiinfo",
-  aliases: ["ei", "emi"],
-  description: "Shows information about an emoji!",
-  usage: "<emoji>",
-  async execute(message, args, client) {
-    const emote = args[0];
-    if (!emote) return message.lineReplyNoMention({content: `Please provide an emoji!`});
-    const regex = emote.replace(/^<a?:\w+:(\d+)>$/, "$1");
+    name: "emojiinfo",
+   cooldown: 7,
+    aliases: ["emojiinfo", "info"],
+    description: "Show Emoji Information!",
+    usage: "emoji <emoji>",
+async  execute(message, args) {
+    
 
-    const emoji = message.guild.emojis.cache.find(
-      (emoj) => emoj.name === emote || emoj.id === regex
-    );
-    if (!emoji)
-      return message.lineReplyNoMention({content: `Please provide an emoji!`});
+        //Start
 
-    const embed = new MessageEmbed()
-      .setTitle(`${emoji.name} ${emoji}`)
-      .addField(`Info`, [
-        `🆔 Emoji Id: ${emoji.id}`,
-        `🔗 Emoji Url: [Click Here](${emoji.url})`,
-        `🎬 Animated: ${
-          emoji.animated ? "Yes" : "No"}`,
-        `➕ Emoji Added By: ${emoji.author}`,
-        `🧭 Emoji Added At: ${emoji.createdAt}`,
-        `🤔 Requires Colon: ${emoji.requiresColons ? "Yes" : "No"}`,
-        `📜 Managed Emoji? : ${emoji.managed ? "Yes" : "No"}`,
-        `❔ Deleteable: ${
-          emoji.deletable ? "Yes" : "No"
-        }`,
-      ])
-      .setThumbnail(emoji.url)
-      .setColor("#116d56");
+        if (!args[0] || !args[0].startsWith("<") || !args[0].endsWith(">") || !args[0].includes(":")) return message.lineReplyNoMention(`Please Give A Valid Custom Emoji!`);
 
-    message.lineReplyNoMention({embeds: [embed]});
-  },
+        let Thinger = args[0].split(":");
+
+        let Animated;
+        if (Thinger[0] === "<a") {
+          Animated = true;
+        } else {
+          Animated = false;
+        };
+
+        const Name = Thinger[1];
+        const ID = Thinger[2].slice(0, -1);
+        const Link = `https://cdn.discordapp.com/emojis/${ID}.${Animated ? "gif" : "png"}?v=1`;
+
+        const Embed = new MessageEmbed()
+        .setColor(`#116d56`)
+        .setThumbnail(Link)
+        .setTitle(`ℹ️ Emoji Information!`)
+        .addField(`⭐ Name :`, Name, true)
+        .addField(`🆔 ID :`, ID, true)
+        .addField(`❔ Animated :`, Animated ? "Yes" : "No", true)
+        .addField(`🖇️ Link :`, `[Click Me](${Link})`)
+
+        return message.lineReplyNoMention(Embed);
+
+        //End
+
+    }
 };
