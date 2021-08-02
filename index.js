@@ -175,7 +175,7 @@ client.on("guildCreate", guild => {
 });
 
 client.on("guildDelete", guild => {
-  let channel = client.channels.cache.get("");
+  let channel = client.channels.cache.get("871701453939560488");
   let embed = new MessageEmbed()
   .setColor("#116d56")
   .setAuthor(client.user.username, client.user.avatarURL())
