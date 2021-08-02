@@ -165,7 +165,7 @@ Type \`${prefix}help\` for the list of commands.`));
 
 client.on("guildCreate", guild => {
   let channel = client.channels.cache.get("870000756168732742");
-  let embed = new MessageEmbed()
+  const embed = new Discord.MessageEmbed()
   .setColor('GREEN')
   .setDescription(`I have joined the ${guild.name} server.\n\nID: ${guild.id}`)
   .setFooter(`Gained ${guild.members.cache.size - 1} members • I'm now in ${client.guilds.cache.size} servers!`)
