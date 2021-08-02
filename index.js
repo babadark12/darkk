@@ -151,19 +151,38 @@ client.on(`message`, async (message) => {
    .setTitle(`There was an error executing that command.`)).catch(console.error);
  }
 
+
 });
 
 client.on("guildCreate", guild => {
   let channel = client.channels.cache.get("870000756168732742");
-      let embed = new MessageEmbed()
-      .setColor('#116d56')
+  let embed = new MessageEmbed()
+      .setColor('GREEN')
       .setDescription(`I have joined the ${guild.name} server.\n\nID: ${guild.id}`)
-      .setFooter(`members: ${guild.memberCount} • I'm now in ${this.client.guilds.cache.size} servers`)
+      .setFooter(`Gained ${guild.memberCount} members • I'm now in ${this.client.guilds.cache.size} servers!`)
       .setThumbnail(guild.iconURL({ dynamic: true }) ? guild.iconURL({ dynamic: true }) : `https://guild-default-icon.herokuapp.com/${encodeURIComponent(guild.nameAcronym)}`)
       .addField('Server Owner', `${guild.owner.user.tag} / ${guild.ownerID}`)
   channel.send(embed);
 });
- 
+
+client.on("guildDelete", guild => {
+  let channel = client.channels.cache.get("870000756168732742");
+  let embed = new MessageEmbed()
+      .setColor('RED')
+      .setDescription(`I have left the ${guild.name} server.`)
+      .setFooter(`Lost ${guild.memberCount} members • I'm now in ${this.client.guilds.cache.size} servers..\n\nID: ${guild.id}`)
+      .setThumbnail(guild.iconURL({ dynamic: true }) ? guild.iconURL({ dynamic: true }) : `https://guild-default-icon.herokuapp.com/${encodeURIComponent(guild.nameAcronym)}`)
+      .addField('Server Owner', `${guild.owner} / ${guild.ownerID}`)
+  channel.send(embed);
+});
+
+function delay(delayInms) {
+ return new Promise(resolve => {
+   setTimeout(() => {
+     resolve(2);
+   }, delayInms);
+ });
+}
 function delay(delayInms) {
  return new Promise(resolve => {
    setTimeout(() => {
