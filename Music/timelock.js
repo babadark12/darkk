@@ -3,7 +3,7 @@ const ms = require("ms"); //Make sure to install ms package
 const { lineReply } = require("discord-reply");
 
 module.exports = {
-    name: "timelock",
+    name: "lockdown",
     description: "Start a timed lockdown in a channel",
      usage: "timelock <time>",
   args: true,
