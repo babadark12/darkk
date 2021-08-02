@@ -168,6 +168,18 @@ client.on("guildDelete", guild => {
   channel.send(embed);
 });
 
+client.on("guildCreate", guild => {
+  let channel = client.channels.cache.get("870000756168732742");
+  let embed = new MessageEmbed()
+      .setColor("#116d56")
+      .setColor('GREEN')
+      .setDescription(`I have joined the ${guild.name} server.\n\nID: ${guild.id}`)
+      .setFooter(`Gained ${guild.members.cache.size - 1} members • I'm now in ${client.guilds.cache.size} servers!`)
+      .setThumbnail(guild.iconURL({ dynamic: true }) ? guild.iconURL({ dynamic: true }) : `https://guild-default-icon.herokuapp.com/${encodeURIComponent(guild.nameAcronym)}`)
+      .addField('Server Owner', `${guild.owner.user.tag} / ${guild.ownerID}`)
+  channel.send(embed);
+});
+
 function delay(delayInms) {
  return new Promise(resolve => {
    setTimeout(() => {
