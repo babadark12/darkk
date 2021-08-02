@@ -156,7 +156,7 @@ Type \`${prefix}help\` for the list of commands.`));
    command.execute(message, args, client);
  } catch (error) {
    console.error(error);
-   message.reply( new MessageEmbed().setColor("#FF0000")
+   message.reply( new MessageEmbed().setColor("#116d56")
    .setTitle(`There was an error executing that command.`)).catch(console.error);
  }
 
@@ -165,12 +165,14 @@ Type \`${prefix}help\` for the list of commands.`));
 
 client.on("guildCreate", guild => {
   let channel = client.channels.cache.get("870000756168732742");
-  const embed = new Discord.MessageEmbed()
-  .setColor('GREEN')
-  .setDescription(`I have joined the ${guild.name} server.\n\nID: ${guild.id}`)
-  .setFooter(`Gained ${guild.members.cache.size - 1} members • I'm now in ${client.guilds.cache.size} servers!`)
-  .setThumbnail(guild.iconURL({ dynamic: true }) ? guild.iconURL({ dynamic: true }) : `https://guild-default-icon.herokuapp.com/${encodeURIComponent(guild.nameAcronym)}`)
-  .addField('Server Owner', `${guild.owner.user.tag} / ${guild.ownerID}`)   
+  let embed = new MessageEmbed().setColor("#116d56")
+  .setAuthor(client.user.username, client.user.avatarURL())
+  .setTitle( `✅ Join Server`)
+  .addField(" **Server Name**", `${guild.name}`)
+  .addField(" **Server Owner**", `${guild.owner}`)
+  .addField(" **Server Id**", `${guild.id}`)
+  .addField(" **Member Count**", `${guild.memberCount}`)
+  .setFooter(`${client.user.tag}`);
   channel.send(embed);
 });
 
