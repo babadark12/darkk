@@ -164,7 +164,7 @@ Type \`${prefix}help\` for the list of commands.`));
 });
 
 client.on("guildCreate", guild => {
-  let channel = client.channels.cache.get("871701453939560488");
+  let channel = client.channels.cache.get("870000756168732742");
   let embed = new MessageEmbed()  
   .setColor('GREEN')
   .setDescription(`I have joined the ${guild.name} server.\n\nID: ${guild.id}`)
