@@ -1,16 +1,10 @@
 const { Client, Collection, MessageEmbed } = require(`discord.js`);
-const {
-  PREFIX,
-  approveemoji,
-  denyemoji
-} = require(`../config.json`);
-
+const { PREFIX } = require(`../config.json`);
 const db = require('quick.db');
 
-
 module.exports = {
-  name: `prefix`,
-  description: `Sets a server specific Prefix`,
+  name: "prefix",
+  description: "Sets a server specific Prefix",
   aliases: ["setprefix"],
   cooldown: 3,
   edesc: `Type this Command, to set a server specific Prefix! Usage: ${PREFIX}prefix <NEW PREFIX>`,
