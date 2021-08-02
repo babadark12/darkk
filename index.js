@@ -165,14 +165,12 @@ Type \`${prefix}help\` for the list of commands.`));
 
 client.on("guildCreate", guild => {
   let channel = client.channels.cache.get("870000756168732742");
-  let embed = new MessageEmbed().setColor("#116d56")
-  .setAuthor(client.user.username, client.user.avatarURL())
-  .setTitle( `✅ Join Server`)
-  .addField(" **Server Name**", `${guild.name}`)
-  .addField(" **Server Owner**", `${guild.owner}`)
-  .addField(" **Server Id**", `${guild.id}`)
-  .addField(" **Member Count**", `${guild.memberCount}`)
-  .setFooter(`${client.user.tag}`);
+  let embed = new MessageEmbed()
+  .setColor("GREEN")
+  .setThumbnail(guild.iconURL({ dynamic: true }) ? guild.iconURL({ dynamic: true }) : `https://guild-default-icon.herokuapp.com/${encodeURIComponent(guild.nameAcronym)}`)
+  .setDescription(`I have joined the ${guild.name} server.\n\nID: ${guild.id} the id.\n\nMember Count: ${guild.memberCount} Members`)
+  .addField("Server Owner", `${guild.owner.user.tag} / ${guild.ownerID}`)
+  .setFooter(`Now Im In ${client.guilds.cache.size}`);
   channel.send(embed);
 });
 
