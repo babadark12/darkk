@@ -10,7 +10,7 @@ module.exports = {
  
 await message.lineReplyNoMention({embed: {
  color: 3447003,
- description: "https://discord.gg/yPhDhhMBK6"
+ description: "https://discord.gg/A6R2CJENGn"
 }});
 
 }
