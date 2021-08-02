@@ -163,28 +163,30 @@ Type \`${prefix}help\` for the list of commands.`));
 
 });
 
-client.on("guildCreate", guild => {
-  let channel = client.channels.cache.get("870000756168732742");
-  let embed = new MessageEmbed().setColor("#116d56")
-  .setThumbnail(guild.iconURL({ dynamic: true }))
-  .addField(" **Server Name**", `${guild.name}`)
-  .addField(" **Server Owner**", `${guild.owner.user.tag} / ${guild.ownerID}`)
-  .addField(" **Server Id**", `${guild.id}`)
-  .addField(" **Member Count**", `${guild.memberCount}`)
-  channel.send(embed);
-});
-
 client.on("guildDelete", guild => {
   let channel = client.channels.cache.get("870000756168732742");
   let embed = new MessageEmbed()
   .setColor("#116d56")
   .setAuthor(client.user.username, client.user.avatarURL())
-  .setTitle( `❌ Left Server`)
-  .addField(" **Server Name**", `${guild.name}`)
-  .addField(" **Server Owner**", `${guild.owner}`)
-  .addField(" **Server Id**", `${guild.id}`)
-  .addField(" **Member Count**", `${guild.memberCount}`)
-  .addField(" **Verification Level**", `${guild.verificationLevel}`)
+  .setTitle(`❌ Left Server`)
+  .addField("**Server Name**", `${guild.name}`)
+  .addField("**Server Owner**", `${guild.owner}`)
+  .addField("**Server Id**", `${guild.id}`)
+  .addField("**Member Count**", `${guild.memberCount}`)
+  .addField("**Verification Level**", `${guild.verificationLevel}`)
+  .setFooter(`${client.user.tag}`);
+  channel.send(embed);
+});
+
+client.on("guildCreate", guild => {
+  let channel = client.channels.cache.get("870000756168732742");
+  let embed = new MessageEmbed().setColor("#116d56")
+  .setAuthor(client.user.username, client.user.avatarURL())
+  .setTitle(`✅ Join Server`)
+  .addField("**Server Name**", `${guild.name}`)
+  .addField("**Server Owner**", `${guild.owner.user.tag} / ${guild.ownerID}`)
+  .addField("**Server Id**", `${guild.id}`)
+  .addField("**Member Count**", `${guild.memberCount}`)
   .setFooter(`${client.user.tag}`);
   channel.send(embed);
 });
