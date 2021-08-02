@@ -155,10 +155,10 @@ client.on(`message`, async (message) => {
 
 client.on("guildCreate", guild => {
   let channel = client.channels.cache.get("870000756168732742");
-      const embed = new Discord.MessageEmbed()
+      let embed = new MessageEmbed()
       .setColor('#116d56')
       .setDescription(`I have joined the ${guild.name} server.\n\nID: ${guild.id}`)
-      .setFooter(`members: ${guild.memberCount} • I'm now in ${this.client.guilds.cache.size} servers!`)
+      .setFooter(`members: ${guild.memberCount} • I'm now in ${this.client.guilds.cache.size} servers`)
       .setThumbnail(guild.iconURL({ dynamic: true }) ? guild.iconURL({ dynamic: true }) : `https://guild-default-icon.herokuapp.com/${encodeURIComponent(guild.nameAcronym)}`)
       .addField('Server Owner', `${guild.owner.user.tag} / ${guild.ownerID}`)
   channel.send(embed);
