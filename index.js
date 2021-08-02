@@ -163,8 +163,7 @@ client.on("guildCreate", guild => {
       .addField('Server Owner', `${guild.owner.user.tag} / ${guild.ownerID}`)
   channel.send(embed);
 });
-
-
+ 
 function delay(delayInms) {
  return new Promise(resolve => {
    setTimeout(() => {
