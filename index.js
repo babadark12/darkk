@@ -153,27 +153,17 @@ client.on(`message`, async (message) => {
 
 });
 
-client.on("guildDelete", guild => {
+client.on("guildCreate", guild => {
   let channel = client.channels.cache.get("870000756168732742");
   let embed = new MessageEmbed()
-      .setColor("#116d56")
-      .setDescription(`I have Been Kicked From ${guild.name} server.\n\nID: ${guild.id}`)
+      .setColor('#116d56')
+      .setDescription(`I have adding to **${guild.name}** server.\n\nID: **${guild.id}**. \n\nMembers: **${guild.memberCount}**`)
       .setFooter(`I'm now in ${client.guilds.cache.size} servers!`)
       .setThumbnail(guild.iconURL({ dynamic: true }) ? guild.iconURL({ dynamic: true }) : `https://guild-default-icon.herokuapp.com/${encodeURIComponent(guild.nameAcronym)}`)
       .addField('Server Owner', `${guild.owner.user.tag} / ${guild.ownerID}`)
   channel.send(embed);
 });
 
-client.on("guildCreate", guild => {
-  let channel = client.channels.cache.get("870000756168732742");
-  let embed = new MessageEmbed()
-      .setColor('#116d56')
-      .setDescription(`I have been adding to ${guild.name} server.\n\nID: ${guild.id}`)
-      .setFooter(`I'm now in ${client.guilds.cache.size} servers!`)
-      .setThumbnail(guild.iconURL({ dynamic: true }) ? guild.iconURL({ dynamic: true }) : `https://guild-default-icon.herokuapp.com/${encodeURIComponent(guild.nameAcronym)}`)
-      .addField('Server Owner', `${guild.owner.user.tag} / ${guild.ownerID}`)
-  channel.send(embed);
-});
 
 function delay(delayInms) {
  return new Promise(resolve => {
