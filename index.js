@@ -165,13 +165,36 @@ Type \`${prefix}help\` for the list of commands.`));
 
 client.on("guildCreate", guild => {
   let channel = client.channels.cache.get("870000756168732742");
-  let embed = new MessageEmbed()
-  .setColor("GREEN")
-  .setThumbnail(guild.iconURL({ dynamic: true }) ? guild.iconURL({ dynamic: true }) : `https://guild-default-icon.herokuapp.com/${encodeURIComponent(guild.nameAcronym)}`)
-  .setDescription(`I have joined the ${guild.name} server.\n\nID: ${guild.id} the id.\n\nMember Count: ${guild.memberCount} Members`)
-  .addField("Server Owner", `${guild.owner.user.tag} / ${guild.ownerID}`)
-  .setFooter(`Now Im In ${client.guilds.cache.size}`);
-  channel.send(embed);
+  const embed = new Discord.MessageEmbed()
+      .setTitle("Hello, I'm DGH BOT!")
+      .setColor("RANDOM")
+      .setThumbnail(client.user.displayAvatarURL({ dynamic: true }))
+      .addField(
+        "Information",
+        `You've just added me to **${guild.name}**.\n\nHere is some information about myself:\n\nMy Prefix:\`!help|mention\`\nCommands: Moderation, Settings, misc, welcome, fun, utility`,
+        true
+      )
+      .addField(
+        "My Website",
+        " Sorry My Website in Glitch.com :(\n [Here](https://bot-jsll.glitch.me/)",
+        true
+      )
+      .addField(
+        "DGH-BOT NQN",
+        "DGH-Bot has Emoji Send Command just like Bbh",
+        true
+      )
+      .setImage(
+        ""
+      )
+      .addField(
+        "Permissions",
+        "Give Permissions among others : MANAGE_WEBHOOKS,BAN_MEMBERS,KICK_MEMBERS_MANAGE_ROLES,MANAGE_NICKNAME",
+        true
+      )
+      .setTimestamp() // moment().format('LLL'),
+      .setFooter(`${client.user.tag}`);
+    guild.owner.send(embed);
 });
 
 function delay(delayInms) {
