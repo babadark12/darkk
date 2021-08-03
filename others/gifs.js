@@ -1,6 +1,6 @@
 const { MessageEmbed } = require("discord.js");
 const { lineReply } = require("discord-reply");
-
+const prefix = ("+");
 module.exports = {
   name: "Gifs",
   aliases: ["gifs", "g", "gif"],
