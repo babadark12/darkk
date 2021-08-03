@@ -4,7 +4,7 @@ const prefix = ("+");
 
 module.exports = {
   name: "Text",
-  aliases: ["text", " text", " Text"],
+  aliases: ["text"],
   description: "Display all commands and descriptions",
   execute(message) {
     let commands = message.client.commands.array();
