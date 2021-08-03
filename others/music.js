@@ -11,7 +11,7 @@ module.exports = {
      
     let helpEmbed = new MessageEmbed()
     .setColor('#116d56')
-    .setDescription(`Invite RupoBot To Your Server By[click here](https://discord.com/api/oauth2/authorize?client_id=868194752619773962&permissions=8&scope=bot)\n\nThere All Music Commands List \n\n${prefix}filter, ${prefix}loop, ${prefix}lyrics, ${prefix}np, ${prefix}pause, ${prefix}play, ${prefix}queue, ${prefix}radio, ${prefix}remove, ${prefix}resume, ${prefix}search, ${prefix}shuffle, ${prefix}skip, ${prefix}skipto, ${prefix}stop, ${prefix}volume`)
+    .setDescription(`Invite RupoBot To Your Server By [click here](https://discord.com/api/oauth2/authorize?client_id=868194752619773962&permissions=8&scope=bot)\n\nThere All Music Commands List \n\n${prefix}filter, ${prefix}loop, ${prefix}lyrics, ${prefix}np, ${prefix}pause, ${prefix}play, ${prefix}queue, ${prefix}radio, ${prefix}remove, ${prefix}resume, ${prefix}search, ${prefix}shuffle, ${prefix}skip, ${prefix}skipto, ${prefix}stop, ${prefix}volume`)
     .setFooter(`Requested by ${message.author.tag}`, message.author.displayAvatarURL({dynamic: true}))
     helpEmbed.setTimestamp();
 
