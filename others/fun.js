@@ -11,7 +11,7 @@ module.exports = {
      
     let helpEmbed = new MessageEmbed()
     .setColor('#116d56')
-    .setDescription(`To Invite Rupo To Your Server [click here](https://discord.com/api/oauth2/authorize?client_id=868194752619773962&permissions=8&scope=bot) - Need more help? join Our Server [click here](https://discord.gg/A6R2CJENGn) \n\nThere All Fun Commands List \n\n${prefix}slap, ${prefix}hug, ${prefix}howgay,‌ ${prefix}meme, ${prefix}cry, ${prefix}kiss, ${prefix}clyde, ${prefix}captcha, ${prefix}phcomment, ${prefix}cuddle, ${prefix}joke, ${prefix}poke, ${prefix}baka, ${prefix}pat, ${prefix}punch, ${prefix}spank, ${prefix}dance, ${prefix}rate, ${prefix}advice, ${prefix}ascii, ${prefix}dicksize`)
+    .setDescription(`Invite RupoBot To Your Server By[click here](https://discord.com/api/oauth2/authorize?client_id=868194752619773962&permissions=8&scope=bot)\n\nThere All Fun Commands List \n\n${prefix}slap, ${prefix}hug, ${prefix}howgay,‌ ${prefix}meme, ${prefix}cry, ${prefix}kiss, ${prefix}clyde, ${prefix}captcha, ${prefix}phcomment, ${prefix}cuddle, ${prefix}joke, ${prefix}poke, ${prefix}baka, ${prefix}pat, ${prefix}punch, ${prefix}spank, ${prefix}dance, ${prefix}rate, ${prefix}advice, ${prefix}ascii, ${prefix}dicksize`)
     .setFooter(`Requested by ${message.author.tag}`, message.author.displayAvatarURL({dynamic: true}))
     helpEmbed.setTimestamp();
 
