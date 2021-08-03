@@ -1,6 +1,7 @@
 const { MessageEmbed } = require("discord.js");
 const { lineReply } = require("discord-reply");
 const prefix = ("+");
+
 module.exports = {
   name: "Text",
   aliases: ["text", " text", " Text"],
