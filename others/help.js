@@ -20,7 +20,7 @@ module.exports = {
     .addField("Gif Commands", `\`boy\`, \`girl\`, ‌\`couple\`, \`anime\`, \`emoji\`, \`animal\`, \`neon\``)
     .addField("Backup Commands", `\`backup-create\`, \`backup-load\`, \`backup-info\``)
     .addField("Game Commands", `\`rps\`, \`slots\`, \`iq\`, \`hack\`, \`8ball\``)
-    .setFooter(`${message.author.tag}`, message.author.avatarURL)
+    .setFooter(`Requested by ${message.author.tag}`, message.author.displayAvatarURL({dynamic: true}))
     helpEmbed.setTimestamp();
 
     message.lineReplyNoMention(helpEmbed).catch(console.error);
