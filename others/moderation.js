@@ -3,8 +3,8 @@ const { lineReply } = require("discord-reply");
 const prefix = ("+");
 
 module.exports = {
-  name: "moderation",
-  aliases: ["mod", "m"],
+  name: "Moderation",
+  aliases: ["moderation", "mod"],
   description: "Display all commands and descriptions",
   execute(message) {
     let commands = message.client.commands.array();
