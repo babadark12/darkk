@@ -1,9 +1,9 @@
 const { MessageEmbed } = require("discord.js");
 const { lineReply } = require("discord-reply");
-
+const prefix = ("+");
 module.exports = {
   name: "Text",
-  aliases: ["text", "ext", "ext"],
+  aliases: ["text", " text", " Text"],
   description: "Display all commands and descriptions",
   execute(message) {
     let commands = message.client.commands.array();
