@@ -6,7 +6,7 @@ const { lineReply } = require("discord-reply");
 module.exports = {
     name: "emojiinfo",
    cooldown: 7,
-    aliases: ["emojiinfo", "info"],
+    aliases: ["emojiinfo"],
     description: "Show Emoji Information!",
     usage: "emoji <emoji>",
 async  execute(message, args) {
