@@ -11,7 +11,7 @@ module.exports = {
      
     let helpEmbed = new MessageEmbed()
     .setColor('#116d56')
-    .setDescription(`Invite RupoBot To Your Server By [click here](https://discord.com/api/oauth2/authorize?client_id=868194752619773962&permissions=8&scope=bot)\n\nThere All Game Commands List \n\n${prefix}rps, ${prefix}slots, ${prefix}iq, ${prefix}hack, ${prefix}8ball`)
+    .setDescription(`Invite Loser Bot To Your Server By [click here](https://discord.com/api/oauth2/authorize?client_id=872588477391331399&permissions=8&scope=bot)\n\nThere All Game Commands List \n\n${prefix}rps, ${prefix}slots, ${prefix}iq, ${prefix}hack, ${prefix}8ball`)
     .setFooter(`${message.author.tag}`, message.author.avatarURL)
     helpEmbed.setTimestamp();
 
