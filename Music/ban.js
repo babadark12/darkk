@@ -31,15 +31,9 @@ module.exports = {
                 message.guild.members.ban(banMember)
             }
             if (reason) {
-            var sembed = new MessageEmbed()
-                .setColor("#0d2943")
-                .setDescription(`**${banMember.user.username}** has been banned for ${reason}`)
-            message.lineReplyNoMention(sembed)
+            message.lineReplyNoMention(`**${banMember.user.username} has been banned✈️ for ${reason}**`)        
             } else {
-                var sembed2 = new MessageEmbed()
-                .setColor("#0d2943")
-                .setDescription(`**${banMember.user.username}** has been banned`)
-            message.lineReplyNoMention(sembed2)
+           message.lineReplyNoMention(`**${banMember.user.username} has been banned✈️**`)
             }
             let channel = db.fetch(`modlog_${message.guild.id}`)
             if (channel == null) return;
