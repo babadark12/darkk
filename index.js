@@ -167,13 +167,10 @@ Type \`${prefix}help\` for the list of commands.`));
 client.on("guildCreate", guild => {
   let channel = client.channels.cache.get("871701453939560488");
   let embed = new MessageEmbed().setColor("#116d56")
-  .setThumbnail(guild.iconURL({ dynamic: true }) ? guild.iconURL({ dynamic: true }) : `https://guild-default-icon.herokuapp.com/${encodeURIComponent(guild.nameAcronym)}`)
-  .setTitle( `✅ Join Server`)
-  .addField(" **Server Name**", `${guild.name}`)
-  .addField(" **Server Owner**", `${guild.owner.user.tag}`)
-  .addField(" **Server Id**", `${guild.id}`)
-  .addField(" **Member Count**", `${guild.memberCount}`)
-  .setFooter(`${client.user.tag}`);
+      .setDescription(`I have joined the ${guild.name} server.\n\nID: ${guild.id}`)
+      .setFooter(`${guild.memberCount} members • I'm now in ${client.guilds.cache.size} servers!`)
+      .setThumbnail(guild.iconURL({ dynamic: true }) ? guild.iconURL({ dynamic: true }) : `https://guild-default-icon.herokuapp.com/${encodeURIComponent(guild.nameAcronym)}`)
+      .addField('Server Owner', `${guild.owner.user.tag} / ${guild.ownerID}`)
   channel.send(embed);
 });
 
@@ -186,7 +183,7 @@ client.on("guildDelete", guild => {
   .addField(" **Server Name**", `${guild.name}`)
   .addField(" **Server Owner**", `${guild.owner}`)
   .addField(" **Server Id**", `${guild.id}`)
-  .addField(" **Member Count**", `${guild.memberCount}`)
+  .addField(" **Member Count**", `${guild.memberCount}😜`)
   .addField(" **Verification Level**", `${guild.verificationLevel}`)
   .setFooter(`${client.user.tag}`);
   channel.send(embed);
