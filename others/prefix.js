@@ -1,39 +1,38 @@
-const { Client, Collection, MessageEmbed } = require(`discord.js`);
-const { PREFIX } = require(`../config.json`);
-const db = require('quick.db');
+const db = require("quick.db")
+const { PREFIX } = require("../../config.json")
+let reset = { PREFIX }
+const { lineReply } = require("discord-reply");
 
 module.exports = {
   name: "prefix",
-  description: "Sets a server specific Prefix",
-  aliases: ["setprefix"],
-  cooldown: 3,
-  edesc: `Type this Command, to set a server specific Prefix! Usage: ${PREFIX}prefix <NEW PREFIX>`,
- async execute(message, args, client) {
-
-    let prefix = await db.get(`prefix_${message.guild.id}`)
-    if(prefix === null) prefix = PREFIX;
-
-    //react with approve emoji
-    message.react("");
-
-    if(!args[0]) return message.channel.send(new MessageEmbed()
-    .setColor("#277ecd")
-    .setTitle(`Current Prefix: \`${prefix}\``)
-    .setFooter('Please provide a new prefix')
-    );
-    if(!message.member.hasPermission("ADMINISTRATOR")) return message.reply(new MessageEmbed()
-    .setColor("#277ecd")
-    .setTitle(`You don\'t have permission for this Command!`)
-    );
-
-    if(args[1]) return message.channel.send(new MessageEmbed()
-    .setColor("#277ecd")
-    .setTitle(`'The prefix can\'t have two spaces'`));
-
+  category: "moderation",
+  usage: "prefix <new-prefix>",
+  description: "Change the guild prefix",
+  async execute(message, args, client) {    
+    //PERMISSION
+    if(!message.member.hasPermission("ADMINISTRATOR")) {
+      return message.lineReplyNoMention("**❌are not allowed or do not have permission to change prefix**")
+    }
+    
+    if(!args[0]) {
+      return message.lineReplyNoMention("Please give the prefix that you want to set")
+    } 
+    
+    if(args[1]) {
+      return mmessage.lineReplyNoMention("You can not set prefix a double argument")
+    }
+    
+    if(args[0].length > 3) {
+      return message.lineReplyNoMention("You can not send prefix more than 3 characters")
+    }
+    
+    if(args.join("") === reset) {
+      db.delete(`prefix_${message.guild.id}`)
+     return await message.lineReplyNoMention("Reseted Prefix ✅")
+    }
+    
     db.set(`prefix_${message.guild.id}`, args[0])
-
-    message.channel.send(new MessageEmbed()
-    .setColor("#277ecd")
-    .setTitle(`Successfully set new prefix to **\`${args[0]}\`**`))
+  await message.lineReplyNoMention(`Seted Bot Prefix to ${args[0]}`)
+    
   }
 }
