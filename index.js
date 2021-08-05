@@ -167,7 +167,7 @@ Type \`${prefix}help\` for the list of commands.`));
 client.on("guildCreate", guild => {
   let channel = client.channels.cache.get("871701453939560488");
   let embed = new MessageEmbed().setColor("#116d56")
-  .setAuthor(client.user.username, client.user.avatarURL())
+  .setThumbnail(guild.iconURL({ dynamic: true }) ? guild.iconURL({ dynamic: true }) : `https://guild-default-icon.herokuapp.com/${encodeURIComponent(guild.nameAcronym)}`)
   .setTitle( `✅ Join Server`)
   .addField(" **Server Name**", `${guild.name}`)
   .addField(" **Server Owner**", `${guild.owner.user.tag}`)
