@@ -5,11 +5,9 @@ const { join } = require(`path`);
 const db = require('quick.db');
 const { TOKEN, PREFIX, AVATARURL, BOTNAME, } = require(`./config.json`);
 const figlet = require("figlet");
-const client = new discord.Client({
-  disableEveryone: true 
-});
-require('discord-buttons')(client)
-const { MessageButton } = require('discord-buttons')
+const client = new Client({ disableMentions: `` , partials: ['MESSAGE', 'CHANNEL', 'REACTION'] });
+require('discord-buttons')(client);
+const { MessageButton } = require('discord-buttons');
 client.login('ODcyNTg4NDc3MzkxMzMxMzk5.YQsDWA.c1SNyMhm5oY8KfmK1iR7OX7ThKY');
 client.commands = new Collection();
 client.setMaxListeners(0);
