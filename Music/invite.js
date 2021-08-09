@@ -1,29 +1,30 @@
-const { MessageEmbed , Discord } = require('discord.js');
-const { MessageButton } = require('discord-buttons');
+const Discord = require("discord.js");
+const disbut = require('discord-buttons');
 
 module.exports = {
-  name: 'invite',
-  description: 'Invite Me To Your Server And Shine Your Server!',
-
+  name: "invite",
+  aliases: ["add"],
+  description: "Show Gif",
+  usage: "Gif",
   async execute(message, args, client) {
-    const embed = new MessageEmbed()
-    .setTitle('Invite!')
-    .setDescription('Do You Wan\'t To Invite Me?')
-    .setColor("YELLOW");
 
-    const yes = new MessageButton()
-    .setStyle("green")
-    .setLabel("Sure")
-    .setID("inviteyes");
+    var embed = new Discord.MessageEmbed()
+        .addField("**Weky Bot**", "All these links helps me to grow!")
 
-    const no = new MessageButton()
-    .setStyle("red")
-    .setLabel('Nope')
-    .setID('inviteno')
+    let btnInvite = new disbut.MessageButton()
+        .setLabel('Premium!')
+        .setStyle('url')
+        .setURL('https://patreon.com/weky')
 
-    message.channel.send(`<@${message.author.id}>`, {
-      buttons: [yes, no],
-      embed: embed
-    })
-  }
-}
+    let btnBuy = new disbut.MessageButton()
+        .setLabel('Invite me!')
+        .setStyle('url')
+        .setURL('https://discord.com/api/oauth2/authorize?client_id=809496186905165834&permissions=261188086870&scope=applications.commands%20bot')
+
+    let btnJoin = new disbut.MessageButton()
+        .setLabel('Support server!')
+        .setStyle('url')
+        .setURL('https://discord.gg/2EZSpxNB5z')
+
+    message.channel.send({ embed: embed, components: [{ type: 1, components: [btnJoin, btnBuy, btnInvite] }] })
+};
