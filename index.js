@@ -189,6 +189,7 @@ client.on("guildDelete", guild => {
   channel.send(embed);
 });
 
+///////// CLICK INVITE ///////
 client.on('clickButton', async (button) => {
   if (button.id === 'inviteyes') {
     button.defer()
