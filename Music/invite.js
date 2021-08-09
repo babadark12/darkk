@@ -1,30 +1,54 @@
-const Discord = require("discord.js");
-const { MessageButton } = require('discord-buttons');
-
+const Discord = require('discord.js');
+const config = require('./config.json');
+const disbut = require('discord-buttons') 
+             
 module.exports = {
-  name: "invite",
-  aliases: ["add"],
+  name: "testl",
+  aliases: ["tl"],
   description: "Show Gif",
   usage: "Gif",
   async execute(message, args, client) {
-
-    var embed = new Discord.MessageEmbed()
-        .addField("**Weky Bot**", "All these links helps me to grow!")
-
-    let btnInvite = new MessageButton()
-        .setLabel('Premium!')
-        .setStyle('url')
-        .setURL('https://patreon.com/weky')
-
-    let btnBuy = new MessageButton()
-        .setLabel('Invite me!')
-        .setStyle('url')
-        .setURL('https://discord.com/api/oauth2/authorize?client_id=809496186905165834&permissions=261188086870&scope=applications.commands%20bot')
-
-    let btnJoin = new MessageButton()
-        .setLabel('Support server!')
-        .setStyle('url')
-        .setURL('https://discord.gg/2EZSpxNB5z')
-
-    message.channel.send({ embed: embed, components: [{ type: 1, components: [btnJoin, btnBuy, btnInvite] }] })
-};
+   
+let id1 = utils.randomID(6)
+ if (!message.member.permissions.has("MANAGE_CHANNELS")) return message.channel.send('You don\'t have permission (MANAGE_CHANNELS) to use this command').then(m => m.delete({timeout: 5000}));
+    if (!message.guild.me.hasPermission(['MANAGE_CHANNELS'])) return message.channel.send('I don\'t have permission to use that command').then(m => m.delete({timeout: 5000}))
+   message.channel.overwritePermissions([
+     {
+        id: message.guild.id,
+        deny : ['SEND_MESSAGES'],
+     },
+    ],);
+   const embed = new Discord.MessageEmbed()
+   .setTitle("Warning")
+   .setDescription(`:lock: | ${message.channel} has been locked`)
+   .setColor("RANDOM");
+   let btn = new disbut.MessageButton()
+   .setStyle('red')
+   .setLabel('🔓')
+   .setID(id1);
+   let msg = await message.channel.send({embed: embed, component:btn});
+   client.on('clickButton', async (button) => {
+     if (button.id === id1) {
+      await button.reply.defer();
+      if (!button.clicker.member.permissions.has("MANAGE_CHANNELS")) return;
+            button.channel.send(new Discord.MessageEmbed()
+            .setTitle("Warning")
+            .setDescription(`:unlock: | ${button.channel} has been unlocked`)
+            .setColor("RANDOM"))
+            button.channel.overwritePermissions([
+              {
+                 id: button.guild.id,
+                 allow : ['SEND_MESSAGES'],
+              },
+             ],)
+             btn = new disbut.MessageButton()
+   .setStyle('red')
+   .setLabel('🔓')
+   .setID(id1)
+   .setDisabled(true)
+             msg.edit({embed: embed, component:btn})
+    }
+});
+   message.delete();
+  };
+                
