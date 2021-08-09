@@ -89,7 +89,7 @@ client.on(`message`, async (message) => {
     .setImage("")
     .setDescription(`Hello! I'm ${client.user.username}, A Multipurposed Bot, Created By Delta{}#7265 My Prefix In The Server Is \`${prefix}\` Searching For My Commands? Try To Do \`${prefix}help\``)
     .setColor("RANDOM");
-    return message.author.send(pingedembed);
+message.channel.send(pingedembed);
   }
   //An embed announcement for everyone but no one knows so fine ^w^
   if(message.content.startsWith(`${prefix}embed`)){
