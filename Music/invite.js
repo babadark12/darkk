@@ -1,27 +1,31 @@
-const Discord = require("discord.js");
-const db = require("quick.db");
-const { lineReply } = require("discord-reply");
+const { Client, Message, MessageEmbed, Discord } = require('discord.js')
+const { MessageButton } = require('discord-buttons')
 
 module.exports = {
   name: "invite",
-  aliases: ["invitelink", "i", "inv"],
-  category: "utility",
-  description: "Give You My Invite Link, Etc!",
-  usage: "Invite",
-  guildOnly: false,
-  cooldown: 5,
+  aliases: ["i"],
+  description: "Show Gif",
+  usage: "Gif",
   async execute(message, args, client) {
-    message.delete();
-    const Invite = `https://discord.com/api/oauth2/authorize?client_id=872588477391331399&permissions=8&scope=bot`;
-    const Embed = new Discord.MessageEmbed()
-      .setColor("#116d56")
-      .setTitle("There links")
-      .addField("Invite Me", `[Click Me](${Invite})`)
-      .addField("Support Server", `[Click Me](https://discord.gg/A6R2CJENGn)`)
-      .addField("Owner", `deko#7562`)
-      .setImage("");
-    return message.lineReplyNoMention(Embed)
-      .catch(() => message.channel.send("Invite Link - " + Invite))
-      .then(m => m.delete({ timeout: 44000 }).catch(e => {}));
+  
+    const embed = new MessageEmbed()
+    .setTitle('Hello!')
+    .setDescription('😉 | Do You Wan\'t To Invite Me?')
+    .setColor("YELLOW");
+
+    const yes = new MessageButton()
+    .setStyle("green")
+    .setLabel("Sure!")
+    .setID("inviteyes");
+
+    const no = new MessageButton()
+    .setStyle("red")
+    .setLabel('Nope!')
+    .setID('inviteno')
+
+    message.channel.send(`<@${message.author.id}>`, {
+      buttons: [yes, no],
+      embed: embed
+    })
   }
-};
+}
