@@ -13,7 +13,7 @@ module.exports = {
 
     const embed = new MessageEmbed()
       .setTimestamp()
-      .setTitle("**Some Servr Info**")
+      .setTitle("**Some Server Info**")
       .setColor(roleColor)
       .addField(`💤 - AFK Channel:`, `<#${message.guild.afkChannelID}>`, false)
       .addField(`💤 - AFK Timeout:`, `${message.guild.afkTimeout} seconds`, false)
