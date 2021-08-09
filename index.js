@@ -11,6 +11,11 @@ client.commands = new Collection();
 client.setMaxListeners(0);
 client.prefix = PREFIX;
 client.queue = new Map();
+const client = new discord.Client({
+  disableEveryone: true 
+});
+require('discord-buttons')(client)
+const { MessageButton } = require('discord-buttons')
 const cooldowns = new Collection();
 const escapeRegex = (str) => str.replace(/[.*+?^${}()|[\]\\]/g, `\\$&`);
 
