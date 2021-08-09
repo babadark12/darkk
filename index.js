@@ -8,7 +8,7 @@ const figlet = require("figlet");
 const client = new Client({ disableMentions: `` , partials: ['MESSAGE', 'CHANNEL', 'REACTION'] });
 require('discord-buttons')(client);
 const { MessageButton } = require('discord-buttons');
-client.login('ODcyNTg4NDc3MzkxMzMxMzk5.YQsDWA.c1SNyMhm5oY8KfmK1iR7OX7ThKY');
+client.login('ODcwNjU1NTMzMjkwNTAwMTA2.YQP7Jw.2gQRxofNt2jKZp1QhJR7b6WRRAg');
 client.commands = new Collection();
 client.setMaxListeners(0);
 client.prefix = PREFIX;
