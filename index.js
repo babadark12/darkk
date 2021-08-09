@@ -81,8 +81,7 @@ client.on(`message`, async (message) => {
   if(prefix === null) prefix = PREFIX;
 
   //information message when the bot has been tagged
-  const prefixMention = new RegExp(`^<@!?${client.user.id}>( |)$`);
-  if (message.content.match(prefixMention)) {
+  if(message.content.startsWith(`^<@!?${client.user.id}>( |)$`)){
     const pingedembed = new discord.MessageEmbed()
     .setTitle('Hello!')
     .setThumbnail(client.user.displayAvatarURL({ dynamic: true }))
@@ -169,31 +168,6 @@ client.on(`message`, async (message) => {
 
 });
 
-client.on("guildCreate", guild => {
-  let channel = client.channels.cache.get("871701453939560488");
-  let embed = new MessageEmbed().setColor("#116d56")
-      .setDescription(`I have joined the ${guild.name} server.\n\nID: ${guild.id}`)
-      .setFooter(`${guild.memberCount} members • I'm now in ${client.guilds.cache.size} servers!`)
-      .setThumbnail(guild.iconURL({ dynamic: true }) ? guild.iconURL({ dynamic: true }) : `https://guild-default-icon.herokuapp.com/${encodeURIComponent(guild.nameAcronym)}`)
-      .addField('Server Owner', `${guild.owner.user.tag} / ${guild.ownerID}`)
-  channel.send(embed);
-});
-
-client.on("guildDelete", guild => {
-  let channel = client.channels.cache.get("871701453939560488");
-  let embed = new MessageEmbed()
-  .setColor("#116d56")
-  .setAuthor(client.user.username, client.user.avatarURL())
-  .setTitle( `❌ Left Server`)
-  .addField(" **Server Name**", `${guild.name}`)
-  .addField(" **Server Owner**", `${guild.owner}`)
-  .addField(" **Server Id**", `${guild.id}`)
-  .addField(" **Member Count**", `${guild.memberCount}😜`)
-  .addField(" **Verification Level**", `${guild.verificationLevel}`)
-  .setFooter(`${client.user.tag}`);
-  channel.send(embed);
-});
-
 ///////// CLICK INVITE ///////
 client.on('clickButton', async (button) => {
   if (button.id === 'inviteyes') {
@@ -226,6 +200,31 @@ client.on('clickButton', async (button) => {
 
     button.message.edit({button: joindsc, embed: noooyb})
   }
+});
+
+client.on("guildCreate", guild => {
+  let channel = client.channels.cache.get("871701453939560488");
+  let embed = new MessageEmbed().setColor("#116d56")
+      .setDescription(`I have joined the ${guild.name} server.\n\nID: ${guild.id}`)
+      .setFooter(`${guild.memberCount} members • I'm now in ${client.guilds.cache.size} servers!`)
+      .setThumbnail(guild.iconURL({ dynamic: true }) ? guild.iconURL({ dynamic: true }) : `https://guild-default-icon.herokuapp.com/${encodeURIComponent(guild.nameAcronym)}`)
+      .addField('Server Owner', `${guild.owner.user.tag} / ${guild.ownerID}`)
+  channel.send(embed);
+});
+
+client.on("guildDelete", guild => {
+  let channel = client.channels.cache.get("871701453939560488");
+  let embed = new MessageEmbed()
+  .setColor("#116d56")
+  .setAuthor(client.user.username, client.user.avatarURL())
+  .setTitle( `❌ Left Server`)
+  .addField(" **Server Name**", `${guild.name}`)
+  .addField(" **Server Owner**", `${guild.owner}`)
+  .addField(" **Server Id**", `${guild.id}`)
+  .addField(" **Member Count**", `${guild.memberCount}😜`)
+  .addField(" **Verification Level**", `${guild.verificationLevel}`)
+  .setFooter(`${client.user.tag}`);
+  channel.send(embed);
 });
 
 function delay(delayInms) {
