@@ -1,4 +1,4 @@
-const discord = require('discord.js');
+const { MessageEmbed , Discord } = require('discord.js');
 const { MessageButton } = require('discord-buttons');
 
 module.exports = {
