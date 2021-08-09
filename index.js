@@ -7,7 +7,7 @@ const { TOKEN, PREFIX, AVATARURL, BOTNAME, } = require(`./config.json`);
 const figlet = require("figlet");
 const client = new Client({ disableMentions: `` , partials: ['MESSAGE', 'CHANNEL', 'REACTION'] });
 require('discord-buttons')(client)
-const { MessageButton } = require('discord-buttons');
+const { MessageButton } = require('discord-buttons')
 client.login('ODcyNTg4NDc3MzkxMzMxMzk5.YQsDWA.c1SNyMhm5oY8KfmK1iR7OX7ThKY');
 client.commands = new Collection();
 client.setMaxListeners(0);
@@ -81,13 +81,16 @@ client.on(`message`, async (message) => {
   if(prefix === null) prefix = PREFIX;
 
   //information message when the bot has been tagged
-  if(message.content.includes(client.user.id)) {
-    message.reply(new Discord.MessageEmbed()
-    .setColor("#116d56")
-    .setTitle(`
-Join a voice channel and \`${prefix}play\` a song.
-Type \`${prefix}help\` for the list of commands.`));
-  } 
+  const prefixMention = new RegExp(`^<@!?${client.user.id}>( |)$`);
+  if (message.content.match(prefixMention)) {
+    const pingedembed = new discord.MessageEmbed()
+    .setTitle('Hello!')
+    .setThumbnail(client.user.displayAvatarURL({ dynamic: true }))
+    .setImage("")
+    .setDescription(`Hello! I'm ${client.user.username}, A Multipurposed Bot, Created By Delta{}#7265 My Prefix In The Server Is \`${prefix}\` Searching For My Commands? Try To Do \`${prefix}help\``)
+    .setColor("RANDOM");
+    return message.author.send(pingedembed);
+  }
   //An embed announcement for everyone but no one knows so fine ^w^
   if(message.content.startsWith(`${prefix}embed`)){
     //define saymsg
