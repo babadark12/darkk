@@ -204,7 +204,7 @@ client.on('clickButton', async (button) => {
     Server Helper: **[Click Me](https://discord.gg/5cNZav2xzD)** \n Recommended: **[Click Me](https://discord.com/api/oauth2/authorize?client_id=872588477391331399&permissions=8&scope=bot)**`)
     .setColor("GREEN");
 
-    const joindsc = new MessageButton()
+    let joindsc = new MessageButton()
     .setStyle('url')
     .setLabel('Join Our Support Server!')
     .setURL('https://discord.gg/5cNZav2xzD');
@@ -218,7 +218,7 @@ client.on('clickButton', async (button) => {
     .setDescription('But Please Join Our Support Server!')
     .setColor("RED");
 
-    const joindsc = new MessageButton()
+    let joindsc = new MessageButton()
     .setStyle('url')
     .setLabel('Join Our Support Server!')
     .setURL('https://discord.gg/5cNZav2xzD');
