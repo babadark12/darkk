@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const config = require('./config.json');
-const disbut = require('discord-buttons') 
+const disbut = require('discord-buttons') ;
              
 module.exports = {
   name: "testl",
@@ -50,5 +50,7 @@ let id1 = utils.randomID(6)
     }
 });
    message.delete();
-  };
-                
+
+	
+    }
+};
