@@ -47,6 +47,18 @@ client.on(`ready`, () => {
   
       }, (5000));
       ////////////////////////////////
+if (command === 'invite' || command === 'inv') {
+const disbut = require("discord-buttons");
+
+let button = new disbut.MessageButton()
+  .setStyle('url')
+  .setURL('put with your invite bot link') 
+  .setLabel('Invite!'); 
+
+message.channel.send('click invite to add me⠀', button);
+
+}
+
       ////////////////////////////////
     figlet.text(`${client.user.username} ready!`, function (err, data) {
       if (err) {
