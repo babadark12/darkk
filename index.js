@@ -1,6 +1,9 @@
-const { TOKEN , PREFIX } = require("./config.json");
+const { TOKEN, PREFIX, AVATARURL, BOTNAME, } = require(`./config.json`);;
 const config = require('./config.json')
 const discord = require("discord.js"); 
+const { join } = require(`path`);
+const db = require('quick.db');
+const figlet = require("figlet");
 const { version } = require('./package.json');
 const { version: discordjsVersion } = require('discord.js');
 const client = new discord.Client({
