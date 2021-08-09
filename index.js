@@ -1,27 +1,24 @@
-const { TOKEN, PREFIX, AVATARURL, BOTNAME, } = require(`./config.json`);;
-const config = require('./config.json')
-const discord = require("discord.js"); 
+const Discord = require(`discord.js`);
+const { Client, Collection, MessageEmbed,MessageAttachment } = require(`discord.js`);
+const { readdirSync } = require(`fs`);
 const { join } = require(`path`);
 const db = require('quick.db');
+const { TOKEN, PREFIX, AVATARURL, BOTNAME, } = require(`./config.json`);
 const figlet = require("figlet");
-const { version } = require('./package.json');
-const { version: discordjsVersion } = require('discord.js');
-const client = new discord.Client({
-  disableEveryone: true 
-});
+const client = new Client({ disableMentions: `` , partials: ['MESSAGE', 'CHANNEL', 'REACTION'] });
 require('discord-buttons')(client)
 const { MessageButton } = require('discord-buttons')
-const { addexp } = require('./handlers/xp.js')
-const db = require("quick.db")
 client.login('ODcyNTg4NDc3MzkxMzMxMzk5.YQsDWA.c1SNyMhm5oY8KfmK1iR7OX7ThKY');
-require('./util/reply');
+client.commands = new Collection();
 client.setMaxListeners(0);
+client.prefix = PREFIX;
 client.queue = new Map();
 const cooldowns = new Collection();
 const escapeRegex = (str) => str.replace(/[.*+?^${}()|[\]\\]/g, `\\$&`);
 
 //this fires when the BOT STARTS DO NOT TOUCH
 client.on(`ready`, () => {	
+
 //////////////
 
 ////////
