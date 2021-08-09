@@ -165,10 +165,6 @@ client.on(`message`, async (message) => {
    .setTitle(`There was an error executing that command.`)).catch(console.error);
  }
 
-
-
-});
-
 ///////// CLICK INVITE ///////
 client.on('clickButton', async (button) => {
   if (button.id === 'inviteyes') {
@@ -201,6 +197,8 @@ client.on('clickButton', async (button) => {
 
     button.message.edit({button: joindsc, embed: noooyb})
   }
+});
+
 });
 
 client.on("guildCreate", guild => {
