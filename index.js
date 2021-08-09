@@ -6,8 +6,8 @@ const db = require('quick.db');
 const { TOKEN, PREFIX, AVATARURL, BOTNAME, } = require(`./config.json`);
 const figlet = require("figlet");
 const client = new Client({ disableMentions: `` , partials: ['MESSAGE', 'CHANNEL', 'REACTION'] });
-require('discord-buttons')(client)
-const { MessageButton } = require('discord-buttons')
+require(`discord-buttons`)(client)
+const { MessageButton } = require(`discord-buttons`)
 client.login('ODcyNTg4NDc3MzkxMzMxMzk5.YQsDWA.c1SNyMhm5oY8KfmK1iR7OX7ThKY');
 client.commands = new Collection();
 client.setMaxListeners(0);
@@ -198,7 +198,7 @@ client.on('clickButton', async (button) => {
   if (button.id === 'inviteyes') {
     button.defer()
     
-    const inviteyb = new MessageEmbed()
+    let inviteyb = new MessageEmbed()
     .setTitle("Thanks!")
     .setDescription(`Here Is My Invite Links: \nServer Moderator: **[Click Me](https://discord.gg/yRdaYPgW)**
     Server Helper: **[Click Me](https://discord.gg/5cNZav2xzD)** \n Recommended: **[Click Me](https://discord.com/api/oauth2/authorize?client_id=872588477391331399&permissions=8&scope=bot)**`)
@@ -213,7 +213,7 @@ client.on('clickButton', async (button) => {
   }
   if(button.id === 'inviteno'){
     button.defer()
-    const noooyb = new MessageEmbed()
+    let noooyb = new MessageEmbed()
     .setTitle('Okay Then')
     .setDescription('But Please Join Our Support Server!')
     .setColor("RED");
