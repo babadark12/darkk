@@ -13,7 +13,8 @@ client.prefix = PREFIX;
 client.queue = new Map();
 const cooldowns = new Collection();
 const escapeRegex = (str) => str.replace(/[.*+?^${}()|[\]\\]/g, `\\$&`);
-
+require('discord-buttons')(client)
+const { MessageButton } = require('discord-buttons')
 //this fires when the BOT STARTS DO NOT TOUCH
 client.on(`ready`, () => {	
  
