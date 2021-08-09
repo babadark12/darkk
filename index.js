@@ -1,12 +1,8 @@
 const { TOKEN , PREFIX } = require("./config.json");
 const config = require('./config.json')
 const discord = require("discord.js"); 
-const { Manager } = require("erela.js");
-const Spotify  = require("erela.js-spotify");
 const { version } = require('./package.json');
 const { version: discordjsVersion } = require('discord.js');
-const clientID = config.clientID; 
-const clientSecret = config.clientSecret;
 const client = new discord.Client({
   disableEveryone: true 
 });
