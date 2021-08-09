@@ -83,7 +83,7 @@ client.on(`message`, async (message) => {
 
   //information message when the bot has been tagged
   if(message.content.includes(client.user.id)) {
-    const pingedembed = new discord.MessageEmbed()
+    const pingedembed = new MessageEmbed()
     .setTitle('Hello!')
     .setThumbnail(client.user.displayAvatarURL({ dynamic: true }))
     .setImage("")
@@ -193,14 +193,38 @@ client.on("guildDelete", guild => {
   channel.send(embed);
 });
 
-client.on("guildCreate", guild => {
-    let embed = new MessageEmbed()
-      .setColor('RANDOM')
-      .setTitle('Hello!')
-      .setDescription(`Woah! Thank You So Much, <@${inviter.id}> For Inviting Me To This Awesome Server (${guild.name})`)
-      .setImage('https://cdn.discordapp.com/attachments/811143476522909718/861430392158552094/standard_6.gif')
-      .setTimestamp();
-    guild.owner.send(embed);
+//---------DISCORD INVITE LINK BUTTON---------\\
+client.on('clickButton', async (button) => {
+  if (button.id === 'inviteyes') {
+    button.defer()
+    
+    const inviteyb = new MessageEmbed()
+    .setTitle("Thanks!")
+    .setDescription(`Here Is My Invite Links: \nServer Moderator: **[Click Me](https://discord.gg/yRdaYPgW)**
+    Server Helper: **[Click Me](https://discord.gg/5cNZav2xzD)** \n Recommended: **[Click Me](https://discord.com/api/oauth2/authorize?client_id=872588477391331399&permissions=8&scope=bot)**`)
+    .setColor("GREEN");
+
+    const joindsc = new MessageButton()
+    .setStyle('url')
+    .setLabel('Join Our Support Server!')
+    .setURL('https://discord.gg/5cNZav2xzD');
+    button.message.edit({button: joindsc, embed: inviteyb})
+
+  }
+  if(button.id === 'inviteno'){
+    button.defer()
+    const noooyb = new MessageEmbed()
+    .setTitle('Okay Then')
+    .setDescription('But Please Join Our Support Server!')
+    .setColor("RED");
+
+    const joindsc = new MessageButton()
+    .setStyle('url')
+    .setLabel('Join Our Support Server!')
+    .setURL('https://discord.gg/5cNZav2xzD');
+
+    button.message.edit({button: joindsc, embed: noooyb})
+  }
 });
 
 function delay(delayInms) {
