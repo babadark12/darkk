@@ -46,19 +46,8 @@ client.on(`ready`, () => {
    
   
       }, (5000));
-      ////////////////////////////////
-if (command === 'add' || command === 'inv') {
-
-let invite = new MessageButton()
-  .setStyle('url')
-  .setURL('https://github.com/Endternvl/zAltmr') 
-  .setLabel('Invite!'); 
-
-message.channel.send('click invite to add me⠀', invite);
-
-}
-
-      ////////////////////////////////
+     ///////////////////////////////
+    ////////////////////////////////
     figlet.text(`${client.user.username} ready!`, function (err, data) {
       if (err) {
           console.log('Something went wrong');
