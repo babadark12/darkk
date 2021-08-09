@@ -195,14 +195,13 @@ client.on("guildDelete", guild => {
 
 client.on("guildCreate", guild => {
     let chx = guild.channels.cache.filter(chx => chx.type === "text").find(x => x.position === 0)
-    const thankEmbed = new MessageEmbed()
+    let embed = new MessageEmbed()
       .setColor('RANDOM')
       .setTitle('Hello!')
       .setDescription(`Woah! Thank You So Much, <@${inviter.id}> For Inviting Me To This Awesome Server (${guild.name})`)
       .setImage('https://cdn.discordapp.com/attachments/811143476522909718/861430392158552094/standard_6.gif')
       .setTimestamp();
-    chx.send(thankEmbed);
-  });
+    chx.send(embed);
 });
 
 function delay(delayInms) {
