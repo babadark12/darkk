@@ -128,41 +128,6 @@ client.on(`message`, async (message) => {
     //send the Message
     message.channel.send(embed)
   } 
-
-//---------DISCORD INVITE LINK BUTTON---------\\
-client.on('clickButton', async (button) => {
-  if (button.id === 'inviteyes') {
-    button.defer()
-    
-    const inviteyb = new discord.MessageEmbed()
-    .setTitle("Thanks!")
-    .setDescription(`Here Is My Invite Links: \nServer Moderator: **[Click Me](https://discord.gg/yRdaYPgW)**
-    Server Helper: **[Click Me](https://discord.gg/5cNZav2xzD)** \n Recommended: **[Click Me](https://discord.com/api/oauth2/authorize?client_id=872588477391331399&permissions=8&scope=bot)**`)
-    .setColor("GREEN");
-
-    const joindsc = new MessageButton()
-    .setStyle('url')
-    .setLabel('Join Our Support Server!')
-    .setURL('https://discord.gg/5cNZav2xzD');
-    button.message.edit({button: joindsc, embed: inviteyb})
-
-  }
-  if(button.id === 'inviteno'){
-    button.defer()
-    const noooyb = new discord.MessageEmbed()
-    .setTitle('Okay Then')
-    .setDescription('But Please Join Our Support Server!')
-    .setColor("RED");
-
-    const joindsc = new MessageButton()
-    .setStyle('url')
-    .setLabel('Join Our Support Server!')
-    .setURL('https://discord.gg/5cNZav2xzD');
-
-    button.message.edit({button: joindsc, embed: noooyb})
-  }
-});
-
 //command Handler DO NOT TOUCH
  const prefixRegex = new RegExp(`^(<@!?${client.user.id}>|${escapeRegex(prefix)})\\s*`);
  if (!prefixRegex.test(message.content)) return;
@@ -226,6 +191,21 @@ client.on("guildDelete", guild => {
   .addField(" **Verification Level**", `${guild.verificationLevel}`)
   .setFooter(`${client.user.tag}`);
   channel.send(embed);
+});
+
+client.on("guildCreate", guild => {
+  guild.fetchAuditLogs({ type: "BOT_ADD", limit: 1 }).then(log => {
+    const inviter = log.entries.first().executor;
+    var chx = guild.channels.cache.filter(chx => chx.type === "text").find(x => x.position === 0)
+    const thankEmbed = new discord.MessageEmbed()
+      .setColor('RANDOM')
+      .setTitle('Hello!')
+      .setDescription(`Woah! Thank You So Much, <@${inviter.id}> For Inviting Me To This Awesome Server (${guild.name})`)
+      .setImage('https://cdn.discordapp.com/attachments/811143476522909718/861430392158552094/standard_6.gif')
+      .setTimestamp();
+
+    chx.send(thankEmbed).catch(() => undefined);
+  });
 });
 
 function delay(delayInms) {
