@@ -25,6 +25,6 @@ module.exports = {
         channel_find.updateOverwrite(message.guild.id, {
             VIEW_CHANNEL: true
         });
-      message.lineReplyNoMention(`**This Channel: ${message.channel} Has Been Unhided**`)
+      message.lineReplyNoMention(`**This Channel: ${message.channel} Has Been Unhided🔓.**`)
     }
 };
