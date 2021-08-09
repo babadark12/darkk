@@ -1,5 +1,5 @@
-const { Client, Message, MessageEmbed, Discord } = require('discord.js')
-const { MessageButton } = require('discord-buttons')
+const discord = require('discord.js');
+const { MessageButton } = require('discord-buttons');
 
 module.exports = {
   name: 'invite',
@@ -7,18 +7,18 @@ module.exports = {
 
   async execute(message, args, client) {
     const embed = new MessageEmbed()
-    .setTitle('Hello!')
-    .setDescription('⚠ | Do You Wan\'t To Invite Me?')
+    .setTitle('Invite!')
+    .setDescription('Do You Wan\'t To Invite Me?')
     .setColor("YELLOW");
 
     const yes = new MessageButton()
     .setStyle("green")
-    .setLabel("Sure!")
+    .setLabel("Sure")
     .setID("inviteyes");
 
     const no = new MessageButton()
     .setStyle("red")
-    .setLabel('Nope!')
+    .setLabel('Nope')
     .setID('inviteno')
 
     message.channel.send(`<@${message.author.id}>`, {
