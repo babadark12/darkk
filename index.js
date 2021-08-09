@@ -198,13 +198,13 @@ client.on('clickButton', async (button) => {
   if (button.id === 'inviteyes') {
     button.defer()
     
-    let inviteyb = new MessageEmbed()
+    const inviteyb = new discord.MessageEmbed()
     .setTitle("Thanks!")
     .setDescription(`Here Is My Invite Links: \nServer Moderator: **[Click Me](https://discord.gg/yRdaYPgW)**
     Server Helper: **[Click Me](https://discord.gg/5cNZav2xzD)** \n Recommended: **[Click Me](https://discord.com/api/oauth2/authorize?client_id=872588477391331399&permissions=8&scope=bot)**`)
     .setColor("GREEN");
 
-    let joindsc = new MessageButton()
+    const joindsc = new MessageButton()
     .setStyle('url')
     .setLabel('Join Our Support Server!')
     .setURL('https://discord.gg/5cNZav2xzD');
@@ -213,12 +213,12 @@ client.on('clickButton', async (button) => {
   }
   if(button.id === 'inviteno'){
     button.defer()
-    let noooyb = new MessageEmbed()
+    const noooyb = new discord.MessageEmbed()
     .setTitle('Okay Then')
     .setDescription('But Please Join Our Support Server!')
     .setColor("RED");
 
-    let joindsc = new MessageButton()
+    const joindsc = new MessageButton()
     .setStyle('url')
     .setLabel('Join Our Support Server!')
     .setURL('https://discord.gg/5cNZav2xzD');
