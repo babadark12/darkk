@@ -24,7 +24,7 @@ module.exports = {
       .addField("📃 - Rules Channel:", message.guild.rulesChannel, false)
       .addField("✅ - Verification Level:", message.guild.verificationLevel, false)
       .addField(`:person_walking: - Weights:`, message.guild.members.cache.filter(member => !member.user.bot).size, true)
-      .setFooter(`Do ${client.config.discord.prefix}serverinfo to see basic server info`)
+      .setFooter(`Do +serverinfo to see basic server info`)
       .setThumbnail(message.guild.iconURL({ dynamic: true }))
 
 
