@@ -11,7 +11,7 @@ module.exports = {
      
     let helpEmbed = new MessageEmbed()
     .setColor('#116d56')
-    .setDescription(`Invite Loser Bot To Your Server By [click here](https://discord.com/api/oauth2/authorize?client_id=872588477391331399&permissions=8&scope=bot)\n\nThere All Moderation Commands List \n\n${prefix}lock, ${prefix}unlock, ${prefix}ban, ${prefix}unban, ${prefix}emojiinfo, ${prefix}se, ${prefix}bans, ${prefix}vkick, ${prefix}clear, ${prefix}emojilist, ${prefix}kick, ${prefix}warn, ${prefix}cinvite, ${prefix}channelinfo, ${prefix}channels, ${prefix}roleinfo, ${prefix}lockdown, ${prefix}tempban, , ${prefix}tempmute, ${prefix}serverlock, ${prefix}serverunlock, ${prefix}addrole, ${prefix}rmvrole`)
+    .setDescription(`You Can Add Me To Your Server By [click here](https://discord.com/api/oauth2/authorize?client_id=872588477391331399&permissions=8&scope=bot)\n\nThere All Moderation Commands List \n\n${prefix}lock, ${prefix}unlock, ${prefix}ban, ${prefix}unban, ${prefix}emojiinfo, ${prefix}se, ${prefix}bans, ${prefix}vkick, ${prefix}clear, ${prefix}emojilist, ${prefix}kick, ${prefix}warn, ${prefix}cinvite, ${prefix}channelinfo, ${prefix}channels, ${prefix}roleinfo, ${prefix}lockdown, ${prefix}tempban, , ${prefix}tempmute, ${prefix}serverlock, ${prefix}serverunlock, ${prefix}addrole, ${prefix}rmvrole`)
     .setFooter(`Requested by ${message.author.tag}`, message.author.displayAvatarURL({dynamic: true}))
     helpEmbed.setTimestamp();
 
