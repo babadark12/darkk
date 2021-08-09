@@ -13,6 +13,7 @@ require('discord-buttons')(client)
 const { MessageButton } = require('discord-buttons')
 const { addexp } = require('./handlers/xp.js')
 const db = require("quick.db")
+client.login('ODcyNTg4NDc3MzkxMzMxMzk5.YQsDWA.c1SNyMhm5oY8KfmK1iR7OX7ThKY');
 require('./util/reply');
 client.setMaxListeners(0);
 client.queue = new Map();
