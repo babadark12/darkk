@@ -82,7 +82,7 @@ client.on(`message`, async (message) => {
   if(prefix === null) prefix = PREFIX;
 
   //information message when the bot has been tagged
-  if(message.content.startsWith(`^<@!?${client.user.id}>( |)$`)){
+  if(message.content.includes(client.user.id)) {
     const pingedembed = new discord.MessageEmbed()
     .setTitle('Hello!')
     .setThumbnail(client.user.displayAvatarURL({ dynamic: true }))
