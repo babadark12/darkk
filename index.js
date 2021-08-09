@@ -47,15 +47,14 @@ client.on(`ready`, () => {
   
       }, (5000));
       ////////////////////////////////
-if (command === 'invite' || command === 'inv') {
-const disbut = require("discord-buttons");
+if (command === 'add' || command === 'inv') {
 
-let button = new disbut.MessageButton()
+let invite = new MessageButton()
   .setStyle('url')
-  .setURL('put with your invite bot link') 
+  .setURL('https://github.com/Endternvl/zAltmr') 
   .setLabel('Invite!'); 
 
-message.channel.send('click invite to add me⠀', button);
+message.channel.send('click invite to add me⠀', invite);
 
 }
 
