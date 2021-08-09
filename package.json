@@ -12,6 +12,7 @@
     "@discordjs/opus": "^0.3.3",
     "discord-ytdl-core": "^4.1.3",
     "discord.js": "^12.4.1",
+    "discord-buttons": "^2.4.1",
     "ffmpeg-static": "^4.2.7",
     "figlet": "^1.5.0",
     "lyrics-finder": "^21.4.0",
