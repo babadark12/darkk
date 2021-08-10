@@ -79,29 +79,6 @@ for (const file of commandFiles) {
   const command = require(join(__dirname, `Fun`, `${file}`));
   client.commands.set(command.name, command);
 }
-if(config.registercommands === true) {
-async function registerSlashCommands(dir) {;
-    fs.readdir(path.join(__dirname, dir), async (err, files) => {
-        if(err){
-            return console.log(chalk.red('An error occured when checking the commands folder for commands to load: ' + err));
-        };
-        files.forEach(async (file) => {
-            fs.stat(path.join(__dirname, dir, file), (err, stat) => {
-                if(err) return console.log(chalk.red('An error occured when checking the commands folder for commands to load: ' + err));
-                if(stat.isDirectory()) {
-                    registerSlashCommands(path.join(dir, file));
-                } else {
-                    if(!file.endsWith('.js')) return;
-                    let commandFile = require(path.join(__dirname, dir, file));
-                    slashCommandList.push({
-                        run: commandFile.slashCommand,
-                        name: file.split('.')[0]
-                    });
-                };
-            });
-        });
-    });
-};
 //COMMANDS //DO NOT TOUCH
 client.on(`message`, async (message) => {
   if (message.author.bot) return;
