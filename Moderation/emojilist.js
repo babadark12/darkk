@@ -3,10 +3,10 @@ const { MessageEmbed } = require("discord.js");
 const { lineReply } = require("discord-reply");
 
 module.exports = {
-  name: "emojis",
+  name: "emojilist",
   category: "misc",
   description: "displays every emoji of the guild, where the command is used",
-  aliases: ["serveremojis"],
+  aliases: ["serveremojis", "emojilist"],
   usage: "hey emojis",
   botPermission: ["MANAGE_EMOJIS"],
   async execute(message, args, client) {
@@ -34,7 +34,7 @@ module.exports = {
       });
 
       let emn = new Discord.MessageEmbed();
-      emn.setTitle(`Server Emojis Of [ ${message.guild.name} ] `);
+      emn.setTitle(`Server Emojis Of: ${message.guild.name}`);
       emn.setColor("#116d56");
       emn.setThumbnail(
         message.guild.iconURL({ dynamic: true, format: "png", size: 512 })
@@ -48,7 +48,6 @@ ${EmojisAnimated}
 
 ${Emojis}`
       );
-      emn.setColor("#116d56");
       message.lineReplyNoMention(emn);
     } catch (err) {
       if (err)
