@@ -11,7 +11,7 @@ module.exports = {
      
     let helpEmbed = new MessageEmbed()
     .setColor('#116d56')
-    .addField("Text", `${prefix}textkurdish, ${prefix}textarabic, ${prefix}textenglish, ${prefix}textturkish, ${prefix}textpersian`)
+    .addField("🖋️› Text's Commands", `${prefix}textkurdish, ${prefix}textarabic, ${prefix}textenglish, ${prefix}textturkish, ${prefix}textpersian`)
     .setFooter(`${message.author.tag}`, message.author.avatarURL)
     helpEmbed.setTimestamp();
 
