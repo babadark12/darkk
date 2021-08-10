@@ -37,7 +37,7 @@ client.on(`ready`, () => {
       });
       
 
-    client.user.setActivity(`+help ${client.guilds.cache.size} Guilds`, { type: "COMPETING"});
+    client.user.setActivity(`+help`, { type: "COMPETING"});
 
     
    
