@@ -79,15 +79,6 @@ for (const file of commandFiles) {
   const command = require(join(__dirname, `Fun`, `${file}`));
   client.commands.set(command.name, command);
 }
-fs.readdir("./events/", (err, files) => {
-  if (err) return console.error(err);
-  files.forEach(file => {
-    const event = require(`./events/${file}`);
-    let eventName = file.split(".")[0];
-     console.log(`[Event Load] loading Event ${eventName}`);
-    client.on(eventName, event.bind(null, client));
-  });
-});
 //COMMANDS //DO NOT TOUCH
 client.on(`message`, async (message) => {
   if (message.author.bot) return;
