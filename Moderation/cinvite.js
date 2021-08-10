@@ -1,4 +1,5 @@
 const { MessageEmbed, Discord } = require("discord.js");
+const { lineReply } = require("discord-reply");
 
 module.exports = {
   name: "cinvite",
@@ -45,7 +46,7 @@ module.exports = {
       })
 
       .then(InviteCode =>
-        message.channel.send(
+        message.lineReplyNoMention(
           new MessageEmbed()
 
             .setColor(`#116d56`)
