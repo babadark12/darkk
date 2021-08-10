@@ -10,7 +10,7 @@ module.exports = {
      
     let helpEmbed = new MessageEmbed()
     .setColor('#116d56')
-    .addField("Gifs", `${prefix}boy, ${prefix}girl, ‌${prefix}couple, ${prefix}anime, ${prefix}emoji, ${prefix}animal, ${prefix}neon`)
+    .addField("✨› Gif's Command", `${prefix}boy, ${prefix}girl, ‌${prefix}couple, ${prefix}anime, ${prefix}emoji, ${prefix}animal, ${prefix}neon`)
     .setFooter(`${message.author.tag}`, message.author.avatarURL)
     helpEmbed.setTimestamp();
 
