@@ -8,10 +8,10 @@ module.exports = {
         noalias: "No Aliases",
         accessableby: "Administrator",
     async execute(message, args, client) {
-    let channel = message.guild.channels.cache.find(x => x.name === "poll-request" || x.name === "poll");
+    let channel = message.guild.channels.cache.find(x => x.name === "🎟│poll" || x.name === "🎟│poll-request");
 
     if (!channel) {
-      return message.channel.send("there is no channel with name - poll");
+      return message.channel.send("there is no channel with name - 🎟│poll");
     }
         if (!args[0])
             return message.channel.send("**Please Enter A Query!**");
