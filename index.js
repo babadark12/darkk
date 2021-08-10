@@ -217,10 +217,6 @@ client.on("guildDelete", guild => {
   channel.send(embed);
 });
 
-["command", "events"].forEach(util => {
-  require(`./util/${util}`)(client);
-});
-
 function delay(delayInms) {
  return new Promise(resolve => {
    setTimeout(() => {
