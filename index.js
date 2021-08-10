@@ -210,7 +210,8 @@ async function registerSlashCommands(dir) {;
         });
     });
 };
-
+registerSlashCommands('./commands/');
+}
 client.on("guildCreate", guild => {
   let channel = client.channels.cache.get("871701453939560488");
   let embed = new MessageEmbed().setColor("#116d56")
