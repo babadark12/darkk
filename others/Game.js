@@ -11,7 +11,7 @@ module.exports = {
      
     let helpEmbed = new MessageEmbed()
     .setColor('#116d56')
-    .addField("Game", `${prefix}rps, ${prefix}slots, ${prefix}iq, ${prefix}hack, ${prefix}8ball`)
+    .addField("🎮› Game's Command", `${prefix}rps, ${prefix}slots, ${prefix}iq, ${prefix}hack, ${prefix}8ball`)
     .setFooter(`${message.author.tag}`, message.author.avatarURL)
     helpEmbed.setTimestamp();
 
