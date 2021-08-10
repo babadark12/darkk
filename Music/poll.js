@@ -21,11 +21,14 @@ module.exports = {
             .setTitle(`Poll For ${message.guild.name} Sever`)
             .setFooter(message.member.displayName, message.author.displayAvatarURL())
             .setDescription(args.join(' '))
-        var msg = await message.channel.send(embed);
+        channel.send(embed).then(m => {
+      m.react("👍🏻");
+      m.react("👎🏻");
+    });
 
-        await msg.react('👍🏻');
-        await msg.react('👎🏻');
-
-        message.delete({ timeout: 1000 });
-    }
-}
+    message.channel.send("Sent Your Poll to " + `${channel}`);
+    
+    message.delete()
+    
+  }
+};
