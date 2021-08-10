@@ -84,7 +84,9 @@ client.on(`message`, async (message) => {
     .setTitle('Hello!')
     .setThumbnail(client.user.displayAvatarURL({ dynamic: true }))
     .setImage("")
-    .setDescription(`Hello! I'm ${client.user.username}, A Multipurposed Bot, Created By Delta{}#7265 My Prefix In The Server Is \`${prefix}\` Searching For My Commands? Try To Do \`${prefix}help\``)
+    .setDescription(`Hello! I'm ${client.user.username}, A Multipurposed Bot,\n\n Created By Delta{}#7265\n\n My Prefix In The Server Is \`${prefix}\` \n\nSearching For My Commands? Try To Do \`${prefix}help\``)
+    .addField("Add Me?", `[click](https://discord.com/api/oauth2/authorize?client_id=872588477391331399&permissions=8&scope=bot)`)
+    .addField("Our Server", `[click](https://discord.gg/5cNZav2xzD)`)
     .setColor("RANDOM");
 message.channel.send(pingedembed);
   }
