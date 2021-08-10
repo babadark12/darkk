@@ -8,8 +8,11 @@ module.exports = {
         noalias: "No Aliases",
         accessableby: "Administrator",
     async execute(message, args, client) {
-        if (!message.member.hasPermission('MANAGE_GUILD')) return message.channel.send("**You Do Not Have Sufficient Permissions! - [MANAGE_GUILD]**");
+    let channel = message.guild.channels.cache.find(x => x.name === "poll-request" || x.name === "poll");
 
+    if (!channel) {
+      return message.channel.send("there is no channel with name - poll");
+    }
         if (!args[0])
             return message.channel.send("**Please Enter A Query!**");
 
@@ -20,8 +23,8 @@ module.exports = {
             .setDescription(args.join(' '))
         var msg = await message.channel.send(embed);
 
-        await msg.react('✅');
-        await msg.react('❌');
+        await msg.react('👍🏻');
+        await msg.react('👎🏻');
 
         message.delete({ timeout: 1000 });
     }
