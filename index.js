@@ -6,8 +6,6 @@ const db = require('quick.db');
 const { TOKEN, PREFIX, AVATARURL, BOTNAME, } = require(`./config.json`);
 const figlet = require("figlet");
 const client = new Client({ disableMentions: `` , partials: ['MESSAGE', 'CHANNEL', 'REACTION'] });
-require('discord-buttons')(client)
-const { MessageButton } = require('discord-buttons')
 client.login('ODc0MzIxODMyNDkxMjQxNTEy.YRFRqA.w1vcQ7oDep3U8m_U4LFfsgAW-7M');
 client.commands = new Collection();
 client.setMaxListeners(0);
