@@ -1,5 +1,5 @@
-const { Client, Message, MessageEmbed, Discord } = require('discord.js')
-const { MessageButton } = require('discord-buttons')
+const { Client, Message, MessageEmbed, Discord } = require('discord.js');
+const { MessageButton } = require('discord-buttons');
 
 module.exports = {
   name: "invite",
@@ -8,7 +8,7 @@ module.exports = {
   description: "Give You My Invite Link, Etc!",
   usage: "Invite",
   guildOnly: true,
-  cooldown: 5,
+  cooldown: 1,
   async execute(message, args, client) {
     const embed = new Discord.MessageEmbed()
        .setColor("GREEN")
