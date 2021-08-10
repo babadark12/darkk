@@ -11,7 +11,7 @@ module.exports = {
      
     let helpEmbed = new MessageEmbed()
     .setColor('#116d56')
-    .setDescription(`You Can Add Me To Your Server By [click here](https://discord.com/api/oauth2/authorize?client_id=872588477391331399&permissions=8&scope=bot)\n\nThere All Info Commands List \n\n${prefix}help, ${prefix}ping, ${prefix}prefix, ${prefix}uptime, ${prefix}avatar, ${prefix}invites, ${prefix}suggest, ${prefix}userinfo, ${prefix}serverinfo, , ${prefix}serverstats, ${prefix}github, ${prefix}support, ${prefix}botinfo, ${prefix}weather, ${prefix}embed, ${prefix}allbots, ${prefix}se, ${prefix}emojiinfo`)
+    .addField("Info", `${prefix}help, ${prefix}ping, ${prefix}prefix, ${prefix}uptime, ${prefix}avatar, ${prefix}invites, ${prefix}suggest, ${prefix}userinfo, ${prefix}serverinfo, , ${prefix}serverstats, ${prefix}github, ${prefix}support, ${prefix}botinfo, ${prefix}weather, ${prefix}embed, ${prefix}allbots, ${prefix}se, ${prefix}emojiinfo`)
     .setFooter(`Requested by ${message.author.tag}`, message.author.displayAvatarURL({dynamic: true}))
     helpEmbed.setTimestamp();
 
