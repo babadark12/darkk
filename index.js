@@ -177,6 +177,16 @@ message.channel.send(pingedembed);
 
 });
 
+fs.readdir("./events/", (err, files) => {
+  if (err) return console.error(err);
+  files.forEach(file => {
+    const event = require(`./events/${file}`);
+    let eventName = file.split(".")[0];
+     console.log(`[Event Load] loading Event ${eventName}`);
+    client.on(eventName, event.bind(null, client));
+  });
+});
+
 client.on("guildCreate", guild => {
   let channel = client.channels.cache.get("871701453939560488");
   let embed = new MessageEmbed().setColor("#116d56")
