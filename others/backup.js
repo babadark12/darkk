@@ -11,7 +11,7 @@ module.exports = {
      
     let helpEmbed = new MessageEmbed()
     .setColor('#116d56')
-    .addField("Backup", `${prefix}backup-create, ${prefix}backup-load, ${prefix}backup-info`)
+    .addField("🎟️› Backup's Command", `${prefix}backup-create, ${prefix}backup-load, ${prefix}backup-info`)
     .setFooter(`${message.author.tag}`, message.author.avatarURL)
     helpEmbed.setTimestamp();
 
