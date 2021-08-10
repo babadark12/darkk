@@ -79,20 +79,10 @@ for (const file of commandFiles) {
   const command = require(join(__dirname, `Fun`, `${file}`));
   client.commands.set(command.name, command);
 }
-for (let file of fs.readdirSync("./events/")) {
-  if (file.endsWith(".js")) {
-    let fileName = file.substring(0, file.length - 3);
-    let fileContents = require(`./events/${file}`);
-    fileContents(client);
-    const description = {
-      name: fileName,
-      filename: file,
-      version: `4.8`
-    };
-    console.log(
-      `⬜️ Module: ${description.name} | Loaded version ${description.version} | form("${description.filename}")`
-    );
-  }
+commandFiles = readdirSync(join(__dirname, `events`)).filter((file) => file.endsWith(`.js`));
+for (const file of commandFiles) {
+  const command = require(join(__dirname, `events`, `${file}`));
+  client.commands.set(command.name, command);
 }
 //COMMANDS //DO NOT TOUCH
 client.on(`message`, async (message) => {
