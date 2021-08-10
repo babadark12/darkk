@@ -1,5 +1,5 @@
-const Discord = require("discord.js");
-const db = require("quick.db");
+const { Client, Message, MessageEmbed, Discord } = require('discord.js')
+const { MessageButton } = require('discord-buttons')
 
 module.exports = {
   name: "invite",
@@ -10,7 +10,6 @@ module.exports = {
   guildOnly: true,
   cooldown: 5,
   async execute(message, args, client) {
-    message.delete();
     const embed = new Discord.MessageEmbed()
        .setColor("GREEN")
         .setTitle("🙏Thanks🙏")
