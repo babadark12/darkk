@@ -1,7 +1,8 @@
 const Discord = require("discord.js");
-const MessageEmbed = require("discord.js");
+const { MessageEmbed }  = require("discord.js");
 const db = require("quick.db");
 const moment = require("moment");
+
 module.exports = async client => {
   client.on("guildCreate", async guild => {
     if (!guild.available) return;
