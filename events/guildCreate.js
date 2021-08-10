@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-const config = require("../config.js");
+const config = require("./config.js");
 const fetch = require("node-fetch");
 module.exports = (client, guild, message) => {
 
