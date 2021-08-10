@@ -11,7 +11,7 @@ module.exports = {
      
     let helpEmbed = new MessageEmbed()
     .setColor('#116d56')
-    .addField("Picture", `${prefix}picboy, ${prefix}picgirl, ${prefix}picanimal, ${prefix}picbaby, ${prefix}picemoji`)
+    .addField("🌄› Picture's Command", `${prefix}picboy, ${prefix}picgirl, ${prefix}picanimal, ${prefix}picbaby, ${prefix}picemoji`)
     .setFooter(`${message.author.tag}`, message.author.avatarURL)
     helpEmbed.setTimestamp();
 
