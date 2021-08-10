@@ -177,41 +177,6 @@ message.channel.send(pingedembed);
 
 });
 
-fs.readdir("./events/", (err, files) => {
-  if (err) return console.error(err);
-  files.forEach(file => {
-    const event = require(`./events/${file}`);
-    let eventName = file.split(".")[0];
-     console.log(`[Event Load] loading Event ${eventName}`);
-    client.on(eventName, event.bind(null, client));
-  });
-});
-
-if(config.registercommands === true) {
-async function registerSlashCommands(dir) {;
-    fs.readdir(path.join(__dirname, dir), async (err, files) => {
-        if(err){
-            return console.log(chalk.red('An error occured when checking the commands folder for commands to load: ' + err));
-        };
-        files.forEach(async (file) => {
-            fs.stat(path.join(__dirname, dir, file), (err, stat) => {
-                if(err) return console.log(chalk.red('An error occured when checking the commands folder for commands to load: ' + err));
-                if(stat.isDirectory()) {
-                    registerSlashCommands(path.join(dir, file));
-                } else {
-                    if(!file.endsWith('.js')) return;
-                    let commandFile = require(path.join(__dirname, dir, file));
-                    slashCommandList.push({
-                        run: commandFile.slashCommand,
-                        name: file.split('.')[0]
-                    });
-                };
-            });
-        });
-    });
-};
-registerSlashCommands('./commands/');
-}
 client.on("guildCreate", guild => {
   let channel = client.channels.cache.get("871701453939560488");
   let embed = new MessageEmbed().setColor("#116d56")
