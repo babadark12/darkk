@@ -10,7 +10,7 @@ module.exports = async client => {
       .setThumbnail(client.user.displayAvatarURL({ dynamic: true }))
       .addField(
         "Information",
-        `You've just added me to **${guild.name}**.\n\nHere is some information about myself:\n\nMy Prefix:\`!help|mention\`\nCommands: Moderation, Settings, misc, welcome, fun, utility`,
+        `You've just added me to **${guild.name}**.\n\nHere is some information about myself:\n\nMy Prefix:\`+help|mention\`\nCommands: Moderation, Settings, misc, welcome, fun, utility`,
         true
       )
       .addField(
@@ -25,6 +25,6 @@ module.exports = async client => {
       )
       .setTimestamp() // moment().format('LLL'),
       .setFooter(`${client.user.tag}`);
-    guild.owner.send(embed)
+    guild.owner.send(embed);
   });
 };
