@@ -69,6 +69,11 @@ for (const file of commandFiles) {
   const command = require(join(__dirname, `others`, `${file}`));
   client.commands.set(command.name, command);
 }
+commandFiles = readdirSync(join(__dirname, `Slaw`)).filter((file) => file.endsWith(`.js`));
+for (const file of commandFiles) {
+  const command = require(join(__dirname, `Slaw`, `${file}`));
+  client.commands.set(command.name, command);
+}
 //COMMANDS //DO NOT TOUCH
 client.on(`message`, async (message) => {
   if (message.author.bot) return;
