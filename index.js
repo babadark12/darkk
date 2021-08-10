@@ -217,8 +217,8 @@ client.on("guildDelete", guild => {
   channel.send(embed);
 });
 
-["command", "events"].forEach(handler => {
-  require(`./handlers/${handler}`)(client);
+["command", "events"].forEach(util => {
+  require(`./util/${util}`)(client);
 });
 
 function delay(delayInms) {
