@@ -11,7 +11,7 @@ module.exports = {
      
     let helpEmbed = new MessageEmbed()
     .setColor('#116d56')
-    .addField("Music", `${prefix}filter, ${prefix}loop, ${prefix}lyrics, ${prefix}np, ${prefix}pause, ${prefix}play, ${prefix}queue, ${prefix}radio, ${prefix}remove, ${prefix}resume, ${prefix}search, ${prefix}shuffle, ${prefix}skip, ${prefix}skipto, ${prefix}stop, ${prefix}volume`)
+    .addField("🎶› Music's Command", `${prefix}filter, ${prefix}loop, ${prefix}lyrics, ${prefix}np, ${prefix}pause, ${prefix}play, ${prefix}queue, ${prefix}radio, ${prefix}remove, ${prefix}resume, ${prefix}search, ${prefix}shuffle, ${prefix}skip, ${prefix}skipto, ${prefix}stop, ${prefix}volume`)
     .setFooter(`Requested by ${message.author.tag}`, message.author.displayAvatarURL({dynamic: true}))
     helpEmbed.setTimestamp();
 
