@@ -9,7 +9,7 @@ module.exports = {
   aliases: ["serveremojis"],
   usage: "hey emojis",
   botPermission: ["MANAGE_EMOJIS"],
-  run: async (bot, message, args, cha) => {
+  async execute(message, args, client) {
     message.delete();
 
     try {
