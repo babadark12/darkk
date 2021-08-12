@@ -26,7 +26,7 @@ module.exports = {
               const embed = new Discord.MessageEmbed()
               .setTitle(user.username + " just got poked by " + message.author.username)
               .setImage(response.body.url)
-              .setColor("#116d56")
+              .setColor("#FF0000")
               .setDescription((user.toString() + " got poked by " + message.author.toString()))
               .setFooter(`rip`)
               .setURL(response.body.url);
