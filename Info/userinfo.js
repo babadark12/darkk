@@ -1,6 +1,6 @@
 const { jpegVersion } = require("canvas");
 const Discord = require("discord.js"), moment = require("moment"); //npm i discord.js moment
-const Color = "#116d56";
+const Color = "#FF0000";
 const { lineReply } = require("discord-reply");
 
 module.exports = {
