@@ -14,8 +14,8 @@ module.exports = {
     message.delete();
     const Invite = `https://discord.com/api/oauth2/authorize?client_id=872588477391331399&permissions=8&scope=bot`;
     const Embed = new Discord.MessageEmbed()
-      .setColor("GREEN")
-      .setTitle("🙏Thanks🙏")
+      .setColor("#FF0000")
+      .setTitle("There All Links")
       .addField("Invite Me", `[Click Me](${Invite})`)
       .addField("Support Me", `[Click Me](https://discord.gg/A6R2CJENGn)`)
       .addField("Developer", `Ds.MrRobot#7265`)
