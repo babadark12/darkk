@@ -10,10 +10,16 @@ module.exports = {
      
     let helpEmbed = new MessageEmbed()
     .setColor('#116d56')
-    .setDescription(`You Can Add Me To Your Server By [click here](https://discord.com/api/oauth2/authorize?client_id=872588477391331399&permissions=8&scope=bot)\n\nNeed Help? This is part of the commands \n\n+Info +Gifs +Pic +Fun +Game +Text +Moderation +Backup +Music\n\nNeed More Help? Join [our server](https://discord.gg/A6R2CJENGn) \nOur channel on [Youtube](https://youtube.com/channel/UC_EfAg6_maZeTyQN2T-0pzg) \nQuesstion Or Suggest Dms: Delta#7265`)
+    .addField("General Info", `help, ping, prefix, uptime, avatar, invites, suggest, userinfo, serverinfo, , serverstats, github, support, botinfo, weather, embed, allbots, se, emojiinfo`)
+    .addField("Moderation", `lock, unlock, ban, unban, bans, vkick, purge, emojilist, kick, warn, cinvite, channelinfo, channels, roleinfo, lockdown, tempban, tempmute, serverlock, serverunlock, addrole, rmvrole`)
+    .addField("Funny", `slap, hug, howgay,‌ meme, cry, kiss, clyde, captcha, phcomment, cuddle, joke, poke, baka, pat, punch, spank, dance, rate, advice, ascii, dicksize`)
+    .addField("Music", `filter, loop, lyrics, np, pause, play, queue, radio, remove, resume, search, shuffle, skip, skipto, stop, volume`)
+    .addField("Text", `textkurdish, textarabic, textenglish, textturkish, textpersian`)
+    .addField("Game", `rps, slots, iq, hack, 8ball`)
+    .addField("Backup", `backup-create, backup-load, backup-info`)
     .setFooter(`Requested by ${message.author.tag}`, message.author.displayAvatarURL({dynamic: true}))
     helpEmbed.setTimestamp();
 
-    message.lineReplyNoMention(helpEmbed).catch(console.error);
+    message.lineReplyNoMention(`Need Help This is part of commads!`, helpEmbed).catch(console.error);
   }
 };
