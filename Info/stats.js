@@ -38,7 +38,7 @@ module.exports = {
       .addField(`#️⃣ Channels Count:`, `${client.channels.cache.size}`, false)
       .addField(`🔸 Shards:`, `1`, false)
       .addField(`⚙️ Made With:`, `Node.js V12`, false)
-      .addField(`🛠️ Creator:`, `Delta{}#7562`, false)
+      .addField(`🛠️ Creator:`, `Ds.MrRobot#7562`, false)
       .addField(`🔻 Prefix : `, `${prefix}`, false)
       .addField(`🚥 Uptime:`, uptime.join(", "), false)
     message.lineReplyNoMention(embed);
