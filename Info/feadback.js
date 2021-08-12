@@ -1,6 +1,10 @@
 const { Client, Message, MessageEmbed } = require("discord.js");
+
 module.exports = {
-  name: 'feedback',
+     name: 'feadback',
+     description: 'Show user avatar',
+     aliases: ["fdb"],
+    async execute(message, args) {
   async execute(message, args, client) {
     const owner = client.users.cache.get('690934381597949955');
     const owner2 = client.users.cache.get("749659830809002014")
