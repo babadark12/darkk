@@ -41,7 +41,7 @@ module.exports = {
     let gifembed = new Discord.MessageEmbed()
 
     .setTitle("Meme posts😂")
-    .setColor("#116d56")
+    .setColor("#FF0000")
     .setFooter(`${message.author.tag} `, message.author.avatarURL)
     .setImage(replies[result]);
 
