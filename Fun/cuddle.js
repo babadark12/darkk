@@ -21,7 +21,7 @@ module.exports = {
               const embed = new Discord.MessageEmbed()
               .setTitle(user.username + " Just got a cuddle from " + message.author.username)
               .setImage(response.body.url)
-              .setColor(`#116d56`)
+              .setColor(`#FF0000`)
               .setDescription((user.toString() + " got a cuddle from " + message.author.toString()))
               .setFooter(`this is so cute`)
               .setURL(response.body.url);
