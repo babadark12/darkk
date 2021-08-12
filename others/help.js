@@ -20,6 +20,6 @@ module.exports = {
     .setFooter(`Requested by ${message.author.tag}`, message.author.displayAvatarURL({dynamic: true}))
     helpEmbed.setTimestamp();
 
-    message.lineReplyNoMention(`Need Help This is part of commads!`, helpEmbed).catch(console.error);
+    message.lineReplyNoMention(`Need Help? This is part of commads!`, helpEmbed).catch(console.error);
   }
 };
