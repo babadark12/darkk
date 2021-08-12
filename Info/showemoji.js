@@ -9,7 +9,7 @@ module.exports = {
   async execute(message, args) {
 
     const emoji = args[0];
-    if (!emoji) return message.channel.send(`Please Give Me A Emoji!`);
+    if (!emoji) return message.lineReplyNoMention(`Please Give Me A Emoji!`);
 
     let customemoji = Discord.Util.parseEmoji(emoji);
 
@@ -20,7 +20,7 @@ module.exports = {
       
       const Added = new MessageEmbed()
         .setTitle("Emoji Converter")
-        .setColor("#116d56")
+        .setColor("#FF0000")
         .addField('📎 • Link', `[Click Me](${Link})`)
         .setImage(Link);
       return message.lineReplyNoMention(Added);
