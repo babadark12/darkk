@@ -17,7 +17,7 @@ module.exports = {
       .setFooter(`Requested By ${message.author.username}`)
       .setTimestamp();
 
-    mmssage.lineReplyNoMention(`Pong🏓`, embed);
+    mmssage.lineReplyNoMention(embed);
 
     
   }
