@@ -18,7 +18,7 @@ module.exports = {
       .setTitle("🙏Thanks🙏")
       .addField("Invite Me", `[Click Me](${Invite})`)
       .addField("Support Me", `[Click Me](https://discord.gg/A6R2CJENGn)`)
-      .addField("Developer", `Delta{}#7265`)
+      .addField("Developer", `Ds.MrRobot#7265`)
     return message.lineReplyNoMention(Embed)
   }
 };
