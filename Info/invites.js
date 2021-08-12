@@ -23,7 +23,7 @@ module.exports = {
             memberInvites.forEach(invite => index += invite.uses);
 
             let embed = new Discord.MessageEmbed()
-                .setColor("#116d56")
+                .setColor("#FF0000")
                 .setFooter(message.guild.name, message.guild.iconURL())
                 .setAuthor(`🎈 | Invites Tracker For ${message.guild.name}`)
                 .setDescription(`**ℹ️ | Information on Invites of ${member.displayName}**`)
