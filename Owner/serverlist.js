@@ -35,15 +35,15 @@ module.exports = {
                     message.author.tag,
                     message.author.displayAvatarURL({ dynamic: true })
                 )
-                .setColor("BLUE")
+                .setColor("#FF0000")
                 .setFooter(client.user.username)
                 .setTitle(`Page - ${page}/${Math.ceil(client.guilds.cache.size / 10)}`)
                 .setDescription(description);
 
             let msg = await message.channel.send(embed);
 
-            await msg.react("⬅");
-            await msg.react("➡");
+            await msg.react("⬅️");
+            await msg.react("➡️");
             await msg.react("❌");
 
             let collector = msg.createReactionCollector(
@@ -51,7 +51,7 @@ module.exports = {
             );
 
             collector.on("collect", async (reaction, user) => {
-                if (reaction._emoji.name === "⬅") {
+                if (reaction._emoji.name === "⬅️") {
                     // Updates variables
                     i0 = i0 - 10;
                     i1 = i1 - 10;
@@ -88,7 +88,7 @@ module.exports = {
                     msg.edit(embed);
                 }
 
-                if (reaction._emoji.name === "➡") {
+                if (reaction._emoji.name === "➡️") {
                     // Updates variables
                     i0 = i0 + 10;
                     i1 = i1 + 10;
