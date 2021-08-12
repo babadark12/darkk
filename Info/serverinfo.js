@@ -79,7 +79,7 @@ async execute(message, args, client) {
 
 			.setDescription(`**Server information for __${message.guild.name}__**`)
 
-			.setColor('#116d56')
+			.setColor('#FF0000')
 
 			.setThumbnail(message.guild.iconURL({ dynamic: true }))
 
