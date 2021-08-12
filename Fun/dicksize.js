@@ -39,7 +39,7 @@ module.exports = {
     let Result = sizes[Math.floor(Math.random() * sizes.length)];
 
     let embed = new MessageEmbed()
-      .setColor("#116d56")
+      .setColor("#FF0000")
       .setDescription(`${Member.user.username} pp Size Is\n${Result}`)
       .setFooter(`Requested by ${message.author.username}`)
       .setTimestamp();
