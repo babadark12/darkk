@@ -24,7 +24,7 @@ module.exports = {
     });
 
     const embed = new Discord.MessageEmbed()
-      .setColor(`#116d56`)
+      .setColor(`#FF0000`)
       .setTitle(`${client.user.username} stats`)
       .setThumbnail(client.user.displayAvatarURL())
       .addField(
