@@ -15,7 +15,7 @@ module.exports = {
     const allbots = message.guild.members.cache.filter(m => m.user.bot).map((m) => m).map((m) => `${m.user.flags ? checked : unchecked} ${m.user.tag} (${m.id})`).join('\n');
 
     const embed = new MessageEmbed()
-    .setColor('#116d56')
+    .setColor('#FF0000')
     .setAuthor(message.author.tag, message.author.displayAvatarURL({ dynamic: true }))
     .setDescription(allbots)
     .setFooter(client.user.tag, client.user.displayAvatarURL())
