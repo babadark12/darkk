@@ -15,7 +15,7 @@ module.exports = {
 
     const embed = new MessageEmbed()
       .setFooter(message.author.username)
-      .setColor("#116d56")
+      .setColor("#FF0000")
       .setTitle(`${message.author.username} Slapped ${slapped}`)
       .setDescription(`[Click here if the image failed to load.](${data.url})`)
       .setImage(`${data.url}`)
