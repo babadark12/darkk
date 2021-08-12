@@ -9,7 +9,7 @@ module.exports = {
     let commands = message.client.commands.array();
      
     let helpEmbed = new MessageEmbed()
-    .setColor('#116d56')
+    .setColor('#d7342a')
     .addField("General Info", `help, ping, prefix, uptime, avatar, invites, suggest, userinfo, serverinfo, , serverstats, github, support, botinfo, weather, embed, allbots, se, emojiinfo`)
     .addField("Moderation", `lock, unlock, ban, unban, bans, vkick, purge, emojilist, kick, warn, cinvite, channelinfo, channels, roleinfo, lockdown, tempban, tempmute, serverlock, serverunlock, addrole, rmvrole`)
     .addField("Funny", `slap, hug, howgay,‌ meme, cry, kiss, clyde, captcha, phcomment, cuddle, joke, poke, baka, pat, punch, spank, dance, rate, advice, ascii, dicksize`)
