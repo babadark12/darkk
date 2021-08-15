@@ -58,7 +58,7 @@ module.exports = {
     }
 
     let embed = new MessageEmbed()
-      .setColor("#116d56")
+      .setColor("#FF0000")
       .setTitle(`Member Unbanned!`)
       .addField(`Moderator`, `${message.author.tag} (${message.author.id}}`)
       .addField(`Unbanned Member`, `${Member.user.tag} (${Member.user.id}`)
