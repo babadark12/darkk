@@ -16,7 +16,7 @@ module.exports = {
 
 if(!message.member.hasPermission("MANAGE_CHANNELS")) return message.lineReplyNoMention(
 new MessageEmbed()
-.setColor("#116d56")
+.setColor("#FF0000")
 .setDescription("**You Need `MANAGE_CHANNELS` Permission To Use This Command!**")
 .setFooter(`${message.author.tag}`, message.author.avatarURL()))
         let channel = message.mentions.channels.first();
