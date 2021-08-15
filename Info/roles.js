@@ -28,6 +28,6 @@ module.exports = {
         .setImage('')
         .setFooter("Roles Of Server");
 
-        message.channel.send(roless)
+        message.channel.send(roless);
     }
 }
