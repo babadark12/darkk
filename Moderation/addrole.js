@@ -1,72 +1,132 @@
-const Discord = require('discord.js');
-const { lineReply } = require("discord-reply");
+const { Client, Message, MessageEmbed } = require('discord.js');
+const db = require('quick.db');
+const ee = require('../../config/bot.json')
 
 module.exports = {
-    name: "addrole",
-    category: "Moderation",
-    aliases: ["ar", "giverole"],
-    description: "Adds the role to the mentioned user or ID with mentioned role or ID !!",
-    example: `+addrole @Dinav @Mod`,
+    name: 'addrole',
+    aliases: ['giverole'],
+    description: 'Add role to any user',
+    useage: '',
+    /** 
+     * @param {Client} client 
+     * @param {Message} message 
+     * @param {String[]} args 
+     */
+    run: async (client, message, args) => {
+        if (!message.member.permissions.has("MANAGE_ROLES")) return message.channel.send(
+            new MessageEmbed()
+            .setColor("#FF0000")
+            .setAuthor(message.author.tag)
+            .setDescription("**You Dont Have The Permissions To Add Roles To Users! - [MANAGE_ROLES]**")
+            .setFooter("Error!")
+        );
+        if (!message.guild.me.permissions.has("MANAGE_ROLES")) return  message.channel.send(
+            new MessageEmbed()
+            .setColor("#FF0000")
+            .setAuthor(message.author.tag)
+            .setDescription(" **I Dont Have The Permissions To Add Roles To Users! - [MANAGE_ROLES]**> ")
+           
+        )
 
-    async execute(message, args, client) {
+        if (!args[0]) return message.channel.send(
+            new MessageEmbed()
+            .setColor("#FF0000")
+            .setAuthor(message.author.tag)
+            .setDescription("**Please Enter A Role!**")
+            
+        )
 
-        const user = message.mentions.members.first() || message.guild.members.cache.get(args[0]);
-        const perms = ["MANAGE_ROLES" || "ADMINSTRATOR"];
-        const doggo = message.guild.members.cache.get(client.user.id);
-        const role = message.mentions.roles.first() || message.guild.roles.cache.get(args[1]);
+        let rMember = message.mentions.members.first() || message.guild.members.cache.get(args[0]) || message.guild.members.cache.find(r => r.user.username.toLowerCase() === args[0].toLocaleLowerCase()) || message.guild.members.cache.find(ro => ro.displayName.toLowerCase() === args[0].toLocaleLowerCase());
+        if (!rMember) return  message.channel.send(
+            new MessageEmbed()
+            .setColor("#FF0000")
+            .setAuthor(message.author.tag)
+            .setDescription("**Please Enter A User Name!**")
+            
+        )
+        if (rMember.roles.highest.comparePositionTo(message.guild.me.roles.highest) >= 0) return  message.channel.send(
+            new MessageEmbed()
+            .setColor("#FF0000")
+            .setAuthor(message.author.tag)
+            .setDescription('**Cannot Add Role To This User!**')
+            
+        )
 
-        let reason = args.slice(2).join(' ');
-        if (!reason) reason = '`-`';
-        if (reason.length > 1024) reason = reason.slice(0, 1021) + '...';
+        let role = message.mentions.roles.first() || message.guild.roles.cache.get(args[1]) || message.guild.roles.cache.find(rp => rp.name.toLowerCase() === args.slice(1).join(' ').toLocaleLowerCase());
+        if (!args[1]) return  message.channel.send(
+            new MessageEmbed()
+            .setColor("#FF0000")
+            .setAuthor(message.author.tag)
+            .setDescription("**Please Enter A Role!**")
+            
+        )
 
-        if(!message.member.hasPermission(perms)) 
-        return message.lineReplyNoMention(`❌ You do not have the permission to do that lol try asking a staff to give you the permission **\`MANAGE_ROLES\`** or **\`ADMINISTRATOR\`**`)
-        .then(msg => {
-            msg.delete({ timeout: 20000 })
-        });
+        if (!role) return message.channel.send(
+            new MessageEmbed()
+            .setColor("#FF0000")
+            .setAuthor(message.author.tag)
+            .setDescription("**Could Not Find That Role!**")
+            
+        )
 
-        
-        if(!doggo.hasPermission(perms))
-        return message.lineReplyNoMention(`❌ I do not have permission to addrole pls enable permission **\`MANAGE_ROLES\`** or **\`ADMINSTRATOR\`** for me`)
+        if (role.managed) return  message.channel.send(
+            new MessageEmbed()
+            .setColor("#FF0000")
+            .setAuthor(message.author.tag)
+            .setDescription("**Cannot Add That Role To The User!**")
+            
+        )
+        if (message.guild.me.roles.highest.comparePositionTo(role) <= 0) return  message.channel.send(
+            new MessageEmbed()
+            .setColor("#FF0000")
+            .setAuthor(message.author.tag)
+            .setDescription('**Role Is Currently Higher Than Me Therefore Cannot Add It To The User!**')
+            
+        )
 
-        if (!user)
-        return message.lineReplyNoMention(`❌ Please specify someone you want to give the role!! **\`+addrole [User] [Role Mention or Role ID]\`**`)
+        if (rMember.roles.cache.has(role.id)) return  message.channel.send(
+            new MessageEmbed()
+            .setColor("#FF0000")
+            .setAuthor(message.author.tag)
+            .setDescription('**Role Is Currently Higher Than Me Therefore Cannot Add It To The User!**')
+           
+        )
+        message.channel.send()
+        if (!rMember.roles.cache.has(role.id)) await rMember.roles.add(role.id);
+        var sembed = new MessageEmbed()
+            // .setColor("GREEN")
+            // .setAuthor(message.guild.name, message.guild.iconURL())
+            // .setDescription(`Role has been added to ${rMember.user.username}`)
+            .setAuthor(rMember.user.username, rMember.user.displayAvatarURL({ dynamic: true }))
+            .setThumbnail(rMember.user.displayAvatarURL({ dynamic: true }))
+            .setColor("#FF0000")
+            .setDescription(`${role} Role has been added to ${rMember.user.username}\n
+            \`Enjoy Dear\``)
+            .setFooter(`Role added by ${message.author.username}`, message.author.displayAvatarURL({dynamic:true}))
+            .setTimestamp()
 
-        if (!role)
-        return message.lineReplyNoMention(`❌ Please mention a role or provide a valid role ID`);
+        message.channel.send(sembed).then((msg => {
+            msg.delete({ timeout: 7000 })
+        }))
 
-        if (user.roles.highest.position >= message.member.roles.highest.position)
-        return message.lineReplyNoMention(`❌ You cannot give a role to someone who is higher or equal to your role`)
+        let channel = db.fetch(`modlog_${message.guild.id}`)
+        if (!channel) return;
 
-        if (user.roles.highest.position >= doggo.roles.highest.position)
-        return message.lineReplyNoMention(`❌ You cannot give a role to someone who is higher or equal to my role`)
+        const embed = new MessageEmbed()
+            .setAuthor(`${message.guild.name} Modlogs`, message.guild.iconURL())
+            .setColor("RED")
+            .setThumbnail(rMember.user.displayAvatarURL({ dynamic: true }))
+            .setFooter(message.guild.name, message.guild.iconURL())
+            .addField("**Moderation**", "addrole")
+            .addField("**Added Role to**", rMember.user.username)
+            .addField("**Role Added**", role.name)
+            .addField("**Added By**", message.author.username)
+            .addField("**Date**", message.createdAt.toLocaleString())
+            .setTimestamp();
 
-        else if (user.roles.cache.has(role.id))
-        return message.lineReplyNoMention(`❌ User already has the provided role`);
+        let sChannel = message.guild.channels.cache.get(channel)
+        if (!sChannel) return;
+        sChannel.send(embed)
+    }
 
-        else {
-            try {
-
-                await user.roles.add(role);
-
-                const embed = new Discord.MessageEmbed()
-                .setTitle('Add Role')
-                .setDescription(`✅ ${role}(\`${role.id}\`) has been successfully given to <@${user.id}>(\`${user.user.tag}\`)`)
-                .addField('Given By', `<@${message.member.id}>\n(\`${message.member.user.tag}\`)`, true)
-                .addField('To', `<@${user.id}>\n(\`${user.user.tag}\`)`, true)
-                .addField('Role', `${role}\n(\`${role.id}\`)`, true)
-                .addField('Reason', reason)
-                .setFooter(message.member.displayName,  message.author.displayAvatarURL({ dynamic: true }))
-                .setTimestamp()
-                .setColor("#FF0000");
-
-                await message.lineReplyNoMention(embed);
-      
-            } catch (err) {
-            return message.lineReplyNoMention(`❌ Please check the role position`, err.message);
-            }
-        }
-    
-    }      
-        
 }
