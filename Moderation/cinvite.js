@@ -49,7 +49,7 @@ module.exports = {
         message.lineReplyNoMention(
           new MessageEmbed()
 
-            .setColor(`#116d56`)
+            .setColor(`#FF0000`)
 
             .setTitle(`${channels.name} Invite`)
 
