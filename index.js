@@ -113,8 +113,9 @@ client.on(`message`, async (message) => {
     .addField("Add Me?", `[click](https://discord.com/api/oauth2/authorize?client_id=872588477391331399&permissions=8&scope=bot)`)
     .addField("Our Server", `[click](https://discord.gg/5cNZav2xzD)`)
     .setColor("RANDOM");
-message.author.send(`You Mentioned Me On ${message.guild.name?`, pingedembed);
+message.author.send(pingedembed);
   }
+  
   //An embed announcement for everyone but no one knows so fine ^w^
   if(message.content.startsWith(`${prefix}embed`)){
     //define saymsg
