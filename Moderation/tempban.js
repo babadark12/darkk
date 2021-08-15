@@ -66,14 +66,14 @@ module.exports = {
       }
       if (reason) {
         var sembed = new MessageEmbed()
-          .setColor("#116d56")
+          .setColor("#FF0000")
           .setDescription(
             `**${banMember.user.username}** has been banned for ${reason} - Time ${regex}`
           );
         message.lineReplyNoMention(sembed);
       } else {
         var sembed2 = new MessageEmbed()
-          .setColor("#116d56")
+          .setColor("#FF0000")
           .setDescription(
             `**${banMember.user.username}** has been banned - Time ${regex}`
           );
@@ -86,7 +86,7 @@ module.exports = {
 
       const embed = new MessageEmbed()
         .setAuthor(`${message.guild.name} Modlogs`, message.guild.iconURL())
-        .setColor("#116d56")
+        .setColor("#FF0000")
         .setThumbnail(banMember.user.displayAvatarURL({ dynamic: true }))
         .setFooter(message.guild.name, message.guild.iconURL())
         .addField("**Moderation**", "tempban")
