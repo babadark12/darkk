@@ -1,68 +1,52 @@
-const Discord = require('discord.js');
-const { lineReply } = require("discord-reply");
+const { Client, Message, MessageEmbed } = require('discord.js');
 
 module.exports = {
-    name: "rmvrole",
-    aliases: ["takerole"],
-    category: "Moderation",
-    description: "Removes a role from the user",
-    example: `+removerole @Dinav @Mod`,
+    name: 'removerole',
+    aliases: ['backrole'],
+    description: 'remove role to any user',
+    useage: '',
+    /** 
+     * @param {Client} client 
+     * @param {Message} message 
+     * @param {String[]} args 
+     */
+async execute(message, args, client) {
+        let target = message.mentions.members.first();
 
-    async execute(message, args, client) {
+        if (!target) return message.channel.send(
+            new MessageEmbed()
+                .setColor("#FF0000")
+                .setAuthor(message.author.tag)
+                .setDescription('**I am unable to find the user**')
+                
+        )
 
-        const user = message.mentions.members.first() || message.guild.members.cache.get(args[0]);
-        const perms = ["MANAGE_ROLES" || "ADMINSTRATOR"];
-        const doggo = message.guild.members.cache.get(client.user.id);
-        const role = message.mentions.roles.first() || message.guild.roles.cache.get(args[1]);
+        let rrole = message.mentions.roles.first();
 
-        let reason = args.slice(2).join(' ');
-        if (!reason) reason = '`-`';
-        if (reason.length > 1024) reason = reason.slice(0, 1021) + '...';
+        if (!rrole) return message.channel.send(
+            new MessageEmbed()
+                .setColor("#FF0000")
+                .setAuthor(message.author.tag)
+                .setDescription('**I am unable to find the role**')
+                
+        )
 
-        if(!message.member.hasPermission(perms)) 
-        return message.lineReplyNoMention(`❌ You do not have the permission to do that lol try asking a staff to give you the permission **\`MANAGE_ROLES\`** or **\`ADMINISTRATOR\`**`)
-        .then(msg => {
-            msg.delete({ timeout: 20000 })
-        });
+        let ticon = target.user.avatarURL({ dynamic: true, size: 2048 });
+        let aicon = message.author.avatarURL({ dynamic: true, size: 2048 });
 
-        if(!doggo.hasPermission(perms))
-        return message.lineReplyNoMention(`❌ I do not have permission to addrole pls enable permission **\`MANAGE_ROLES\`** or **\`ADMINSTRATOR\`** for me`)
+        const embed = new MessageEmbed()
+            .setAuthor(target.user.username, ticon)
+            .setThumbnail(target.user.displayAvatarURL({ dynamic: true }))
+            .setColor("#FF0000")
+            .setDescription(`${rrole} role removed from ${target}\n
+            \`So Sad I Pray You Will Get Role Back\``)
+            .setFooter(`Role added by ${message.author.username}`, aicon)
+            .setTimestamp()
 
-        if (!user)
-        return message.lineReplyNoMention(`❌ Please specify someone you want to remove the role!! **\`+removerole [User] [Role Mention or Role ID]\`**`)
+        await message.channel.send(embed).then((msg => {
+            msg.delete({ timeout: 7000 })
+        }))
 
-        if (!role)
-        return message.lineReplyNoMention(`❌ Please mention a role or provide a valid role ID`);
-
-        if (user.roles.highest.position >= message.member.roles.highest.position)
-        return message.lineReplyNoMention(`❌ You cannot give a remove a role from someone who is higher or equal to your role`)
-
-        if (user.roles.highest.position >= doggo.roles.highest.position)
-        return message.lineReplyNoMention(`❌ I cannot remove a role from someone who is higher or equal to my role`)
-
-        else if (!user.roles.cache.has(role.id))
-        return message.lineReplyNoMention(`❌ User does not have the provided role`);
-
-        else {
-            try {
-      
-              await user.roles.remove(role);
-
-              const embed = new Discord.MessageEmbed()
-                .setTitle('Remove Role')
-                .setDescription(`✅ ${role}(\`${role.id}\`) has been successfully removed from <@${user.id}>(\`${user.user.tag}\`)`)
-                .addField('Removed By', `<@${message.member.id}>\n(\`${message.member.user.tag}\`)`, true)
-                .addField('From', `<@${user.id}>\n(\`${user.user.tag}\`)`, true)
-                .addField('Role', `${role}\n(\`${role.id}\`)`, true)
-                .addField('Reason', reason)
-                .setFooter(message.member.displayName,  message.author.displayAvatarURL({ dynamic: true }))
-                .setTimestamp()
-                .setColor("#FF0000");
-              await message.lineReplyNoMention(embed);
-      
-            } catch (err) {
-              return message.lineReplyNoMention(`❌ Please check the role hierarchy !!!`, err.message);
-            }
-        }  
+        target.roles.remove(rrole)
     }
 }
