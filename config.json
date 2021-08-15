@@ -3,5 +3,6 @@
   "PREFIX": "+",
   "approveemoji": "",
   "denyemoji": "",
-  "erroremoji": ""
+  "erroremoji": "",
+  "color": "#FF0000"
 }
