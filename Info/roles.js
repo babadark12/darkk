@@ -21,7 +21,7 @@ module.exports = {
         }
 
         let roless = new MessageEmbed()
-        .setColor(config.colors.yes)
+        .setColor("RED")
         .setTitle(`**❯ All Roles Of :** ${message.guild.name}`)
         .setDescription(`**${roles.toString()}**`)
         .setThumbnail(message.guild.iconURL())
