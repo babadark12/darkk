@@ -15,7 +15,7 @@ module.exports = {
         if (!message.member.permissions.has("ADMINISTRATOR"))
             return message.channel.send(
                 new MessageEmbed()
-                    .setColor(config.color)
+                    .setColor("#FF0000"
                     .setAuthor(message.author.tag)
                     .setDescription("**You Dont Have The Permissions To Mute Users! - [ADMINISTRATOR]**")
                    
@@ -25,7 +25,7 @@ module.exports = {
         let member = message.mentions.members.first();
         if (!member) return message.channel.send(
             new MessageEmbed()
-                .setColor(config.color)
+                .setColor("#FF0000")
                 .setAuthor(message.author.tag)
                 .setDescription("**ERROR, please ping a USER! Usage: `mute @User <Time> [REASON]` example: `mute @User 10m He is doing bad stuff!`**")
                
@@ -35,7 +35,7 @@ module.exports = {
         if (member.roles.highest.position >= message.member.roles.highest.position) {
             return message.channel.send(
                 new MessageEmbed()
-                    .setColor(config.color)
+                    .setColor("#FF0000")
                     .setAuthor(message.author.tag)
                     .setDescription("**:x: I cannot mute this Member, because he is higher/Equal to your Rang Position!**")
                     
@@ -44,7 +44,7 @@ module.exports = {
 
         if (!message.guild.me.permissions.has("MANAGE_ROLES")) return message.channel.send(
             new MessageEmbed()
-                .setColor(config.color)
+                .setColor("#FF0000")
                 .setAuthor(message.author.tag)
                 .setDescription("**I need the permission, to Manage Roles aka give roles**")
                 
@@ -63,7 +63,7 @@ module.exports = {
         if (!mutedrole) {
             return message.channel.send(
                 new MessageEmbed()
-                    .setColor(config.color)
+                    .setColor("#FF0000")
                     .setAuthor(message.author.tag)
                     .setDescription("**:x: You never muted someone, there is no muted role yet!**")
                     
@@ -72,7 +72,7 @@ module.exports = {
         if (!message.member.permissions.has("ADMINISTRATOR") && mutedrole.position > message.guild.me.roles.highest.position) {
             return message.channel.send(
                 new MessageEmbed()
-                    .setColor(config.color)
+                    .setColor("#FF0000")
                     .setAuthor(message.author.tag)
                     .setDescription("**:x: I cannot access the Role, because it's above me!**")
                     
@@ -83,7 +83,7 @@ module.exports = {
         }, async (err, data) => {
             if (!data) return message.channel.send(
                 new MessageEmbed()
-                    .setColor(config.color)
+                    .setColor("#FF0000")
                     .setAuthor(message.author.tag)
                     .setDescription("**:x: You never muted someone, there is no muted role yet!**")
                     
@@ -91,7 +91,7 @@ module.exports = {
             const user = data.Users.findIndex((prop) => prop === member.id)
             if (user == -1) return message.channel.send(
                 new MessageEmbed()
-                    .setColor(config.color)
+                    .setColor("#FF0000")
                     .setAuthor(message.author.tag)
                     .setDescription("**:x: You never muted someone, there is no muted role yet!**")
                     
@@ -103,14 +103,14 @@ module.exports = {
         } catch {
             message.channel.send(
                 new MessageEmbed()
-                    .setColor(config.color)
+                    .setColor("#FF0000")
                     .setAuthor(message.author.tag)
                     .setDescription("**Something went wrong!**")
                     
             )
         }
         let embed = new MessageEmbed()
-            .setColor(config.color)
+            .setColor("#FF0000")
             .setTitle(`Unmuted: \`${member.user.tag}\``)
             .setThumbnail(member.user.displayAvatarURL({ dynamic: true }))
             .setFooter(`By: ${message.author.tag}`, message.author.displayAvatarURL({ dynamic: true }))
