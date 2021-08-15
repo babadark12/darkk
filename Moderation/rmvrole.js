@@ -40,7 +40,7 @@ async execute(message, args, client) {
             .setColor("#FF0000")
             .setDescription(`${rrole} role removed from ${target}\n
             \`So Sad I Pray You Will Get Role Back\``)
-            .setFooter(`Role added by ${message.author.username}`, aicon)
+            .setFooter(`Role removed by ${message.author.username}`, aicon)
             .setTimestamp()
 
         await message.channel.send(embed).then((msg => {
