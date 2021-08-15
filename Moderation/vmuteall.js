@@ -17,7 +17,7 @@ module.exports = {
         message.channel.send(
             new MessageEmbed()
                 .setTitle(`${channel.name} - All members on your channel have been silenced`)
-                .setColor("YELLOW")
+                .setColor("#FF0000")
         )
 
 
