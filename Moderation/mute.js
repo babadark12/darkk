@@ -162,7 +162,7 @@ async execute(message, args, client) {
             .setTitle(`Muted: \`${member.user.tag}\``)
             .setThumbnail(member.user.displayAvatarURL({ dynamic: true }))
             .setFooter(`By: ${message.author.tag}`, message.author.displayAvatarURL({ dynamic: true }))
-            .setDescription(`He/you is now muted for \`${ms(mutetime, { long: true })} Talk Moderator To Unmute you..\`${reason ? `\n\n**REASON**\n> ${reason.substr(0, 1800)}` : "\nNO REASON"}`)
+            .setDescription(`**He/you is now muted for** \`${ms(mutetime, { long: true })} **Talk Moderator To Unmute you..** \`${reason ? `\n\n**REASON**\n> ${reason.substr(0, 1800)}` : "\nNO REASON"}`)
         message.channel.send(embed).catch(e => console.log(e))
 
         member.send(embed.setTitle(`You got muted by: \`${message.author.tag}\``)).catch(e => console.log(e))
