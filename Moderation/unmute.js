@@ -15,7 +15,7 @@ module.exports = {
         if (!message.member.permissions.has("ADMINISTRATOR"))
             return message.channel.send(
                 new MessageEmbed()
-                    .setColor("#FF0000"
+                    .setColor("#FF0000")
                     .setAuthor(message.author.tag)
                     .setDescription("**You Dont Have The Permissions To Mute Users! - [ADMINISTRATOR]**")
                    
