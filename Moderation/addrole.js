@@ -1,6 +1,5 @@
 const { Client, Message, MessageEmbed } = require('discord.js');
 const db = require('quick.db');
-const ee = require('../../config/bot.json')
 
 module.exports = {
     name: 'addrole',
@@ -12,7 +11,7 @@ module.exports = {
      * @param {Message} message 
      * @param {String[]} args 
      */
-    run: async (client, message, args) => {
+    async execute(message, args, client) {
         if (!message.member.permissions.has("MANAGE_ROLES")) return message.channel.send(
             new MessageEmbed()
             .setColor("#FF0000")
