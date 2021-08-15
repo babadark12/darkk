@@ -29,7 +29,7 @@ const channelEmbed = new MessageEmbed()
 ${channel.members ? channel.members.array().join(" **|** ") : 'None'}`
 ]) 
 .setTimestamp()
-.setColor('#116d56')
+.setColor('#FF0000')
 .setFooter(`Requested by ${message.author.tag}`, message.author.displayAvatarURL({dynamic: true}))
 message.lineReplyNoMention(`**Information About** <#${channel.id}> **Channel**`,channelEmbed)
 }
@@ -45,7 +45,7 @@ const channelEmbed = new MessageEmbed()
 `**❯ Category:** ${channel.parent ? channel.parent.name : 'None'}`, 
 `**❯ Topic:** \n${channel.topic ? channel.topic.length > 200 ? `${channel.topic.slice(0, 200)}...` : channel.topic : "None"}`
 ]) 
-.setColor('#116d56') 
+.setColor('#FF0000') 
 .setTimestamp() 
 .setFooter(`Requested by ${message.author.tag}`, message.author.displayAvatarURL({dynamic: true}))
 message.lineReplyNoMention(`**Information About** <#${channel.id}> **Channel**`,channelEmbed)
@@ -63,7 +63,7 @@ const channelEmbed = new MessageEmbed()
 ${channel.children ? channel.children.array().join(" **|** ") : 'None'}`
 		])
 .setTimestamp()
-.setColor('#116d56')
+.setColor('#FF0000')
 .setFooter(`Requested by ${message.author.tag}`, message.author.displayAvatarURL({dynamic: true}))
 	message.lineReplyNoMention(`**Information About** <#${channel.id}> **Channel**`,channelEmbed)
 }
