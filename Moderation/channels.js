@@ -1,25 +1,78 @@
-const { MessageEmbed } = require("discord.js");
-const { lineReply } = require("discord-reply");
+const { MessageEmbed } = require("discord.js") 
+const Discord = require("discord.js") 
 
 module.exports = {
-  name: "channels",
-  aliases: ["ch"],
-  description: "Show Gif",
-  usage: "Gif",
-   async execute(message, args, client) {
-        const channels = message.guild.channels.cache;
-        const voiceChannels = channels.filter((channel) => channel.type === "voice").map((channel) => channel.name).join(", ");
-        const textChannels = channels.filter((channel) => channel.type === "text").map((channel) => `<#${channel.id}>`).join(", ");
+name: 'channels', 
+aliases: ["channels-list"], 
+async execute(message, args, client) {
 
-        const embed = new MessageEmbed()
-            .setColor("#FF0000")
-            .setTitle(`${message.guild.name}'s channels`)
-            .addField("**🔊 Voice Channels:**", voiceChannels)
-            .addField("**#️⃣ Text Channels:**", textChannels)
-            .setFooter(message.author.username)
-            .setTimestamp();
+// CATEGORY CHANNELS
+let cat = message.guild.channels.cache.array().filter(c => c.type === 'category').sort((b,a) => b.position - a.position).map(c => c).join(" **|** ");
+if(cat.length > 1024) cat = message.guild.channels.cache.array().filter(c => c.type === 'category').sort((b,a) => b.position - a.position).map(c => c).join(" **|** ").slice(0, 1024) + " .......... Too many category channels to show.";
+
+// TEXT CHANNELS 
+let text = message.guild.channels.cache.array().filter(c => c.type !== 'category' && c.type !== 'voice').sort((b,a) => b.position - a.position).map(c => c).join(" **|** ");
+if(text.length > 1024) text = message.guild.channels.cache.array().filter(c => c.type !== 'category' && c.type !== 'voice').sort((b,a) => b.position - a.position).map(c => c).join(" **|** ").slice(0, 1024) + " .......... Too many text channels to show.";
+let voice = message.guild.channels.cache.array().filter(c => c.type === 'voice').sort((b,a) => b.position - a.position).map(c => `${c}`).join(" **|** ");
+if(voice.length > 1024) voice = message.guild.channels.cache.array().filter(c => c.type === 'voice').sort((b,a) => b.position - a.position).map(c => `${c}`).join(" **|** ").slice(0, 1024) + " .......... Too many voice channels to show.";
+    const e = [
+             "◀",
+             "▶"
+             ]
+const embed = new MessageEmbed() 
+.setColor("#FF0000") 
+.setTitle(`Channels List of ${message.guild.name}`) 
+.setThumbnail(message.guild.iconURL({dynamic: true})) 
+.setDescription([
+`This is the navigation page`, 
+`\n`, 
+`Page 1 = Category Channels`, 
+`Page 2 = Text Channels`, 
+`Page 3 = Voice Channels`, 
+`\n`, 
+`Use ${e[0]+e[1]} emojis to navigate.`, 
+`\n`, 
+`**Total Channels:** ${message.guild.channels.cache.size}`,
+])
+.setTimestamp()
+
+.setFooter(`Total Channels: ${message.guild.channels.cache.size}`) 
+    const embed1 = new MessageEmbed() 
+.setTitle(`Category Channels [${message.guild.channels.cache.filter(c => c.type === 'category').size}]`) 
+.setDescription(cat || "None") 
+.setColor("#FF0000") 
+.setTimestamp() 
+
+const embed2 = new MessageEmbed()
+.setTitle(`Text Channels [${message.guild.channels.cache.filter(c => c.type !== 'category' && c.type !== 'voice').size}]`) 
+.setDescription(text || "None") 
+.setColor("#FF0000") 
+.setTimestamp() 
+
+const embed3 = new MessageEmbed()
+.setTitle(`Voice Channels [${message.guild.channels.cache.filter(c => c.type === 'voice').size}]`) 
+.setDescription(voice || "None") 
+.setTimestamp() 
+.setColor("#FF0000") 
+
+ const pagination = require('discord.js-pagination');    
+  const pages = [
+                    embed,
+                   embed1, 
+embed2, 
+embed3, 
+            ]
+    
+            const emojiList = [
+             "◀",
+             "▶"
+              
+              ]
+              const timeout = '120000';
+    
+            pagination(message, pages, emojiList, timeout)
+   
 
 
-        message.lineReplyNoMention(embed);
-    }
-};
+}
+}
