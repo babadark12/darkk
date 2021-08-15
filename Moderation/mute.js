@@ -14,7 +14,7 @@ module.exports = {
 async execute(message, args, client) {
         if (!message.member.permissions.has("ADMINISTRATOR")) return message.channel.send(
             new MessageEmbed()
-                .setColor("RED")
+                .setColor("#FF0000")
                 .setAuthor(message.author.tag)
                 .setDescription("**You Dont Have The Permissions To Mute Users! - [ADMINISTRATOR]**")
                
@@ -23,7 +23,7 @@ async execute(message, args, client) {
         let member = message.mentions.members.first();
         if (!member) return message.channel.send(
             new MessageEmbed()
-                .setColor("RED")
+                .setColor("#FF0000")
                 .setAuthor(message.author.tag)
                 .setDescription("ERROR, please ping a USER! Usage: `mute @User <Time+Format(e.g: 10m)> [REASON]` example: `mute @User 10m He is doing bad stuff!`")
                 
@@ -33,7 +33,7 @@ async execute(message, args, client) {
         if (member.roles.highest.position >= message.member.roles.highest.position) {
             return message.channel.send(
                 new MessageEmbed()
-                    .setColor("RED")
+                    .setColor("#FF0000")
                     .setAuthor(message.author.tag)
                     .setDescription(":x: I cannot mute this Member, because he is higher/Equal to your Rang Position!")
                     
@@ -42,7 +42,7 @@ async execute(message, args, client) {
 
         if (!message.guild.me.permissions.has("MANAGE_ROLES")) return message.channel.send(
             new MessageEmbed()
-                .setColor("RED")
+                .setColor("#FF0000")
                 .setAuthor(message.author.tag)
                 .setDescription("**I need the permission, to Manage Roles aka give roles**")
                 
@@ -51,7 +51,7 @@ async execute(message, args, client) {
         let time = args[0];
         if (!time) return message.channel.send(
             new MessageEmbed()
-                .setColor("RED")
+                .setColor("#FF0000")
                 .setAuthor(message.author.tag)
                 .setDescription("**ERROR, please add a TIME! Usage: `mute @User <Time+Format(e.g: 10m)> [REASON]` example: `mute @User 10m He is doing bad stuff!`**")
               
@@ -72,7 +72,7 @@ async execute(message, args, client) {
         if (!mutedrole) {
             if (!message.guild.me.permissions.has("MANAGE_GUILD")) return message.channel.send(
                 new MessageEmbed()
-                    .setColor("RED")
+                    .setColor("#FF0000")
                     .setAuthor(message.author.tag)
                     .setDescription("**I need the permission, to Manage Roles aka give roles**")
                    
@@ -82,7 +82,7 @@ async execute(message, args, client) {
             mutedrole = await message.guild.roles.create({
                 data: {
                     name: 'muted',
-                    color: '#222222', //grey color
+                    color: '#FF0000', //grey color
                     hoist: false, //hoist true
                     position: Number(highestrolepos) - 1, //muted role under highest Bot Role!
                     //permissions: ["SEND_MESSAGES"]
@@ -93,7 +93,7 @@ async execute(message, args, client) {
                     console.log(e);
                     message.channel.send(
                         new MessageEmbed()
-                            .setColor("RED")
+                            .setColor("#FF0000")
                             .setAuthor(message.author.tag)
                             .setDescription("**I COULD NOT CREATE A ROLE, sorry**")
                             
@@ -103,7 +103,7 @@ async execute(message, args, client) {
         if (mutedrole.position > message.guild.me.roles.highest.position) {
             return message.channel.send(
                 new MessageEmbed()
-                    .setColor("RED")
+                    .setColor("#FF0000")
                     .setAuthor(message.author.tag)
                     .setDescription("**:x: I cannot access the Role, because it's above me!**")
                    
@@ -115,14 +115,14 @@ async execute(message, args, client) {
         } catch {
             return message.channel.send(
                 new MessageEmbed()
-                    .setColor("RED")
+                    .setColor("#FF0000")
                     .setAuthor(message.author.tag)
                     .setDescription("**ERROR, please add a TIME! Usage: `mute @User <Time+Format(e.g: 10m)> [REASON]` example: `mute @User 10m He is doing bad stuff!`**")
             )
         }
         if (!mutetime || mutetime === undefined) return message.channel.send(
             new MessageEmbed()
-                .setColor("RED")
+                .setColor("#FF0000")
                 .setAuthor(message.author.tag)
                 .setDescription("**ERROR, please add a TIME! Usage: `mute @User <Time+Format(e.g: 10m)> [REASON]` example: `mute @User 10m He is doing bad stuff!`**")
         )
@@ -152,13 +152,13 @@ async execute(message, args, client) {
         } catch {
             message.channel.send(
                 new MessageEmbed()
-                    .setColor("RED")
+                    .setColor("#FF0000")
                     .setAuthor(message.author.tag)
                     .setDescription("**Something went wrong!**")
             )
         }
         let embed = new MessageEmbed()
-            .setColor("RED")
+            .setColor("#FF0000")
             .setTitle(`Muted: \`${member.user.tag}\``)
             .setThumbnail(member.user.displayAvatarURL({ dynamic: true }))
             .setFooter(`By: ${message.author.tag}`, message.author.displayAvatarURL({ dynamic: true }))
@@ -174,7 +174,7 @@ async execute(message, args, client) {
             } catch {
                 message.channel.send(
                     new MessageEmbed()
-                        .setColor("RED")
+                        .setColor("#FF0000")
                         .setAuthor(message.author.tag)
                         .setDescription("**Something went wrong!**")
                 )
