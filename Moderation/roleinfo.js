@@ -22,7 +22,7 @@ module.exports = {
         }
 
         let roleembed = new MessageEmbed()
-            .setColor("#116d56")
+            .setColor("#FF0000")
             .setTitle(`Role Info: \`[  ${role.name}  ]\``)
             .setThumbnail(message.guild.iconURL())
             .addField("**ID**", `\`${role.id}\``, true)
