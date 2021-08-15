@@ -31,7 +31,7 @@ module.exports = {
 	.setTitle('Ubanned all')
 	.setDescription(`Successfully unbanned all the banned users\n**Moderator:** <@${message.author.id}>`)
 
-	.setColor("#116d56")
+	.setColor("#FF0000")
         message.lineReplyNoMention(emb);
                             
                         }
