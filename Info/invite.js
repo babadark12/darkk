@@ -8,8 +8,7 @@ module.exports = {
     usage: '',
     async execute(message, args, client) {
       
-        message.channel.send(
-            new MessageEmbed()
+             const embed = new MessageEmbed()
                 .setColor('BLUE')
                 .setAuthor(message.author.tag)
                 .setTitle("Invite & Support Link!")
@@ -17,8 +16,8 @@ module.exports = {
                 .addField("**Support Server**", `[Click to join support Server](https://discord.gg/sCypg2pj)`)
                 .setFooter(`Requested by ${message.author.tag}`, client.user.displayAvatarURL())
                 .setTimestamp()
-
-
+            message.channel.send(embed);
+     
         )
 
     }
