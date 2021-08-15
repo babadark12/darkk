@@ -10,7 +10,7 @@ module.exports = {
     required: 'DEVELOPER',
     guildOnly: true,
     async execute(message, args, client) {
-        if (message.author.id === config.owner) {
+        if (message.author.id === owner) {
             let User = await message.mentions.members.first() || message.guild.members.cache.get(args[0]) || message.guild.members.cache.find(r => r.user.username.toLowerCase().includes() === args.join(' ').toLocaleLowerCase()) || message.guild.members.cache.find(r => r.displayName.toLowerCase().includes() === args.join(' ').toLocaleLowerCase())
             
             let bReason = args.join(" ").slice(32)
