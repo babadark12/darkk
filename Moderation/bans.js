@@ -21,7 +21,7 @@ if (!message.channel.guild) return;
 		message.guild.fetchBans().then(bans =>
 message.lineReplyNoMention (new MessageEmbed()
 .setAuthor(message.guild.name, message.guild.iconURL())
-.setColor("#116d56")
+.setColor("#FF0000")
 .addField("Total Ban's Is", `\`${bans.size}\``)
 .setFooter(`${message.author.tag}`, message.author.avatarURL()))).catch(console.error);
     }
