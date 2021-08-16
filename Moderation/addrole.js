@@ -103,7 +103,8 @@ module.exports = {
             .setFooter(`Role added by ${message.author.username}`, message.author.displayAvatarURL({dynamic:true}))
             .setTimestamp()
 
-        message.channel.send(sembed)
+        message.channel.send(sembed).then((msg => {
+            msg.delete({ timeout: 7000000 })
         }))
 
         let channel = db.fetch(`modlog_${message.guild.id}`)
