@@ -12,7 +12,7 @@ module.exports = {
   examples: [
     'resetroles @user',
     'resetrole 7283746571920016374'
-  ],
+  ], 
   async execute(message, args, client) {
 
     if (!member.match(/\d{17,19}/)){
