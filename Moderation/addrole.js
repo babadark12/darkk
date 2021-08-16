@@ -99,7 +99,7 @@ module.exports = {
             .setAuthor(rMember.user.username, rMember.user.displayAvatarURL({ dynamic: true }))
             .setThumbnail(rMember.user.displayAvatarURL({ dynamic: true }))
             .setColor("#FF0000")
-            .setDescription(`${role} Role has been added to ${rMember.user.username} Enjoy Dear`)
+            .setDescription(`${role} Role has been added to ${rMember.user.username} \`Enjoy Dear\``)
             .setFooter(`Role added by ${message.author.username}`, message.author.displayAvatarURL({dynamic:true}))
             .setTimestamp()
 
