@@ -11,7 +11,6 @@ module.exports = {
     .setDescription('Thank you for checking my links! here is all of my support links! nmake sure you joined our support server if you want to ask about the repository or something \:>')
     .addField('Adding Me?', '[Click Here](https://discord.com/api/oauth2/authorize?client_id=${client.user.id}&permissions=8&scope=bot)')
     .addField('Support Server?', '[Click Here](https://discord.gg/DZtSGmkf)')
-    .addField("Dm Owner For Quoesstion", 'MrRobot#7265')
     .setThumbnail(client.user.displayAvatarURL({dynamic: true}))
     .setColor('#FF0000')
     .setFooter('Pretty Links');
