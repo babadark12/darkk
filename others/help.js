@@ -13,7 +13,7 @@ category: "help",
 
         const general = new Discord.MessageEmbed()
         .setThumbnail(message.author.avatarURL({ dynamic: true, size: 2048 }))
-        .addField("General Info", `\nhelp\n ping\n prefix\n uptime\n links\n avatar\n invites\n suggest\n userinfo\n serverinfo\n serverstats\n github\n support\n botinfo\n weather\n embed\n allbots\n se\n emojiinfo\n roles**`)
+        .addField("General Info", `\`help, ping, prefix, uptime, links, avatar, invites, suggest, userinfo, serverinfo, serverstats, github, support, botinfo, weather, embed, allbots, se, emojiinfo, roles\``)
         .setTimestamp()
 .setColor("#FF0000")
         const moderation = new Discord.MessageEmbed()
