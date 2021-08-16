@@ -2,8 +2,7 @@ const { MessageEmbed } = require("discord.js")
 const { lineReply } = require("discord-reply");
 
 module.exports = {
-    config: {
-        name: "serverinfo",
+       name: "serverinfo",
         description: "Pulls the serverinfo of the guild!",
         usage: " ",
         category: "info",
