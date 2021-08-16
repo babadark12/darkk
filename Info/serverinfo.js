@@ -12,7 +12,7 @@ module.exports = {
         let owner = [];
         await client.users.fetch(message.guild.ownerID).then(o => owner.push(o.tag))
         try {
-            let embed = new MessageEmbed()
+            let embed = new MessageEmbed() 
                 .setColor("#FF0000")
                 .setThumbnail(message.guild.iconURL())
                 .setAuthor(`${message.guild.name} Info`, message.guild.iconURL())
