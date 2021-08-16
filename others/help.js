@@ -11,31 +11,43 @@ category: "help",
 
         //Sort your commands into categories, and make seperate embeds for each category
 
-        const moderation = new Discord.MessageEmbed()
-        .setTitle('Moderation')
-        .addField('`;kick`', 'Kicks a member from your server via mention or ID')
-        .addField('`;ban`', 'Bans a member from your server via mention or ID')
-        .addField('`;purge`', 'Purges messages')
+        const general = new Discord.MessageEmbed()
+        .setTitle('General Info')
+        .setDescription(`help, ping, prefix, uptime, links, avatar, invites, suggest, userinfo, serverinfo, , serverstats, github, support, botinfo, weather, embed, allbots, se, emojiinfo, roles`)
         .setTimestamp()
 .setColor("#FF0000")
-        const fun = new Discord.MessageEmbed()
-        .setTitle('Fun')
-        .addField('`;meme`', 'Generates a random meme')
-        .addField('`;ascii`', 'Converts text into ascii')
+        const moderation = new Discord.MessageEmbed()
+        .setTitle('Moderation')
+        .setDescription(`lock, unlock, ban, unban, bans, vkick, purge, emojilist, kick, warn, cinvite, channelinfo, channels, roleinfo, lockdown, tempban, tempmute, serverlock, serverunlock, addrole, rmvrole, mute, unmute, antivc, unantivc, vmuteall, vunmuteall, nick, unnick`)
         .setTimestamp()
 .setColor('#FF0000')
-        const info = new Discord.MessageEmbed()
-        .setTitle('Info')
-        .addField('`;Botinfo`', 'Get information about bot')
-        .addField('`; serverinfo`', 'get information about server')
-        .addField('`;ping`', 'Get the bot\'s API ping')
-
+        const fun = new Discord.MessageEmbed()
+        .setTitle('Funny')
+        .setDescription(`slap, hug, howgay, meme, cry, kiss, clyde, captcha, phcomment, cuddle, joke, poke, baka, pat, punch, spank, dance, rate, advice, ascii, dicksize`)
+        .setTimestamp()
+.setColor('#FF0000')
+        const music = new Discord.MessageEmbed()
+        .setTitle('Music')
+        .setDescription(`filter, loop, lyrics, np, pause, play, queue, radio, remove, resume, search, shuffle, skip, skipto, stop, volume`)
+        .setTimestamp()
+.setColor('#FF0000')
+        const text = new Discord.MessageEmbed()
+        .setTitle('Text')
+        .setDescription(`textkurdish, textarabic, textenglish, textturkish, textpersian`)
+        .setTimestamp()
+.setColor('#FF0000')
+        const gif = new Discord.MessageEmbed()
+        .setTitle('Gifa')
+        .setDescription(`boy, girl, couple, anime, emoji, animal`)
         .setTimestamp()
 .setColor('#FF0000')
         const pages = [
+                general,
                 moderation,
                 fun,
-                info
+                music,
+                text,
+                gif
         ]
 
         const emojiList = ["⏪", "⏩"];
