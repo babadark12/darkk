@@ -29,7 +29,7 @@ module.exports = {
     .setTimestamp()
     .setFooter(`${message.guild.name}`);
     await feedbackchannel.send(embed)
-	await message.author.send("Feedback successfully send to Bot Support Feedback Channel!")
+	await message.channel.send("Feedback successfully send to Bot Support Feedback Channel!")
     }
 }
 ©
