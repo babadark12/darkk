@@ -10,7 +10,7 @@ module.exports = {
      
     let helpEmbed = new MessageEmbed()
     .setColor('#FF0000')
-    .addField("General Info", `help, ping, prefix, uptime, avatar, invites, suggest, userinfo, serverinfo, , serverstats, github, support, botinfo, weather, embed, allbots, se, emojiinfo, roles`)
+    .addField("General Info", `help, ping, prefix, uptime, links, avatar, invites, suggest, userinfo, serverinfo, , serverstats, github, support, botinfo, weather, embed, allbots, se, emojiinfo, roles`)
     .addField("Moderation", `lock, unlock, ban, unban, bans, vkick, purge, emojilist, kick, warn, cinvite, channelinfo, channels, roleinfo, lockdown, tempban, tempmute, serverlock, serverunlock, addrole, rmvrole, mute, unmute, antivc, unantivc, vmuteall, vunmuteall, nick, unnick`)
     .addField("Funny", `slap, hug, howgay, meme, cry, kiss, clyde, captcha, phcomment, cuddle, joke, poke, baka, pat, punch, spank, dance, rate, advice, ascii, dicksize`)
     .addField("Music", `filter, loop, lyrics, np, pause, play, queue, radio, remove, resume, search, shuffle, skip, skipto, stop, volume`)
