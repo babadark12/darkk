@@ -12,7 +12,7 @@ module.exports = {
         const wuser = message.mentions.users.last();
         const mUser = message.mentions.members.last();
         const embed = new MessageEmbed()
-            .setColor(client.color)
+            .setColor("#FF0000")
             .setAuthor(wuser.username, wuser.displayAvatarURL({dynamic: true}))
             .setTitle(`User info for ${wuser.username}`)
             .addFields(
@@ -66,7 +66,7 @@ module.exports = {
 
 //        if (message.mentions.users.last().id !== this.client.user.id || message.mentions.users.last().id === this.client.user.id) {
         const e = new MessageEmbed()
-            .setColor(client.color)
+            .setColor("#FF0000")
             .setAuthor(message.author.tag, message.author.displayAvatarURL({dynamic: true}))
             .setTitle(`User info for ${message.author.username}`)
             .setThumbnail(message.author.displayAvatarURL({dynamic: true}))
