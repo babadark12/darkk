@@ -6,7 +6,7 @@ const db = require('quick.db');
 const { TOKEN, PREFIX, AVATARURL, BOTNAME, } = require(`./config.json`);
 const figlet = require("figlet");
 const client = new Client({ disableMentions: `` , partials: ['MESSAGE', 'CHANNEL', 'REACTION'] });
-client.login('ODcyNTg4NDc3MzkxMzMxMzk5.YQsDWA.zK_3pis0r5YPXQYE6d3aW5z1XBk');
+client.login('');
 client.commands = new Collection();
 client.setMaxListeners(0);
 client.prefix = PREFIX;
@@ -194,7 +194,7 @@ message.channel.send(pingedembed);
 });
 
 client.on("guildCreate", guild => {
-  let channel = client.channels.cache.get("871701453939560488");
+  let channel = client.channels.cache.get("");
   let embed = new MessageEmbed().setColor("#116d56")
       .setDescription(`I have joined the ${guild.name} server.\n\nID: ${guild.id}`)
       .setFooter(`${guild.memberCount} members • I'm now in ${client.guilds.cache.size} servers!`)
@@ -204,7 +204,7 @@ client.on("guildCreate", guild => {
 });
 
 client.on("guildDelete", guild => {
-  let channel = client.channels.cache.get("871701453939560488");
+  let channel = client.channels.cache.get("");
   let embed = new MessageEmbed()
   .setColor("#116d56")
   .setAuthor(client.user.username, client.user.avatarURL())
