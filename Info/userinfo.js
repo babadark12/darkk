@@ -29,7 +29,6 @@ module.exports = {
             .addField("**ID**", `${member.user.id}`)
             .addField("**Username**",`${member.user.username}`)
             .addField("**Tag**", `${member.user.tag}`)
-            .addField("Avatar", `[Click Here](member.user.displayAvatarURL({ dynamic: true})`)
             .addField("**Created at**", `${created}`)
             .addField("**Joined at**", `${joined}`)
             .addField("**Roles**", `${roles}`, true)
