@@ -24,7 +24,7 @@ module.exports = {
                 .addField("**Voice Channels**", `${message.guild.channels.cache.filter(c => c.type === "voice").size}`)
                 .addField("**Members**", `${message.guild.memberCount}`, true)
                 .addField("**Roles**", `${message.guild.roles.cache.size}`, true)
-            message.lineReplyNoMention(`Server Info`, embed);
+            message.lineReplyNoMention(embed);
         }
         catch {
             return message.channel.send('Something Went Wrong!')
