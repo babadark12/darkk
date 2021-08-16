@@ -10,7 +10,7 @@ module.exports = {
   examples: [
     'emoji :exampleonly:'
   ],
-  get examples(){ return [ this.name + ' <emoji>'];},
+ 
   async execute(message, args, client) {
 
     if (!emoji.match(/<?(a)?:?(\w{2,32}):(\d{17,19})>?/)){
