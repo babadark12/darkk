@@ -12,7 +12,10 @@ module.exports = {
     'resetchannel',
     'resetch'
   ],
-  async execute(message, args, client) => message.channel.overwritePermissions([
+  
+  async execute(message, args, client) {
+    
+  message.channel.overwritePermissions([
     { id: message.guild.roles.everyone.id }
   ])
   .then(ch => message.channel.send(`Sucesssfully reset the permissions for this channel.`))
