@@ -1,65 +1,37 @@
 const Discord = require("discord.js");
 
 module.exports = {
-  name: "boost",
+  name: "inrole",
   aliases: [],
-  description: "Gives the server boost information",
+  description: "You can see the members with the role",
   category: "Utility",
-  usage: "boost",
+  usage: "inrole <role>",
   botPermissions: ["SEND_MESSAGES", "VIEW_CHANNEL", "EMBED_LINKS"],
   userPermissions: [],
-  cooldown: 3,
-  async execute(message, args, client) {
+  cooldown: 2,
+   async execute(message, args, client) {
+    try {
+    const role = message.mentions.roles.firts || message.guild.roles.cache.get(args[0]) || message.guild.roles.cache.find(e => e.name.match(new RegExp(`${args[0]}`, 'gi')));
 
-    var server = message.guild;
-    let features = {
-        ANIMATED_ICON: "Animated icon",
-        PREVIEW_ENABLED: "Preview",
-        MEMBER_VERIFICATION_GATE_ENABLED: "Verification Gate",
-        BANNER: "Server banner",
-        COMMERCE: "Store channel",
-        COMMUNITY: "Community",
-        DISCOVERABLE: "Discord Discovery List Server",
-        FEATURABLE: "Eligible to be on the featured list",
-        INVITE_SPLASH: "Background for invitations",
-        PUBLIC: "Public Servers",
-        NEWS: "News channel",
-        PARTNERED: "Associated Server",
-        VANITY_URL: "Personalized invitation",
-        VERIFIED: "Verified server",
-        VIP_REGIONS: "Region V.I.P",
-        WELCOME_SCREEN_ENABLED: "Welcome Screen"
-    };
+    if (!role) return message.channel.send("> | You must mention a role!");
 
-    let nivel = {
-        0: "None",
-        1: "Level 1",
-        2: "Level 2",
-        3: "Level 3"
-    };
+    let i = 0;
+    const membersxd = role.members.filter((x) => x.user.tag !== message.guild.id).map((x) => `[${++i}] ${x.user.tag}`)
+    const listaRoles = membersxd.length > 25 ? `${membersxd.slice(0, 25).join('\n')}\n# and ${membersxd.length - 25} more members` : membersxd.join('\n');
 
-    const embedBoost = new Discord.MessageEmbed()
-        .setColor('#FF0000')
-        .setAuthor(server.name)
-        .setThumbnail(server.iconURL({ dynamic: true }))
-        .addFields({
-            name: "Boost level:",
-            value: nivel[server.premiumTier],
-            inline: true
-        })
-        .addFields({
-            name: "Boost size:", value: server.premiumSubscriptionCount === 0 ? "No boosts"
-                : `${server.premiumSubscriptionCount} ${
-                server.premiumSubscriptionCount === 1 ? "Boost" : "Boosts"}`,
-            inline: true
-        })
-        .addFields({
-            name: "Server benefits:", value: `${server.features.length <= 0
-                ? "None"
-                : `${server.features.map(f => features[f]).join(" | ")}`
-                }`
-            , inline: false
-        })
-    message.channel.send(embedBoost);
+    function css(str) {
+        return `\`\`\`css\n${str}\n\`\`\``;
+      };
 
+    const embedInRole = new Discord.MessageEmbed()
+        .setTitle(`Members with the role:\n\`${role.name}\` - \`${role.members.size}\``)
+        .setDescription(css(listaRoles))
+        .setColor("#FF0000")
+        .setThumbnail(message.guild.iconURL({ dynamic: true }))
+        .setFooter(client.user.displayAvatarURL());
+        message.channel.send(embedInRole);
+      } catch (e) {
+        message.channel.send(`| **${e.name}:** ${e.message}`);
+      }
   }
+}
