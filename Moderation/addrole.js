@@ -99,13 +99,11 @@ module.exports = {
             .setAuthor(rMember.user.username, rMember.user.displayAvatarURL({ dynamic: true }))
             .setThumbnail(rMember.user.displayAvatarURL({ dynamic: true }))
             .setColor("#FF0000")
-            .setDescription(`${role} Role has been added to ${rMember.user.username}\n
-            \`Enjoy Dear\``)
+            .setDescription(`${role} **Role has been added to** ${rMember.user.username} **Enjoy Dear** `)
             .setFooter(`Role added by ${message.author.username}`, message.author.displayAvatarURL({dynamic:true}))
             .setTimestamp()
 
-        message.channel.send(sembed).then((msg => {
-            msg.delete({ timeout: 7000 })
+        message.channel.send(sembed)
         }))
 
         let channel = db.fetch(`modlog_${message.guild.id}`)
