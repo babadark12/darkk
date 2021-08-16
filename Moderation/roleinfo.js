@@ -15,7 +15,7 @@ module.exports = {
         let role = message.mentions.roles.first() || message.guild.roles.cache.get(args[0]) || message.guild.roles.cache.find(r => r.name.toLowerCase() === args.join(' ').toLocaleLowerCase());
         if (!role) return message.channel.send("**Please Enter A Valid Role!**");
  
-          let roleP = target.permissions.toArray()
+          let roleP = role.permissions.toArray()
 const embed = new MessageEmbed()
 .setColor("#FF0000")
 .setAuthor(message.author.tag, message.author.displayAvatarURL({dynamic: true}))
