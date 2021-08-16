@@ -1,25 +1,47 @@
-const { MessageEmbed } = require("discord.js");
-const { lineReply } = require("discord-reply");
+const pagination = require('discord.js-pagination');
+const Discord = require('discord.js');
 
 module.exports = {
-  name: "help",
-  aliases: ["h"],
-  description: "Display all commands and descriptions",
-  execute(message) {
-    let commands = message.client.commands.array();
-     
-    let helpEmbed = new MessageEmbed()
-    .setColor('#FF0000')
-    .addField("General Info", `help, ping, prefix, uptime, links, avatar, invites, suggest, userinfo, serverinfo, , serverstats, github, support, botinfo, weather, embed, allbots, se, emojiinfo, roles`)
-    .addField("Moderation", `lock, unlock, ban, unban, bans, vkick, purge, emojilist, kick, warn, cinvite, channelinfo, channels, roleinfo, lockdown, tempban, tempmute, serverlock, serverunlock, addrole, rmvrole, mute, unmute, antivc, unantivc, vmuteall, vunmuteall, nick, unnick`)
-    .addField("Funny", `slap, hug, howgay, meme, cry, kiss, clyde, captcha, phcomment, cuddle, joke, poke, baka, pat, punch, spank, dance, rate, advice, ascii, dicksize`)
-    .addField("Music", `filter, loop, lyrics, np, pause, play, queue, radio, remove, resume, search, shuffle, skip, skipto, stop, volume`)
-    .addField("Text", `textkurdish, textarabic, textenglish, textturkish, textpersian`)
-    .addField("Game", `rps, slots, iq, hack, 8ball`)
-    .addField("Backup", `backup-create, backup-load, backup-info`)
-    .setFooter(`Requested by ${message.author.tag}`, message.author.displayAvatarURL({dynamic: true}))
-    helpEmbed.setTimestamp();
+    name: "help",
+category: "help",
+    description: "The help command, what do you expect?",
 
-    message.lineReplyNoMention(`Need Help? This is part of commads!`, helpEmbed).catch(console.error);
-  }
-};
+       async execute(message, args, client) {
+    
+
+        //Sort your commands into categories, and make seperate embeds for each category
+
+        const moderation = new Discord.MessageEmbed()
+        .setTitle('Moderation')
+        .addField('`;kick`', 'Kicks a member from your server via mention or ID')
+        .addField('`;ban`', 'Bans a member from your server via mention or ID')
+        .addField('`;purge`', 'Purges messages')
+        .setTimestamp()
+.setColor("#FF0000")
+        const fun = new Discord.MessageEmbed()
+        .setTitle('Fun')
+        .addField('`;meme`', 'Generates a random meme')
+        .addField('`;ascii`', 'Converts text into ascii')
+        .setTimestamp()
+.setColor('#FF0000')
+        const info = new Discord.MessageEmbed()
+        .setTitle('Info')
+        .addField('`;Botinfo`', 'Get information about bot')
+        .addField('`; serverinfo`', 'get information about server')
+        .addField('`;ping`', 'Get the bot\'s API ping')
+
+        .setTimestamp()
+.setColor('#FF0000')
+        const pages = [
+                moderation,
+                fun,
+                info
+        ]
+
+        const emojiList = ["⏪", "⏩"];
+
+        const timeout = '120000';
+
+        pagination(message, pages, emojiList, timeout)
+    }
+}
