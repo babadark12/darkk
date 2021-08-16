@@ -1,14 +1,13 @@
 const Discord = require('discord.js');
 
 module.exports = {
-    config: {
         name: "feedback",
         aliases: [],
         category: "info",
         description: "Sends Feedback",
         usage: "<stars <text>",
-        accessableby: "everyone"
-    },
+        accessableby: "everyone",
+	
     async execute(message, args, client) {
     let feedbackchannel = client.channels.cache.get("875123429932679188");
     let feednumber = message.content.split(" ").slice(1)
