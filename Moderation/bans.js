@@ -13,13 +13,14 @@ module.exports = {
     description : "To show all server bans",
     async execute(message, args, client) {
 	if(!message.member.hasPermission("ADMINISTRATOR")) return message.lineReplyNoMention(new MessageEmbed()
-	.setColor("#0d2943")
+	.setColor("#FF0000")
 	.setDescription(`**You Need** \`ADMINISTRATOR\` **Permission To Use This Command!**`)
 	.setFooter(`${message.author.tag}`, message.author.avatarURL()))
 if (!message.channel.guild) return;
 		message.channel;
 		message.guild.fetchBans().then(bans =>
 message.lineReplyNoMention (new MessageEmbed()
+ .setColor("#FF0000")			    
  .setAuthor(`Found ${bans.size} members banned` ,message.guild.iconURL({dynamic: true}))
     }
 };
