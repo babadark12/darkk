@@ -4,12 +4,12 @@ const ms = require('ms');
 const { lineReply } = require("discord-reply");
 
 module.exports = {
-       name: "serverinfo",
+       name: "botstats",
         description: "Pulls the serverinfo of the guild!",
         usage: " ",
         category: "info",
         accessableby: "everyone",
-        aliases: ["sinfo"],
+        aliases: ["binfo"],
     async execute(message, args, client) {
         const embed = new MessageEmbed()
             .setThumbnail(client.user.displayAvatarURL())
