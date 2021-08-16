@@ -11,30 +11,42 @@ module.exports = {
         args: true,
         category: "misc",
     async execute(message, args, client) {
-      const bot = client
-        if (!args[0]) return message.lineReplyNoMention("**Please Enter A Role!**")
+        if (!args[0]) return message.channel.send("**Please Enter A Role!**")
         let role = message.mentions.roles.first() || message.guild.roles.cache.get(args[0]) || message.guild.roles.cache.find(r => r.name.toLowerCase() === args.join(' ').toLocaleLowerCase());
-        if (!role) return message.lineReplyNoMention("**Please Enter A Valid Role!**");
+        if (!role) return message.channel.send("**Please Enter A Valid Role!**");
+ 
+          let roleP = target.permissions.toArray()
+const embed = new MessageEmbed()
+.setColor("#FF0000")
+.setAuthor(message.author.tag, message.author.displayAvatarURL({dynamic: true}))
+.setDescription(`Role info for: \`${role.name}\``)
+.addField("Role name:", `${role.name}`, true)
+.addField("Role color:", `${role.color}`, true)
+.addField('Role hex color:', role.hexColor, true)
+.addField("Mention:", `<@&${role.id}>`, true)
+.addField('Created AT', role.createdAt.toLocaleTimeString(), true)
+.addField("Role ID:", role.id, true)
+.addField("Role position", role.position, true)
+.addField("Role permissions", "React to see role permissions", true)
+.addField('Role Hoist', role.hoist, true)
+.addField("Role Mentionable", role.mentionable, true)
+.addField("Role Editable", role.editable, true)
+.addField("Role managed", role.managed, true)
+message.channel.send(embed).then(M => {
+    M.react('✅').then((m) => {
+        client.on('messageReactionAdd', (reaction, user) => {
+            if (reaction.message.id !== M.id) return;
+              if (user.id !== message.author.id) return;
+                M.edit(roleP.join('\n').toLowerCase(), {embed: null})   
+        })
 
-        const status = {
-            false: "No",
-            true: "Yes"
-        }
+        client.on('messageReactionRemove', (reaction, user) => {
+            if (reaction.message.id !== M.id) return;
+            if (user.id !== message.author.id) return;
 
-        let roleembed = new MessageEmbed()
-            .setColor("#FF0000")
-            .setTitle(`Role Info: \`[  ${role.name}  ]\``)
-            .setThumbnail(message.guild.iconURL())
-            .addField("**ID**", `\`${role.id}\``, true)
-            .addField("**Name**", role.name, true)
-            .addField("**Hex**", role.hexColor, true)
-            .addField("**Color**", role.color, true)
-            .addField("**Members**", role.members.size, true)
-            .addField("**Position**", role.position, true)
-            .addField("**Mentionable**", status[role.mentionable], true)
-            .setFooter(message.member.displayName, message.author.displayAvatarURL(), true)
-            .setTimestamp()
+            M.edit(null, {embed: embed})
+        })
+    })
 
-        message.lineReplyNoMention(roleembed).catch(console.error);
-    }
+})
 }
