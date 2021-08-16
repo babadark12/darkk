@@ -36,6 +36,7 @@ module.exports = {
       .addField(`🎟️ Servers Count:`, `${client.guilds.cache.size}`, false)
       .addField(`🎫 Users Count:`, `${client.guilds.cache.reduce((a, g) => a + g.memberCount, 0)}`, false)
       .addField(`#️⃣ Channels Count:`, `${client.channels.cache.size}`, false)
+      .addField(`Voice Connections:`, `${client.voice.connections.size}`, false)
       .addField(`🔸 Shards:`, `1`, false)
       .addField(`⚙️ Made With:`, `Node.js V12`, false)
       .addField(`🛠️ Creator:`, `Ds.MrRobot#7562`, false)
