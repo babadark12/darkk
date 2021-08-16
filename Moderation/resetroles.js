@@ -1,4 +1,5 @@
-const em = require('../../assets/json/emojis.json');
+const Discord = require('discord.js');
+
 module.exports = {
   name: 'resetroles',
   aliases: [ 'resetrole', 'removeroles', 'removerole', 'purgerole' ],
