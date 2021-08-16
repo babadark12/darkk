@@ -37,14 +37,7 @@ module.exports = {
     let embedEmojiInformation = new Discord.MessageEmbed()
     .setTitle(`Emoji Information`)
     .setThumbnail(emoji.url)
-    .addField(`**Name:** ${emoji.name}`, [
-      `**ID:** ${emoji.id}`,
-      `**Added By:** ${await emoji.fetchAuthor().then(user => user.tag).catch(() => {}) || "I can't see who added it"}`,
-      `**Animated:** ${emoji.animated ? 'Yes' : 'No'}`,
-      `**Identifier:** \`<:${emoji.identifier}>\``,
-      `**Created At:** ${emoji.createdAt.toUTCString().substr(0, 16)} (${checkDays(emoji.createdAt)})`,
-      `**Emoji URL:** [Click here](${emoji.url})`
-    ])
+    .setDescription(`**Name:** ${emoji.name}\n\n**ID:** ${emoji.id}\n\n**Added By:** ${await emoji.fetchAuthor().then(user => user.tag).catch(() => {}) || "I can't see who added it"}\n\n**Animated:** ${emoji.animated ? 'Yes' : 'No'}\n\n**Identifier:** \`<:${emoji.identifier}>\`\n\n**Created At:** ${emoji.createdAt.toUTCString().substr(0, 16)} (${checkDays(emoji.createdAt)})\n\n**Emoji URL:** [Click here](${emoji.url})`)
     .setColor('#FF0000');
     message.channel.send(embedEmojiInformation);
 
