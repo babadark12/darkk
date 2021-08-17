@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 const backup = require("discord-backup");
 const { lineReply } = require("discord-reply"); 
-const prefix = ("+");
+const prefix = (">");
 
 module.exports = {
   name: "backup-create",
