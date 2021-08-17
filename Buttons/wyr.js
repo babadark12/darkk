@@ -5,7 +5,7 @@ module.exports = {
         name: 'wyr',
         aliases: ['wouldyourather'],
         description: 'Would you Rather? Hmm..',
-        category: __dirname.split("Commands\\")[1]
+        category: __dirname.split("Buttons\")[1]
     },
     run: async (client, message, args) => {
 
