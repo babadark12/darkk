@@ -95,15 +95,28 @@ category: "help",
 > \`emoji animal\`
 
 `)
+
         .setTimestamp()
 .setColor('#FF0000')
+const copy = new Discord.MessageEmbed()
+        .setThumbnail(message.author.avatarURL({ dynamic: true, size: 2048 }))
+        .setTitle('<a:jano:877151218869370900> Server copy')
+        .setDescription(` 
+> \`backup-create\`
+> \`backup-info \`
+> \`backup-load\`
+
+      `)
+        .setTimestamp()
+.setColor("#FF0000")
         const pages = [
                 general,
                 moderation,
                 fun,
                 music,
                 text,
-                gif
+                gif,
+                copy
         ]
 
         const emojiList = ["⏪", "⏩"];
