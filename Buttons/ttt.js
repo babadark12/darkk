@@ -5,7 +5,7 @@ module.exports = {
         name: 'ttt',
         aliases: ['tictactoe'],
         description: 'TicTacToe game, wahoo~!',
-        category: __dirname.split("Commands\\")[1]
+        category: __dirname.split("Buttons\")[1]
     },
     run: async (client, message, args) => {
 
