@@ -5,7 +5,7 @@ module.exports = {
         name: 'snake',
         aliases: ['snake'],
         description: 'Play the snake game in Discord!',
-        category: __dirname.split("Buttons\\")[1]
+        category: __dirname.split("Buttons\")[1]
     },
     run: async (client, message, args) => {
 
