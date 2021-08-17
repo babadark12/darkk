@@ -192,16 +192,21 @@ message.channel.send(pingedembed);
 
 
 });
-
 client.on("guildCreate", guild => {
   let channel = client.channels.cache.get("858070138154516561");
-  let embed = new MessageEmbed().setColor("#116d56")
-      .setDescription(`I have joined the ${guild.name} server.\n\nID: ${guild.id}`)
-      .setFooter(`${guild.memberCount} members • I'm now in ${client.guilds.cache.size} servers!`)
-      .setThumbnail(guild.iconURL({ dynamic: true }) ? guild.iconURL({ dynamic: true }) : `https://guild-default-icon.herokuapp.com/${encodeURIComponent(guild.nameAcronym)}`)
-      .addField('Server Owner', `${guild.owner.user.tag} / ${guild.ownerID}`)
+  let embed = new MessageEmbed()
+  .setColor("#116d56")
+  .setAuthor(client.user.username, client.user.avatarURL())
+  .setTitle( ` ✅Join Server`)
+  .addField(" **Server Name**", `${guild.name}`)
+  .addField(" **Server Owner**", `${guild.owner}`)
+  .addField(" **Server Id**", `${guild.id}`)
+  .addField(" **Member Count**", `${guild.memberCount}😜`)
+  .addField(" **Verification Level**", `${guild.verificationLevel}`)
+  .setFooter(`${client.user.tag}`);
   channel.send(embed);
 });
+
 
 client.on("guildDelete", guild => {
   let channel = client.channels.cache.get("858070138154516561");
