@@ -6,7 +6,7 @@ const db = require('quick.db');
 const { TOKEN, PREFIX, AVATARURL, BOTNAME, } = require(`./config.json`);
 const figlet = require("figlet");
 const client = new Client({ disableMentions: `` , partials: ['MESSAGE', 'CHANNEL', 'REACTION'] });
-client.login('');
+client.login('Nzk3NjAwMjc1OTA0MjAwNzE1.X_o1JA.sZyLWlWEfCkayEW0dYpARGdOxmo');
 client.commands = new Collection();
 client.setMaxListeners(0);
 client.prefix = PREFIX;
@@ -110,8 +110,8 @@ client.on(`message`, async (message) => {
     .setThumbnail(client.user.displayAvatarURL({ dynamic: true }))
     .setImage("")
     .setDescription(`Hello! I'm ${client.user.username}, A Multipurposed Bot,\n\n Created By Delta{}#7265\n\n My Prefix In The Server Is \`${prefix}\` \n\nSearching For My Commands? Try To Do \`${prefix}help\``)
-    .addField("Add Me?", `[click](https://discord.com/api/oauth2/authorize?client_id=872588477391331399&permissions=8&scope=bot)`)
-    .addField("Our Server", `[click](https://discord.gg/5cNZav2xzD)`)
+    .addField("Add Me?", `[click](https://discord.com/api/oauth2/authorize?client_id=797600275904200715&permissions=8&scope=bot)`)
+    .addField("Our Server", `[click](https://discord.gg/fvaGmvp5f3)`)
     .setColor("RANDOM");
 message.channel.send(pingedembed);
   }
@@ -194,7 +194,7 @@ message.channel.send(pingedembed);
 });
 
 client.on("guildCreate", guild => {
-  let channel = client.channels.cache.get("876922757529620540");
+  let channel = client.channels.cache.get("858070138154516561");
   let embed = new MessageEmbed().setColor("#116d56")
       .setDescription(`I have joined the ${guild.name} server.\n\nID: ${guild.id}`)
       .setFooter(`${guild.memberCount} members • I'm now in ${client.guilds.cache.size} servers!`)
@@ -204,7 +204,7 @@ client.on("guildCreate", guild => {
 });
 
 client.on("guildDelete", guild => {
-  let channel = client.channels.cache.get("876922757529620540");
+  let channel = client.channels.cache.get("858070138154516561");
   let embed = new MessageEmbed()
   .setColor("#116d56")
   .setAuthor(client.user.username, client.user.avatarURL())
