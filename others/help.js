@@ -1,7 +1,7 @@
 
 const pagination = require('discord.js-pagination');
 const Discord = require('discord.js');
-const { lineReply } = require("discord-reply")
+const lineReply = require("discord-reply")
 
 module.exports = {
     name: "help",
@@ -16,19 +16,49 @@ category: "help",
         const general = new Discord.MessageEmbed()
         .setThumbnail(message.author.avatarURL({ dynamic: true, size: 2048 }))
         .setTitle('ℹ General Info')
-        .setDescription(`**\nhelp\n ping\n prefix\n uptime\n links\n avatar\n invites\n suggest\n userinfo\n serverinfo\n serverstats\n github\n support\n botinfo\n weather\n embed\n allbots\n se\n emojiinfo\n roles**`)
+        .setDescription(` 
+> \`help ping prefix\`
+> \`uptime links avatar \`
+> \`invites suggest\`
+> \`userinfo serverinfo\`
+> \`serverstats github\`
+> \`support botinfo\`
+> \`weather embed\`
+> \`allbots se\`
+> \`emojiinfo roles\`
+      `)
         .setTimestamp()
 .setColor("#FF0000")
         const moderation = new Discord.MessageEmbed()
         .setThumbnail(message.author.avatarURL({ dynamic: true, size: 2048 }))
         .setTitle(':tools: Moderation')
-        .setDescription(`**\nlock\n unlock\n ban\n unban\n bans\n vkick\n purge\n emojilist\n kick\n warn\n cinvite\n channelinfo\n channels\n roleinfo\n lockdown\n tempban\n tempmute\n serverlock\n serverunlock\n addrole\n rmvrole\n mute\n unmute\n antivc\n unantivc\n vmuteall\n vunmuteall\n nick\n unnick**`)
+        .setDescription(`
+> \`lock unlock\`
+> \`ban unban bans\`
+> \`vkick purge emojilist\`
+> \`kick warn cinvite\`
+> \`channelinfo channels roleinfo\`
+> \`lockdown tempban tempmute\`
+> \`serverlock serverunlock addrole\`
+> \`rmvrole mute unmute antivc\`
+> \`unantivc vmuteall vunmuteall\`
+> \`nick unnick\`
+
+`)
         .setTimestamp()
 .setColor('#FF0000')
         const fun = new Discord.MessageEmbed()
         .setThumbnail(message.author.avatarURL({ dynamic: true, size: 2048 })) 
         .setTitle(':joy: Funny')
-        .setDescription(`**\nslap\n hug\n howgay\n meme\n cry\n kiss\n clyde\n captcha\n phcomment\n cuddle\n joke\n poke\n baka\n pat\n punch\n spank\n dance\n rate\n advice\n ascii\n dicksize**`)
+        .setDescription(`
+> \`slap hug howgay\`
+> \`meme cry kiss\`
+> \`clyde captcha phcomment\`
+> \`cuddle joke poke\`
+> \`baka pat punch\`
+> \`spank dance rate\`
+> \`advice ascii dicksize\`
+`)
         .setTimestamp()
 .setColor('#FF0000')
         const music = new Discord.MessageEmbed()
