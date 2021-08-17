@@ -9,7 +9,7 @@ module.exports = {
      * @param {Client} client 
      * @param {Message} message 
      * @param {String[]} args 
-     *//
+     */
     async execute(message, args, client) {
         if (!message.member.permissions.has("MANAGE_CHANNELS")) return;
         const target = message.mentions.members.first() || message.guild.members.cache.get(args[0]);
