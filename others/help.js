@@ -33,16 +33,16 @@ category: "help",
         .setThumbnail(message.author.avatarURL({ dynamic: true, size: 2048 }))
         .setTitle('<a:emoji_9:815300472218976266> Moderation')
         .setDescription(`
-> \`lock unlock\`
+> \`lock unlock addrole\`
 > \`ban unban bans\`
 > \`vkick purge emojilist\`
 > \`kick warn cinvite\`
 > \`channelinfo channels roleinfo\`
 > \`lockdown tempban tempmute\`
-> \`serverlock serverunlock addrole\`
-> \`rmvrole mute unmute antivc\`
-> \`unantivc vmuteall vunmuteall\`
-> \`nick unnick\`
+> \`serverlock serverunlock \`
+> \`rmvrole mute unmute \`
+> \` vmuteall vunmuteall\`
+> \`nick unnick antivc unantivc\`
 
 `)
         .setTimestamp()
@@ -53,9 +53,9 @@ category: "help",
         .setDescription(`
 > \`slap hug howgay\`
 > \`meme cry kiss\`
-> \`clyde captcha phcomment\`
+> \`clyde captcha pat\`
 > \`cuddle joke poke\`
-> \`baka pat punch\`
+> \`baka phcomment punch\`
 > \`spank dance rate\`
 > \`advice ascii dicksize\`
 `)
