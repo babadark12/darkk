@@ -64,19 +64,37 @@ category: "help",
         const music = new Discord.MessageEmbed()
          .setThumbnail(message.author.avatarURL({ dynamic: true, size: 2048 }))
         .setTitle(':musical_note: Music')
-        .setDescription(`**\nfilter\n loop\n lyrics\n np\n pause\n play\n queue\n radio\n remove\n resume\n search\n shuffle\n skip\n skipto\n stop\n volume**`)
+        .setDescription(`
+> \`nfilter loop\`
+> \`lyrics np\`
+> \`pause play\`
+> \`queue radio\`
+> \`remove resume\`
+> \`search shuffle\`
+> \`skip skipto\`
+> \`stop volume\`
+`)
         .setTimestamp()
 .setColor('#FF0000')
         const text = new Discord.MessageEmbed()
         .setThumbnail(message.author.avatarURL({ dynamic: true, size: 2048 }))
         .setTitle(':pen_fountain: Text')
-        .setDescription(`**\ntextkurdish\n textarabic\n textenglish\n textturkish\n textpersian**`)
+        .setDescription(`
+> \`ntextkurdish textarabic\`
+> \`textenglish textturkish\`
+> \`textpersian\`
+`)
         .setTimestamp()
 .setColor('#FF0000')
         const gif = new Discord.MessageEmbed()
         .setThumbnail(message.author.avatarURL({ dynamic: true, size: 2048 }))
         .setTitle(':star_struck: Gifs')
-        .setDescription(`**\nboy\n girl\n couple\n anime\n emoji\n animal**`)
+        .setDescription(`
+> \`nboy girl\`
+> \`couple anime\`
+> \`emoji animal\`
+
+`)
         .setTimestamp()
 .setColor('#FF0000')
         const pages = [
@@ -90,7 +108,7 @@ category: "help",
 
         const emojiList = ["⏪", "⏩"];
 
-        const timeout = '120000';
+        const timeout = '12000000000000';
 
         pagination(message, pages, emojiList, timeout)
     }
