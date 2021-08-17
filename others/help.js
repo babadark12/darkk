@@ -125,7 +125,7 @@ const copy = new Discord.MessageEmbed()
                 copy
         ]
 
-        const emojiList = ["<a:emoji_33:877292716462075914>", "<a:emoji_32:877292697134710835>"];
+        const emojiList = ["⬅️", "➡️"];
 
         const timeout = '120000';
 
