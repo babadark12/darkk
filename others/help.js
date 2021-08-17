@@ -1,7 +1,7 @@
+const Discord = require("discord.js");
+const { MessageEmbed } = require("discord.js");
+const { lineReply } = require("discord-reply");
 
-const pagination = require('discord.js-pagination');
-const Discord = require('discord.js');
-const lineReply = require("discord-reply")
 
 module.exports = {
     name: "help",
