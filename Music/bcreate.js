@@ -23,7 +23,7 @@ backup.create(message.guild, {
   jsonBeautify: true
 }).then((backupData) => {
   // And send informations to the backup owner
-  message.author.send("The backup has been created! To load it, type this command on the server of your choice: `" + prefix + "load-backup " + backupData.id + "`");
+  message.author.send("The backup has been created! To load it, type this command on the server of your choice: `" + prefix + "backup-load " + backupData.id + "`");
   message.lineReplyNoMention(new Discord.MessageEmbed()
   .setDescription('Backup has been created and saved to my data. to load your backup, please go to your dms, copy the id that i given, then load it.')
   .setColor('BLUE')
