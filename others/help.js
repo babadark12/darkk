@@ -15,7 +15,7 @@ category: "help",
 
         const general = new Discord.MessageEmbed()
         .setThumbnail(message.author.avatarURL({ dynamic: true, size: 2048 }))
-        .setTitle('ℹ General Info')
+        .setTitle('<a:emoji_14:830052364038832138> General Info')
         .setDescription(` 
 > \`help ping prefix\`
 > \`uptime links avatar \`
@@ -31,7 +31,7 @@ category: "help",
 .setColor("#FF0000")
         const moderation = new Discord.MessageEmbed()
         .setThumbnail(message.author.avatarURL({ dynamic: true, size: 2048 }))
-        .setTitle(':tools: Moderation')
+        .setTitle('<a:emoji_9:815300472218976266> Moderation')
         .setDescription(`
 > \`lock unlock\`
 > \`ban unban bans\`
@@ -49,7 +49,7 @@ category: "help",
 .setColor('#FF0000')
         const fun = new Discord.MessageEmbed()
         .setThumbnail(message.author.avatarURL({ dynamic: true, size: 2048 })) 
-        .setTitle(':joy: Funny')
+        .setTitle('<a:emoji_26:857835095980376064> Funny')
         .setDescription(`
 > \`slap hug howgay\`
 > \`meme cry kiss\`
@@ -63,7 +63,7 @@ category: "help",
 .setColor('#FF0000')
         const music = new Discord.MessageEmbed()
          .setThumbnail(message.author.avatarURL({ dynamic: true, size: 2048 }))
-        .setTitle(':musical_note: Music')
+        .setTitle('<a:janom1:866836692250132481> Music')
         .setDescription(`
 > \`nfilter loop\`
 > \`lyrics np\`
@@ -78,7 +78,7 @@ category: "help",
 .setColor('#FF0000')
         const text = new Discord.MessageEmbed()
         .setThumbnail(message.author.avatarURL({ dynamic: true, size: 2048 }))
-        .setTitle(':pen_fountain: Text')
+        .setTitle('<a:emoji_27:857835733984739359> Text')
         .setDescription(`
 > \`ntextkurdish textarabic\`
 > \`textenglish textturkish\`
@@ -88,7 +88,7 @@ category: "help",
 .setColor('#FF0000')
         const gif = new Discord.MessageEmbed()
         .setThumbnail(message.author.avatarURL({ dynamic: true, size: 2048 }))
-        .setTitle(':star_struck: Gifs')
+        .setTitle('<a:emoji_13:763535848599191554> Gifs')
         .setDescription(`
 > \`nboy girl\`
 > \`couple anime\`
