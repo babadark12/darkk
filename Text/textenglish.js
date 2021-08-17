@@ -4,7 +4,7 @@ const { lineReply } = require("discord-reply");
 
 module.exports = {
   name: "textenglish",
-  aliases: ["textEnglish"],
+  aliases: ["Ten"],
   description: "Show text",
   usage: "text",
   async execute(message, args, client) {
