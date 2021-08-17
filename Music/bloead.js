@@ -3,7 +3,7 @@ module.exports = {
     name: "backup-load",
     aliases: ["bload"],
     category: "backup",
-    usage: "qbackup-load",
+    usage: "backup-load",
     description: "load a server backup",
     async execute(message, args, client) {
       if(!message.member.hasPermission('ADMINISTRATOR')){
@@ -21,7 +21,7 @@ module.exports = {
             max: 1
         });
         collector.on('collect', (m) => {
-            const confirm = m.content === '+confirm';
+            const confirm = m.content === '>confirm';
             collector.stop();
             if (confirm) {
 
