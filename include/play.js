@@ -138,10 +138,10 @@ module.exports = {
         .setColor("#116d56")
         .setThumbnail(`https://cdn.discordapp.com/avatars/844069682545164289/b40e8a61cbeb7a6319b5050238a9aa03.png?size=1024`)
         .setImage(thumb)
-        .setDescription(`◈ ━━━━━━━ <a:emoji_7:869913781013217291> ━━━━━━━ ◈`)
-        .addField("<a:emoji_2:869911935599124530> Requested by:", `\`${message.author.username}#${message.author.discriminator}\``, true)
-        .addField("<a:emoji_13:869913950454677585> Length:", `\`${song.duration} Minutes\``, true)
-        .addField("<a:emoji_6:869913748998066176> Volume:", `\`100\``, true)
+        .setDescription(`◈ ━━━━━━━ ◈ ━━━━━━━ ◈`)
+        .addField(" ◈Requested by:", `\`${message.author.username}#${message.author.discriminator}\``, true)
+        .addField(" ◈Length:", `\`${song.duration} Minutes\``, true)
+        .addField(" ◈Volume:", `\`100\``, true)
 
       var playingMessage = await queue.textChannel.send(newsong);
       
