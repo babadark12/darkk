@@ -16,7 +16,7 @@ const escapeRegex = (str) => str.replace(/[.*+?^${}()|[\]\\]/g, `\\$&`);
 //this fires when the BOT STARTS DO NOT TOUCH
 client.on(`ready`, () => {	
  
-//////////////
+//////////////code by MrRobot
 
 ////////
    
@@ -225,3 +225,5 @@ function delay(delayInms) {
    }, delayInms);
  });
 }
+
+/////mrrobot
