@@ -121,7 +121,7 @@ const copy = new Discord.MessageEmbed()
 
         const emojiList = ["⏪", "⏩"];
 
-        const timeout = '12000000000000';
+        const timeout = '12000';
 
         pagination(message, pages, emojiList, timeout)
     }
