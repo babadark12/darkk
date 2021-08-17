@@ -16,6 +16,7 @@ category: "help",
         const general = new Discord.MessageEmbed()
         .setThumbnail(message.author.avatarURL({ dynamic: true, size: 2048 }))
         .setTitle('<a:emoji_14:830052364038832138> General Info')
+        .setImage('https://media.discordapp.net/attachments/783102255053930496/877288953294778398/image0.gif')
         .setDescription(` 
 > \`help ping prefix\`
 > \`uptime links avatar \`
@@ -32,6 +33,7 @@ category: "help",
         const moderation = new Discord.MessageEmbed()
         .setThumbnail(message.author.avatarURL({ dynamic: true, size: 2048 }))
         .setTitle('<a:emoji_9:815300472218976266> Moderation')
+        .setImage('https://media.discordapp.net/attachments/783102255053930496/877288953294778398/image0.gif')
         .setDescription(`
 > \`lock unlock addrole\`
 > \`ban unban bans\`
@@ -50,6 +52,7 @@ category: "help",
         const fun = new Discord.MessageEmbed()
         .setThumbnail(message.author.avatarURL({ dynamic: true, size: 2048 })) 
         .setTitle('<a:emoji_26:857835095980376064> Funny')
+        .setImage('https://media.discordapp.net/attachments/783102255053930496/877288953294778398/image0.gif')
         .setDescription(`
 > \`slap hug howgay\`
 > \`meme cry kiss\`
@@ -58,12 +61,14 @@ category: "help",
 > \`baka phcomment punch\`
 > \`spank dance rate\`
 > \`advice ascii dicksize\`
+> \` ship phcomment\`
 `)
         .setTimestamp()
 .setColor('#FF0000')
         const music = new Discord.MessageEmbed()
          .setThumbnail(message.author.avatarURL({ dynamic: true, size: 2048 }))
         .setTitle('<a:janom1:866836692250132481> Music')
+        .setImage('https://media.discordapp.net/attachments/783102255053930496/877288953294778398/image0.gif')
         .setDescription(`
 > \`nfilter loop\`
 > \`lyrics np\`
@@ -79,6 +84,7 @@ category: "help",
         const text = new Discord.MessageEmbed()
         .setThumbnail(message.author.avatarURL({ dynamic: true, size: 2048 }))
         .setTitle('<a:emoji_27:857835733984739359> Text')
+        .setImage('https://media.discordapp.net/attachments/783102255053930496/877288953294778398/image0.gif')
         .setDescription(`
 > \`ntextkurdish textarabic\`
 > \`textenglish textturkish\`
@@ -89,6 +95,7 @@ category: "help",
         const gif = new Discord.MessageEmbed()
         .setThumbnail(message.author.avatarURL({ dynamic: true, size: 2048 }))
         .setTitle('<a:emoji_13:763535848599191554> Gifs')
+        .setImage('https://media.discordapp.net/attachments/783102255053930496/877288953294778398/image0.gif')
         .setDescription(`
 > \`nboy girl\`
 > \`couple anime\`
@@ -101,6 +108,7 @@ category: "help",
 const copy = new Discord.MessageEmbed()
         .setThumbnail(message.author.avatarURL({ dynamic: true, size: 2048 }))
         .setTitle('<a:jano:877151218869370900> Server copy')
+        .setImage('https://media.discordapp.net/attachments/783102255053930496/877288953294778398/image0.gif')
         .setDescription(` 
 > \`backup-create\`
 > \`backup-info \`
