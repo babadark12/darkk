@@ -84,7 +84,7 @@ category: "help",
         .setTitle('<a:emoji_27:857835733984739359> Text')
         .setImage('https://media.discordapp.net/attachments/783102255053930496/877288953294778398/image0.gif')
         .setDescription(`
-> \`ntextkurdish textarabic\`
+> \`textkurdish textarabic\`
 > \`textenglish textturkish\`
 > \`textpersian\`
 `)
@@ -95,9 +95,9 @@ category: "help",
         .setTitle('<a:emoji_13:763535848599191554> Gifs')
         .setImage('https://media.discordapp.net/attachments/783102255053930496/877288953294778398/image0.gif')
         .setDescription(`
-> \`nboy girl\`
+> \`boy girl\`
 > \`couple anime\`
-> \`emoji animal\`
+> \`emoji animal neon\`
 
 `)
 
