@@ -11,7 +11,7 @@ category: "Snake",
             message: message,
             embed: {
                 title: 'Snake',
-                color: config.embedcolor,
+                color: 'RANDOM',
                 gameOverTitle: "Game Over",
             },
             emojis: {
