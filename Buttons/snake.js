@@ -2,7 +2,7 @@ const { Snake } = require('weky')
 
 module.exports = {
     name: "Snake",
-category: "Snake",
+category: "Buttons",
     description: "Play snake game in discord",
 
        async execute(message, args, client) {
