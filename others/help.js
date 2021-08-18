@@ -59,7 +59,7 @@ category: "help",
 > \`baka phcomment punch\`
 > \`spank dance rate\`
 > \`advice ascii dicksize\`
-> \` ship phcomment\`
+> \`ship phcomment\`
 `)
         .setTimestamp()
 .setColor('#FF0000')
@@ -125,7 +125,7 @@ const copy = new Discord.MessageEmbed()
                 copy
         ]
 
-        const emojiList = ["⬅️", "➡️"];
+        const emojiList = ["<:28470062F3E04D54BBFDB75827F909A4:877460470871756800>", "<:7B054D135D5A454D803475AEED0F41B5:877460474667626536>"];
 
         const timeout = '120000';
 
