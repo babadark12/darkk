@@ -1,13 +1,10 @@
 const { TicTacToe } = require('weky')
-
 module.exports = {
-    help: {
-        name: 'ttt',
-        aliases: ['tictactoe'],
-        description: 'TicTacToe game, wahoo~!',
-        category: __dirname.split("Buttons\")[1]
-    },
-    run: async (client, message, args) => {
+    name: "ttt",
+category: "Buttons",
+    description: "TicTacToe game, wahoo~!",
+
+       async execute(message, args, client) {
 
         if (!args[0]) return message.channel.send("Please Provide someone to battle with.")
         const opponent = message.mentions.users.first()
