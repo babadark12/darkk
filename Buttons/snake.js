@@ -1,13 +1,11 @@
 const { Snake } = require('weky')
 
 module.exports = {
-    help: {
-        name: 'snake',
-        aliases: ['snake'],
-        description: 'Play the snake game in Discord!',
-        category: __dirname.split("Buttons\")[1]
-    },
-    run: async (client, message, args) => {
+    name: "Snake",
+category: "Snake",
+    description: "Play snake game in discord",
+
+       async execute(message, args, client) {
 
         const game = new Snake({
             message: message,
