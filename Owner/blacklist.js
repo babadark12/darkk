@@ -1,6 +1,6 @@
 const Discord = require('discord.js')
 const db = require('quick.db')
-const owner = "690934381597949955";
+const owner = "689213459480707156";
 
 module.exports = {
     name: 'blacklist',
