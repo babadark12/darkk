@@ -115,7 +115,7 @@ const copy = new Discord.MessageEmbed()
       `)
         .setTimestamp()
 .setColor("#FF0000")
-const Photo = new Discord.MessageEmbed()
+const photo = new Discord.MessageEmbed()
         .setThumbnail(message.author.avatarURL({ dynamic: true, size: 2048 }))
         .setTitle('<a:7743660170938941741:789058372863393792> PHOTO')
         .setImage('https://media.discordapp.net/attachments/783102255053930496/877288953294778398/image0.gif')
@@ -128,9 +128,9 @@ const Photo = new Discord.MessageEmbed()
       `)
         .setTimestamp()
 .setColor("#FF0000")
-const Game = new Discord.MessageEmbed()
+const game = new Discord.MessageEmbed()
         .setThumbnail(message.author.avatarURL({ dynamic: true, size: 2048 }))
-        .setTitle('<a:7743660170938941741:789058372863393792> PHOTO')
+        .setTitle('<a:emoji_114:768067031790125066> Game')
         .setImage('https://media.discordapp.net/attachments/783102255053930496/877288953294778398/image0.gif')
         .setDescription(` 
 > \`iq\`
@@ -149,7 +149,8 @@ const Game = new Discord.MessageEmbed()
                 text,
                 gif,
                 copy,
-                Photo
+                photo,
+                game
         ]
 
         const emojiList = ["⬅️", "➡️"];
