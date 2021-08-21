@@ -105,12 +105,38 @@ category: "help",
 .setColor('#FF0000')
 const copy = new Discord.MessageEmbed()
         .setThumbnail(message.author.avatarURL({ dynamic: true, size: 2048 }))
-        .setTitle('<a:jano:877151218869370900> Server copy')
+        .setTitle('<a:emoji_6:840993023197708331> Server copy')
         .setImage('https://media.discordapp.net/attachments/783102255053930496/877288953294778398/image0.gif')
         .setDescription(` 
 > \`backup-create\`
 > \`backup-info \`
 > \`backup-load\`
+
+      `)
+        .setTimestamp()
+.setColor("#FF0000")
+const Photo = new Discord.MessageEmbed()
+        .setThumbnail(message.author.avatarURL({ dynamic: true, size: 2048 }))
+        .setTitle('<a:7743660170938941741:789058372863393792> PHOTO')
+        .setImage('https://media.discordapp.net/attachments/783102255053930496/877288953294778398/image0.gif')
+        .setDescription(` 
+> \`Picanimal\`
+> \`Picboy \`
+> \`Picgirl\`
+> \`Picbaby\`
+> \`Piccouple\`
+      `)
+        .setTimestamp()
+.setColor("#FF0000")
+const Game = new Discord.MessageEmbed()
+        .setThumbnail(message.author.avatarURL({ dynamic: true, size: 2048 }))
+        .setTitle('<a:7743660170938941741:789058372863393792> PHOTO')
+        .setImage('https://media.discordapp.net/attachments/783102255053930496/877288953294778398/image0.gif')
+        .setDescription(` 
+> \`iq\`
+> \`rps \
+> \`hack\`
+> \`8ball\`
 
       `)
         .setTimestamp()
@@ -122,7 +148,8 @@ const copy = new Discord.MessageEmbed()
                 music,
                 text,
                 gif,
-                copy
+                copy,
+                Photo
         ]
 
         const emojiList = ["⬅️", "➡️"];
