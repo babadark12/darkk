@@ -37,8 +37,8 @@ client.on(`ready`, () => {
       });
       
 
-    client.user.setActivity(`>help`, { type: "COMPETING"});
-    client.user.setActivity(`${client.guilds.cache.size} Server,Users ${client.guilds.cache.reduce((a, g) => a + g.memberCount, 0)}`, { type: "COMPETING"});
+    client.user.setActivity(`>help | server: ${client.guilds.cache.size},Users: ${client.guilds.cache.reduce((a, g) => a + g.memberCount, 0)}`, { type: "COMPETING"});
+   
     
    
   
@@ -109,7 +109,7 @@ client.on(`message`, async (message) => {
     .setTitle('Hello!')
     .setThumbnail(client.user.displayAvatarURL({ dynamic: true }))
     .setImage("")
-    .setDescription(`Hello! I'm ${client.user.username}, A Multipurposed Bot,\n\n Created By Delta{}#7265\n\n My Prefix In The Server Is \`${prefix}\` \n\nSearching For My Commands? Try To Do \`${prefix}help\``)
+    .setDescription(`Hello! I'm ${client.user.username}, A Multipurposed Bot,\n\n Created By JaNoO#7265\n\n My Prefix In The Server Is \`${prefix}\` \n\nSearching For My Commands? Try To Do \`${prefix}help\``)
     .addField("Add Me?", `[click](https://discord.com/api/oauth2/authorize?client_id=797600275904200715&permissions=8&scope=bot)`)
     .addField("Our Server", `[click](https://discord.gg/fvaGmvp5f3)`)
     .setColor("RANDOM");
