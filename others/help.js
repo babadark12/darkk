@@ -16,16 +16,23 @@ const main = new Discord.MessageEmbed()
         .setImage('https://media.discordapp.net/attachments/783102255053930496/877288953294778398/image0.gif')
         .setDescription(` 
 
-<a:emoji_14:830052364038832138> \`Genaral Commands\`
-<a:emoji_9:815300472218976266> \`Moderation Commands \`
-<a:emoji_26:857835095980376064> \`Fun Commands\` 
-            
-<a:janom1:866836692250132481> \`Music Commands\`
-<a:emoji_27:857835733984739359> \`Text Commands\`
-<a:emoji_13:763535848599191554> \`Gif Commands\`
-<a:jano:815301368495210577> \`Copy Server\`
-<a:7743660170938941741:789058372863393792>\`Photo Commands\`
-<a:emoji_114:768067031790125066> \`Game Commands\`
+1: <a:emoji_14:830052364038832138> \`Genaral Commands\`
+
+2: <a:emoji_9:815300472218976266> \`Moderation Commands \`
+
+3: <a:emoji_26:857835095980376064> \`Fun Commands\`  
+          
+4: <a:janom1:866836692250132481> \`Music Commands\`
+
+5: <a:emoji_27:857835733984739359> \`Text Commands\`
+
+6: <a:emoji_13:763535848599191554> \`Gif Commands\`
+
+7: <a:jano:815301368495210577> \`Copy Server\`
+
+8: <a:7743660170938941741:789058372863393792>\`Photo Commands\`
+
+9: <a:emoji_114:768067031790125066> \`Game Commands\`
       `)
         .setTimestamp()
 .setColor("#FF0000")
@@ -59,7 +66,7 @@ const main = new Discord.MessageEmbed()
 > \`lockdown tempban tempmute\`
 > \`serverlock serverunlock \`
 > \`rmvrole mute unmute \`
-> \` vmuteall vunmuteall\`
+> \`vmuteall vunmuteall\`
 > \`nick unnick antivc unantivc\`
 
 `)
