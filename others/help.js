@@ -22,12 +22,14 @@ const main = new Discord.MessageEmbed()
 
 3: <a:emoji_26:857835095980376064> \`Fun Commands\`  
           
+•━━━━━━ ✽ • ✽ ━━━━━━•
 4: <a:janom1:866836692250132481> \`Music Commands\`
 
 5: <a:emoji_27:857835733984739359> \`Text Commands\`
 
 6: <a:emoji_13:763535848599191554> \`Gif Commands\`
 
+•━━━━━━ ✽ • ✽ ━━━━━━•
 7: <a:jano:815301368495210577> \`Copy Server\`
 
 8: <a:7743660170938941741:789058372863393792>\`Photo Commands\`
