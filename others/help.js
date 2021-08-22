@@ -18,7 +18,8 @@ const main = new Discord.MessageEmbed()
 
 <a:emoji_14:830052364038832138> \`Genaral Commands\`
 <a:emoji_9:815300472218976266> \`Moderation Commands \`
-<a:emoji_26:857835095980376064> \`Fun Commands\`             
+<a:emoji_26:857835095980376064> \`Fun Commands\` 
+            
 <a:janom1:866836692250132481> \`Music Commands\`
 <a:emoji_27:857835733984739359> \`Text Commands\`
 <a:emoji_13:763535848599191554> \`Gif Commands\`
@@ -151,7 +152,7 @@ const game = new Discord.MessageEmbed()
         .setImage('https://media.discordapp.net/attachments/783102255053930496/877288953294778398/image0.gif')
         .setDescription(` 
 > \`iq\`
-> \`rps \
+> \`rps\`
 > \`hack\`
 > \`8ball\`
 
