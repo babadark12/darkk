@@ -15,17 +15,17 @@ const main = new Discord.MessageEmbed()
         .setTitle('Help Info')
         .setImage('https://media.discordapp.net/attachments/783102255053930496/877288953294778398/image0.gif')
         .setDescription(` 
-1: <a:emoji_14:830052364038832138>\`Genaral Commands\`
-2: <a:emoji_9:815300472218976266>\`Moderation Commands \`
-3: <a:emoji_26:857835095980376064>\`Fun Commands\`         
+1: <a:emoji_14:830052364038832138>\`Genaral \`
+2: <a:emoji_9:815300472218976266>\`Moderation \`
+3: <a:emoji_26:857835095980376064>\`Fun\` 
 •━━━━━━ ✽ • ✽ ━━━━━━•
-4: <a:janom1:866836692250132481> \`Music Commands\`
-5: <a:emoji_27:857835733984739359> \`Text Commands\`
-6: <a:emoji_13:763535848599191554> \`Gif Commands\`
+4: <a:janom1:866836692250132481> \`Music\`
+5: <a:emoji_27:857835733984739359> \`Text\`
+6: <a:emoji_13:763535848599191554> \`Gif \`
 •━━━━━━ ✽ • ✽ ━━━━━━•
 7: <a:jano:815301368495210577> \`Copy Server\`
-8: <a:7743660170938941741:789058372863393792>\`Photo Commands\`
-9: <a:emoji_114:768067031790125066> \`Game Commands\`
+8: <a:7743660170938941741:789058372863393792>\`Photo\`
+9: <a:emoji_114:768067031790125066> \`Game\`
       `)
         .setTimestamp()
 .setColor("#FF0000")
