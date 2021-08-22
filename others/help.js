@@ -10,7 +10,24 @@ category: "help",
     
 
         //Sort your commands into categories, and make seperate embeds for each category
+const main = new Discord.MessageEmbed()
+        .setThumbnail(message.author.avatarURL({ dynamic: true, size: 2048 }))
+        .setTitle('Help Info')
+        .setImage('https://media.discordapp.net/attachments/783102255053930496/877288953294778398/image0.gif')
+        .setDescription(` 
 
+<a:emoji_14:830052364038832138> \`Genaral Commands\`
+<a:emoji_9:815300472218976266> \`Moderation Commands \`
+<a:emoji_26:857835095980376064> \`Fun Commands\`             
+<a:janom1:866836692250132481> \`Music Commands\`
+<a:emoji_27:857835733984739359> \`Text Commands\`
+<a:emoji_13:763535848599191554> \`Gif Commands\`
+<a:jano:815301368495210577> \`Copy Server\`
+<a:7743660170938941741:789058372863393792>\`Photo Commands\`
+<a:emoji_114:768067031790125066> \`Game Commands\`
+      `)
+        .setTimestamp()
+.setColor("#FF0000")
         const general = new Discord.MessageEmbed()
         .setThumbnail(message.author.avatarURL({ dynamic: true, size: 2048 }))
         .setTitle('<a:emoji_14:830052364038832138> General Info')
@@ -49,7 +66,7 @@ category: "help",
 .setColor('#FF0000')
         const fun = new Discord.MessageEmbed()
         .setThumbnail(message.author.avatarURL({ dynamic: true, size: 2048 })) 
-        .setTitle('<a:emoji_26:857835095980376064> Funny')
+        .setTitle('<a:emoji_26:857835095980376064> Fun')
         .setImage('https://media.discordapp.net/attachments/783102255053930496/877288953294778398/image0.gif')
         .setDescription(`
 > \`slap hug howgay\`
@@ -68,7 +85,7 @@ category: "help",
         .setTitle('<a:janom1:866836692250132481> Music')
         .setImage('https://media.discordapp.net/attachments/783102255053930496/877288953294778398/image0.gif')
         .setDescription(`
-> \`nfilter loop\`
+> \`filter loop\`
 > \`lyrics np\`
 > \`pause play\`
 > \`queue radio\`
@@ -105,7 +122,7 @@ category: "help",
 .setColor('#FF0000')
 const copy = new Discord.MessageEmbed()
         .setThumbnail(message.author.avatarURL({ dynamic: true, size: 2048 }))
-        .setTitle('<a:emoji_6:840993023197708331> Server copy')
+        .setTitle('<a:jano:815301368495210577> Server copy')
         .setImage('https://media.discordapp.net/attachments/783102255053930496/877288953294778398/image0.gif')
         .setDescription(` 
 > \`backup-create\`
@@ -142,6 +159,7 @@ const game = new Discord.MessageEmbed()
         .setTimestamp()
 .setColor("#FF0000")
         const pages = [
+                main,
                 general,
                 moderation,
                 fun,
