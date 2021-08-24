@@ -110,7 +110,7 @@ const main = new Discord.MessageEmbed()
 .setColor('#FF0000')
         const gif = new Discord.MessageEmbed()
         .setThumbnail(message.author.avatarURL({ dynamic: true, size: 2048 }))
-        .setTitle('<a:emoji_13:763535848599191554> Gifs')
+        .setTitle('<a:emoji_84:735459905397588041> Gifs')
         .setImage('https://media.discordapp.net/attachments/783102255053930496/877288953294778398/image0.gif')
         .setDescription(`
 > \`boy girl\`
