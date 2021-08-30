@@ -24,7 +24,7 @@ const main = new Discord.MessageEmbed()
 6: <a:emoji_84:735459905397588041> \`Gif \`
 •━━━━━━ ✽ • ✽ ━━━━━━•
 7: <a:jano:815301368495210577> \`Copy Server\`
-8: <a:7743660170938941741:789058372863393792>\`Photo\`
+8: <a:emoji_26:841321416325464094>\`Photo\`
 9: <a:emoji_114:768067031790125066> \`Game\`
       `)
         .setTimestamp()
@@ -135,14 +135,14 @@ const copy = new Discord.MessageEmbed()
 .setColor("#FF0000")
 const photo = new Discord.MessageEmbed()
         .setThumbnail(message.author.avatarURL({ dynamic: true, size: 2048 }))
-        .setTitle('<a:7743660170938941741:789058372863393792> PHOTO')
+        .setTitle('<a:emoji_26:841321416325464094> PHOTO')
         .setImage('https://media.discordapp.net/attachments/783102255053930496/877288953294778398/image0.gif')
         .setDescription(` 
 > \`Picanimal\`
 > \`Picboy \`
 > \`Picgirl\`
 > \`Picbaby\`
-> \`Piccouple\`
+> \`Picemoji\`
       `)
         .setTimestamp()
 .setColor("#FF0000")
