@@ -1,200 +1,259 @@
-////////////////////////////
-//////CONFIG LOAD///////////
-////////////////////////////
-const { play } = require("../include/play");
-const { Client, Collection, MessageEmbed } = require("discord.js");
-const { attentionembed } = require("../util/attentionembed");
-const { PREFIX } = require(`../config.json`);
-const ytsr = require("youtube-sr")
+const { Util, MessageEmbed } = require("discord.js");
+const { TrackUtils, Player } = require("erela.js");
+const prettyMilliseconds = require("pretty-ms");
 
-////////////////////////////
-//////COMMAND BEGIN/////////
-////////////////////////////
 module.exports = {
-  name: "play",
-  aliases: ["p"],
-  description: "Plays song from YouTube/Stream",
-  cooldown: 1.5,
-  edesc: `Type this command to play some music.\nUsage: ${PREFIX}play <TITLE | URL>`,
-  
-async execute(message, args, client) {
-    //If not in a guild return
-    if (!message.guild) return;
-    //define channel
-    const { channel } = message.member.voice;
-    //get serverqueue
-    const serverQueue = message.client.queue.get(message.guild.id);
-    //If not in a channel return error
-    if (!channel) return attentionembed(message, "Please join a Voice Channel first");
-    //If not in the same channel return error
-    if (serverQueue && channel !== message.guild.me.voice.channel)
-      return attentionembed(message, `You must be in the same Voice Channel as me`);
-    //If no args return
-    if (!args.length)
-      return attentionembed(message, `Usage: ${message.client.prefix}play <YouTube URL | Video Name | Soundcloud URL>`);
-    //react with approve emoji
-    message.react("<a:emoji_1:867153722931806218>").catch(console.error);
-    //get permissions and send error if bot doesnt have enough
-    const permissions = channel.permissionsFor(message.client.user);
-    if (!permissions.has("CONNECT"))
-      return attentionembed(message, "I need permissions to join your channel!");
-    if (!permissions.has("SPEAK"))
-      return attentionembed(message, "I need permissions to speak in your channel");
+    name: "play",
+    description: "Play your favorite songs",
+    usage: "[song]",
+    permissions: {
+        channel: ["VIEW_CHANNEL", "SEND_MESSAGES", "EMBED_LINKS"],
+        member: [],
+    },
+    aliases: ["p"],
+    /**
+     *
+     * @param {import("../structures/DiscordMusicBot")} client
+     * @param {import("discord.js").Message} message
+     * @param {string[]} args
+     * @param {*} param3
+     */
+    run: async (client, message, args, { GuildDB }) => {
+        if (!message.member.voice.channel) return client.sendTime(message.channel, "❌ | **You must be in a voice channel to play something!**");
+        if (message.guild.me.voice.channel && message.member.voice.channel.id !== message.guild.me.voice.channel.id) return client.sendTime(message.channel, ":x: | **You must be in the same voice channel as me to use this command!**");
+        let SearchString = args.join(" ");
+        if (!SearchString) return client.sendTime(message.channel, `**Usage - **\`${GuildDB.prefix}play [song]\``);
+        let CheckNode = client.Manager.nodes.get(client.config.Lavalink.id);
+        let Searching = await message.channel.send(":mag_right: Searching...");
+        if (!CheckNode || !CheckNode.connected) {
+       return client.sendTime(message.channel,"❌ | **Lavalink node not connected**");
+        }
+        const player = client.Manager.create({
+            guild: message.guild.id,
+            voiceChannel: message.member.voice.channel.id,
+            textChannel: message.channel.id,
+            selfDeafen: false,
+        });
 
-    //define some url patterns
-    const search = args.join(" ");
-    const videoPattern = /^(https?:\/\/)?(www\.)?(m\.)?(youtube\.com|youtu\.?be)\/.+$/gi;
-    const urlValid = videoPattern.test(args[0]);
+        let SongAddedEmbed = new MessageEmbed().setColor("RANDOM");
 
-    //define Queue Construct
-    const queueConstruct = {
-      textChannel: message.channel,
-      channel,
-      connection: null,
-      songs: [],
-      loop: false,
-      volume: 69,
-      filters: [],
-      realseek: 0,
-      playing: true
-    };
-    //get song infos to null
-    let songInfo = null;
-    let song = null;
-    //try catch for errors
-    try {
-      //If something is playing
-      if (serverQueue) {
-        //if its an url
-        if (urlValid) { //send searching link
-          message.channel.send(new MessageEmbed().setColor("#c219d8")
-            .setDescription(`**<a:emoji_9:867154131168526358> Searching [\`LINK\`](${args.join(" ")})**`))
-        //if not
+        if (!player) return client.sendTime(message.channel, "❌ | **Nothing is playing right now...**");
+
+        if (player.state != "CONNECTED") await player.connect();
+
+        try {
+            if (SearchString.match(client.Lavasfy.spotifyPattern)) {
+                await client.Lavasfy.requestToken();
+                let node = client.Lavasfy.nodes.get(client.config.Lavalink.id);
+                let Searched = await node.load(SearchString);
+
+                if (Searched.loadType === "PLAYLIST_LOADED") {
+                    let songs = [];
+                    for (let i = 0; i < Searched.tracks.length; i++) songs.push(TrackUtils.build(Searched.tracks[i], message.author));
+                    player.queue.add(songs);
+                    if (!player.playing && !player.paused && player.queue.totalSize === Searched.tracks.length) player.play();
+                    SongAddedEmbed.setAuthor(`Playlist added to queue`, message.author.displayAvatarURL());
+                    SongAddedEmbed.addField("Enqueued", `\`${Searched.tracks.length}\` songs`, false);
+                    //SongAddedEmbed.addField("Playlist duration", `\`${prettyMilliseconds(Searched.tracks, { colonNotation: true })}\``, false)
+                    Searching.edit(SongAddedEmbed);
+                } else if (Searched.loadType.startsWith("TRACK")) {
+                    player.queue.add(TrackUtils.build(Searched.tracks[0], message.author));
+                    if (!player.playing && !player.paused && !player.queue.size) player.play();
+                    SongAddedEmbed.setAuthor(`Added to queue`, client.config.IconURL);
+                    SongAddedEmbed.setDescription(`[${Searched.tracks[0].info.title}](${Searched.tracks[0].info.uri})`);
+                    SongAddedEmbed.addField("Author", Searched.tracks[0].info.author, true);
+                    //SongAddedEmbed.addField("Duration", `\`${prettyMilliseconds(Searched.tracks[0].length, { colonNotation: true })}\``, true);
+                    if (player.queue.totalSize > 1) SongAddedEmbed.addField("Position in queue", `${player.queue.size - 0}`, true);
+                    Searching.edit(SongAddedEmbed);
+                } else {
+                    return client.sendTime(message.channel, "**No matches found for - **" + SearchString);
+                }
+            } else {
+                let Searched = await player.search(SearchString, message.author);
+                if (!player) return client.sendTime(message.channel, "❌ | **Nothing is playing right now...**");
+
+                if (Searched.loadType === "NO_MATCHES") return client.sendTime(message.channel, "**No matches found for - **" + SearchString);
+                else if (Searched.loadType == "PLAYLIST_LOADED") {
+                    player.queue.add(Searched.tracks);
+                    if (!player.playing && !player.paused && player.queue.totalSize === Searched.tracks.length) player.play();
+                    SongAddedEmbed.setAuthor(`Playlist added to queue`, client.config.IconURL);
+                    SongAddedEmbed.setThumbnail(Searched.tracks[0].displayThumbnail());
+                    SongAddedEmbed.setDescription(`[${Searched.playlist.name}](${SearchString})`);
+                    SongAddedEmbed.addField("Enqueued", `\`${Searched.tracks.length}\` songs`, false);
+                    SongAddedEmbed.addField("Playlist duration", `\`${prettyMilliseconds(Searched.playlist.duration, { colonNotation: true })}\``, false);
+                    Searching.edit(SongAddedEmbed);
+                } else {
+                    player.queue.add(Searched.tracks[0]);
+                    if (!player.playing && !player.paused && !player.queue.size) player.play();
+                    SongAddedEmbed.setAuthor(`Added to queue`, client.config.IconURL);
+
+                    SongAddedEmbed.setThumbnail(Searched.tracks[0].displayThumbnail());
+                    SongAddedEmbed.setDescription(`[${Searched.tracks[0].title}](${Searched.tracks[0].uri})`);
+                    SongAddedEmbed.addField("Author", Searched.tracks[0].author, true);
+                    SongAddedEmbed.addField("Duration", `\`${prettyMilliseconds(Searched.tracks[0].duration, { colonNotation: true })}\``, true);
+                    if (player.queue.totalSize > 1) SongAddedEmbed.addField("Position in queue", `${player.queue.size - 0}`, true);
+                    Searching.edit(SongAddedEmbed);
+                }
+            }
+        } catch (e) {
+            console.log(e);
+            return client.sendTime(message.channel, "**No matches found for - **" + SearchString);
         }
-        else { //send searching TITLE
-          message.channel.send(new MessageEmbed().setColor("#c219d8")
-            .setDescription(`**<a:emoji_9:867154131168526358> Searching \`${args.join(" ")}\`**`))
-        }
-      } else {
-        //If nothing is playing join the channel
-        queueConstruct.connection = await channel.join();
-        //send join message
-        message.channel.send(new MessageEmbed().setColor("#c219d8")
-          .setDescription(`**<a:emoji_16:867154442456530994> Joined \`${channel.name}\` 📄 bound \`#${message.channel.name}\`**`)
-          .setFooter(`By: ${message.author.username}#${message.author.discriminator}`))
-        //if its an url
-        if (urlValid) { //send searching link
-          message.channel.send(new MessageEmbed().setColor("#c219d8")
-            .setDescription(`**<a:emoji_9:867154131168526358> Searching [\`LINK\`](${args.join(" ")})**`))
-          //if not 
-        }
-        else { //send searching TITLE
-          message.channel.send(new MessageEmbed().setColor("#c219d8")
-            .setDescription(`**<a:emoji_9:867154131168526358> Searching \`${args.join(" ")}\`**`))
-        }
-        //Set selfdeaf and serverdeaf true
-        queueConstruct.connection.voice.setSelfDeaf(true);
-        queueConstruct.connection.voice.setDeaf(true);
-      }
-    }
-    catch {
-    }
-    //if its a valdi youtube link
-    if (urlValid) {
-      try {
-        songInfo = await ytsr.searchOne(search) ;
-        song = {
-          title: songInfo.title,
-          url: songInfo.url,
-          thumbnail: songInfo.thumbnail,
-          duration: songInfo.durationFormatted,
-       };
-      } catch (error) {
-        if (error.statusCode === 403) return attentionembed(message, "Max. uses of api Key, please refresh!");
-        console.error(error);
-        return attentionembed(message, error.message);
-      }
-    } 
-    //else try to find the song via ytsr 
-    else {
-      try {
-       //get the result 
-        songInfo = await ytsr.searchOne(search) ;
-        song = {
-          title: songInfo.title,
-          url: songInfo.url,
-          thumbnail: songInfo.thumbnail,
-          duration: songInfo.durationFormatted,
-       };
-      } catch (error) {
-        console.error(error);
-        return attentionembed(message, error);        
-      }                                                               
-    }
-    //get the thumbnail
-    let thumb = "https://cdn.discordapp.com/attachments/748095614017077318/769672148524335114/unknown.png"
-    if (song.thumbnail === undefined) thumb = "https://cdn.discordapp.com/attachments/748095614017077318/769672148524335114/unknown.png";
-    else thumb = song.thumbnail.url;
-    //if there is a server queue send that message!
-    if (serverQueue) {
-      //Calculate the estimated Time
-      let estimatedtime = Number(0);
-      for (let i = 0; i < serverQueue.songs.length; i++) {
-        let minutes = serverQueue.songs[i].duration.split(":")[0];   
-        let seconds = serverQueue.songs[i].duration.split(":")[1];    
-        estimatedtime += (Number(minutes)*60+Number(seconds));   
-      }
-      if (estimatedtime > 60) {
-        estimatedtime = Math.round(estimatedtime / 60 * 100) / 100;
-        estimatedtime = estimatedtime + " Minutes"
-      }
-      else if (estimatedtime > 60) {
-        estimatedtime = Math.round(estimatedtime / 60 * 100) / 100;
-        estimatedtime = estimatedtime + " Hours"
-      }
-      else {
-        estimatedtime = estimatedtime + " Seconds"
-      }
-      //Push the ServerQueue
-      serverQueue.songs.push(song);
-      //the new song embed
-      const newsong = new MessageEmbed()
-        .setTitle("✅ " + song.title)
-        .setColor("#c219d8")
-        .setThumbnail(thumb)
-        .setURL(song.url)
-        .setDescription(`\`\`\`Has been added to the Queue.\`\`\``)
-        .addField("Estimated time until playing:", `\`${estimatedtime}\``, true)
-        .addField("Position in queue", `**\`${serverQueue.songs.length - 1}\`**`, true)
-        .setFooter(`Requested by: ${message.author.username}#${message.author.discriminator}`, message.member.user.displayAvatarURL({ dynamic: true }))
-      //send the Embed into the Queue Channel
-        return serverQueue.textChannel
-        .send(newsong)
-        .catch(console.error);
-      
-    }
-    //push the song list by 1 to add it to the queu
-    queueConstruct.songs.push(song);
-    //set the queue
-    message.client.queue.set(message.guild.id, queueConstruct);
-    //playing with catching errors
-    try {
+    },
+
+    SlashCommand: {
+        options: [
+            {
+                name: "song",
+                value: "song",
+                type: 3,
+                required: true,
+                description: "Play music in the voice channel",
+            },
+        ],
+        /**
+         *
+         * @param {import("../structures/DiscordMusicBot")} client
+         * @param {import("discord.js").Message} message
+         * @param {string[]} args
+         * @param {*} param3
+         */
+        run: async (client, interaction, args, { GuildDB }) => {
+            const guild = client.guilds.cache.get(interaction.guild_id);
+            const member = guild.members.cache.get(interaction.member.user.id);
+            const voiceChannel = member.voice.channel;
+            let awaitchannel = client.channels.cache.get(interaction.channel_id); /// thanks Reyansh for this idea ;-;
+            if (!member.voice.channel) return client.sendTime(interaction, "❌ | **You must be in a voice channel to use this command.**");
+            if (guild.me.voice.channel && !guild.me.voice.channel.equals(member.voice.channel)) return client.sendTime(interaction, ":x: | **You must be in the same voice channel as me to use this command!**");
+            let CheckNode = client.Manager.nodes.get(client.config.Lavalink.id);
+            if (!CheckNode || !CheckNode.connected) {
+              return client.sendTime(interaction,"❌ | **Lavalink node not connected**");
+            }
     
-      //try to play the song
-      play(queueConstruct.songs[0], message, client);
-    } catch (error) {
-      //if an error comes log
-      console.error(error);
-      //delete the Queue
-      message.client.queue.delete(message.guild.id);
-      //leave the channel
-      await channel.leave();
-      //sent an error message
-      return attentionembed(message, `Could not join the channel: ${error}`);
-    }
-  }
-};
+            let player = client.Manager.create({
+                guild: interaction.guild_id,
+                voiceChannel: voiceChannel.id,
+                textChannel: interaction.channel_id,
+                selfDeafen: false,
+            });
+            if (player.state != "CONNECTED") await player.connect();
+            let search = interaction.data.options[0].value;
+            let res;
 
-//////////////////////////////////////////
-//////////////////////////////////////////
-/////////////by Tomato#6966///////////////
+            if (search.match(client.Lavasfy.spotifyPattern)) {
+                await client.Lavasfy.requestToken();
+                let node = client.Lavasfy.nodes.get(client.config.Lavalink.id);
+                let Searched = await node.load(search);
+
+                switch (Searched.loadType) {
+                    case "LOAD_FAILED":
+                        if (!player.queue.current) player.destroy();
+                        return client.sendError(interaction, `❌ | **There was an error while searching**`);
+
+                    case "NO_MATCHES":
+                        if (!player.queue.current) player.destroy();
+                        return client.sendTime(interaction, "❌ | **No results were found.**");
+                    case "TRACK_LOADED":
+                        player.queue.add(TrackUtils.build(Searched.tracks[0], member.user));
+                        if (!player.playing && !player.paused && !player.queue.length) player.play();
+                        let SongAddedEmbed = new MessageEmbed();
+                            SongAddedEmbed.setAuthor(`Added to queue`, client.config.IconURL);
+                            SongAddedEmbed.setColor("RANDOM");
+                            SongAddedEmbed.setDescription(`[${Searched.tracks[0].info.title}](${Searched.tracks[0].info.uri})`);
+                            SongAddedEmbed.addField("Author", Searched.tracks[0].info.author, true);
+                            if (player.queue.totalSize > 1) SongAddedEmbed.addField("Position in queue", `${player.queue.size - 0}`, true);
+                            return interaction.send(SongAddedEmbed);
+
+                    case "SEARCH_RESULT":
+                        player.queue.add(TrackUtils.build(Searched.tracks[0], member.user));
+                        if (!player.playing && !player.paused && !player.queue.length) player.play();
+                        let SongAdded = new MessageEmbed();
+                            SongAdded.setAuthor(`Added to queue`, client.config.IconURL);
+                            SongAdded.setColor("RANDOM");
+                            SongAdded.setDescription(`[${Searched.tracks[0].info.title}](${Searched.tracks[0].info.uri})`);
+                            SongAdded.addField("Author", Searched.tracks[0].info.author, true);
+                            if (player.queue.totalSize > 1) SongAdded.addField("Position in queue", `${player.queue.size - 0}`, true);
+                            return interaction.send(SongAdded);
+
+
+                    case "PLAYLIST_LOADED":
+                        let songs = [];
+                        for (let i = 0; i < Searched.tracks.length; i++) songs.push(TrackUtils.build(Searched.tracks[i], member.user));
+                        player.queue.add(songs);
+                        if (!player.playing && !player.paused && player.queue.totalSize === Searched.tracks.length) player.play();
+                        let Playlist = new MessageEmbed();
+                        Playlist.setAuthor(`Playlist added to queue`, client.config.IconURL);
+                        Playlist.setDescription(`[${Searched.playlistInfo.name}](${interaction.data.options[0].value})`);
+                        Playlist.addField("Enqueued", `\`${Searched.tracks.length}\` songs`, false);
+                        return interaction.send(Playlist);
+                }
+            } else {
+                try {
+                    res = await player.search(search, member.user);
+                    if (res.loadType === "LOAD_FAILED") {
+                        if (!player.queue.current) player.destroy();
+                        return client.sendError(interaction, `:x: | **There was an error while searching**`);
+                    }
+                } catch (err) {
+                    return client.sendError(interaction, `There was an error while searching: ${err.message}`);
+                }
+                switch (res.loadType) {
+                    case "NO_MATCHES":
+                        if (!player.queue.current) player.destroy();
+                        return client.sendTime(interaction, "❌ | **No results were found.**");
+                    case "TRACK_LOADED":
+                        player.queue.add(res.tracks[0]);
+                        if (!player.playing && !player.paused && !player.queue.length) player.play();
+                        let SongAddedEmbed = new MessageEmbed();
+                            SongAddedEmbed.setAuthor(`Added to queue`, client.config.IconURL);
+                            SongAddedEmbed.setThumbnail(res.tracks[0].displayThumbnail());
+                            SongAddedEmbed.setColor("RANDOM");
+                            SongAddedEmbed.setDescription(`[${res.tracks[0].title}](${res.tracks[0].uri})`);
+                            SongAddedEmbed.addField("Author", res.tracks[0].author, true);
+                            SongAddedEmbed.addField("Duration", `\`${prettyMilliseconds(res.tracks[0].duration, { colonNotation: true })}\``, true);
+                            if (player.queue.totalSize > 1) SongAddedEmbed.addField("Position in queue", `${player.queue.size - 0}`, true);
+                            return interaction.send(SongAddedEmbed);
+                            
+                    case "PLAYLIST_LOADED":
+                        player.queue.add(res.tracks);
+                        await player.play();
+                        let SongAdded = new MessageEmbed();
+                        SongAdded.setAuthor(`Playlist added to queue`, client.config.IconURL);
+                        SongAdded.setThumbnail(res.tracks[0].displayThumbnail());
+                        SongAdded.setDescription(`[${res.playlist.name}](${interaction.data.options[0].value})`);
+                        SongAdded.addField("Enqueued", `\`${res.tracks.length}\` songs`, false);
+                        SongAdded.addField("Playlist duration", `\`${prettyMilliseconds(res.playlist.duration, { colonNotation: true })}\``, false);
+                        return interaction.send(SongAdded);
+                    case "SEARCH_RESULT":
+                        const track = res.tracks[0];
+                        player.queue.add(track);
+                    
+
+                        if (!player.playing && !player.paused && !player.queue.length) {
+                            let SongAddedEmbed = new MessageEmbed();
+                            SongAddedEmbed.setAuthor(`Added to queue`, client.config.IconURL);
+                            SongAddedEmbed.setThumbnail(track.displayThumbnail());
+                            SongAddedEmbed.setColor("RANDOM");
+                            SongAddedEmbed.setDescription(`[${track.title}](${track.uri})`);
+                            SongAddedEmbed.addField("Author", track.author, true);
+                            SongAddedEmbed.addField("Duration", `\`${prettyMilliseconds(track.duration, { colonNotation: true })}\``, true);
+                            if (player.queue.totalSize > 1) SongAddedEmbed.addField("Position in queue", `${player.queue.size - 0}`, true);
+                            player.play();
+                            return interaction.send(SongAddedEmbed);
+                            
+                        } else {
+                            let SongAddedEmbed = new MessageEmbed();
+                            SongAddedEmbed.setAuthor(`Added to queue`, client.config.IconURL);
+                            SongAddedEmbed.setThumbnail(track.displayThumbnail());
+                            SongAddedEmbed.setColor("RANDOM");
+                            SongAddedEmbed.setDescription(`[${track.title}](${track.uri})`);
+                            SongAddedEmbed.addField("Author", track.author, true);
+                            SongAddedEmbed.addField("Duration", `\`${prettyMilliseconds(track.duration, { colonNotation: true })}\``, true);
+                            if (player.queue.totalSize > 1) SongAddedEmbed.addField("Position in queue", `${player.queue.size - 0}`, true);
+                            interaction.send(SongAddedEmbed);
+                        }
+                }
+            }
+        },
+    },
+};
