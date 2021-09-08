@@ -41,7 +41,6 @@
     "youtube-sr": "^1.0.4",
     "ytdl-core-discord": "^1.3.0",
     "scrape-yt": "^1.4.8",
-    "weky": "^2.5.1",
     "ytdl-core": "^4.0.0"
   }
 }
