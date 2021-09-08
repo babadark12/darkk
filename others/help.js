@@ -26,6 +26,7 @@ const main = new Discord.MessageEmbed()
 7: <a:jano:815301368495210577> \`Copy Server\`
 8: <a:emoji_26:841321416325464094>\`Photo\`
 9: <a:emoji_114:768067031790125066> \`Game\`
+**[  SUPPORT  ](https://discord.gg/gBWQh2e7Rc)** - [INVITE](https://discord.com/api/oauth2/authorize?client_id=${client.user.id}&permissions=8&scope=bot)
       `)
         .setTimestamp()
 .setColor("#FF0000")
@@ -76,8 +77,8 @@ const main = new Discord.MessageEmbed()
 > \`cuddle joke poke\`
 > \`baka phcomment punch\`
 > \`spank dance rate\`
-> \`advice ascii dicksize\`
-> \`ship phcomment\`
+> \`advice ascii \`
+> \`ship dicksize \`
 `)
         .setTimestamp()
 .setColor('#FF0000')
@@ -86,9 +87,9 @@ const main = new Discord.MessageEmbed()
         .setTitle('<a:janom1:866836692250132481> Music')
         .setImage('https://media.discordapp.net/attachments/783102255053930496/877288953294778398/image0.gif')
         .setDescription(`
-> \`filter loop\`
+> \`play loop\`
 > \`lyrics np\`
-> \`pause play\`
+> \`pause filter\`
 > \`queue radio\`
 > \`remove resume\`
 > \`search shuffle\`
