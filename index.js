@@ -108,8 +108,8 @@ client.on(`message`, async (message) => {
     .setThumbnail(client.user.displayAvatarURL({ dynamic: true }))
     .setImage("")
     .setDescription(`Hello! I'm ${client.user.username}, A Multipurposed Bot,\n\n Created By JaNoO#7265\n\n My Prefix In The Server Is \`${prefix}\` \n\nSearching For My Commands? Try To Do \`${prefix}help\``)
-    .addField("Add Me?", `[click](https://discord.com/api/oauth2/authorize?client_id=797600275904200715&permissions=8&scope=bot)`)
-    .addField("Our Server", `[click](https://discord.gg/fvaGmvp5f3)`)
+    .addField("Add Me?", `[click](..)`)
+    .addField("Our Server", `[click](https://discord.gg/8hhVuG58tm)`)
     .setColor("RANDOM");
 message.channel.send(pingedembed);
   }
