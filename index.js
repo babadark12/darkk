@@ -37,7 +37,7 @@ client.on(`ready`, () => {
       });
       
 
-    client.user.setActivity(`>help | server: ${client.guilds.cache.size},Users: ${client.guilds.cache.reduce((a, g) => a + g.memberCount, 0)}`, { type: "COMPETING"});
+    client.user.setActivity( server: ${client.guilds.cache.size},Users: ${client.guilds.cache.reduce((a, g) => a + g.memberCount, 0)}`, { type: "COMPETING"});
    
     
    
