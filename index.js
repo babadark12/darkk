@@ -36,8 +36,6 @@ client.on(`ready`, () => {
         { return member.voice.channel.leave(); }
       });
       
-
-    client.user.setActivity(yAshex UP server: ${client.guilds.cache.size},Users: ${client.guilds.cache.reduce((a, g) => a + g.memberCount, 0)}`, { type: "COMPETING"});
    
     
    
