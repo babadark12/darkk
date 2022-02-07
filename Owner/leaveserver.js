@@ -1,5 +1,5 @@
 const Discord = require("discord.js");
-const ownerid = ["689213459480707156"];
+const ownerid = ["663538031147352069"];
 
 module.exports = { 
         name:"leaveserver",
