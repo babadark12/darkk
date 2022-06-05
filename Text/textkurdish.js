@@ -20,8 +20,8 @@ module.exports = {
     let result = Math.floor((Math.random() * replies.length));
 
     message.lineReplyNoMention(replies[result]).then(message => {
-			message.react('<:topggDotBlue:949638672385466448>').then(r => {
-				message.react('<:topggDotRed:949638634796105728>');
+			message.react('<:emoji_243:982855409452863529>').then(r => {
+				message.react('<<:emoji_242:982855361218379826>');
            });
           });
       }
