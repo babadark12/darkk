@@ -6,7 +6,7 @@ const db = require('quick.db');
 const { TOKEN, PREFIX, AVATARURL, BOTNAME, } = require(`./config.json`);
 const figlet = require("figlet");
 const client = new Client({ disableMentions: `` , partials: ['MESSAGE', 'CHANNEL', 'REACTION'] });
-client.login('ODU1MzYzMjczOTAwNTU2MzI4.YMxZIA.llev0uBU3bBtGV8tY4W-EfRuIYM');
+client.login('ODc2MjM0MTU1Njg2NTE0NzE4.G7kD1X.ap8OlOrNek2mHKKM5QzUrpWf9K_Uy4qky-XTC0');
 client.commands = new Collection();
 client.setMaxListeners(0);
 client.prefix = PREFIX;
@@ -191,7 +191,7 @@ message.channel.send(pingedembed);
 
 });
 client.on("guildCreate", guild => {
-  let channel = client.channels.cache.get("858070138154516561");
+  let channel = client.channels.cache.get("982838906888286288");
   let embed = new MessageEmbed()
   .setColor("#116d56")
   .setAuthor(client.user.username, client.user.avatarURL())
@@ -207,7 +207,7 @@ client.on("guildCreate", guild => {
 
 
 client.on("guildDelete", guild => {
-  let channel = client.channels.cache.get("858070138154516561");
+  let channel = client.channels.cache.get("982838906888286288");
   let embed = new MessageEmbed()
   .setColor("#116d56")
   .setAuthor(client.user.username, client.user.avatarURL())
