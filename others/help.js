@@ -15,7 +15,7 @@ const main = new Discord.MessageEmbed()
         .setTitle('Help Info')
         .setImage('https://media.discordapp.net/attachments/911389141713956874/939758666423341066/IMG_0146.jpg?width=576&height=379')
         .setDescription(` 
-1: <:emoji_177:935073131691921519>\`Genaral \`
+1: <:emoji_177:982840789388378162>\`Genaral \`
 2: <:emoji_177:935073131691921519>\`Moderation \`
 3: <:emoji_177:935073131691921519>\`Fun\` 
 •━━━━━━ ✽ • ✽ ━━━━━━•
