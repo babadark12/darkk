@@ -21,7 +21,7 @@ module.exports = {
 
     message.lineReplyNoMention(replies[result]).then(message => {
 			message.react('<a:emoji_10:869913862604996669>').then(r => {
-				message.react('<a:emoji_11:869913887913422848>');
+				message.react('<a:emoji_11:869913887913422848>'); 
            });
           });
       }
