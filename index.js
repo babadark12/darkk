@@ -109,7 +109,7 @@ client.on(`message`, async (message) => {
     .setImage("")
     .setDescription(`Hello! I'm ${client.user.username}, A Multipurposed Bot,\n\n Created By JaNoO#7265\n\n My Prefix In The Server Is \`${prefix}\` \n\nSearching For My Commands? Try To Do \`${prefix}help\``)
     .addField("Add Me?", `[click](..)`)
-    .addField("Our Server", `[click](https://discord.gg/8hhVuG58tm)`)
+    .addField("Our Server", `[click](https://discord.gg/3D55CHur7D)`)
     .setColor("RANDOM");
 message.channel.send(pingedembed);
   }
