@@ -13,7 +13,7 @@ category: "help",
 const main = new Discord.MessageEmbed()
         .setThumbnail(message.author.avatarURL({ dynamic: true, size: 2048 }))
         .setTitle('Help Info')
-        .setImage('https://media.discordapp.net/attachments/911389141713956874/939758666423341066/IMG_0146.jpg?width=576&height=379')
+        .setImage('https://media.discordapp.net/attachments/857714045251878972/1012265103070081064/LACIVERT.gif')
         .setDescription(` 
 1:  \`Genaral \`
 2:  \`Moderation \`
