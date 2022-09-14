@@ -15,18 +15,18 @@ const main = new Discord.MessageEmbed()
         .setTitle('Help Info')
         .setImage('https://media.discordapp.net/attachments/857714045251878972/1012265103070081064/LACIVERT.gif')
         .setDescription(` 
-1: <a:emoji_50:969703677982031872> \`Genaral \` <a:emoji_50:969703677982031872>
-2:  \`Moderation \`
-3:  \`Fun\` 
+1:  ✨\`Genaral \`✨
+2:  🌜\`Moderation \`🌛
+3:  🌙\`Fun\`🌙 
 •━━━━━━ ✽ • ✽ ━━━━━━•
-4:  \`Music\`
-5:  \`Text\`
-6:  \`Gif \`
+4:  🎧\`Music\`🎧
+5:  ⚡️\`Text\`⚡️
+6:  🧿\`Gif \`🧿
 •━━━━━━ ✽ • ✽ ━━━━━━•
-7:  \`Copy Server\`
-8:  \`Photo\`
-9: <a:emoji_52:1017881674484297778> \`Game\` <a:emoji_52:1017881674484297778>
-**[  SUPPORT  ](https://discord.gg/3D55CHur7D)** - [INVITE](https://discord.com/api/oauth2/authorize?client_id=851307156690698280&permissions=8&scope=bot)`)
+7:  🪄\`Copy Server\`🪄
+8:  🧸\`Photo\`🧸
+9:  🌀\`Game\`🌀
+**[SUPPORT](https://discord.gg/3D55CHur7D)** - [INVITE](https://discord.com/api/oauth2/authorize?client_id=851307156690698280&permissions=8&scope=bot)`)
         .setTimestamp()
 .setColor("#FF0000")
         const general = new Discord.MessageEmbed()
