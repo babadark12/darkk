@@ -25,7 +25,7 @@ const main = new Discord.MessageEmbed()
 •━━━━━━ ✽ • ✽ ━━━━━━•
 7:  \`Copy Server\`
 8:  \`Photo\`
-9:  \`Game\`
+9: <a:image302:938474927051382834> \`Game\` <a:image303:938474925931515944>
 **[  SUPPORT  ](https://discord.gg/3D55CHur7D)** - [INVITE](https://discord.com/api/oauth2/authorize?client_id=851307156690698280&permissions=8&scope=bot)
       `)
         .setTimestamp()
