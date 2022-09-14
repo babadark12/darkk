@@ -173,7 +173,7 @@ const game = new Discord.MessageEmbed()
                 game
         ]
 
-        const emojiList = ["⬅️", "➡️"];
+        const emojiList = ["<a:image303:938474925931515944>", "<a:image302:938474927051382834>"];
 
         const timeout = '120000';
 
