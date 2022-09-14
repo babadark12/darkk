@@ -15,7 +15,7 @@ const main = new Discord.MessageEmbed()
         .setTitle('Help Info')
         .setImage('https://media.discordapp.net/attachments/857714045251878972/1012265103070081064/LACIVERT.gif')
         .setDescription(` 
-1:  \`Genaral \`
+1: <a:emoji_50:969703677982031872> \`Genaral \` <a:emoji_50:969703677982031872>
 2:  \`Moderation \`
 3:  \`Fun\` 
 •━━━━━━ ✽ • ✽ ━━━━━━•
@@ -173,7 +173,7 @@ const game = new Discord.MessageEmbed()
                 game
         ]
 
-        const emojiList = ["<:leaves:866356598356049930>", "<:joines:866356465299488809>"];
+        const emojiList = ["🌟", "⭐️"];
 
         const timeout = '120000';
 
