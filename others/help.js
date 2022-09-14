@@ -173,7 +173,7 @@ const game = new Discord.MessageEmbed()
                 game
         ]
 
-        const emojiList = ["<a:image303:938474925931515944>", "<a:image302:938474927051382834>"];
+        const emojiList = ["<:leaves:866356598356049930>", "<:joines:866356465299488809>"];
 
         const timeout = '120000';
 
