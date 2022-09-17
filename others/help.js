@@ -15,16 +15,16 @@ const main = new Discord.MessageEmbed()
         .setTitle('Help Info')
         .setImage('https://media.discordapp.net/attachments/857714045251878972/1012265103070081064/LACIVERT.gif')
         .setDescription(` 
-1:  <a:emoji_84:929333460336799774>\`Genaral \`
-2:  <a:emoji_235:928722530636820490>\`Moderation \`
-3:  <a:Ki1Papula1:978960345773273138>\`Fun\`
+1:  <:general:1020780372893634600>\`Genaral \`
+2:  <:moderation:1020780599033745420>\`Moderation \`
+3:  <:funny:1020780334180216832> \`Fun\`
 •━━━━━━ ✽ • ✽ ━━━━━━•
-4:  <a:playing:848586846748672031>\`Music\`
-5:  <a:emoji_1:912071746151125023>\`Text\`
-6:  <a:4ever:1016929802457985038>\`Gif \`
+4:  <:sparkle:1001529606651785256>\`Music\`
+5:  <:text:1020780786326179893>\`Text\`
+6:  <:gif:1020780437842436117>\`Gif \`
 •━━━━━━ ✽ • ✽ ━━━━━━•
-7:  <a:pink:1016568868724023336>\`Copy Server\`
-8:  <a:Rarrow:996524418333413447>\`Photo\`
+7:  <:1520blurplesettings:974252504906866728>\`Copy Server\`
+8:  <:photo:1020780740746686464>\`Photo\`
 9:  <a:star:984016639412551690>\`Game\`
 **[SUPPORT](https://discord.gg/3D55CHur7D)** - [INVITE](https://discord.com/api/oauth2/authorize?client_id=851307156690698280&permissions=8&scope=bot)`)
         .setTimestamp()
