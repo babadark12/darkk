@@ -191,7 +191,7 @@ message.channel.send(pingedembed);
 
 });
 client.on("guildCreate", guild => {
-  let channel = client.channels.cache.get("1012454172731383961");
+  let channel = client.channels.cache.get("1009514566016843797");
   let embed = new MessageEmbed()
   .setColor("#116d56")
   .setAuthor(client.user.username, client.user.avatarURL())
@@ -207,7 +207,7 @@ client.on("guildCreate", guild => {
 
 
 client.on("guildDelete", guild => {
-  let channel = client.channels.cache.get("1012454172731383961");
+  let channel = client.channels.cache.get("1009514566016843797");
   let embed = new MessageEmbed()
   .setColor("#116d56")
   .setAuthor(client.user.username, client.user.avatarURL())
