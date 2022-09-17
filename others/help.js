@@ -23,9 +23,9 @@ const main = new Discord.MessageEmbed()
 5:  <:text:1020780786326179893> \`Text\`
 6:  <:gif:1020780437842436117> \`Gif \`
 •━━━━━━ ✽ • ✽ ━━━━━━•
-7:  <:blurple_partner:1016394334830076027> \`Copy Server\`
+7:  <:load:1001138778162864148> \`Copy Server\`
 8:  <:photo:1020780740746686464> \`Photo\`
-9:  <a:star:984016639412551690> \`Game\`
+9:  <:star:1001543827192037507> \`Game\`
 **[SUPPORT](https://discord.gg/3D55CHur7D)** - [INVITE](https://discord.com/api/oauth2/authorize?client_id=851307156690698280&permissions=8&scope=bot)`)
         .setTimestamp()
 .setColor("#FF0000")
@@ -123,7 +123,7 @@ const main = new Discord.MessageEmbed()
 .setColor('#FF0000')
 const copy = new Discord.MessageEmbed()
         .setThumbnail(message.author.avatarURL({ dynamic: true, size: 2048 }))
-        .setTitle('<:blurple_partner:1016394334830076027> Server copy')
+        .setTitle('<:load:1001138778162864148> Server copy')
         .setImage('https://media.discordapp.net/attachments/857714045251878972/1010414909017825370/GIF-220812_230230.gif')
         .setDescription(` 
 > \`backup-create\`
@@ -148,7 +148,7 @@ const photo = new Discord.MessageEmbed()
 .setColor("#FF0000")
 const game = new Discord.MessageEmbed()
         .setThumbnail(message.author.avatarURL({ dynamic: true, size: 2048 }))
-        .setTitle('<:Game:928004431998513172> Game')
+        .setTitle('<:star:1001543827192037507> Game')
         .setImage('https://media.discordapp.net/attachments/857714045251878972/1007586484129366106/c159e3097719839d058c71fee4b6498f.jpg')
         .setDescription(` 
 > \`iq\`
