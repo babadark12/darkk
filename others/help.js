@@ -26,7 +26,7 @@ const main = new Discord.MessageEmbed()
 7:  <:load:1001138778162864148> \`Copy Server\`
 8:  <:photo:1020780740746686464> \`Photo\`
 9:  <:star:1001543827192037507> \`Game\`
-**[SUPPORT](https://discord.gg/3D55CHur7D)** - [INVITE](https://discord.com/api/oauth2/authorize?client_id=851307156690698280&permissions=8&scope=bot)`)
+** <:links:1020780527009136700> [SUPPORT](https://discord.gg/3D55CHur7D)** - <:link:1020780477776404630> [INVITE](https://discord.com/api/oauth2/authorize?client_id=851307156690698280&permissions=8&scope=bot)`)
         .setTimestamp()
 .setColor("#FF0000")
         const general = new Discord.MessageEmbed()
