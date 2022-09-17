@@ -15,23 +15,23 @@ const main = new Discord.MessageEmbed()
         .setTitle('Help Info')
         .setImage('https://media.discordapp.net/attachments/857714045251878972/1012265103070081064/LACIVERT.gif')
         .setDescription(` 
-1:  <:general:1020780372893634600>\`Genaral \`
-2:  <:moderation:1020780599033745420>\`Moderation \`
+1:  <:general:1020780372893634600> \`Genaral \`
+2:  <:moderation:1020780599033745420> \`Moderation \`
 3:  <:funny:1020780334180216832> \`Fun\`
 •━━━━━━ ✽ • ✽ ━━━━━━•
-4:  <:sparkle:1001529606651785256>\`Music\`
-5:  <:text:1020780786326179893>\`Text\`
-6:  <:gif:1020780437842436117>\`Gif \`
+4:  <:sparkle:1001529606651785256> \`Music\`
+5:  <:text:1020780786326179893> \`Text\`
+6:  <:gif:1020780437842436117> \`Gif \`
 •━━━━━━ ✽ • ✽ ━━━━━━•
-7:  <:1520blurplesettings:974252504906866728>\`Copy Server\`
-8:  <:photo:1020780740746686464>\`Photo\`
-9:  <a:star:984016639412551690>\`Game\`
+7:  <:blurple_partner:1016394334830076027> \`Copy Server\`
+8:  <:photo:1020780740746686464> \`Photo\`
+9:  <a:star:984016639412551690> \`Game\`
 **[SUPPORT](https://discord.gg/3D55CHur7D)** - [INVITE](https://discord.com/api/oauth2/authorize?client_id=851307156690698280&permissions=8&scope=bot)`)
         .setTimestamp()
 .setColor("#FF0000")
         const general = new Discord.MessageEmbed()
         .setThumbnail(message.author.avatarURL({ dynamic: true, size: 2048 }))
-        .setTitle('General Info')
+        .setTitle('<:general:1020780372893634600> General Info')
         .setImage('https://media.discordapp.net/attachments/857714045251878972/1014961252906315786/8e67589060b489d9f4bb3e6a65824bff.gif')
         .setDescription(` 
 > \`help ping prefix\`
@@ -48,7 +48,7 @@ const main = new Discord.MessageEmbed()
 .setColor("#FF0000")
         const moderation = new Discord.MessageEmbed()
         .setThumbnail(message.author.avatarURL({ dynamic: true, size: 2048 }))
-        .setTitle('Moderation')
+        .setTitle('<:moderation:1020780599033745420> Moderation')
         .setImage('https://media.discordapp.net/attachments/857714045251878972/1014961252067442708/270b644788fc098dc9ddfb4fcf3cdd21.gif')
         .setDescription(`
 > \`lock unlock addrole\`
@@ -67,7 +67,7 @@ const main = new Discord.MessageEmbed()
 .setColor('#FF0000')
         const fun = new Discord.MessageEmbed()
         .setThumbnail(message.author.avatarURL({ dynamic: true, size: 2048 })) 
-        .setTitle('Fun')
+        .setTitle('<:funny:1020780334180216832> Fun')
         .setImage('https://media.discordapp.net/attachments/857714045251878972/1014956210430165012/844cfdd6d662778e04e4b172901f342e.gif')
         .setDescription(`
 > \`slap hug howgay\`
@@ -83,7 +83,7 @@ const main = new Discord.MessageEmbed()
 .setColor('#FF0000')
         const music = new Discord.MessageEmbed()
          .setThumbnail(message.author.avatarURL({ dynamic: true, size: 2048 }))
-        .setTitle('')
+        .setTitle('<:sparkle:1001529606651785256> music')
         .setImage('https://media.discordapp.net/attachments/857714045251878972/1014956210665050152/ad30e879132a7f7be5dc3a25d8de73cc.gif')
         .setDescription(`
 > \`play loop\`
@@ -99,7 +99,7 @@ const main = new Discord.MessageEmbed()
 .setColor('#FF0000')
         const text = new Discord.MessageEmbed()
         .setThumbnail(message.author.avatarURL({ dynamic: true, size: 2048 }))
-        .setTitle('Text')
+        .setTitle('<:text:1020780786326179893> Text')
         .setImage('https://media.discordapp.net/attachments/857714045251878972/1009609468184633446/a_43bc7abc0b96813f041d8aac2ee9d9b8.gif')
         .setDescription(`
 > \`textkurdish textarabic\`
@@ -110,7 +110,7 @@ const main = new Discord.MessageEmbed()
 .setColor('#FF0000')
         const gif = new Discord.MessageEmbed()
         .setThumbnail(message.author.avatarURL({ dynamic: true, size: 2048 }))
-        .setTitle('Gifs')
+        .setTitle('<:gif:1020780437842436117> Gifs')
         .setImage('https://media.discordapp.net/attachments/857714045251878972/1012608301994885161/Fragments.gif')
         .setDescription(`
 > \`boy girl\`
@@ -123,7 +123,7 @@ const main = new Discord.MessageEmbed()
 .setColor('#FF0000')
 const copy = new Discord.MessageEmbed()
         .setThumbnail(message.author.avatarURL({ dynamic: true, size: 2048 }))
-        .setTitle('Server copy')
+        .setTitle('<:blurple_partner:1016394334830076027> Server copy')
         .setImage('https://media.discordapp.net/attachments/857714045251878972/1010414909017825370/GIF-220812_230230.gif')
         .setDescription(` 
 > \`backup-create\`
@@ -135,7 +135,7 @@ const copy = new Discord.MessageEmbed()
 .setColor("#FF0000")
 const photo = new Discord.MessageEmbed()
         .setThumbnail(message.author.avatarURL({ dynamic: true, size: 2048 }))
-        .setTitle('PHOTO')
+        .setTitle('<:photo:1020780740746686464> PHOTO')
         .setImage('https://media.discordapp.net/attachments/857714045251878972/1010881755059847230/a820aa643d4f736c19bace70af8bcfb8.png')
         .setDescription(` 
 > \`Picanimal\`
@@ -148,7 +148,7 @@ const photo = new Discord.MessageEmbed()
 .setColor("#FF0000")
 const game = new Discord.MessageEmbed()
         .setThumbnail(message.author.avatarURL({ dynamic: true, size: 2048 }))
-        .setTitle('Game')
+        .setTitle('<:Game:928004431998513172> Game')
         .setImage('https://media.discordapp.net/attachments/857714045251878972/1007586484129366106/c159e3097719839d058c71fee4b6498f.jpg')
         .setDescription(` 
 > \`iq\`
