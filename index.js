@@ -6,7 +6,7 @@ const db = require('quick.db');
 const { TOKEN, PREFIX, AVATARURL, BOTNAME, } = require(`./config.json`);
 const figlet = require("figlet");
 const client = new Client({ disableMentions: `` , partials: ['MESSAGE', 'CHANNEL', 'REACTION'] });
-client.login('ODUxMzA3MTU2NjkwNjk4Mjgw.Gxtt09.i7EqnsXGpaQ6_I5vM6Hor512VTPa6lmwKq3TJU');
+client.login('OTM0NDY3NDc3NDQ0OTA3MDE4.G5gbLM.sQAUMRizO8s2NTmSA6h1esxFr5yZvMPtHjgkFM');
 client.commands = new Collection();
 client.setMaxListeners(0);
 client.prefix = PREFIX;
@@ -36,7 +36,7 @@ client.on(`ready`, () => {
         { return member.voice.channel.leave(); }
       });
       
-   client.user.setActivity(`${PREFIX}help | ${client.guilds.cache.size} Server,Users ${client.guilds.cache.reduce((a, g) => a + g.memberCount, 0)},`, { type: "LISTENING"});
+   client.user.setActivity(`${PREFIX}/help | ${client.guilds.cache.size} Server,Users ${client.guilds.cache.reduce((a, g) => a + g.memberCount, 0)},`, { type: "LISTENING"});
     
    
   
