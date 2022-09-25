@@ -39,7 +39,7 @@ module.exports = {
       .addField(`Voice Connections:`, `${client.voice.connections.size}`, false)
       .addField(`🔸 Shards:`, `1`, false)
       .addField(`⚙️ Made With:`, `Node.js V12`, false)
-      .addField(`🛠️ Creator:`, `<@800882925486866452>`, false)
+      .addField(`🛠️ Creator:`, `<@800882925486866452> and <@800309113363759124>`, false)
       .addField(`🔻 Prefix : `, `${prefix}`, false)
       .addField(`🚥 Uptime:`, uptime.join(", "), false)
     message.lineReplyNoMention(embed);
