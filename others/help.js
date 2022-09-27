@@ -26,7 +26,7 @@ const main = new Discord.MessageEmbed()
 7:  \`Copy Server\`
 8:  \`Photo\`
 9: \`Game\`
-**[SUPPORT](https://discord.gg/AwBfECKuMX)** - [INVITE](https://discord.com/api/oauth2/authorize?client_id=932765246114922546&permissions=8&scope=bot)`)
+**[SUPPORT](https://discord.gg/AwBfECKuMX)** - [INVITE](https://discord.com/api/oauth2/authorize?client_id=922157963584618586&permissions=8&scope=bot)`)
         .setTimestamp()
 .setColor("#FF0000")
         const general = new Discord.MessageEmbed()
